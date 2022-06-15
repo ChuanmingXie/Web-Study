@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+input[type='button'],
+input[type='password'],
+input[type='email'],
+input[type='text'] {
+	padding: 0px 10px;
+	width: 150px;
+}
+
+input[type='submit']{
+    width: 100px;
+    background-color: #b2f1e4fd;
+}
+
+a{
+    font-size: small;
+}
+
+input[type="checked"] {
+	width: 20px;
+}
+
+/* input {
+	margin: 10px 0px;
+	width: 150px;
+}
+*/
+/* select 设置  */
+select {
+	width: 174px;
+	height: 22px;    
+	padding: 0px 10px;
+	/* margin-left: -4px; */
+}
