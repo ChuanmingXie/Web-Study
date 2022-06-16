@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-04 列标签属性</title>
+</head>
+<body>
+    <h2>2-04-1 列标签属性</h2>
+    <table border="1" rules="all" width="400">
+        <tr>
+            <th>编号</th>
+            <th>商品名</th>
+            <th>商品类型</th>
+            <th>市场价</th>
+            <th>进货价</th>
+        </tr>
+        <tr>
+            <td>电子产品1-1</td>
+            <td>Dell笔记本</td>
+            <td rowspan="3" align="right" valign="bottom" bacolor="#CCCCCC">电子产品</td>
+            <td>5399</td>
+            <td>4000</td>
+        </tr>
+        <tr>
+            <td>电子产品2-3</td>
+            <td>小米手机</td>
+            <td colspan="2">588</td>
+        </tr>
+        <tr>
+            <td>电子产品6-8</td>
+            <td>苹果电脑</td>
+            <td width="85" height="50">6999</td>
+            <td>5830</td>
+        </tr>
+    </table>
+    <br>
+
+    <h2>2-04-2 列标签属性-合并单元格</h2>
+    <table border="1" rules="all" width="400">
+        <tr>
+            <td colspan="2">单元格占两列&nbsp;</td>
+            <!-- <td></td> -->
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td rowspan="2">单元格占两行&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <!-- <td></td> -->
+        </tr>
+    </table>
+</body>
+</html>
