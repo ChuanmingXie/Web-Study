@@ -1,11 +1,11 @@
 ### Chapter01 HTML语言基础
 
-####　1.1 Internet 起源
+#### 1.1 Internet 起源
     * 20世纪40年代左右，人们希望计算机设备之间互联，实现网络资源共享，但是受Web和Internet底层基础设施的限制，数据交换都经常受困。
     * 1960年左右，美国军方ARPA计划启动，联合计算机公司和大学共同研制出ARPnet网络，主要用于军事研究，1969年投入使用，ARPnet成为现代网络诞生的标志。
     * 20世纪80年代左右，Internet几经转表，用户由军方变成了教育机构，于是ARPnet分裂成为军用的MILNET和民用的ARPnet。后来广域网和局域网的篷布发展对Internet的进一步发展起到重要作用
 
-####　1.2 HTML 概述
+#### 1.2 HTML 概述
 ##### 1.2.1 HTML发展过程
     A. 超文本标记语言（Hyper Text Markup Language，HTML）时Internet上用来编写网页的主要语言，目前为止HTML已经从1.0发展到5.1.并在W3C(万维网联盟)组织的关注下继续不断完善
     B. 2001年1月HTML 4.01版本中增加了更加严格的规则，形成了著名的可扩展超文本标记语言(Extensible Hyper Text Markup Language，XHTML)
