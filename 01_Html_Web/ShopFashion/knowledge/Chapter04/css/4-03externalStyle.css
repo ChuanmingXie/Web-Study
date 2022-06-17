@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+hr{
+    width: 95%;
+    text-align: center;
+}
+
+h4{
+    border: dotted thin blue;
+    text-align: center;
+}
+
+span{
+    color: red;
+    font-weight: bold;
+}
