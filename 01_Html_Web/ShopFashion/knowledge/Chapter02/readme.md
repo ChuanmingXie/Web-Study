@@ -39,21 +39,26 @@
 	* box或border 显示表格的所有边框(不指定frame属性时默认)
 
 ##### 2.1.3 单元格标签 td 属性
-* align；设置单元格内容的水平对齐方式：left、center、right、justify、
-* valign；设置单元格内容的垂直对齐方式：top、middle、bottom、baseline
-* rowspan；设置单元格跨越的行数：指表格内某个单元格在水平方向向右的跨越单元格的列数
-* colspan；设置单元格跨越的列数：指单元格在垂直方向向下所跨的行数
-* scope；定义将表头数据与单元数据相关联的办法
-* width；设置单元格的宽度
-* height；设置单元格的高度
-* bgcolor；设置单元格背景颜色
+属性|描述
+:------:|:------:|
+align|		设置单元格内容的水平对齐方式：left、center、right、justify、
+valign|		设置单元格内容的垂直对齐方式：top、middle、bottom、baseline
+rowspan|	设置单元格跨越的行数：指表格内某个单元格在水平方向向右的跨越单元格的列数
+colspan|	设置单元格跨越的列数：指单元格在垂直方向向下所跨的行数
+scope|		定义将表头数据与单元数据相关联的办法
+width|		设置单元格的宽度
+height|		设置单元格的高度
+bgcolor|	设置单元格背景颜色
+
 ##### 2.1.4 行表单 tr 属性
-* align；设置单元格内容的水平对齐方式：left、center、right、justify
-* valign；设置单元格内容的垂直对齐方式：top、middle、bottom、baseline
-* bgcolor；设置单元格背景颜色
-* bordercolor；设置单元格的边框颜色（下面三种颜色同时设置时，本属性将被覆盖）
-* bordercolordark；设置单元格内的左上边框颜色
-* bordercolorlight；设置单元格内的右下边框颜色
+属性|描述
+:------:|:------:|
+align|		设置单元格内容的水平对齐方式：left、center、right、justify
+valign|		设置单元格内容的垂直对齐方式：top、middle、bottom、baseline
+bgcolor|	设置单元格背景颜色
+bordercolor|	设置单元格的边框颜色（下面三种颜色同时设置时，本属性将被覆盖）
+bordercolordark|	设置单元格内的左上边框颜色
+bordercolorlight|	设置单元格内的右下边框颜色
 
 ##### 2.1.5 表格的行分组
     a. 使用<thead>、<tfoot>、<tbody>、<caption>对数据进行横向分组
@@ -61,15 +66,18 @@
         tfoot定义表格尾部，创建脚注部分
         tbody定义表格主体
         caption定义表格标题，显示在真个表格上方
-    b. 如果表格数据过长，无法在一版屏幕中显示，使用<thead>、<tfoot>、<tbody>分组可以使浏览器有能力支持独立的表头和表尾的表格正文滚动，当打印一个较长的表格时，表格的表头和表尾会被打印在包含表格数据的每一页中
+    b. 如果表格数据过长，无法在一版屏幕中显示，使用<thead>、<tfoot>、<tbody>分组可以使浏览器有能力支持独立的表头和表尾的表格正文滚动，
+    当打印一个较长的表格时，表格的表头和表尾会被打印在包含表格数据的每一页中
     对于大型数据表而言，尽量将<tfoot>放在<tbody>之前，这样有利于浏览器在接受主体数据之前就能渲染表尾，有利于加快表格显示速度
 
 ##### 2.1.6 表格的列分组
    	纵向分组又称列分组，在HTML中使用<colgroup/>标签。该标签将表格按列进行分组，colgroup 标签的属性如下:
-* align；设置单元格内容水平对齐方式：left、center、right、justify、
-* valign；设置单元格内容垂直对齐方式：top、middle、bottom、baseline
-* span；规定该列分组可以跨越的列个数，默认值为1
-* width；设置列组合的宽度
+属性|描述
+:------:|:------:|
+align|	设置单元格内容水平对齐方式：left、center、right、justify、
+valign|	设置单元格内容垂直对齐方式：top、middle、bottom、baseline
+span|	规定该列分组可以跨越的列个数，默认值为1
+width|	设置列组合的宽度
 
 ##### 2.1.7 表格的嵌套 
     a. 页面排版比较复杂时，通常使用一个表格从整体上控制布局，内部细节也嵌套一个新的表格进行设计，防止在一个表格中引起列宽高的冲突
@@ -77,7 +85,8 @@
 
 
 #### 2.2 框架
-	框架能够让浏览器窗口划分为多个独立的窗格，每个窗格包含一个独立的HTML页。它的出现可以让用户通过框架加载单个窗格的内容，而不需要加载整个窗口。相对于框架而言整个浏览器窗口对应的框架集合称为框架集（frameset）
+	框架能够让浏览器窗口划分为多个独立的窗格，每个窗格包含一个独立的HTML页。它的出现可以让用户通过框架加载单个窗格的内容，
+	而不需要加载整个窗口。相对于框架而言整个浏览器窗口对应的框架集合称为框架集（frameset）
 
 ##### 2.2.1 框架及的基本结构
 	HTML中使用框架集标签<frameset>来划分框架，使用属性rows和cols说明框架的行数和列数以及所占窗口的比例，
@@ -91,7 +100,8 @@ frameborder|	设置框架集的边框是否显示，取值为1，0或yes，no，
 bordercolor|	设置框架集的边款颜色
 framespacing|	框架与框架间的空白距离
 * 框架集的rows和cols 属性 及其 四种取值方式
-	* 一个frameset可以包含多个frame框架窗口，rows和cols可以单独使用也可以一起使用。rows属性用于设置框架中包含的行数，cols属性用于设置框架中包含的列数，参数个数是两个或两个以时采用逗号分割
+	* 一个frameset可以包含多个frame框架窗口，rows和cols可以单独使用也可以一起使用。rows属性用于设置框架中包含的行数，
+	cols属性用于设置框架中包含的列数，参数个数是两个或两个以时采用逗号分割
 	* row和cols的取值
 		* 以像素为单位的绝对值
 		* 例如rows="120,580,*",说明三行高度分别为120像素，580像素，以及占据剩余空间
@@ -106,13 +116,11 @@ framespacing|	框架与框架间的空白距离
 
 ##### 2.2.3 框架的属性
 	a. frame标签用于指示每个框架的内容，语法如下
-```html
 		<frame src="url" name="" ... />
-```html
 	b. frame属性
 属性|描述
 :------:|:------:|
-name|设置框架的名称，在设置超链接时用作框架的标记
+name|	设置框架的名称，在设置超链接时用作框架的标记
 src|	设置框架中显示的URL界面
 frameborder|	设置框架边框是否显示
 marginheight|	定义内容与框架山下边缘的高度
@@ -124,22 +132,21 @@ noresize|	设置框架不能调整大小取值只有noresize
 	与table一样，对于复杂的页面结构，需要通过嵌套框架集来实现。
 
 ##### 2.2.5 内联框架
-	a. 框架集虽然可以创建一个单独的滚动区域，但是由于框架集固有的行列设计，限制了布局的灵活性。而内联框架（行内框架）可以出现在页面的任何位置，比框架集更加灵活。语法如下：
-```html
-	<iframe src="" name="" width="" height=""></iframe>
-```html
+	a. 框架集虽然可以创建一个单独的滚动区域，但是由于框架集固有的行列设计，限制了布局的灵活性。
+	而内联框架（行内框架）可以出现在页面的任何位置，比框架集更加灵活。语法如下：
+		<iframe src="" name="" width="" height=""></iframe>
 	b. 内联框架属性
-属性 | 描述 |
-:-----:|:-----:|
-align  |设置iframe与周围文本的对齐方式，取值left、right、top、middle、bottom | 
-frameborder|	设置iframe是否显示边框，取值0 或 1|
-marginheight|	顶部和底部的边距|
-marginwidth|	左侧和右侧的边距|
-height|	高度|
-width|	设置iframe的宽度|
-scrolling|	设置iframe中是否显示滚动条，取值yes、no、auto|
-src|	设置iframe中显示的URL|
-name|	设置iframe的名称|
+属性|描述
+:------:|:------:|
+align  |设置iframe与周围文本的对齐方式，取值left、right、top、middle、bottom
+frameborder|	设置iframe是否显示边框，取值0 或 1
+marginheight|	顶部和底部的边距
+marginwidth|	左侧和右侧的边距
+height|	高度
+width|	设置iframe的宽度
+scrolling|	设置iframe中是否显示滚动条，取值yes、no、auto
+src|	设置iframe中显示的URL
+name|	设置iframe的名称
 
 ##### 2.2.6 框架之间的链接
 	通过 a标签 使用target属性指向框架名称，实现框架内对页面的直接链接
