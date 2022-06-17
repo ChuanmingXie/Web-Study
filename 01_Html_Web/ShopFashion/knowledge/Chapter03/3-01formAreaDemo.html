@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3-01 表单域</title>
+</head>
+<body>
+    <h2>3-01 表单域</h2>
+    <form action="" method="post" enctype="multipart/form-data">
+        <h3>3-01-1 文本框</h3>
+        <input type="text" name="..." id="" size="" maxlength="30" value="我是示例" disabled readonly><br> <br>
+        <input type="text" > <br><br>
+        <input type="text" name="userName" id="userName" value="请输入用户名"> <br><br>
+        <input type="text" value="请输入用户名" size="25" maxlength="10"> <br><br>
+        <input type="text" value="请输入用户名" disabled> <br> <br>
+        <input type="text" value="请输入用户名" readonly> <br> <br>
+
+        <h3>3-01-2 密码框</h3>
+        <input type="password" name="..."  id="" size="..." maxlength="" value="我是示例"> <br><br>
+        用户名：<input type="text" name="userName" id="userName" value="请输入用户名"> <br><br>
+        密　码：<input type="password" name="userPwd" id="userPwd" value=""> <br><br>
+
+        <h3>3-01-3 单选框</h3>
+        <input type="radio" name="..." id="" value="..." checked="checked" /> 我是示例 <br><br>			
+		性别：<input type="radio" name="sex" id="" value="man" checked="checked" />男
+            <input type="radio" name="sex" id="" value="woman" checked="checked" />女 <br>
+        专业：<input type="radio" name="major" id="" value="computer" />计算机
+            <input type="radio" name="major" id="" value="physics" checked="checked" />物理
+            <input type="radio" name="major" id="" value="chemical" />化工 <br><br>
+        
+        <h4>3-01-4 复选框</h4> 
+        <input type="checkbox" name="..." id="" value="..." checked="checked" /> 我是示例 <br><br>
+		爱好：<input type="checkbox" name="hobby" id="" value="music" />音乐
+            <input type="checkbox" name="hobby" id="" value="swimming" />游泳
+            <input type="checkbox" name="hobby" id="" value="football" checked="checked" />足球 <br>
+        选修：<input type="checkbox" name="choice" id="" value="computer" checked="checked"/>计算机
+            <input type="checkbox" name="choice" id="" value="physics" />物理
+            <input type="checkbox" name="choice" id="" value="chemical"  checked="checked"/>化工 <br>
+
+        <h3>3-01-5 文件选择框</h3>
+        我数示例：<input type="file" name="..." id="" accept="..."> <br> <br>
+        请选择上传的头像: <input type="file" name="headImage" id="" accept="image/*">
+
+        <h4>3-01-6 隐藏域</h4>
+        <input type="hidden" name="hiddenData" id="" value="不显示的数据">
+
+        <h3>3-01-7 文本域</h3>
+        <textArea rows="6" cols="40" wrap="virtual" name="intro" value="自我介绍">
+你好，
+我来自青岛，是一名信息工程大学软件工程专业的应届本科即将毕业的学生。
+我的性格偏内向，为人坦率，热诚，讲求原则；处事乐观、专心、细致、头脑清晰；富有责任心、乐于助人。
+        </textArea>
+
+        <h3>3-01-8 列表选择框</h3>
+        请选择国家：
+        <select name="country" id="">
+            <option value="0">中国</option>
+            <option value="1">格罗斯</option>
+            <option value="2">美国</option>
+        </select>
+        <br><br>
+        请选择省份：
+        <select name="province" id="" size="4" multiple="multiple">
+            <option value="0">山东</option>
+            <option value="1">内蒙古</option>
+            <option value="2" selected>台湾</option>
+            <option value="3">陕西</option>
+            <option value="4">湖南</option>
+        </select>
+        <br><br>
+        请选择城市：
+        <select name="city" id="">
+            <option value="0">上海</option>
+            <option value="1">北京</option>
+        </select>
+        <h3>3-01-8 分组选择框</h3>
+        日期选择：
+        <select name="day" id="">
+            <optgroup label="--工作日--">
+                <option value="0">周一</option>
+                <option value="1">周二</option>
+                <option value="2">周三</option>
+                <option value="3">周四</option>
+                <option value="4">周五</option>
+            </optgroup>
+            <optgroup label="--休息日--">
+                <option value="saturday">周六</option>
+                <option value="sunday">周日</option>
+            </optgroup>
+            <optgroup label="--节假日--">
+                <option value="NewYear">春节</option>
+                <option value="MayDay">五一</option>
+                <option value="CountryDay">十一</option>
+            </optgroup>
+        </select>
+    </form>
+</body>
+</html>
