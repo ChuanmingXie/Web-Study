@@ -1,5 +1,5 @@
 @charset "UTF-8";
-
+/* 文本属性 */
 /* 缩进文本 - 设置文本的缩进大小,值可以为正值或负值,单位可以为em,px,% */
 .textIndex{
     text-indent: 20px;
@@ -57,6 +57,3 @@ tr:nth-child(even){
 tr:nth-child(odd){
     background-color: white;
 }
-
-
-

@@ -85,6 +85,16 @@
 
 #### 4.4 CSS样式属性
 ##### 4.4.1 文本属性
+功 能|属性名|描 述
+:---------:|:---------:|:---------:|
+文本缩进|text-index|设置行的缩进大小,值可以为正值或负值,单位可以为em,px,%
+水平对齐|text-align|设置文本的水平对齐方式,取值left、right、center、justify
+垂直对齐|vertical-align|设置文本的垂直对齐方式,取值bottom,middle,top,baseline
+字间距|word-spacing|设置单词之间的间隔
+字符间距|letter-spacing|设置字符（汉字）之间的间隔
+字符转换|text-transform|设置段落中需要强调的文字，取值uppercase,lowercase,capitalize,
+文本修饰符|text-decoration|设置段落中需要强调的文字,取值underline,overline,line-through,
+空白字符|white-space|设置处理原文档多余的空白自动的方式，normal(忽略多余)，pre(正常显示)，nowrap(文本不换行)
 ##### 4.4.2 字体属性
 ##### 4.4.3 背景属性
 ##### 4.4.4 表格属性

@@ -1,0 +1,50 @@
+@charset "UTF-8";
+/* 字体颜色 */
+
+div{
+    padding: 1em;
+    margin: 3em;
+}
+
+.fontguqiaocolor{
+    background-color: #F17666;
+}
+
+.fontshehongcolor{    
+    background-color: #F19790;
+}
+
+.fontliuzihong{
+    background-color: #F1908C;
+}
+
+.fontfamily{
+    font-family: "Microsoft Yahei";
+}
+
+.fontstyle{
+    font-style: italic;
+}
+
+.fontvariant{
+    font-variant: small-caps;
+}
+
+.fontWeight{
+    text-indent: 40px;
+    color: #F1939C;
+    font-family: "Miscroft Yahei";
+    font-weight: bold;
+}
+
+.lineheight{
+    line-height: 10px;
+}
+
+.fontsize1{
+    font-size: xx-large;
+}
+
+.fontsize2{
+    font-size: 24px;
+}
