@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+/* 缩进文本 - 设置文本的缩进大小,值可以为正值或负值,单位可以为em,px,% */
+.textIndex{
+    text-indent: 20px;
+    letter-spacing: 0.3em;  
+}
+
+.textTransform{
+    text-transform: uppercase;
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+/* 下划线除了用decoration之外更多的是用 border 外框属性 */
+.textdecoration{
+    /* blink 浏览器支持程度不一，建议不使用 */
+    text-decoration: blink;
+    padding-bottom: 9px;
+    border-bottom: 2px solid #48C2F9;
+}
+
+body{
+    margin: 20px 10em;
+    font-family:'微软雅黑';
+}
+table{
+    width: 50em;
+}
+
+table tr td:first-child{
+    width: 100px;
+    text-align: center;
+    /* padding-left: 20px; */
+    /* font-weight: bold; */
+}
+
+table tr td:nth-child(2){
+    width: 130px;
+}
+
+table tr td{
+    /* letter-spacing: 0.1em; */
+    padding: 4px 20px;
+}
+
+table tbody{
+    font-size: 14px;
+}
+
+tr:nth-child(even){
+    background-color: rgba(169, 163, 163, 0.675);
+}
+
+tr:nth-child(odd){
+    background-color: white;
+}
+
+
+

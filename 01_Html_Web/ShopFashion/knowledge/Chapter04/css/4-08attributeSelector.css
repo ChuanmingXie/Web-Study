@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+/* 存在选择器 */
+p[id]{font-size: 14px;}
+
+/* 相等选择器 */
+p[name="teaName"]{font-weight: bold;}
+
+/* 包含选择器 */
+p[name~="stu"]{color: rgb(24, 28, 224);}
+
+/* 连接字符串选择器 - 匹配等于zh或以zh-开头的lang属性*/
+p[lang|="zh"]{background-color: rgb(240, 30, 30);}
+
+/* 前缀选择器 */
+p[title^='j']{font-size: 12px;}
+
+/* 字串选择器 */
+p[title*='e']{background-color: #999;}
+
+/* 后缀选择器 */
+p[title$='o']{color: #603;}
