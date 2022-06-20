@@ -105,7 +105,7 @@
 字体加粗|font-weight|设置100-900，其中lighter(细体对应100),bold(加粗对应900),normal(普通对应400)
 字体大小|font-size|设置文本的大小,取值可以为数字、或者xx-small、x-samll、samll、medium、large、x-large、xx-large
 行间距|line-height|设置文本的行高
-属性合并简写|font-style font-variant font-weight font-size/line-height font-family
+属性合并简写|font:|font-style font-variant font-weight font-size/line-height font-family;<br>font:oblique small-caps xx-small 14px/20px Cambria,Microsoft Yahei;
 
 ##### 4.4.3 背景属性
 功 能|属性名|描 述
@@ -118,7 +118,7 @@
 背景尺寸|background-size|CSS3新增属性，用来设置背景图像的尺寸，可以使用图像的像素或%设定图片的尺寸。在CSS3之前，背景图片的尺寸由图片的实际尺寸决定
 填充区域|background-origin|CSS3新增属性，规定background-position属性相对什么位置来定位，取值border-box、padding-box、content-box
 绘制区域|background-clip|CSS3新增属性，规定背景的绘制区域，取值border-box、padding-box、content-box
-背景简写|background|可以综合设置以上属性[background](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background "示例")
+背景简写|background|可以综合设置以上属性[background](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background "示例")<br>background: #FBA414 center 5% / 80% 50% repeat-y padding-box border-box scroll url("../img/backimg3.jpg");
 
 ##### 4.4.4 表格属性
 功 能|属性名|描 述
