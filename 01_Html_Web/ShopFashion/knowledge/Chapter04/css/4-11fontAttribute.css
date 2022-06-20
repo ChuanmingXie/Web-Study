@@ -4,6 +4,7 @@
 div{
     padding: 1em;
     margin: 3em;
+    color:white
 }
 
 .fontguqiaocolor{
@@ -18,6 +19,19 @@ div{
     background-color: #F1908C;
 }
 
+.fontpinhongcolor{
+    background-color: #EF3473;
+}
+
+.fontshangchacolor{
+    background-color: #ED556A;
+}
+
+
+.fontzanghuacolor{
+    background-color: #EC2D7A;
+}
+
 .fontfamily{
     font-family: "Microsoft Yahei";
 }
@@ -26,8 +40,12 @@ div{
     font-style: italic;
 }
 
+/* 设置小型大写字母或者正常型大写字母 */
 .fontvariant{
-    font-variant: small-caps;
+    font-variant: small-caps;  /* 小型大写字母 */
+}
+.texttransform{
+    text-transform: uppercase;
 }
 
 .fontWeight{
@@ -47,4 +65,13 @@ div{
 
 .fontsize2{
     font-size: 24px;
+}
+
+.fontall{
+    /* 错误的字体属性设置，xx-small 是fontsize的属性值*/
+    /* font: font-style font-variant font-weight font-size/line-height font-family */
+    font:oblique small-caps xx-small 14px/20px Cambria,Microsoft Yahei;
+}
+.fontall1{
+    font:oblique small-caps 300 14px/20px Cambria,Microsoft YaHei;
 }

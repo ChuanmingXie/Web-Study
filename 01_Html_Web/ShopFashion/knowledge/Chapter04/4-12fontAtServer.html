@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4-12 导入外部字体</title>
+    <style type="text/css" rel="stylesheet">
+        @font-face {
+            font-family: QstFont;
+            src: url("./font/博洋楷体7000.TTF");
+        }
+        /* @font-face {
+            font-family: QstGlyphicons;
+            src: url("./font/glyphicons-halflings-regular.ttf"),
+            url("./font/glyphicons-halflings-regular.eot");
+        } */
+
+        @font-face {
+            font-family: Qstkaishu;
+            src: url("./font/博洋行书7000.TTF");
+        }
+
+        @font-face {
+            font-family: QstFZkaishu;
+            src: url("./font/方正硬笔楷书简体.TTF");
+        }
+
+        p{
+            font-family: QstFont;
+        }
+        /* span{
+            font-family: QstGlyphicons;
+        } */
+        div p{
+            font-family: Qstkaishu;
+        }
+
+        div p span{
+            font-family: QstFZkaishu;
+        }
+    </style>
+</head>
+<body>
+    <h2>4-12 导入外部字体</h2>
+    普通字体　－　在CSS3之前，web设计师必须使用已在用户计算机上安装好的字体<br>
+    <p>博洋楷体7000　－　在CSS3之前，web设计师必须使用已在用户计算机上安装好的字体</p>
+    <span class="glyphicon glyphicon-cloud" aria-hidden="true"></span>
+    <span>QstGlyphicons - 在CSS3之前，web设计师必须使用已在用户计算机上安装好的字体</span>
+    <div>
+        <p>博洋行书7000　－　在CSS3之前，web设计师必须使用已在用户计算机上安装好的字体</p>
+    </div>
+    <div>
+        <p>
+            <span>方正硬笔楷书简体　－　在CSS3之前，web设计师必须使用已在用户计算机上安装好的字体</span>
+        </p>
+    </div>
+</body>
+</html>

@@ -95,9 +95,33 @@
 字符转换|text-transform|设置段落中需要强调的文字，取值uppercase,lowercase,capitalize,
 文本修饰符|text-decoration|设置段落中需要强调的文字,取值underline,overline,line-through,
 空白字符|white-space|设置处理原文档多余的空白自动的方式，normal(忽略多余)，pre(正常显示)，nowrap(文本不换行)
+
 ##### 4.4.2 字体属性
+功 能|属性名|描 述
+:---------:|:---------:|:---------:|
+文本颜色|color|设置文本颜色，取值如red、rgb(255,0,0)、#F0000
+字体风格|font-family|设置文本的字体，可取宋体、隶属、Microsoft Yahei以及serif,Verdana(英文,中文)
+字体变形|font-variant|设定小型大写字母，取值small-caps
+字体加粗|font-weight|设置100-900，其中lighter(细体对应100),bold(加粗对应900),normal(普通对应400)
+字体大小|font-size|设置文本的大小,取值可以为数字、或者xx-small、x-samll、samll、medium、large、x-large、xx-large
+行间距|line-height|设置文本的行高
+属性合并简写|font-style font-variant font-weight font-size/line-height font-family
+
 ##### 4.4.3 背景属性
+功 能|属性名|描 述
+:---------:|:---------:|:---------:|
+背景颜色|background-color|设置元素背景色
+背景定位|background-posotion|设置图像在背景中的位置，取值top、bottom、left、right、center或具体值（10px）、百分比(%)
+背景图像|background-image|设置背景图片，格式：background-image:url(bg.jpg); 没有图像,则该值为none
+背景重复|background-repeat|设置背景平铺的方式,取值no-repeat(不平铺)、repeat-x(横向平铺)、repeat-y(纵向平铺)
+背景关联|background-attachment|设置背景图片是否随页面内容一起滚动，取值默认为scroll(滚动)、还可取fixed(固定)
+背景尺寸|background-size|CSS3新增属性，用来设置背景图像的尺寸，可以使用图像的像素或%设定图片的尺寸。在CSS3之前，背景图片的尺寸由图片的实际尺寸决定
+填充区域|background-origin|CSS3新增属性，规定background-position属性相对什么位置来定位，取值border-box、padding-box、content-box
+绘制区域|background-clip|CSS3新增属性，规定背景的绘制区域，取值border-box、padding-box、content-box
+背景简写|background|可以综合设置以上属性[background](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background "示例")
+
 ##### 4.4.4 表格属性
+
 ##### 4.4.5 列表属性
 ##### 4.4.6 分类属性
 

@@ -1,0 +1,146 @@
+@charset "UTF-8";
+
+div{
+    margin: 1em;
+    padding: 2em;
+    width: 345px;
+    display: inline-table;
+}
+
+/* 背景色 */
+.yellowruibai {
+    background-color: #F9F4DC;
+}
+
+.yellowxinghuang {
+    background-color: #F7E8AA;
+}
+
+.yellowmolihuang {
+    background-color: #F8DF72;
+}
+
+.yellowmaiganhuang {
+    background-color: #F8DF70;
+}
+
+.yellowyoucai {
+    background-color: #FBDA41;
+}
+
+.yellowfoushou {
+    background-color: #FED71A;
+}
+
+.yellowruibai,
+.yellowxinghuang,
+.yellowmolihuang,
+.yellowmaiganhuang,
+.yellowyoucai,
+.yellowfoushou {
+    position:relative;
+}
+
+.colorcardtip {
+    font-size: 12px;
+    padding-left: 5px;
+    border-left: 1px solid #0f1213d0;
+}
+
+.colorName {
+    text-align: right;
+    font-size: 26px;
+}
+
+.colorName>span {
+    font-size: 14px;
+}
+
+
+/* 背景图 */
+.backgroundimg1 {
+    background-image: url("../img/backimg1.jpg");
+}
+
+.backgroundimg2 {
+    background-image: url("../img/backimg2.jpg");
+}
+
+.backgroundimg3 {
+    background-image: url("../img/backimg3.jpg");
+}
+
+.backgroundimg4 {
+    background-image: url("../img/backimg4.jpg");
+}
+
+.backgroundimg5 {
+    background-image: url("../img/backimg5.jpg");
+}
+
+.backgroundimg6 {
+    background-image: url("../img/backimg6.jpg");
+}
+
+.img,
+.backgroundimg1,
+.backgroundimg2,
+.backgroundimg3,
+.backgroundimg4,
+.backgroundimg5,
+.backgroundimg6{
+    height: 160px;
+    /* padding: 2em;
+    margin: 1em;
+    width: 345px; */
+    /* display: inline-table; */
+
+    background-color: #F9F4DC;
+    background-size: 50%;
+    background-repeat:no-repeat;
+    background-clip: border-box;  /* 绘制区域 */  
+    background-position: center;
+
+}
+
+.backgroundRepeat {
+    background-repeat: repeat-x;
+}
+
+.backgroundposition1 {
+    background-position: 1em 20px;
+}
+
+.backgroundposition2 {
+    background-position: bottom;
+}
+
+.backgroundattachment {
+    background-attachment: scroll;
+}
+
+.backgroundsize {
+    background-size: 20px;
+}
+
+.backgroundorigin {
+    background-origin: content-box;
+}
+
+.backgroundclip {
+    width: 285px;
+    height: 120px;
+    /* background-clip: padding-box; */
+    border:30px solid #0f121313;
+    /* 绘制区域到达 content边界 */
+    background: center 50% content-box radial-gradient(crimson, skyblue);
+    /* 绘制区域到达 padding边界 */
+    /* background: center 50% padding-box radial-gradient(crimson, skyblue); */
+    /* 绘制区域到达 border边界 */
+    /* background: center 50% border-box radial-gradient(crimson, skyblue); */
+}
+
+.backgroundall {
+    height: 180px;
+    background: #FBA414 center 5% / 80% 50% repeat-y padding-box border-box scroll url("../img/backimg3.jpg");
+}
