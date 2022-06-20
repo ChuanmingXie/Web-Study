@@ -111,13 +111,13 @@
 功 能|属性名|描 述
 :---------:|:---------:|:---------:|
 背景颜色|background-color|设置元素背景色
-背景定位|background-posotion|设置图像在背景中的位置，取值top、bottom、left、right、center或具体值（10px）、百分比(%)
-背景图像|background-image|设置背景图片，格式：background-image:url(bg.jpg); 没有图像,则该值为none
-背景重复|background-repeat|设置背景平铺的方式,取值no-repeat(不平铺)、repeat-x(横向平铺)、repeat-y(纵向平铺)
-背景关联|background-attachment|设置背景图片是否随页面内容一起滚动，取值默认为scroll(滚动)、还可取fixed(固定)
-背景尺寸|background-size|CSS3新增属性，用来设置背景图像的尺寸，可以使用图像的像素或%设定图片的尺寸。在CSS3之前，背景图片的尺寸由图片的实际尺寸决定
-填充区域|background-origin|CSS3新增属性，规定background-position属性相对什么位置来定位，取值border-box、padding-box、content-box
-绘制区域|background-clip|CSS3新增属性，规定背景的绘制区域，取值border-box、padding-box、content-box
+背景定位|background-posotion|设置图像在背景中的位置，<br>取值top、bottom、left、right、center或具体值（10px）、百分比(%)
+背景图像|background-image|设置背景图片，<br>格式：background-image:url(bg.jpg); 没有图像,则该值为none
+背景重复|background-repeat|设置背景平铺的方式,<br>取值no-repeat(不平铺)、repeat-x(横向平铺)、repeat-y(纵向平铺)
+背景关联|background-attachment|设置背景图片是否随页面内容一起滚动，<br>取值默认为scroll(滚动)、还可取fixed(固定)
+背景尺寸|background-size|CSS3新增属性，用来设置背景图像的尺寸，<br>可以使用图像的像素或%设定图片的尺寸。在CSS3之前，背景图片的尺寸由图片的实际尺寸决定
+填充区域|background-origin|CSS3新增属性，规定background-position属性相对什么位置来定位，<br>取值border-box、padding-box、content-box
+绘制区域|background-clip|CSS3新增属性，规定背景的绘制区域，<br>取值border-box、padding-box、content-box
 背景简写|background|可以综合设置以上属性[background](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background "示例")<br>background: #FBA414 center 5% / 80% 50% repeat-y padding-box border-box scroll url("../img/backimg3.jpg");
 
 ##### 4.4.4 表格属性
@@ -134,7 +134,13 @@
 内容垂直对齐方式|vertical-align|设置表格单元格内容的垂直对齐方式
 表格元素内居中|margin:auto|将表格在父元素内设置为居中对齐
 
-##### 4.4.5 列表属性
+##### 4.4.5 ul列表li的属性
+功 能|属性名|描 述
+:---------:|:---------:|:---------:|
+列表类型|list-style-type|设置浏览器的图形符号，<br>取值为none,disc,circle,square,decimal,lower-latin,lower-roman,lower-alpha,upper-latin
+列表项图像|list-style-image|指定图像符号为图像，list-style-image:url(xxx.gif)
+列表项图像|list-style-position|设置列表图项符号的位置，取值inside,outside
+列表简写|list-style|设置顺序为
 ##### 4.4.6 分类属性
 
 #### 4.5 CSS伪类和伪元素

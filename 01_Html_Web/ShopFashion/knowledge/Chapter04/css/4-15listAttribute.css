@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+.liststyletype{
+    list-style-type: upper-roman;
+    /* list-style-type: upper-alpha; */
+}
+
+.liststyleimage{
+    list-style-image: url("../img/liststar.jpg");
+}
+
+.liststyleposition{
+    list-style-position: inside;
+}
+
+.liststyle li{
+    list-style: lower-greek inside url(../img/liststar.jpg);
+}
+
+.fontstyle{
+    font:small-caps lighter 14px/20px Cambria,Microsoft Yahei;
+}
+
+.fontstyle li:nth-child(even){
+    font: oblique small-caps 900 14px/20px Cambira,Microsoft Yahei;
+}
