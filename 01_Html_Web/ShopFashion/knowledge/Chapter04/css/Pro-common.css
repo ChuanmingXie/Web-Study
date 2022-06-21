@@ -1,1 +1,45 @@
 @charset "UTF-8";
+
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-size: 12px;
+    font-family: microsoft yahei;
+    color: #000;
+}
+
+li,ul{
+    list-style: none;
+}
+
+/* header */
+
+/* logo */
+
+/* menu */
+
+.nav_bg{background: #CE2626; width: 100%; color:#fff}
+.nav_content{width: 100%; margin: 0 auto; height: 40px; line-height: 40px;}
+.nav{width: 100%; float: left; margin-left: 200px;}
+.nav li{
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    width: 80px;
+    float: left;
+    text-align: center;
+    margin-right: 15px;
+}
+.active{background: #b12121;}
+.orange{font-weight: 700; color:#f60;}
+a.white{text-decoration: none; color: #fff;}
+a.white:hover{color:#ff0; border-bottom: 2px solid #41B349; padding-bottom: 7px;}
+/* 
+menu
+title
+right_arrow
+red_dot */
+
+/* footer */
