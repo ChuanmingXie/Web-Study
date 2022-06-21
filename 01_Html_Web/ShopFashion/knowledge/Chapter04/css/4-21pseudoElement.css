@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+.colorgongdian{
+    background-color: #20894d;
+}
+.colordanbaishi{
+    background-color: #579572;
+}
+.colorwasong{
+    background-color: #6E8B72;
+}
+.coloryusui{
+    background-color: #41B349;
+}
+
+div{
+    width: 345px;
+    height: 180px;
+    padding: 4em;
+    margin: 1em;
+    display: inline-table;
+    border-radius: 10px;
+    text-align: right;
+    color: #FFFFFF;
+}
+
+span{
+    text-transform: uppercase;
+}
+
+::first-line{
+    text-decoration: underline;
+    /* font-weight: bold;
+    font-size: 18px;
+    line-height: 30px; */
+    font:18px/30px bold
+}
+
+.colordanbaishi p::first-letter{
+    font-size: 40px;
+    color: red;
+}
+
+.coloryusui p::before{
+    content: url("../img/liststar.jpg");
+}
+
+.coloryusui p::after{
+    content: url("../img/liststar.jpg");
+}
+
+
+
+

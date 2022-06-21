@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4-20 伪类选择器</title>
+    <link rel="stylesheet" href="./css/4-20pseudoClass.css">
+</head>
+
+<body>
+    <h2>4-20 伪类选择器</h2>
+    <h4>4-20-1 基本用法</h4>
+    <p>CSS伪类用于向某些选择器添加特殊的效果</p>
+    <a href="#">未访问的链接</a>|
+    <a>已访问的链接</a>|
+    <a href="http:101.131.152.252">当前活动的链接</a> <br><br>
+    <img src="./img/backimg6.jpg" width="300" alt="">
+    <img src="./img/backimg6.jpg" width="300" alt=""> <br><br>
+    <input type="text" id="userName" readonly="readonly" value="只读文本">
+    <input type="text" id="name" value="获取焦点">
+    <input type="text" value="获取焦点">
+    <input type="button" name="" id="" disabled="disabled" value="被禁用的按钮">
+    <input type="button" class="enableButton" value="可用的按钮"> <br> <br>
+
+    爱好：<input type="checkbox" name="" id="" checked="checked"> 设计
+    　　　<input type="checkbox" name="" id="" > 编程　<br><br>
+    
+    协议：<input type="radio" name="radio1" id="" checked="checked"> 设计
+    　　　<input type="radio" name="radio1" id="" > 编程　<br><br>
+    
+    <h4>4-20-2 登陆示例</h4>
+    <form action="do.action" method="post" class="formclass">
+        <!-- <fieldset>
+            <legend>注册页面</legend> -->
+            <div class="info">
+                <table>
+                    <tr>
+                        <td>用户名：</td>
+                        <td><input type="text" name="userName" id="userName" required placeholder="请输入用户名"></td>
+                    </tr>
+                    <tr>
+                        <td>密　码：</td>
+                        <td><input type="password" name="loginPass" id="loginPass" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" value="登录">
+                            <input type="reset" value="取消">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        <!-- </fieldset> -->
+    </form>
+</body>
+
+</html>
