@@ -10,19 +10,33 @@ body{
     color: #000;
 }
 
+.clear{clear: both;}
+.floatleft{float: left;}
+.floatright{float: right;}
+
 li,ul{
     list-style: none;
 }
+a{color: #000; text-decoration: none;}
 
 /* header */
+.top_bg{
+    border-bottom: 1px solid #CCC; 
+    font-size: 12px; 
+    line-height: 30px;
+    font-family: "宋体";
+    background: #f7f7f7; 
+    height: 30px;
+}
+.top_content{width: 1200px; margin: 0 auto;}
 
 /* logo */
-
+.logo{margin: 5px auto; width: 1200px; height: 85px;}
 /* menu */
 
 .nav_bg{background: #CE2626; width: 100%; color:#fff}
-.nav_content{width: 100%; margin: 0 auto; height: 40px; line-height: 40px;}
-.nav{width: 100%; float: left; margin-left: 200px;}
+.nav_content{width: 1200px; margin: 0 auto; height: 40px; line-height: 40px;}
+.nav{width: 700px; float: left; margin-left: 200px;}
 .nav li{
     font-size: 16px;
     font-weight: 700;
@@ -36,10 +50,10 @@ li,ul{
 .orange{font-weight: 700; color:#f60;}
 a.white{text-decoration: none; color: #fff;}
 a.white:hover{color:#ff0; border-bottom: 2px solid #41B349; padding-bottom: 7px;}
-/* 
-menu
-title
-right_arrow
-red_dot */
+
+.menu{}
+.title{}
+.right_arrow{}
+.red_dot{}
 
 /* footer */
