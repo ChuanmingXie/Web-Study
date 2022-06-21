@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+.arrow{ cursor: url("../cursor/arrow.cur"),auto;}
+.beam{ cursor: url("../cursor/beam.cur"),auto;}
+.cross{ cursor: url("../cursor/cross.cur"),auto;}
+.help{ cursor: url("../cursor/help.cur"),auto;}
+.link{ cursor: url("../cursor/link.cur"),auto;}
+.move{ cursor: url("../cursor/move.cur"),auto;}
+.no{ cursor: url("../cursor/no.cur"),auto;}
+.pen{ cursor: url("../cursor/pen.cur"),auto;}
+.pin{ cursor: url("../cursor/pin.cur"),auto;}
+.size1{ cursor: url("../cursor/size1.cur"),auto;}
+.size2{ cursor: url("../cursor/size2.cur"),auto;}
+.size3{ cursor: url("../cursor/size3.cur"),auto;}
+.size4{ cursor: url("../cursor/size4.cur"),auto;}
+.up{ cursor: url("../cursor/up.cur"),auto;}
+
+h4{
+    text-indent: 40px;
+}
+
+/* 设置子div/span元素在父级div元素中水平垂直居中,且父级div横向优先排列 */
+div{
+    color: #FFFFFF;
+    font:small-caps bold 16px/14px Cambria,Microsoft Yahei;
+    background: #2983bb;
+    width: 280px;
+    height: 180px;
+    margin: 1em;
+    display: inline-flex;
+    justify-content: center;    /* 水平居中 */
+    align-items: center;        /* 垂直居中 */
+}
+div span{
+    border: 1px dotted #FFFFFF;
+    position: absolute;
+    padding: 40px;
+}

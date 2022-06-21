@@ -115,7 +115,7 @@
 背景图像|background-image|设置背景图片，<br>格式：background-image:url(bg.jpg); 没有图像,则该值为none
 背景重复|background-repeat|设置背景平铺的方式,<br>取值no-repeat(不平铺)、repeat-x(横向平铺)、repeat-y(纵向平铺)
 背景关联|background-attachment|设置背景图片是否随页面内容一起滚动，<br>取值默认为scroll(滚动)、还可取fixed(固定)
-背景尺寸|background-size|CSS3新增属性，用来设置背景图像的尺寸，<br>可以使用图像的像素或%设定图片的尺寸。在CSS3之前，背景图片的尺寸由图片的实际尺寸决定
+背景尺寸|background-size|CSS3新增属性，用来设置背景图像的尺寸，<br>可以使用图像的像素或%设定图片的尺寸。<br>在CSS3之前，背景图片的尺寸由图片的实际尺寸决定
 填充区域|background-origin|CSS3新增属性，规定background-position属性相对什么位置来定位，<br>取值border-box、padding-box、content-box
 绘制区域|background-clip|CSS3新增属性，规定背景的绘制区域，<br>取值border-box、padding-box、content-box
 背景简写|background|可以综合设置以上属性[background](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background "示例")<br>background: #FBA414 center 5% / 80% 50% repeat-y padding-box border-box scroll url("../img/backimg3.jpg");
@@ -140,8 +140,32 @@
 列表类型|list-style-type|设置浏览器的图形符号，<br>取值为none,disc,circle,square,decimal,lower-latin,lower-roman,lower-alpha,upper-latin
 列表项图像|list-style-image|指定图像符号为图像，list-style-image:url(xxx.gif)
 列表项图像|list-style-position|设置列表图项符号的位置，取值inside,outside
-列表简写|list-style|设置顺序为
+列表简写|list-style|设置顺序为type、image、position
 ##### 4.4.6 分类属性
+属 性|属性值|描 述
+:---------:|:---------:|:---------:|
+position|
+取值|描述
+:---------:|:---------:|
+static|	默认，元素在页面流中正常出现，并作为页面流的一部分
+relative|	相对定位，相对于其正常位置进行定位，并保持其定位前的形状和所占的空间
+absolute|	绝对定位，相对于浏览器窗口进行定位，将元素框从页面流中完全删除后，重新定位，当拖拽页面滚动条时，该元素随页面一起滚动
+fixed|	固定定位，相对浏览器窗口进行定位，将元素框从页面流中完全删除后，重新定位，拖拽滚动条，元素不随页面一起滚动
+
+float|
+取值|描述
+:---------:|:---------:|
+left|	元素浮动到左侧边界
+right|	元素浮动到右边界
+none|	默认值，元素不浮动
+
+clear|
+取值|描述
+:---------:|:---------:|
+left|	清除左侧浮动产生的影响
+right|	清除右侧浮动产生的影响
+both|	清除两侧浮动产生的影响
+none|	默认值，允许浮动元素出现在两侧
 
 #### 4.5 CSS伪类和伪元素
 ##### 4.5.1 伪类
