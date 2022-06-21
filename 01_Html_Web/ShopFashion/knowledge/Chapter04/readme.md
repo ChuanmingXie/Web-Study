@@ -118,7 +118,7 @@
 背景尺寸|background-size|CSS3新增属性，用来设置背景图像的尺寸，<br>可以使用图像的像素或%设定图片的尺寸。<br>在CSS3之前，背景图片的尺寸由图片的实际尺寸决定
 填充区域|background-origin|CSS3新增属性，规定background-position属性相对什么位置来定位，<br>取值border-box、padding-box、content-box
 绘制区域|background-clip|CSS3新增属性，规定背景的绘制区域，<br>取值border-box、padding-box、content-box
-背景简写|background|可以综合设置以上属性[background](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background "示例")<br>background: #FBA414 center 5% / 80% 50% repeat-y padding-box border-box scroll url("../img/backimg3.jpg");
+背景简写|background|可以综合设置以上属性[background](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background "示例")<br>background: #FBA414 center 5% / 80% 50% repeat-y <br> padding-box border-box scroll url("../img/backimg3.jpg");
 
 ##### 4.4.4 表格属性
 功 能|属性名|描 述
@@ -148,7 +148,7 @@ position属性
 :---------:|:---------:|
 static|	默认，元素在页面流中正常出现，并作为页面流的一部分
 relative|	相对定位，相对于其正常位置进行定位，并保持其定位前的形状和所占的空间
-absolute|	绝对定位，相对于浏览器窗口进行定位，将元素框从页面流中完全删除后，重新定位，当拖拽页面滚动条时，该元素随页面一起滚动
+absolute|	绝对定位，相对于浏览器窗口进行定位，将元素框从页面流中完全删除后，<br>重新定位，当拖拽页面滚动条时，该元素随页面一起滚动
 fixed|	固定定位，相对浏览器窗口进行定位，将元素框从页面流中完全删除后，重新定位，拖拽滚动条，元素不随页面一起滚动
 
 float属性
