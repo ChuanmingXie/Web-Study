@@ -6,32 +6,32 @@
 * Office-Add-In则对Office的相关小工具进行开发的学习
 
 ### 书籍及博文目录结构
-> 01_Html_Web
-    > ShopFashion：《Web前端设计与开发-HTML+CSS+JavaScript+HTML5+jQuery》-QST轻软实训 清华大学出版社
-    > ShopCoffee：《HTML5+CSS3+JavaScript项目开发》-刘蕾 清华大学出版社
+* 01_Html_Web
+    * ShopFashion：《Web前端设计与开发-HTML+CSS+JavaScript+HTML5+jQuery》-QST轻软实训 清华大学出版社
+    * ShopCoffee：《HTML5+CSS3+JavaScript项目开发》-刘蕾 清华大学出版社
 
-> 02_jQuery
-    > jQueryShap：《锋利的jQuery》-单东林 人民邮电出版社（电子版）
-    > jQueryGuide：《jQuery权威指南》-陶国荣 机械工业出版社（电子版）
+* 02_jQuery
+    * jQueryShap：《锋利的jQuery》-单东林 人民邮电出版社（电子版）
+    * jQueryGuide：《jQuery权威指南》-陶国荣 机械工业出版社（电子版）
 
-> 03_Bootstrap
-    > Bootstrap3
-        >ThemeDefault：《Bootstrap Web 设计与开发实战》-杨旺功 清华大学出版社
-        >ThemeDefinedLess：《Bootstrap实战-Bootstrap Site Blueprints》-David Cochran著 李松峰译 中国工信出版集团 人民邮电出版社（电子版）
+* 03_Bootstrap
+    * Bootstrap3
+        * ThemeDefault：《Bootstrap Web 设计与开发实战》-杨旺功 清华大学出版社
+        * ThemeDefinedLess：《Bootstrap实战-Bootstrap Site Blueprints》-David Cochran著 李松峰译 人民邮电出版社（电子版）
 
-    > Bootstrap4
-        >ThemeDefault：https://v4.bootcss.com/docs/getting-started/introduction/ 等等
-        >ThemeDefinedSass：《Bootstrap 4 Site Blueprints》-Bass Jobsen,David Cochran Packt Publishing
+    * Bootstrap4
+        * ThemeDefault：[Bootstrap4中文网](https://v4.bootcss.com/docs/getting-started/introduction/ "Bootstrap4") ...
+        * ThemeDefinedSass：《Bootstrap 4 Site Blueprints》-Bass Jobsen,David Cochran Packt Publishing （英文电子版）
 
-    > Bootstrap5
-        >ThemeDefault：https://www.runoob.com/bootstrap5/bootstrap5-tutorial.html 等等
-        >MDBootstarp5：https://mdbootstrap.com/docs/standard/layout/grid/ 等等
+    * Bootstrap5
+        * ThemeDefault：[菜鸟教程](https://www.runoob.com/bootstrap5/bootstrap5-tutorial.html "Bootstrap5") ...
+        * MDBootstarp5：[MDBootstrap5官网](https://mdbootstrap.com/docs/standard/layout/grid/ "官网") ...
 
-> 04_Vue
-    > Vuejs_2：《Vue.js实战》-尤雨溪 清华大学出版社
-    > Vuejs_3：https://www.runoob.com/vue3/vue3-tutorial.html 等等
-> 05_Office_Add_in
-    Office客户端开发：https://docs.microsoft.com/zh-cn/office/client-developer/onenote/application-interface-onenote?redirectedfrom=MSDN
+* 04_Vue
+    * Vuejs_2：《Vue.js实战》-尤雨溪 清华大学出版社（电子版）
+    * Vuejs_3：[菜鸟教程](https://www.runoob.com/vue3/vue3-tutorial.html "Vue.js-3") ...
+* 05_Office_Add_in
+    * Office客户端开发：[微软教程](https://docs.microsoft.com/zh-cn/office/client-developer/onenote/application-interface-onenote?redirectedfrom=MSDN "教程")
 
 
 
