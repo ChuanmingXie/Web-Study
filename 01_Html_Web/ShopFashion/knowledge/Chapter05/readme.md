@@ -100,6 +100,9 @@ border-image-width|图像的宽度
 border-image-repeat|图片覆盖方式,repeat、round、stretch
 
 #### 5.4 内边距
+	padding：遵循TRBL原则
 #### 5.5 外边距
+	margin：遵循TRBL原则
 ##### 5.3.1 外边距基本用法
 ##### 5.3.2 外边距合并
+	w外边距合并是指当俩个垂直外边距相遇时，将形成一个外边距。合并后的外边距高度等于合并前两者最大的

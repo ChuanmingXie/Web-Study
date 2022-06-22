@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+div{
+    display: inline-flex;
+    width: 200px;
+    height: 200px;
+    border:1px solid #FCD217;
+    background: #20894d;
+}
+
+div img{
+    width: 200px;
+    height: 200px;
+}
+
+.padding1{padding: 10px;}
+
+.padding2{padding: 10px 20px;}
+
+.padding3{padding: 10px 20px 30px;}
+
+.padding4{padding: 10px 20px 30px 40px;}
+
+.padding5{
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    padding-left: 40px;
+}
+
