@@ -79,8 +79,25 @@ outset|定义3D凸边.效果取决于border-color的值
 	4(水平,垂直)		3(水平,垂直)
 ##### 5.3.4 边框阴影
 	box-shadow 属性
+	语法： box-shadow: h-shadow v-shadow [blur][spread][color][inset];
+参数|含义
+:--------:|:-------:|
+h-shadow|指定水平阴影的位置，该值允许为负值
+v-shadow|指定垂直阴影的位置，该值允许为负值
+blur|指定模糊距离
+spread|	指定阴影尺寸
+color；|指定阴影颜色
+inset|指定外部或内部阴影
 
 ##### 5.3.5 图像边框
+	简写 border-image 属性，控制 border-image-source,border-image-slice,border-image-width,border-image-repeat
+	语法：url(图像的路径) 图像的分割方式(slice)/图像边宽的宽度(width) 图像的平铺方式(repeat)
+分类属性|取值
+:--------:|:--------:|
+border-image-source|url("../img/...jpg")
+border-image-slice|遵循TRBL原则的1-4个数值或百分比作为参数,<br>以及可选的fill参数，将内容区域分割成9个部分
+border-image-width|图像的宽度
+border-image-repeat|图片覆盖方式,repeat、round、stretch
 
 #### 5.4 内边距
 #### 5.5 外边距

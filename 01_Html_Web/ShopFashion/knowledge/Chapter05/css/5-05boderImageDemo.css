@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+div{
+    display: inline-flex;
+    margin: 10px;
+    border: 50px solid #CCC;
+}
+
+.divsize1{
+    width: 200px;
+    height: 200px;
+}
+
+.divsize2{
+    width: 120px;
+    height: 120px;
+}
+
+.divsize3{
+    width: 210px;
+    height: 200px;
+}
+
+.borderimg1{
+    border-image: url("../img/borderimg.jpg") 200;
+}
+.borderimg2{
+    border-image: url("../img/borderimg.jpg") 200/50px 35px 30px 25px;
+}
+.borderimg3{
+    border-image: url("../img/borderimg.jpg") 200 180 160 190/50px 35px 30px 25px;
+}
+
+.borderimg4{
+    border-image: url("../img/borderimg.jpg") 200/50px repeat;
+}
+.borderimg5{
+    border-image: url("../img/borderimg.jpg") 200/50px round;
+}
+.borderimg6{
+    border-image: url("../img/borderimg.jpg") 200/50px stretch;
+}
+
+.borderimg7{
+    border-image: url("../img/borderimg.jpg") 200 fill/50px stretch;
+}
