@@ -35,9 +35,18 @@ section {
     background: #EEE;
 }
 
-.leftdiv {}
+.leftdiv,
+.rightdiv {
+    width: 60%;
+    height: 99%;
+    background: #CCC;
+    float: left;
+}
 
-.rightdiv {}
+.rightdiv {
+    width: 39%;
+    float: right;
+}
 
 #contentDiv {
     width: 100%;
@@ -46,10 +55,16 @@ section {
     background-color: #999;
 }
 
-.content1 {}
+.content1,
+.content2,
+.content3 {
+    width:33%;
+    height:99%;
+    background:#CCC;
+    float: left;
+}
+.content2,.content3{
+    margin-left: 4px;
+}
 
-.content2 {}
-
-.content3 {}
-
-footer {width:100%;height: 90; background: #BBB;margin-top: 3px;}
+footer {width:100%;height: 90px; background: #BBB;margin-top: 3px;}
