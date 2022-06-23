@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6-06 多分支结构</title>
+    <style>
+        p{
+            font:14px/44px Cambria,Microsoft YaHei;
+            text-indent: 40px;
+        }
+        br::before{
+            text-indent: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h2>6-06 多分支结构</h2>
+    <script type="text/javascript">
+        var authority=1;
+        if(authority==1){
+            document.writeln("<p>你的权限是<b>管理员</b>,欢迎使用漫步时代广场后台管理系统</p>");
+        }else if(authority==2){
+            document.writeln("<p>你的权限是<b>店长</b>,欢迎使用漫步时代广场后台管理系统</p>");
+        }else if(authority==3){
+            document.writeln("<p>你的权限是<b>普通会员</b>,欢迎进入漫步时代广场</p>");
+        }else{
+            document.writeln("<p><b>游客</b>你好,欢迎使用漫步时代广场后台管理系统</p>");
+        }
+        
+        var authority1="管理员"
+        document.writeln("<h3>"+authority1+"的权限如下</h3>");
+        switch(authority1){
+            case "管理员":document.writeln("<p>用户管理<br />商品管理<br />商品类型管理<br />系统管理<br />个人管理<br />退出系统</p>");break;
+            case "店长":document.writeln("<p>商品管理<br />商品类型管理<br />个人管理<br />退出系统</p>");break;
+            case "普通会员":document.writeln("<p>个人管理<br />退出系统</p>");break;
+            default:document.writeln("漫步时代广场");break;
+        }
+    </script>
+</body>
+</html>

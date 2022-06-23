@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+*{
+    margin: 5px;
+    padding: 2px;
+}
+
+img{
+    margin: 0 10px;
+}
+
+dl{
+    width: 100%;
+    text-align: center;
+}
+
+dt{
+    display: inline-flex;
+    align-items: center;
+    justify-self: center;
+}
+
+a{text-decoration: none;}

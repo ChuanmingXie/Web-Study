@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6-01 数据类型</title>
+    <style type="text/css">
+        body{
+            font:14px/44px Cambria,Microsoft YaHei;
+        }
+        p::first-line {
+            font-size: 14px;
+        }
+
+        p::first-letter,
+        label::first-letter {
+            font-size: 40px;
+            cursor: pointer;
+        }
+    </style>
+    <script type="text/javascript">
+        var x = 30;
+        alert(typeof x);
+        // label.text=typeof x;
+        x = '软件学院';
+        alert(typeof (x));
+    </script>
+</head>
+
+<body>
+    <h2>6-01 数据类型-变量</h2>
+    <p>嘚嘚嘚，造孽啊</p>
+    <label>造孽啊</label><br>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+
+    <script type="text/javascript">
+        var a = '计算机科学与技术';
+        var b = 2 == 3;
+        var c = null;
+        var x = undefined;
+        var y = [1, 2, 3, '数组'];
+        var y1 = new Array("1", "2", "3", "4");
+        var z = 30;
+
+        var plist = document.getElementsByTagName('p');
+        plist[1].innerText = 'a 的数据类型为：' + typeof a;
+        plist[2].innerText = 'b 的数据类型为：' + typeof b;
+        plist[3].innerText = 'c 的数据类型为：' + typeof c;
+        plist[4].innerText = 'x 的数据类型为：' + typeof x;
+        plist[5].innerText = 'y 的数据类型为：' + y1.constructor;
+        plist[6].innerText = 'z 的数据类型为：' + typeof z;
+    </script>
+</body>
+
+</html>

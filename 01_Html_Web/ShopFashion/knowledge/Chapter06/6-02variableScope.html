@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6-02 变量作用域</title>
+    <link rel="stylesheet" href="css/6-02variableScope.css">
+    <script type="text/javascript" src="./js/6-02variableScope.js"></script>
+    <script type="text/javascript">
+        var name2="此处为全局变量的信息";
+        function testPart(){
+            var name3='此处为局部变量的作用域';
+            alert(name3);
+        }
+        testPart();
+        alert(name2);
+    </script>
+</head>
+<body>
+    <h2>6-02 变量作用域-全局|局部</h2>
+    <p></p>
+    <p></p>
+    <p></p>
+    <script type="text/javascript">
+        var pList=document.getElementsByTagName('p');
+        pList[0].innerText=name2;
+        pList[1].innerText='名称'+name+',地址'+address;
+    </script>
+</body>
+</html>

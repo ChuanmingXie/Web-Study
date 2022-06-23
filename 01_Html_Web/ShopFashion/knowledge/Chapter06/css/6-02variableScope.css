@@ -1,0 +1,12 @@
+body{
+    font:small-caps 600 14px/40px Cambria,Microsoft YaHei;
+}
+
+p::first-line{
+    font-size: 12px;
+}
+
+p::first-letter{
+    font-size: 40px;
+    cursor: pointer;
+}
