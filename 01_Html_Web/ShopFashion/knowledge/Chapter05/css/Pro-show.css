@@ -4,7 +4,8 @@
 .middle{width: 690px;float: left;}
 .pic_title_good{
     width: 680px;
-    font-size: 16px;
+    font:small-caps bold 14px/40px Cambria,Microsoft Yanhei;
+    color: #fff;
     text-align: left;
     text-indent: 20px;
     margin: 0 10px 10px;
@@ -19,3 +20,41 @@
 .font12{font-size: 12px; color: #ccc;float: right;}
 .pic_list_good2{margin: 0 6px 0 12px;}
 .pic_list_good2 li{width: 160px; height:311px; margin: 5px 4px; float: left;}
+.pic_list_good2 div{height: 280px;}
+
+/* 美食 列表页中部样式 */
+.middle_food{width: 80%; float: left;}
+.pic_title_food{
+    width: 97%;
+    height: 33px;
+    margin: 1px 10px;
+}
+.iconfood{ display: inline-flex; justify-content: center; align-items: center;}
+.iconfood img{width: 20px; height: 20px;}
+.iconfood span{
+    font: bold 16px/33px Cambria,Microsoft YaHei;     
+    letter-spacing: 4px;
+    margin: auto;
+    cursor: pointer;
+}
+.iconfood .orange{
+    font-size: 10px;
+    letter-spacing: 0px;
+    cursor: pointer;
+}
+.pic_list_food{
+    height: 440px;
+    border: 1px solid #f5f4f0;
+    padding: 20px;
+    margin: 10px;
+}
+.pic_list_food dl{width: 275px; margin: 10px; float: left;}
+.pic_list_food dl img{border: 1px solid #CCC;padding: 5px; margin: 10px;}
+.pic_list_food dl div{height: 140px;}
+.pic_list_food dl dt{
+    font: small-caps bold 14px/33px Cambria,Microsoft Yahei; 
+    text-align: center; 
+    background: #e5e4e1;
+}
+.pic_list_food dl dd{margin: 10px 0;}
+.price_food{font-weight: 700; color: red; float: left;}
