@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+body {
+    font: 14px/34px Cambria, Microsoft Yahei;
+}
+
+table {
+    width: 600px;
+    margin: 0 auto;
+    border: 1px thin #e4e5e1;
+    text-align: center;
+}
+
+.imgcontainer,
+.footstep{
+    width: 600px;
+    margin: 0 auto;
+    border: 1px solid #FCD337;
+    line-height: 0px;
+}
+
+.forInloop{
+    width: 600px;
+    margin: 0 auto;
+}
+
+.imgcontainer img {
+    width: 150px;
+    height: 100px;
+    margin: 0;
+}
+
+img{
+    width: 50px;
+}
+
+font{
+    text-align: center;
+}

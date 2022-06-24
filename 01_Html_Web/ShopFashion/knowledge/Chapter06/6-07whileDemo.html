@@ -1,28 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>6-07 while 循环</title>
+    <title>6-07 循环结构</title>
+    <link rel="stylesheet" href="./css/6-07whileDemo.css">
 </head>
-<body>    
-    <h2>6-07 while 循环</h2>
+
+<body>
+    <h2>6-07 循环结构</h2>
+    <h4>6-07-1 while 循环</h4>
     <script type="text/javascript">
-        document.write("<table border='1'>");
+        document.write("<table border='1' rules='all'>");
         document.write("<tr>");
         document.write("<th>ID</th><th>商品编号</th><th>价格</th>")
         document.write("</tr>");
-        var i=1;
-        while(i<=4){
+        var i = 1;
+        while (i <= 4) {
             document.write('<tr>');
-            document.write('<td>'+i+'</td>');
-            document.write('<td>FZ00'+i+'</td>');
-            document.write('<td>'+(Math.random()*100).toFixed(2)+'</td>')
+            document.write('<td>' + i + '</td>');
+            document.write('<td>FZ00' + i + '</td>');
+            document.write('<td>' + (Math.random() * 100).toFixed(2) + '</td>')
             document.write('</tr>');
             i++;
         }
         document.write("</table>");
     </script>
+    <h4>6-07-2 do...while循环</h4>
+    <div class="imgcontainer">
+        <!-- <img src="img/picList_r1_c1.png"> -->
+        <script type="text/javascript">
+            var imgpre = 'picList';
+            var imgrear = '.png';
+            var i = 1;
+            do {
+                var j = 1;
+                do {
+                    var imgname = imgpre + "_r" + i + "_c" + j + imgrear;
+                    document.write('<img src="img/' + imgname + '"/>');
+                    j++;
+                } while (j <= 4);
+                // document.write('<br>');
+                i++;
+            } while (i <= 3);
+        </script>
+    </div>
+    <h4>6-07-3 for循环</h4>
+    <div class="footstep">
+        <script type="text/javascript">
+            for (let index = 0; index < 7; index++) {
+                // 次数注意条件为  j<=index, 实现 下三角
+                for (let j = 1; j <= index; j++) {
+                    document.write("T T T ");
+                }
+                document.write('<img src="img/w' + (index % 9 + 1) + '.png" /><br/>')
+            }
+            for (let i = 0; i < 7; i++) {
+                for (let k = 6; k > i; k--) {
+                    document.write('T T T ');
+                }
+                document.write("<img src='img/w" + (i % 9 + 1) + ".png' /><br />");
+            }
+        </script>
+    </div>
+
+    <h4>6-07-4 forIn 循环</h4>
+    <div class="forInloop">
+        <script type="text/javascript">
+            var name = "我从小生活在一个纷争不断的家庭，父母给我的生活造成了很多烦恼。"
+            for (const i in name) {
+                if (Object.hasOwnProperty.call(name, i)) {
+                    var size = (i % 7);
+                    document.write("<font size='" + size + "'>" + name.substr(i, 1) + "</font>");
+                }
+            }
+
+            var family = ['丈夫', '妻子', '父亲', '母亲', '儿子', '女儿', '妹妹'];
+            document.write("<br><br><h5>家庭成员主要包括：</h5>");
+            for (const t in family) {
+                if (Object.hasOwnProperty.call(family, t)) {
+                    document.write(family[t] + "  ");
+                }
+            }
+
+            document.write('<br><br><h5>管理员信息如下：</h5>')
+            var person = {
+                name: 'CloudWhales',
+                authority: '管理员',
+                address: '青岛',
+                tel: '15824355399'
+            };
+            document.write("<dl>");
+            for (const property in person) {
+                if (Object.hasOwnProperty.call(person, property)) {
+                    document.write("<dt>"+property + ":</dt><dd>" + person[property]+"</dd><br/>");
+                }
+            }
+            document.write("</dl>");
+        </script>
+    </div>
 </body>
+
 </html>

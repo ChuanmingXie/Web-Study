@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6-11 跳转语句</title>
+    <style>
+        img {
+            width: 80px;
+            height: 80px;
+            margin: 0 8px;
+        }
+        div{
+            width: 800px;
+            margin: 0 auto;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h2>6-11 break&continue</h2>
+    <div>
+        <script>
+            for (let index = 1; index < 9; index++) {
+                document.write("<img src='img/w" + index + ".png'/>")
+            }
+            document.write("<br/>")
+            for (let i = 1; i < 9; i++) {
+                if (i % 3 == 0) {
+                    document.write("<img src='img/w.png'>")
+                    continue;
+                }
+                if (i % 8 == 0) {
+                    break;
+                }
+                document.write("<img src='img/w" + i + ".png' />")
+            }
+
+            document.write("<br/><br/>")
+            function count() {
+                var sum = 0;
+                for (let i = 100; i < 1000; i++) {
+                    sum += i;
+                    if (sum < 10000) {
+                        document.write('已统计到：' + i+'　　　　');
+                        continue;
+                    }
+                    if (i > 200) {
+                        break;
+                    }
+                    return sum;
+                }
+                document.write('不会被执行的代码');
+            }
+
+            document.write('<br/>统计结果为:' + count());
+        </script>
+    </div>
+</body>
+
+</html>
