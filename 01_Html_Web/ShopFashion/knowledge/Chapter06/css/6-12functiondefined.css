@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+div{
+    width: 600px;
+    margin: 0 auto;
+    font: 14px/33px  Cambria,Microsoft Yahei;
+}
+
+input[type='text']{
+    width: 180px;
+    height: 25px;
+    font:14px/25px Cambria,Microsoft Yahei;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    border: 1px solid #F0ADA0;
+}
+
+input[type='text']:focus{
+    border:none;
+    outline: 1px solid #ED5126;
+}
+
+input[type='button']{
+    width: 100px;
+    height:32px;
+    color: #FFF;
+    /* font:bold 16px/32px "宋体"; */
+    border-radius: 10px;
+    border: 1px solid #2983bb;
+    background: #2983bb;
+    float: right;
+
+}
+
+input[type='button']:hover{
+    border: 1px solid #D2B116;
+    background: #D2B116;
+}

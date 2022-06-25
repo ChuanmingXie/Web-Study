@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6-14 用户自定义函数</title>
+    <link rel="stylesheet" href="./css/6-12functiondefined.css">
+
+</head>
+<body>
+    <h2>4-16 函数-自定义函数</h2>
+    <h4>4-16-1 统计各个字符串之和</h4>
+    <div>
+        请输入含有数字的字符串:<input type="text" value="3257dkjs84">
+        <hr>
+        <input type="button" value="计 算" onclick="calc()">
+        <p>各项数字子和为:<span></span></p>
+    </div>
+    <script type="text/javascript">
+        function input(){
+            // return prompt('请输入一个字符串,然后统计字符串各项数据之和');
+            return document.getElementsByTagName('input')[0].value;
+        }
+
+        function count(data){
+            var sum=0;
+            for (var i in data) {
+                // if (Object.hasOwnProperty.call(data, data[i])) {
+                    sum+= parseInt(data[i]);
+                // }
+            }
+            return sum;
+        }
+
+        function calc(){
+            var data=input();
+            var sum=count(data);
+            // alert(data+'各项数字之和为:'+sum);
+            document.getElementsByTagName('span')[0].innerText=sum;
+        }
+
+    </script>
+</body>
+</html>

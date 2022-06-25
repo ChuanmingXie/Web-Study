@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6-15 自定义函数</title>
+    <style>
+        div{
+            width: 600px;
+            margin: 0 auto;
+            font: bold 14px/44px Cambria,Microsoft Yahei;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+    <h2>6-15 自定义函数</h2>
+    <div>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+    <script type="text/javascript">
+        var anonymous=function(name,i){
+            // alert('欢迎'+name+'来到漫步时代广场');
+            document.getElementsByTagName('p')[i].innerText='欢迎'+name+'来到漫步时代广场';
+        }
+
+        var test=anonymous;
+        anonymous('admin',0);
+        test('admin',1);
+
+        var showinfo=new Function(
+            'name','age','authority','address',
+            "alert('数据处理中...'); "+
+            "return ('姓名:'+name+',年龄:'+age+',权限:'+authority+',地址:'+address);"
+        );
+        // alert(showinfo('chuanming','27','管理员','上海'));
+        document.getElementsByTagName('p')[2].innerText=showinfo('chuanming','27','管理员','上海');
+
+        var userName='chuanming';
+        (function(userData){
+            document.getElementsByTagName('p')[3].innerText='欢迎：'+userData+'来到漫步时代广场!';
+            // alert('欢迎：'+userData+'来到漫步时代广场!');
+        })(userName);
+    </script>
+</body>
+</html>
