@@ -1,2 +1,24 @@
 @charset "UTF-8";
 
+.middle_good{width: 690px;float: left;}
+.pic_title_good{
+    width: 680px;
+    font:small-caps bold 14px/40px Cambria,Microsoft Yahei;
+    color:#fff;
+    text-align: left;
+    text-indent: 20px;
+    margin: 0 10px 10px;
+    float: left;
+}
+.pic_list_good{float: left;}
+.pic_list_good div{height: 202px;}
+.pic_list_good dl{width: 152px;margin: 0 10px 10px;float: left;}
+.pic_list_good dl img{border: 1px solid #ccc;padding: 5px;margin-bottom: 10px;}
+.pic_list_good dl dd{float: left;}
+
+.price{font-size: 15px; font-weight: 700; color: red; float: left;}
+.font12{font-size:12px;color: #ccc;float: right;}
+
+.pic_list_good2{margin: 0 6px 0 12px;}
+.pic_list_good2 li{width: 160px;height: 311px; margin: 5px 4px; float: left;}
+.pic_list_good2 div{height: 280px;}
