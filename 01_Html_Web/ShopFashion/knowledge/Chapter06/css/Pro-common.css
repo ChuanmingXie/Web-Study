@@ -41,6 +41,7 @@ a:hover{color: #126E82;}
 /* shopcart 样式 */
 .shopcart_bg{display: inline-block;position: relative;}
 .dropdown{display:none;}
+/* .dropdown:hover{display: block; position: absolute;} */
 /* .droparrow{}
 .shopcart{}
 .shop_pic{} */
