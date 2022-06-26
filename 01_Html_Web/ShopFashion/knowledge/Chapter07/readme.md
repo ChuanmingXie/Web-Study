@@ -40,12 +40,8 @@ arrayA.unshift(newElement1,newElement2,...,newElementX);|	用于向数组开头�
 arrayA.shift()|	用于删除并返回数组中开头第一个元素
 arrayA.sort([sortby]);|	用于对当前数组进行排序
 arrayA.reverse()|	在原有的数组的基础上颠倒数组中元素的顺序,不会创建新数组
-arrayA.slice(start,[end]);|	从数组中返回指定的一部分元素<br>
-index必选：规定添加和删除元素的位置，<br>
-index<0 时从数组尾部向前计数,-1表示最后一个元素，-2表示导数第二
-arrayA.splice(index,howmany,[item1,...itemX)]);|howmany必选：表示要删除元素的数量，0代表不删除数据<br>
-[items]可选：表示向数组中添加和替换的元素 <br>
-向数组中添加1-n个元素或者从数组中删除元素，
+arrayA.slice(start,[end]);|	从数组中返回指定的一部分元素<br>index必选：规定添加和删除元素的位置，<br>index<0 时从数组尾部向前计数,-1表示最后一个元素，-2表示导数第二
+arrayA.splice(index,howmany,[item1,...itemX)]);|howmany必选：表示要删除元素的数量，0代表不删除数据<br>[items]可选：表示向数组中添加和替换的元素 <br>向数组中添加1-n个元素或者从数组中删除元素，
 
     B. Sort()方法，数组排序详解
         a. 使用JavaScript中的if条件句和sort()函数按照字母对象对数组进行排序
