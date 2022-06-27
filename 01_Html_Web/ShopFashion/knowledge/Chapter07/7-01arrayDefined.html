@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7-01数组定义</title>
+    <link rel="stylesheet" href="./css/7-01arrayDefined.css">
+</head>
+
+<body>
+    <h2>7-01 数组的声明定义</h2>
+    <h4>7-01-1数组对象的创建</h4>
+    <div>
+        <span>语法：</span>
+        <p>
+            new Array(); <br>
+            new Array(size); <br>
+            new Array(element0,element1,element2,elementn);
+        </p>
+    </div>
+    <div>
+        <span>示例：</span>
+        <p>
+            var goodTypes=new Array();<br>
+            goodTypes[0]="男装";<br>
+            goodTypes[1]="女装"; <br>
+            var foodTypes=new Array('卤菜','川菜','粤菜');
+            var MovieTypes=new Array(8);
+        </p>
+    </div>
+    <div>
+        <span>简写：</span>
+        <p>
+            <br>
+            var foods=['兰州拉面','潍坊火烧','北京烤鸭','德州扒鸡','四川火锅'];
+        </p>
+    </div>
+
+    <h4>7-01-2 数组的常用方法</h4>
+    <table border="1px" rules="all">
+        <thead>
+            <tr>
+                <th>函数</th>
+                <th>用法</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>arrayA.concat(arrayB,arrayC,...,arrayN)</td>
+                <td>用于连接两个或多个数字，返回合并后的新数组，而原数组保持不变</td>
+            </tr>
+            <tr>
+                <td>arrayA.join(separator)</td>
+                <td>将数组中的元素通过指定的字符串连接</td>
+            </tr>
+            <tr>
+                <td>arrayA.push(newElement1,newElement2,newElementX)</td>
+                <td>用于像数组尾部添加一个或多个元素，返回数组的新长度</td>
+            </tr>
+            <tr>
+                <td>arrayA.slice(start,[end])</td>
+                <td>从数组中返回指定的元素</td>
+            </tr>
+            <tr>
+                <td>arrayA.sort([sortby])</td>
+                <td>用于对当前数组进行排序</td>
+            </tr>
+            <tr>
+                <td>arrayA.splice(index,howmany,[item1,...itemX)])</td>
+                <td>
+                    向数组中添加1-n个元素或者从数组中删除元素，<br>
+                    index必选，规定添加和删除元素的位置，index < 0 时从数组尾部向前计数,-1表示最后一个元素，-2表示倒数第二<br>
+                        howmany必选，表示要删除元素的数量，0代表不删除数据 <br>
+                        [items]可选：表示向数组中添加和替换的元素
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4>7-01-3 二维数组</h4>
+    <div>
+        <span>声明:</span>
+        <p>
+            var array=new Array(); <br>
+            array[0]=new Array('科幻','流浪地球',80);<br>
+            array[1]=new Array('战争','长津湖',79);<br>
+            array[2]='从1992到2012年这二十年时本次太阳纪的最后一个周期,又被称为"地球更新期"...';<br>
+            array[3]=88;
+        </p>
+    </div>
+    <div>
+        <span> 简写：</span>
+        <p>
+            var movies=[<br>
+                ['科幻','流浪地球',80],<br>
+                ['战争','长津湖',79],<br>
+                ['动漫','雄狮少年',6],<br>
+                ['戏剧','赵氏孤儿',100]<br>
+            ]
+        </p>
+    </div>
+</body>
+
+</html>

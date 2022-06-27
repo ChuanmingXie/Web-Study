@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+body {
+    font-family: Cambria, Microsoft Yahei;
+}
+
+div {
+    width: 580px;
+    height: 145px;
+    margin: 10px 20px;
+    font-family: '楷体';
+    color: #FFF;
+    display: inline-flex;
+    border: 1px solid #5CB3cc;
+    background: #5CB3cc;
+    border-radius: 10px;
+}
+/* div span{
+} */
+div span::first-letter {
+    margin: 0 5px;
+    padding-left: 2px;
+    line-height: 40px;
+    border-left: 2px solid #FFF;
+}
+
+p {
+    font: lighter 14px/22px Cambria,'楷体';
+    color: #FFFF;
+    padding: 0 10px;
+}
+
+table {
+    width: 1200px;
+    margin: 0 20px;
+    text-align: center;
+    font: 500 14px/28px Cambria, '楷体'
+}
+
+table th {
+    font: bold 16px/32px Microsoft Yahei;
+    letter-spacing: 14px;
+    color: #FFF;
+    background: #5CB3cc;
+    border: 1px solid #BBB5AC;
+}
+
+table td {
+    border: 1px solid #BBB5AC;
+    padding: 3px;
+
+}
+
+table td:nth-child(2) {
+    text-align: left;
+}
+
+table tr:nth-child(even) {
+    background: #F7DE98;
+}
+
+table tr:hover,
+table td:hover {
+    background: #5CB3cc;
+    border: 1px solid #5CB3cc;
+    cursor: pointer;
+}
