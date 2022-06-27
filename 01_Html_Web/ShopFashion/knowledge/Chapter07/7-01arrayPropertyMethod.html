@@ -40,17 +40,26 @@
             border-bottom: 2px solid #ebdc38;
             padding:0 10px 8px;
         }
-        .result{
+        .result,.resultMethod,.resultMatrix{
             margin: 20px;
             padding: 10px;
             font:500 14px/28px Cambria,'楷体';
             letter-spacing: 2px;
         }
-        .result p{
+        .result p {
             margin: 10px auto;
         }
+        /* div p{
+            margin: 10px auto;
+        } */
+
         hr{
             width: 60%;
+            margin: 10px 0;
+        }
+
+        .resultMatrix table{
+            width: 600px;
         }
     </style>
 </head>
@@ -61,15 +70,15 @@
         <div class="btngroup_content">
             <ul class="btngroup">
                 <li><a class="white" id="" onclick="arrayProperty()">数组属性</a></li>
-                <li><a class="white" id="" onclick="arrayjoin()">数组join方法</a></li>
                 <li><a class="white" id="" onclick="arrayConcat()">数组concat</a></li>
+                <li><a class="white" id="" onclick="arrayjoin()">数组join方法</a></li>
                 <li><a class="white" id="" onclick="arrayMatrix()">二维数组</a></li>
             </ul>
         </div>
     </nav>
-    <div class="result">
-
-    </div>
+    <div class="result"></div>    
+    <div class="resultMethod"></div>    
+    <div class="resultMatrix"></div>
 </body>
 
 </html>
