@@ -1,13 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>7-01 数组排序Sort()方法的展开示例</title>
     <script src="./js/7-01arraySortMethod.js"></script>
+    <style>
+        body {
+            font-family: Cambria, Microsoft Yahei;
+        }
+
+        input[type='text'] {
+            width: 500px;
+            height: 25px;
+            font: 700 14px/25px Cambria;
+            letter-spacing: 2px;
+            margin: 5px 0;
+        }
+
+        p {
+            text-indent: 20px;
+        }
+
+        span,div {
+            margin-left: 40px;
+        }
+
+        table {
+            width: 600px;
+            font: 600 14px/22px Cambria, '楷体';
+            margin: 0 20px;
+            border: 1px solid #b4d5b0;
+            display:inline-table;
+
+        }
+
+        table caption {
+            margin: 10px 0;
+        }
+
+        table td {
+            padding: 2px;
+        }
+
+        table th:nth-child(1) {
+            width: 100px;
+        }
+
+        table th:nth-child(4) {
+            width: 100px;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <h2>7-01 Sort() 方法的综合使用</h2>
+    <h4>7-01-1 数组的普通排序方法-sort()+if条件句</h4>
+    <p>1. 字符串数组排序</p>
+    <span>原始未排序的：</span> <input type="text" value="orange,apple,banner"> <br>
+    <span>排序后的数据：</span> <input type="text" value="">
+    <p>2. 对象数组排序</p>
+    <div>
+        <table border="1px" rules="all"></table> <br>
+        <table border="1px" rules="all"></table>
+        <table border="1px" rules="all"></table>
+    </div>
+
+    <h4>7-01-2 数组的localeCompare()排序方法- sort()+localeCompare()委托 </h4>
+    <div>
+        <table border="1px" rules="all"></table>
+        <table border="1px" rules="all"></table>
+    </div>
+
+    <h4>7-01-3 数组的Intl.Collator().compare()排序方法-sort()+Collator().compare()委托</h4>
+    <div>
+        <table border="1px" rules="all"></table>
+    </div>
+
+    <script type="text/javascript">
+        // 原生js只有在DOM加载完成后才能是同document对象方法;
+        var input = document.getElementsByTagName('input')[1];
+        input.value = arraySort.join(',');
+
+        // 姓名对象排序结果
+        var tablefirst = document.getElementsByTagName('table')[0];
+        var tablestr = '<caption>姓名对象数组排序</caption>';
+        tablestr += "<tr><th>排序</th><th>名字</th><th>姓氏</th><th>原始顺序</th>";
+        i = 0;
+        sortResult.forEach(element => {
+            tablestr += "<tr><td>" +
+                (++i) + "</td><td>" +
+                element.FirstName + "</td><td>" +
+                element.LastName + "</td><td>" +
+                element.num + "</td></tr>";
+        });
+        tablefirst.innerHTML = tablestr;
+
+        // 书籍对象排序结果
+        var tablesecond = document.getElementsByTagName('table')[1];
+        var tablestr = '<caption>书籍对象数组排序</caption>';
+        tablestr += "<tr><th>排序</th><th>书籍</th><th>作者</th><th>原始顺序</th>";
+        i = 0;
+        sortResult1.forEach(element => {
+            tablestr += "<tr><td>" +
+                (++i) + "</td><td>" +
+                element.name + "</td><td>" +
+                element.author + "</td><td>" +
+                element.num + "</td></tr>";
+        });
+        tablesecond.innerHTML = tablestr;
+
+        //书籍对象排序结果2
+        var tablethird=document.getElementsByTagName('table')[2];
+        var tablestr = '<caption>书籍对象数组排序</caption>';
+        tablestr += "<tr><th>排序</th><th>书籍</th><th>作者</th><th>原始顺序</th>";
+        i = 0;
+        sortResult2.forEach(element => {
+            tablestr += "<tr><td>" +
+                (++i) + "</td><td>" +
+                element.name + "</td><td>" +
+                element.author + "</td><td>" +
+                element.num + "</td></tr>";
+        });
+        tablethird.innerHTML = tablestr;
+
+        //localeCompare()排序
+        var tablefour=document.getElementsByTagName('table')[3];
+        var tablestr = '<caption>书籍对象数组对author的localeCompare排序</caption>';
+        tablestr += "<tr><th>排序</th><th>书籍</th><th>作者</th><th>原始顺序</th>";
+        i = 0;
+        sortResult3.forEach(element => {
+            tablestr += "<tr><td>" +
+                (++i) + "</td><td>" +
+                element.name + "</td><td>" +
+                element.author + "</td><td>" +
+                element.num + "</td></tr>";
+        });
+        tablefour.innerHTML = tablestr;
+
+        var tablefive=document.getElementsByTagName('table')[4];
+        var tablestr = '<caption>书籍对象数组对book name的localeCompare排序</caption>';
+        tablestr += "<tr><th>排序</th><th>书籍</th><th>作者</th><th>原始顺序</th>";
+        i = 0;
+        sortResult4.forEach(element => {
+            tablestr += "<tr><td>" +
+                (++i) + "</td><td>" +
+                element.name + "</td><td>" +
+                element.author + "</td><td>" +
+                element.num + "</td></tr>";
+        });
+        tablefive.innerHTML = tablestr;
+
+        var tablesix=document.getElementsByTagName('table')[5];
+        var tablestr = '<caption>书籍对象数组对book name的Intl.Collator().compare()排序</caption>';
+        tablestr += "<tr><th>排序</th><th>书籍</th><th>作者</th><th>原始顺序</th>";
+        i = 0;
+        sortResult5.forEach(element => {
+            tablestr += "<tr><td>" +
+                (++i) + "</td><td>" +
+                element.name + "</td><td>" +
+                element.author + "</td><td>" +
+                element.num + "</td></tr>";
+        });
+        tablesix.innerHTML = tablestr;
+
+    </script>
 </body>
+
 </html>
