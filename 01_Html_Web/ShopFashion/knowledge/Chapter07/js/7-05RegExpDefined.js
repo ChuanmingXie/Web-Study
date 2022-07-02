@@ -1,4 +1,5 @@
 /* RegExp 对象-定义与创建*/
+
 	// 直接量方式
 	// var reg=/pattern/attributes;
 	// 构造函数方式

@@ -25,29 +25,29 @@ function contentValidate(content) {
     var contentReg = new RegExp('Ea', "gi");
     var i = 1;
     while ((result = contentReg.exec(content)) != null) {
-        document.write("第"+i+"次匹配" + result + ",位置在"
+        document.write("第" + (i++) + "次匹配" + result + ",位置在"
             + result.index + "~" + contentReg.lastIndex + "<br />");
     }
 }
 
-(function(){
-    var telephone="0532-1234-5671234";
-    if(telephoneValidate(telephone)){
-        document.write(telephone+"座机号码无效<br />");
-    }else{
-        document.write(telephone+"座机号码无效<br />");
+(function () {
+    var telephone = "0532-1234-5671234";
+    if (telephoneValidate(telephone)) {
+        document.write(telephone + "座机号码无效<br />");
+    } else {
+        document.write(telephone + "座机号码无效<br />");
     }
-    var mobile="17348594235";
-    if(mobileValidate(mobile)){
-        document.write(mobile+"手机号码有效<br />");
-    }else{
-        document.write(mobile+"手机号码无效<br />");
+    var mobile = "17348594235";
+    if (mobileValidate(mobile)) {
+        document.write(mobile + "手机号码有效<br />");
+    } else {
+        document.write(mobile + "手机号码无效<br />");
     }
 
-    var num="123a";
-    document.write(num+":"+(isDigit(num)?"使出数字":"非出数字")+"<hr />");
+    var num = "123a";
+    document.write(num + ":" + (isDigit(num) ? "使出数字" : "非出数字") + "<br />");
 
-    var content="Qingdao,located in the southEast part of Shandong Province,is a beautiful  SEASIDE city with clear air and enchanting SEA view";
-    contentValidate(clearInterval);
+    var content = "Qingdao,located in the southEast part of Shandong Province,is a beautiful  SEASIDE city with clear air and enchanting SEA view";
+    contentValidate(content);
     document.write("<br />");
-})
+})();
