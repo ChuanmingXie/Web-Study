@@ -58,10 +58,10 @@ function matchContent(matchTxt, position) {
     var splitText = "baby,gril,boy,man,woman";
     document.write("乘车人员包括：<br />");
     splitContent(splitText);
-    document.write("<br />");
+    // document.write("<br />");
 
     var matchText = "醉鬼三张在KTV唱歌,张三在看电影，张小三在斗地主，小张三在踢足球，张府老三在练太极";
-    document.write("<br/>" + matchText + "<br/>");
+    document.write(matchText + "<br/>");
     matchContent(matchText, true);
     document.write('<br />');
     matchContent(matchText);

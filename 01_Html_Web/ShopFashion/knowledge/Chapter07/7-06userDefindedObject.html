@@ -1,12 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>7-06 用户自定义对象的创建</title>
+    <link rel="stylesheet" href="./css/7-01arrayDefined.css">
 </head>
+
 <body>
-    
+    <h2>7-06 用户自定义对象的创建</h2>
+    <h4>7-06-1 原始方式:首先创建1个Object对象,然后为对象添加所需的属性和方法</h4>
+    <div>
+        <span>做法：</span>
+        <p>
+            使用Object创建一个对象object <br>
+            propertyName表示为object对象添加的属性名 <br>
+            methodName表示为object对象添加的方法名， <br>其值可以是预先定义好的函数名或者匿名函数 <br>
+        </p>
+    </div>
+    <div>
+        <span>语法：</span>
+        <p>
+            var object new Object(); <br>
+            object.propertyName=value; <br>
+            object.methodName=functionName|function(){}; <br>
+        </p>
+    </div>
+    <div>
+        <span>示例:</span>
+        <p>
+            <script>
+                var goodsOption = new Object();
+                goodsOption.name = "男士白领衬衫";
+                goodsOption.type = "男装";
+                goodsOption.price = "580";
+                goodsOption.color = "white";
+                goodsOption.showInfo = function () {
+                    document.write("商品名称为：" + goodsOption.name +
+                        "<br>商品类型：" + goodsOption.type +
+                        "<br>商品价格：" + goodsOption.price +
+                        "<br>商品颜色：" + goodsOption.color);
+                }
+                goodsOption.showColor = showColor;
+                function showColor() {
+                    document.write("<br>商品颜色为：" + goodsOption.color);
+                }
+                goodsOption.showInfo();
+                goodsOption.showColor();
+            </script>
+        </p>
+    </div>
+    <h4>7-06-2 构造函数:构造函数construcor function创建一个JS对象</h4>
+    <div>
+        <span>语法：</span>
+        <p>通过构造函数(constructor function)创建一个JS对象。<br>
+            构造函数名即为类名，使用时通过new运算符和构造函数参数创建 <br>
+            function ClassName([param1],[param2],...){ <br>
+            this.propertyName=value; <br>
+            this.MethodName=functionName|function(){ }; <br>
+            }
+        </p>
+    </div>
+    <div>
+        <span>示例：</span>
+        <p>
+            <script>
+                function Goods(name, type, price, color) {
+                    this.name = name;
+                    this.type = type;
+                    this.price = price;
+                    this.color = color;
+                    this.showInfo = function () {
+                        document.write("商品名称为：" + this.name +
+                            "<br>商品类型为：" + this.type +
+                            "<br>商品价格为：" + this.price +
+                            "<br>商品颜色为：" + this.color)
+                    }
+                    this.showColor = showColor;
+                    function showColor() {
+                        document.write("商品颜色为：" + this.color + "<br>");
+                    }
+                }
+                var goods1 = new Goods("男士衬衫", "男装", 200, "白色");
+                var goods2 = new Goods("女士花裙", "女装", 700, "红色");
+
+                goods1.showColor();
+                goods2.showInfo();
+            </script>
+        </p>
+    </div>
+    <h4>7-06-3 原型方式:通过prototype属性对象添加新的属性和方法</h4>
+    <div>
+        <span>语法：</span>
+        <p>
+            object.prototype.name = value; <br>
+            object表示被扩展的对象,包括系统内置对象和自定义对象 <br>
+            prototype 表示对象的原型 <br>
+            name 表示所添加的属性或方法. <br>当添加属性时,value为属性值;当添加方法时,value为函数的引用 <br>
+        </p>
+    </div>
+    <div>
+        <span>示例1:为用户自定义对象添加属性</span>
+        <p>
+            <script>
+                function Goods() { }
+                Goods.prototype.name = "耐克运动鞋";
+                Goods.prototype.type = "鞋类";
+                Goods.prototype.price = "1200";
+                Goods.prototype.color = "白色";
+                Goods.prototype.showInfo = function () {
+                    document.write("商品名称为：" + this.name +
+                        "<br >商品类型为：" + this.type +
+                        "<br >商品价格为：" + this.price +
+                        "<br >商品颜色为：" + this.color);
+                }
+                Goods.prototype.showColor = showColor;
+                function showColor() {
+                    document.write('商品颜色为：' + this.color);
+                }
+                var goods = new Goods();
+                goods.showInfo();
+                goods.showColor();
+            </script>
+        </p>
+    </div>
+    <div>
+        <span>示例2：为Date和Array 等内置对象添加方法</span>
+        <p>
+            <script>
+                Date.prototype.showTime = function () {
+                    var year = this.getFullYear();
+                    var month = this.getMonth() + 1;
+                    var date = this.getDate();
+                    var hour = this.getHours();
+                    var minute = this.getMinutes();
+                    var second = this.getSeconds();
+                    return year + "年" + month + "月" + date + "日" +
+                        hour + ":" + minute + ":" + second + "<br />";
+                }
+
+                Array.prototype.count = function (param) {
+                    var num = 0;
+                    for (let i = 0; i < this.length; i++) {
+                        if (param == this[i]) {
+                            num++;
+                        }
+                    }
+                    return num;
+                }
+
+                Array.prototype.search = function (param) {
+                    for (let i = 0; i < this.length; i++) {
+                        if (param == this[i]) {
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+
+                var date = new Date();
+                document.write(date.showTime());
+                var array = [3, 6, 7, 6, 9, 10, 3, 6];
+                document.write("数组：[" + array + "]中包含'" + 6 + "'的次数为:" + array.count(6) + "<br />");
+                document.write("数组：[" + array + "]中" + (array.search(9) ? "" : "不") + "包含元素" + 9 + "<br />");
+            </script>
+        </p>
+    </div>
+    <h4>7-06-4 混合方式:使用默认构造函数创建对象的属性,使用原型方式动态添加对象方法</h4>
+    <div>
+        <span>示例：</span>
+        <p>
+            <script>
+                function Goods(name, type, price, color) {
+                    this.name = name;
+                    this.type = type;
+                    this.price = price;
+                    this.color = color;
+                }
+                Goods.prototype.showInfo = function () {
+                    document.write('商品名称为：' + this.name +
+                        "<br>商品类型为：" + this.type +
+                        "<br>商品价格为：" + this.price +
+                        "<br>商品颜色为：" + this.color);
+                }
+                Goods.prototype.showColor = showColor;
+                function showColor() {
+                    document.write('<br>商品颜色为：' + this.color);
+                }
+
+                var goods1 = new Goods("男士衬衫", '男装', 200, "白色");
+                var goods2 = new Goods("女士衬衫", '女装', 700, "红色");
+
+                goods1.showInfo();
+                goods2.showColor();
+            </script>
+        </p>
+    </div>
+    <h4>7-06-5 JSON方式:JavaScript Object Notation</h4>
+    <div>
+        <span>语法：</span>
+        <p>
+            是一种基于ECAMScript的轻量级数据交换格式,采用完全独立于语言的文本格式, <br>
+            能够以更加简明的方式创建对象JSON对象以{开始,以}结束。属性名和属性值之间使用冒号隔开，<br>
+            属性的类型可以是字符串、数值、日期、数组或自定义对象等类型 <br>
+            方法部分是由方法和匿名函数构造，并使用冒号（":"）隔开， <br>
+            属性或方法之间使用逗号（,）隔开,最后一项不需要逗号 <br>
+        </p>
+    </div>
+    <div>
+        <span>示例：</span>
+        <p>
+            <script>
+                var goods = {
+                    name: "男士衬衫",
+                    type: "男装",
+                    price: 200,
+                    color: "白色",
+                    showInfo: function () {
+                        document.write("商品名称为：" + this.name +
+                            "商品类型为：" + this.type +
+                            "商品价格为：" + this.price +
+                            "商品颜色为：" + this.color);
+                    },
+                    showInfo: function () {
+                        document.write("商品颜色为：" + this.color);
+                    }
+                }
+                goods.showInfo();
+
+                var customer = {
+                    name: "guogy",
+                    type: "admin",
+                    address: {
+                        province: "山东",
+                        city: "青岛"
+                    },
+                    enjoy: ['科幻', '购物', '戏剧', '足球'],
+                    order: [
+                        { name: '男士衬衫', quantity: 3 },
+                        { name: '耐克运动鞋', quantity: 2 }
+                    ]
+                };
+                document.write("<br>用户名：" + customer.name +
+                    ",<br>权限:" + customer.type +
+                    ",<br>地区:" + customer.address.province +
+                    " " + customer.address.city +
+                    ",<br>爱好:" + customer.enjoy);
+            </script>
+        </p>
+    </div>
+    <div style="height: 230px;">
+        <span>将字符串转换为JSON对象</span>
+        <p>
+            与XML数据相比,JSON数据格式具有简洁易读,数据体积小、传输速度快等的特点。 <br>
+            JSON对象是一种轻量级的数据交换格式，是理想的数据交换格式。 <br>
+            在传输过程中，JSON对象往往以字符串的形式进行传输， <br>
+            所以在页面中需要通过JavaScript中的evel()方式或者 <br>
+            Function对象的方式将字符串解析成JavaScript <br>
+            注意： <br>
+            alert(typeof(evel("{}"))) //return undefined <br>
+            alert(typeof(evel("({})"))) //return object[object] <br>
+            即进行JSON转化时，要添加一对小括号才能进行正常转化 <br>
+        </p>
+    </div>
+    <div style="height: 230px;">
+        <span>evel()方式：将字符串转换为JSON对象 </span>
+        <p>
+            var movieStr='{'+ <br>
+            'name:"长津湖",'+ 'type:"战争",'+ 'price:80,'+ <br>
+            'showInfo:function(){'+ <br>
+            　　'document.write("影片名称:"+this.name+",电影类型:"+this.type+",票价:"+this.price);'+ <br>
+            　'}'+ <br>
+            '}'; <br>
+            <script>
+                var movieStr = '{' +
+                    'name:"长津湖",' +
+                    'type:"战争",' +
+                    'price:80,' +
+                    'showInfo:function(){' +
+                    'document.write("影片名称："+this.name+",电影类型："+this.type+",票价："+this.price+"<br/>");' +
+                    '}' +
+                    '}';
+                var movie = eval("(" + movieStr + ")");
+                movie.showInfo();
+            </script>
+        </p>
+    </div>
+    <div>
+        <span>Function对象的方式将字符串解析成JavaScript</span>
+        <p>
+            在创建Function对象时，第一个参数是一个列表，用于传递数据，<br>
+            第二个参数作为函数的执行体；在执行中使用return返回JSON内容即可 <br>
+            <script>
+                var movieStr = '{' +
+                    'name:"长津湖",' +
+                    'type:"战争",' +
+                    'price:80,' +
+                    'showInfo:function(){' +
+                    'document.write("影片名称："+this.name+",电影类型："+this.type+",票价："+this.price+"<br/>");' +
+                    '}' +
+                    '}';
+                document.write('方式1')
+                var movie=(new Function("","return"+movieStr))();
+                movie.showInfo();
+                document.write('方式2')
+                var movie2=new Function("","return"+movieStr);
+                var movie=new movie2();
+                movie.showInfo();
+            </script>
+        </p>
+    </div>
 </body>
+
 </html>

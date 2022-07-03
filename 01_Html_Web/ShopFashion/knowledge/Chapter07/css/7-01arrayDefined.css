@@ -6,16 +6,18 @@ body {
 
 div {
     width: 580px;
-    height: 145px;
+    height: 165px;
     margin: 10px 20px;
     font-family: '楷体';
     color: #FFF;
     display: inline-flex;
+    flex-direction: column;
     border: 1px solid #5CB3cc;
     background: #5CB3cc;
     border-radius: 10px;
 }
 /* div span{
+    display: block;
 } */
 div span::first-letter {
     margin: 0 5px;
@@ -27,7 +29,8 @@ div span::first-letter {
 p {
     font: lighter 14px/22px Cambria,'楷体';
     color: #FFFF;
-    padding: 0 10px;
+    padding: 0 40px;
+    margin-top: -5px;
 }
 
 table {
