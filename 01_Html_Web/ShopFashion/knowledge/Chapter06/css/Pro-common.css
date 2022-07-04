@@ -47,7 +47,7 @@ a:hover{color: #126E82;}
 .shop_pic{} */
 
 /* logo */
-.logo{width: 1200px; height: 85px; height: 5px auto;}
+.logo{width: 1200px; height: 85px; margin:5px auto;}
 
 /* top Menu */
 .nav_bg{width: 100%;}
@@ -60,7 +60,7 @@ a:hover{color: #126E82;}
 .nav{width: 900px; float: left;margin-left: 200px;}
 .nav li{
     width: 80px;
-    font:700 16px/40px Crambria,Microsoft Yahei;
+    font:700 16px/40px Cambria,Microsoft Yahei;
     color: #fff;
     text-align: center;
     float: left;
