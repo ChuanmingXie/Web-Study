@@ -11,8 +11,28 @@
     display: inline-flex;
 }
 .carousel_pic_bg{ width: 690px; margin-right: 5px;}
-.pic_focusbox{}
-.pic_focusbox li{text-align: center;}
+.pic_focusbox{
+    width:120px;
+    top:490px;
+    left: 50%;
+    margin-left: -60px;
+    list-style: none;
+    position: absolute;
+}
+.pic_focusbox li{
+    width: 15px;
+    height: 15px;
+    background-color: gray;
+    margin-left: 10px;
+    border-radius: 10px;
+    float: left;
+    cursor: pointer;
+}
+.pic_focusbox li.cur{
+    background: #f60;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+}
 .pic_focusbox li img{ height: 350px;}
 
 
