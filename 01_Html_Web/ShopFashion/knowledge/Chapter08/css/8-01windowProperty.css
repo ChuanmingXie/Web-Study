@@ -1,0 +1,71 @@
+@charset "UTF-8";
+body{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, Microsoft Yahei ;
+}
+
+div {
+    width: 600px;
+    margin: 0 auto;
+    display: block;
+    font: 14px/44px Cambria, Microsoft Yahei;
+}
+
+#btngroup {
+    height: 40px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: center;
+}
+
+#timeDiv {
+    height: 22px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input[type='text'] {
+    width: 180px;
+    height: 25px;
+    font: 14px/25px Cambria, Times 'Times New Roman';
+    letter-spacing: 2px;
+    border-radius: 5px;
+    border: 1px solid #fcd304;
+}
+
+input[type='text']:focus {
+    border: none;
+    outline: 2px solid #EA4307;
+}
+
+input[type='button'],.white{
+    width: 120px;
+    height: 32px;
+    color: #fff;
+    font-family:Cambria, Microsoft Yahei;
+    border: 1px solid #1F638F;
+    border-radius: 10px;
+    background: #1F638F;
+    float: right;
+}
+
+.white{
+    height: 30px;
+    width: 185px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 30px;
+}
+
+input[type='button']:hover,.white:hover {
+    background: #ea4307;
+    border: 1px solid #ea4307;
+}
+
+img {
+    width: 20px;
+}

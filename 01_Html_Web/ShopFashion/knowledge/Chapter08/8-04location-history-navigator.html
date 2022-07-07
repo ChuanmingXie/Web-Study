@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8-04 location-history-navigator</title>
+    <link rel="stylesheet" href="./css/8-01windowProperty.css">
+    <link rel="stylesheet" href="./css/8-02windowDemo.css">
+    <style>
+        div {
+            width: 800px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>8-04 location-history-navigator</h2>
+    <h4>8-04-1 location</h4>
+    <div class="panel">
+        <span>地址栏对象属性</span>
+        <p>
+            <script type="text/javascript">
+                var url = new URL("http://127.0.0.1:5501/01_Html_Web/ShopFashion/knowledge/Chapter08/8-02windowMethod.html?name=guoqy#myAnchor")
+                /* var location=Location;
+                location.href=url; */
+                document.write("URL:" + url + "对象属性为：<br/>");
+                document.write("url.protocol：" + url.protocol + "<br/>");
+                document.write("url.host：" + url.host + "<br/>");
+                document.write("url.hostname：" + url.hostname + "<br/>");
+                document.write("url.port：" + url.port + "<br/>");
+                document.write("url.hash：" + url.hash + "<br/>");
+                document.write("url.search：" + url.search + "<br/>");
+                document.write("url.pathname：" + url.pathname + "<br/>");
+                document.write('<hr />')
+            </script>
+        </p>
+    </div>
+    <h4>8-04-1 history</h4>
+    <div id="btngroup">
+        <a href="./8-01windowProperty.html" class="white">测试历史对象链接</a>
+        <input type="button" value="forward()前进" onclick="historyForward()">
+        <input type="button" value="back()后退" onclick="historyBack()">
+        <input type="button" value="go()前进" onclick="goNext()">
+        <input type="button" value="go()退后" onclick="goPrevious()">
+    </div>
+    <script type="text/javascript">
+        function goNext() {
+            history.go(1);
+        }
+        function goPrevious() {
+            history.go(-1);
+        }
+        function historyForward() {
+            history.forward();
+        }
+        function historyBack() {
+            history.back();
+        }
+    </script>
+    <h4>8-04-1 navigator</h4>
+    <div id="btngroup">
+        <input type="button" value="Brower" onclick="browserType()">
+    </div>
+
+    <div class="panel" style="float:left;">
+        <span>地址栏导航信息</span>
+        <p>
+            <script type="text/javascript">
+                document.write('浏览器：' + navigator.appName + "<br>");
+                document.write('浏览器版本：' + navigator.appVersion + "<br>");
+                document.write('浏览器代码：' + navigator.appCodeName + "<br>");
+                document.write('浏览器平台：' + navigator.pathname + "<br>");
+                document.write('浏览器Cookies启用：' + navigator.cookieEnabled + "<br>");
+                document.write('浏览器的用户代理报头：' + navigator.userAgent + "<br>");
+
+                function browserType() {
+                    var isExists;
+                    var typeInfo = ['MSIE', 'Trident', 'Firefox', 'Chrome', 'safari', 'netscape'];
+                    var explorer = navigator.userAgent;
+                    for (let i = 0; i < typeInfo.length; i++) {
+                        if (explorer.indexOf(typeInfo[i]) >= 0) {
+                            isExists = typeInfo[i];
+                            break;
+                        }
+                    }
+                    alert('您的浏览器类型为：' + isExists);
+                }
+            </script>
+        </p>
+    </div>
+</body>
+
+</html>

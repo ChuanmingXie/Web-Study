@@ -1,22 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>8-01 windows对象属性</title>
+    <title>8-01 window对象属性</title>
+    <link rel="stylesheet" href="./css/8-01windowProperty.css">
 </head>
+
 <body>
-    <input type="button" value="改变窗口状态栏" onclick="changeStatus()">
-    <input type="button" value="获取窗口的宽高" onclick="getWindowSize()">
+    <h2>8-01 window对象属性</h2>
+    <div id="btngroup">
+        <input type="button" value="改变窗口状态栏" onclick="changeStatus()">
+        <input type="button" value="获取窗口的宽高" onclick="getWindowSize()">
+        <input type="button" value="鼠标移动到此处" onmouseover="getinnerText()">
+    </div>
+    <br>
+    <div id="btngroup">
+        <input type="button" value="go()前进" onclick="goNext()">
+        <input type="button" value="go()退后" onclick="goPrevious()">
+    </div>
     <script type="text/javascript">
-        window.defaultStatus="123456789";
+        window.defaultStatus = "123456789";
         function changeStatus() {
-            window.status="987654321";
+            window.status = "987654321";
         }
         function getWindowSize() {
-            alert('宽度：'+window.innerWidth+"高度："+window.innerHeight);
+            alert('宽度：' + window.innerWidth + "高度：" + window.innerHeight);
+        }
+        function getinnerText(e) {
+            var that=document.getElementsByTagName('input')[2].value;
+            alert(that);
+        }
+
+        function goNext(){
+            history.go(1);
+        }
+        function goPrevious(){
+            history.go(-1);
         }
     </script>
 </body>
+
 </html>

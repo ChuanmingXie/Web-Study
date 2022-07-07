@@ -43,12 +43,14 @@ history|包含历览器历史访问记录，如访问过的URL、访问数量信
 #### 8.2 window对象
 ##### 8.1.2 window的属性
 ##### 8.1.2 window的方法
-    a. open()方法
-    b. close()方法
-    c. setTimeout()方法
-    d. clearTimeout()方法
-    e. setInterval()方法
-    f. clearInterval()方法
+方法|示例
+:---------:|:---------:|
+open()方法:|        1.open(url,name,features,relace); <br> var newWindow=window.open("http://www.baidu.com","弹出广告","width=1300,height=400,toolbar=no,menubar=no,location=no,status=no,resizable=yes");
+close()方法:|     newWindow.close();
+setTimeout()方法:|        var id_Of_timeout=setTimeout(code,millisec);
+clearTimeout()方法:|        clearTimeout(id_Of_timeout);
+setInterval()方法:|        var id_Of_Interval=setInterval(code,millisec);
+clearInterval()方法:|        clearInterval(id_Of_Interval);
 #### 8.3 location,history,navigator对象
 ##### 8.3.1 location对象
 ##### 8.3.2 history对象
