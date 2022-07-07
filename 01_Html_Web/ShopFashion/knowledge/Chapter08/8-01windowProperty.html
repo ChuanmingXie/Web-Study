@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8-01 windows对象属性</title>
+</head>
+<body>
+    <input type="button" value="改变窗口状态栏" onclick="changeStatus()">
+    <input type="button" value="获取窗口的宽高" onclick="getWindowSize()">
+    <script type="text/javascript">
+        window.defaultStatus="123456789";
+        function changeStatus() {
+            window.status="987654321";
+        }
+        function getWindowSize() {
+            alert('宽度：'+window.innerWidth+"高度："+window.innerHeight);
+        }
+    </script>
+</body>
+</html>
