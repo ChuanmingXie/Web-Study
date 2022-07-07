@@ -10,6 +10,17 @@ div {
     font: 14px/44px Cambria, Microsoft Yahei;
 }
 
+#cookieDiv{
+    background: #bcd2c3;
+    height: 200px;
+    border-radius: 10px;
+}
+
+h4{
+    text-indent: 40px;
+}
+
+
 #btngroup {
     height: 40px;
     margin: 0 auto;
@@ -28,16 +39,29 @@ div {
     align-items: center;
 }
 
-input[type='text'] {
-    width: 180px;
+input[type='text'],
+input[type='password'],
+select {
+    width: 280px;
     height: 25px;
     font: 14px/25px Cambria, Times 'Times New Roman';
     letter-spacing: 2px;
     border-radius: 5px;
     border: 1px solid #fcd304;
 }
+select{
+    height: 30px;
+    width: 285px;
+}
+option {
+    line-height: 30px;
+    font-family: Cambria,'楷体';
+    font-size: 18px;
+}
 
-input[type='text']:focus {
+input[type='text']:focus,
+input[type='password']:focus,
+select:focus {
     border: none;
     outline: 2px solid #EA4307;
 }
