@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8-08 document对象的方法</title>
+    <link rel="stylesheet" href="./css/8-01windowProperty.css">
+    <link rel="stylesheet" href="./css/8-02windowDemo.css">
+    <style>
+        #resultDiv{
+            height: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>8-08 document对象的方法</h2>
+    <div id="menuDiv">
+        <span class="buyClass baseClass">购物栏目</span>
+        <span class="filmClass baseClass">影视栏目</span>
+        <span class="foodClass baseClass">餐饮栏目</span>
+    </div>
+    <div>
+        <form id="myform" action="" method="">
+            用户姓名：<input type="text" name="userName" id="userName" > <br>
+            <div class="checkboxgroup">
+            爱　　好：
+                <input type="checkbox" name="hobby" id="" value="看电影"> 看电影
+                <input type="checkbox" name="hobby" id="" value="购物"> 购物
+                <input type="checkbox" name="hobby" id="" value="评委美食"> 评委美食 <br>
+            </div>
+            <input type="button" value="统计按钮" onclick="countElement()">
+        </form>
+    </div>
+    <div class="clear"></div>
+    <br>
+    <div id="resultDiv">
+        <span>显示result信息的Div</span>
+        <p>
+        </p>
+    </div> 
+    <script type="text/javascript" src="./js/8-08documentMethod.js"></script>
+</body>
+
+</html>

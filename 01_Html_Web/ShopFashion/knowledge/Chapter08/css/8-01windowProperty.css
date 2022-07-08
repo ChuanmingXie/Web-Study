@@ -10,10 +10,11 @@ div {
     font: 14px/44px Cambria, Microsoft Yahei;
 }
 
-#cookieDiv{
-    background: #bcd2c3;
+#resultDiv{
     height: 200px;
+    border: 1px solid #5CB3cc;
     border-radius: 10px;
+    background: #5CB3cc;
 }
 
 h4{
@@ -39,8 +40,29 @@ h4{
     align-items: center;
 }
 
+#menuDiv{
+    height: 30px;
+    font: bold 14px/30px Cambria,Microsoft Yahei;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 15px auto;
+}
+
+#menuDiv span{
+    padding: 0 72px;
+    background: #1F638F;
+    color: #FFF;
+}
+
+#menuDiv span:hover{
+    background: #EA4307;
+}
+
 input[type='text'],
 input[type='password'],
+input[type='email'],
+input[type='tel'],
 select {
     width: 280px;
     height: 25px;
@@ -61,12 +83,22 @@ option {
 
 input[type='text']:focus,
 input[type='password']:focus,
+input[type='email']:focus,
+input[type='tel']:focus,
 select:focus {
     border: none;
     outline: 2px solid #EA4307;
 }
 
-input[type='button'],.white{
+.checkboxgroup{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.white,
+input[type='button'],
+input[type='submit']{
     width: 120px;
     height: 32px;
     color: #fff;
@@ -77,6 +109,14 @@ input[type='button'],.white{
     float: right;
 }
 
+.clear{
+    clear: both;
+}
+
+form{
+    margin: 0 10px;
+}
+
 .white{
     height: 30px;
     width: 185px;
@@ -84,8 +124,9 @@ input[type='button'],.white{
     text-decoration: none;
     line-height: 30px;
 }
-
-input[type='button']:hover,.white:hover {
+.white:hover,
+input[type='submit']:hover,
+input[type='button']:hover{
     background: #ea4307;
     border: 1px solid #ea4307;
 }

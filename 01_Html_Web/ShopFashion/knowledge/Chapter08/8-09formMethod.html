@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8-09 form对象的属性和方法</title>
+    <link rel="stylesheet" href="./css/8-01windowProperty.css">
+    <link rel="stylesheet" href="./css/8-02windowDemo.css">
+    <style>
+        .header {
+            text-align: center;
+        }
+
+        .header img {
+            margin: 0 auto;
+            width: 130px;
+            padding: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>8-09 form对象的属性和方法</h2>
+    <h4>8-09-1 用户注册</h4>
+    <div class="header">
+        <img src="img/cloudwhales.png" alt="">
+        <h3>会员注册</h3>
+    </div>
+    <form name="myform" action="http://101.132.152.252" method="post" onsubmit="return checkForm()">
+        <div id="menuDiv">
+            用户名：<input type="text" name="userName" id="userName"><br>
+        </div>
+        <div id="menuDiv">
+            密　码：<input type="password" name="userPwd" id="userPwd"><br>
+        </div>
+        <div id="menuDiv">
+            手机号：<input type="tel" name="userPhone" id="userPhone"> <br>
+        </div>
+        <div id="menuDiv">
+            邮　箱：<input type="email" name="userMail" id="userMail"> <br>
+        </div>
+        <div id="btngroup">
+            <input type="submit" value="submit 提交">
+            <input type="button" value="button 提交" onclick="chcekForm1()">
+        </div>
+    </form>
+    <script src="./js/8-09formMethod.js"></script>
+
+</body>
+
+</html>

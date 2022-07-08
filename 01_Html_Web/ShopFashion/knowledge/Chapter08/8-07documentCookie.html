@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>8-07 document Cookie</title>
+    <title>8-07 document的Cookie属性的使用</title>
     <link rel="stylesheet" href="./css/8-01windowProperty.css">
     <link rel="stylesheet" href="./css/8-02windowDemo.css">
 </head>
@@ -16,7 +16,7 @@
     <form id="myform" action="" method="">
         <div>
             用户姓名：<input type="text" name="userName"> <br>
-            密　　码：<input type="password" name="userPwd"> <br>
+            密　　码：<input type="password" name="userPwd" autocomplete="off"> <br>
             保存时间：<select name="saveTime" id="">
                 <option value="1">天</option>
                 <option value="7">周</option>
@@ -28,14 +28,16 @@
             <input type="button" value="注册测试" onclick="saveCookie('register')">
             <input type="button" value="获取注册" onclick="loadCookie('register')">
             <input type="button" value="登录测试" onclick="saveCookie('login')">
-            <input type="button" value="加载测试" onclick="loadCookie('login')">
+            <input type="button" value="加载登录" onclick="loadCookie('login')">
         </div>
     </form>
-    <div id="cookieDiv">
+    <div id="resultDiv">
         <span>显示Cookie信息的Div</span>
         <p>
         </p>
-    </div>
+    </div>    
+    <div id="timeDiv"></div>
+    <script src="./js/8-02windowMethod-timeWoker.js"></script>
 
     <h4>8-07-2 referrer 属性测试</h4>
     <div id="btngroup">

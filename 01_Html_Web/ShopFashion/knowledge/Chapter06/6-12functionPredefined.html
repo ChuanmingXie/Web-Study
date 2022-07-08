@@ -7,25 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>6-12 预定义函数</title>
     <style>
-        div{
+        div {
             width: 600px;
             margin: 0 auto;
-            font:14px/44px Cambria,Microsoft Yahei;
+            font: 14px/44px Cambria, Microsoft Yahei;
         }
-        input[type='text']{
+
+        input[type='text'] {
             width: 180px;
             height: 25px;
-            font:14px/25px Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font: 14px/25px Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             letter-spacing: 2px;
             border-radius: 5px;
             /* outline: 1px solid #ebe57b; */
             border: 1px solid #fcd304;
         }
-        input[type='text']:focus{
+
+        input[type='text']:focus {
             border: none;
             outline: 2px solid #ea4307;
         }
-        input[type='button']{
+
+        input[type='button'] {
             width: 100px;
             height: 32px;
             color: #FFF;
@@ -34,7 +37,8 @@
             background: #1F638F;
             float: right;
         }
-        input[type='button']:hover{
+
+        input[type='button']:hover {
             background: #ea4307;
             border: 1px solid #ea4307;
         }
@@ -44,11 +48,18 @@
 <body>
     <h2>6-12 预定义函数</h2>
     <div>
+        <h4>6-12-1 对话框函数</h4>
         请输入收入水平：<input type="text" name="" id="" value="">
         <hr>
         <input type="button" value="提交" onclick="predefined()">
-        <br>
+        <h4>6-12-2 数字转换函数</h4>
         <script src="./js/6-12functionPredefined.js"></script>
+        <h4>6-12-3 字符串转数字函数</h4>
+        <script type="text/javascript">
+            document.write(+"023");
+            document.write("<br/>" + ("0xFF" - 0));
+            document.write("<br/>" + "1.23" * 1);
+        </script>
     </div>
 </body>
 

@@ -110,7 +110,73 @@ querySelectorAll()| 返回满足条件的元素集合
 
 
 #### 8.7 Form对象
+属性|描述
+:--------:|:--------:|
+element[] | 返回包含表单中所有元素的数组,元素在数组中的顺序与在表单中出现的顺序相同,每个元素都有一个type属性,即元素的类型
+enctype   | 设置或返回用于编码表单内容的MIME类型,默认值是"application/x-www-form-urlencoded",当上传文件时"multipart/form-data"
+target    | 可设置或返回在何处打开表单中action-URL。可以是_blank、_self、_parent、_top
+method    | 设置或返回用于表单提交提交的HTTP方法
+length    | 用于返回表单中元素的数量
+action    | 设置或返回表单的action 属性
+name      | 返回表单的名称
+
+    表单 id位myform的 四种获取表单中元素的方式：
+        var userName = document.getElementById('userName');
+        var userPwd = document.myform.userPwd;
+        var userPhone = document.forms[0].elements[2];
+        var userEmail = document.forms[0].userMail
+
 #### 8.8 Table对象
+Table对象的属性
+属性|描述
+:---------:|:---------:|
+row[]      |返回表格中所有行(TableRow对象)的一个数组集合，包括<thead>、<tfoot>、<tbody>中定义的所有行
+cells[]    |返回表格中所有单元格(TableCell对象)的一个数组集合
+border     |设置或返回表格边框的宽度(以像素为单位)
+caption    |设置或返回表格的caption元素
+width      |设置返回表格的宽度
+cellpadding|设置或返回单元格边框与单元格内容之间的间距
+cellSpacing|设置或返回在表格中的单元格之间的间距
+
+
+Table对象的方法
+方法|描述
+:--------------:|:---------------:|
+createCaption() |在表格中获取或创建<caption>元素
+createTFoot()   |在表格中获取或创建<tfoot> 元素
+createTHead()   |在表格中获取或创建<thead> 元素
+insertRow()     |在表格中插入一新行，新行将被插入到index所在的行之前,index不在正确行数范围内,报错
+deleteCaption() |在表格中获取或删除<caption>元素及其内容
+deleteTFoot()   |在表格中获取或删除<tfoot> 元素
+deleteTHead()   |在表格中获取或删除<thead> 元素
+deleteRow()     |从表格中删除指定位置的行
+
+
+TableRow对象的属性
+属性|描述
+:--------------:|:---------------:|
+cells[]         | 返回当前行所包含的单元格数组
+sectionRowIndex | 返回某一行在tBody、tHead或者tFoot中的位置
+rowIndex        | 返回某一行在表格的行集合中的位置 
+innerHTML       | 设置或返回表格行的开始和结束标签之间的HTML内容
+
+
+TableRow对象的方法
+属性|描述
+:-----------:|:-----------:|
+insertCell() | 在HTML表的一行的指定位置插入一个空的<td>元素
+deleteCell() | 删除表格中的单元格
+
+
+TableCell对象的属性
+属性|描述
+:-----------:|:-----------:|
+width  | 设置或返回表元的宽度
+rowSpan| 设置或返回表元横跨的行数
+
+width  | 设置或返回表元的宽度
+rowSpan| 设置或返回表元横跨的行数
+
 #### 8.9 DOM节点
 
 #### 8.10 事件处理
