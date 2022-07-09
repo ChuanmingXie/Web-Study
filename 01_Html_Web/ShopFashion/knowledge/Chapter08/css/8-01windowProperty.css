@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 body {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, Microsoft Yahei;
+    font-family: Cambria, '楷体';
 }
 .clear {clear: both;}
 h4 {text-indent: 40px;}
@@ -14,6 +14,16 @@ hr{
     background: #594;
     border: none;
     margin: 5px auto;
+}
+        
+.header {
+    text-align: center;
+}
+
+.header img {
+    margin: 0 auto;
+    width: 130px;
+    padding: 0 auto;
 }
 
 div {
@@ -135,12 +145,19 @@ input[type='button']:hover {
 }
 
 table {
-    /* width: 1200px; */
-    margin: 0 auto;
+    width: 600px;
+    margin: 5px auto;
     text-align: center;
     font: 500 14px/28px Cambria, '楷体';
     border: none;
     border-bottom: 1px solid #BBB5AC;
+}
+table caption{
+    font: 700 16px/30px Cambria,'楷体';
+    margin: 10px auto;
+}
+table tfoot input{
+    float: left;
 }
 
 table th {
@@ -150,14 +167,12 @@ table th {
     /* background: #5CB3cc; */
     border: none;
     border-bottom: 1px solid #BBB5AC;
-    /* border-top: 1px solid #BBB5AC; */
 }
 
 table td,
 table tr {
     border: none;
     border-bottom: 1px solid #BBB5AC;
-    /* border-top: 1px solid #BBB5AC; */
     padding: 3px;
 }
 
