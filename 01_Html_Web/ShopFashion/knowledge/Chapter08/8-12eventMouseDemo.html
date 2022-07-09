@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8-12 鼠标事件</title>
+    <link rel="stylesheet" href="./css/8-01windowProperty.css">
+</head>
+
+<body>
+    <h2>8-12 鼠标事件</h2>
+    <div class="dl_bg">
+        <dl>
+            <dt><img src="img/card/01.jpg" alt="" onclick="this.src='img/card/10.jpg'"></dt>
+            <dd>单击事件</dd>
+        </dl>
+
+        <dl>
+            <dt><img src="img/card/01.jpg" alt="" onclick="this.src='img/card/11.jpg';
+                alert('双击了图片')"></dt>
+            <dd>双击事件</dd>
+        </dl>
+
+        <dl>
+            <dt><img src="img/card/01.jpg" alt="" onmouseover="this.src='img/card/12.jpg'"
+                    onmouseout="this.src='img/card/01.jpg'"></dt>
+            <dd>移动悬停</dd>
+        </dl>
+
+        <dl>
+            <dt><img src="img/card/01.jpg" alt="" onmousedown="this.src='img/card/13.jpg'"
+                    onmouseup="this.src='img/card/01.jpg'"></dt>
+            <dd>按下松下</dd>
+        </dl>
+
+        <dl>
+            <dt><img src="img/card/01.jpg" alt="" onmouseover="changeImage(event)"></dt>
+            <dd>鼠标移动四角</dd>
+        </dl>
+    </div>
+    <script type="text/javascript">
+        function changeImage(e) {
+            e = e || window.event;
+            var myImageList = document.getElementsByTagName('img');
+            var myImage = myImageList[myImageList.length - 1];
+            var x = e.clientX - myImage.offsetLeft;
+            var y = e.clientY - myImage.offsetTop;
+            if (x < myImage.width / 2 && y < myImage.height / 2) {
+                myImage.src = 'img/card/11.jpg';
+            } else if (x < myImage.width / 2 && y > myImage.height / 2) {
+                myImage.src = 'img/card/12.jpg';
+            } else if (x > myImage.width / 2 && y < myImage.height / 2) {
+                myImage.src = 'img/card/13.jpg';
+            } else if (x > myImage.width / 2 && y > myImage.height / 2) {
+                myImage.src = 'img/card/14.jpg';
+            }
+        }
+    </script>
+</body>
+
+</html>

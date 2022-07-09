@@ -194,3 +194,20 @@ td input[type="image"] {
     margin: 5px 5px -5px 5px;
     width: 20px;
 }
+
+.dl_bg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dl_bg dl{
+    margin: 20px;
+}
+.dl_bg dl dd{
+    text-align: center;
+    margin: auto;
+}
+dl dt img{
+    width: 120px;
+}
