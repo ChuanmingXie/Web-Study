@@ -1,6 +1,19 @@
 @charset "UTF-8";
-body{
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, Microsoft Yahei ;
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, Microsoft Yahei;
+}
+.clear {clear: both;}
+h4 {text-indent: 40px;}
+form {margin: 0 10px;}
+img { width: 20px;}
+
+hr{
+    width: 1200px;
+    height: 1px;
+    background: #594;
+    border: none;
+    margin: 5px auto;
 }
 
 div {
@@ -10,17 +23,12 @@ div {
     font: 14px/44px Cambria, Microsoft Yahei;
 }
 
-#resultDiv{
+#resultDiv {
     height: 200px;
     border: 1px solid #5CB3cc;
     border-radius: 10px;
     background: #5CB3cc;
 }
-
-h4{
-    text-indent: 40px;
-}
-
 
 #btngroup {
     height: 40px;
@@ -40,22 +48,22 @@ h4{
     align-items: center;
 }
 
-#menuDiv{
+#menuDiv {
     height: 30px;
-    font: bold 14px/30px Cambria,Microsoft Yahei;
+    font: bold 14px/30px Cambria, Microsoft Yahei;
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin: 15px auto;
 }
 
-#menuDiv span{
+#menuDiv span {
     padding: 0 72px;
     background: #1F638F;
     color: #FFF;
 }
 
-#menuDiv span:hover{
+#menuDiv span:hover {
     background: #EA4307;
 }
 
@@ -71,13 +79,15 @@ select {
     border-radius: 5px;
     border: 1px solid #fcd304;
 }
-select{
+
+select {
     height: 30px;
     width: 285px;
 }
+
 option {
     line-height: 30px;
-    font-family: Cambria,'楷体';
+    font-family: Cambria, '楷体';
     font-size: 18px;
 }
 
@@ -90,7 +100,7 @@ select:focus {
     outline: 2px solid #EA4307;
 }
 
-.checkboxgroup{
+.checkboxgroup {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -98,39 +108,74 @@ select:focus {
 
 .white,
 input[type='button'],
-input[type='submit']{
+input[type='submit'] {
     width: 120px;
     height: 32px;
     color: #fff;
-    font-family:Cambria, Microsoft Yahei;
+    font-family: Cambria, Microsoft Yahei;
     border: 1px solid #1F638F;
     border-radius: 10px;
     background: #1F638F;
     float: right;
 }
 
-.clear{
-    clear: both;
-}
-
-form{
-    margin: 0 10px;
-}
-
-.white{
+.white {
     height: 30px;
     width: 185px;
     text-align: center;
     text-decoration: none;
     line-height: 30px;
 }
+
 .white:hover,
 input[type='submit']:hover,
-input[type='button']:hover{
+input[type='button']:hover {
     background: #ea4307;
     border: 1px solid #ea4307;
 }
 
-img {
+table {
+    /* width: 1200px; */
+    margin: 0 auto;
+    text-align: center;
+    font: 500 14px/28px Cambria, '楷体';
+    border: none;
+    border-bottom: 1px solid #BBB5AC;
+}
+
+table th {
+    font: bold 16px/32px Cambria, Microsoft Yahei;
+    /* letter-spacing: 5px; */
+    color: #15559A;
+    /* background: #5CB3cc; */
+    border: none;
+    border-bottom: 1px solid #BBB5AC;
+    /* border-top: 1px solid #BBB5AC; */
+}
+
+table td,
+table tr {
+    border: none;
+    border-bottom: 1px solid #BBB5AC;
+    /* border-top: 1px solid #BBB5AC; */
+    padding: 3px;
+}
+
+/* table td:nth-child(2) {
+    text-align: left;
+} */
+
+/* table tr:nth-child(even) {
+    background: #F7DE98;
+} */
+
+table tbody tr:hover {
+    background: #F9F4DC;
+    border: 1px solid #F9F4DC;
+    cursor: pointer;
+}
+
+td input[type="image"] {
+    margin: 5px 5px -5px 5px;
     width: 20px;
 }

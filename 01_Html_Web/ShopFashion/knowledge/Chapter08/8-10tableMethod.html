@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,75 @@
     <title>8-10 table元素的属性和方法</title>
     <link rel="stylesheet" href="./css/8-01windowProperty.css">
     <link rel="stylesheet" href="./css/8-02windowDemo.css">
+    <style>
+        table {
+            margin-top: 40px;
+        }
+        
+        .header {
+            text-align: center;
+        }
+
+        .header img {
+            margin: 0 auto;
+            width: 130px;
+            padding: 0 auto;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <h2>8-10 table对象的属性和方法</h2>
+    <div class="header">
+        <img src="img/cloudwhales.png" alt="">
+    </div>
+    <div>
+        <div id="menuDiv">
+            编　　　号: <input type="text" name="userID" id="userID">
+        </div>
+        <div id="menuDiv">
+            姓　　　名: <input type="text" name="userName" id="userName">
+        </div>
+    </div>
+    <div id="btngroup">
+        <input type="button" value="添加新行至头部" onclick="insertFirstRow()">
+        <input type="button" value="添加新行至尾部" onclick="insertrearRow()">
+        <input type="button" value="添加的表格标题" onclick="appendCaption()">
+        <input type="button" value="移除表格的标题" onclick="removeCaption()">
+    </div>
+    <hr>
+    <div>
+        <table id="myTable" rules="all" width="600">
+            <thead>
+                <tr>
+                    <th>编　　号</th>
+                    <th>姓　　名</th>
+                    <th>操　　作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2</td>
+                    <td>张三</td>
+                    <td>
+                        <input type="image" src="./img/filetool/delete.png" alt="删除" onclick="deleteRow(this)">
+                        <input type="image" src="./img/filetool/detail.png" alt="详情">
+                        <input type="image" src="./img/filetool/create.png" alt="编辑">
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>李四</td>
+                    <td>
+                        <input type="image" src="./img/filetool/delete.png" alt="删除" onclick="deleteRow(this)">
+                        <input type="image" src="./img/filetool/detail.png" alt="详情">
+                        <input type="image" src="./img/filetool/create.png" alt="编辑">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <script src="./js/8-10tableMethod.js"></script>
 </body>
+
 </html>
