@@ -3,6 +3,9 @@
     height: 230px;
     margin: 10px 20px;
     font-family: '楷体';
+    word-spacing: normal;
+    word-break: break-all;
+    word-wrap: break-word;
     color: #FFF;
     display: inline-flex;
     flex-direction: column;

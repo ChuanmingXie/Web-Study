@@ -1,21 +1,21 @@
 var walkGirl = document.getElementById('walkGirl');
-var headerDiv = document.getElementsByClassName('walkingDiv')[0];
+var walkDiv = document.getElementsByClassName('walkingDiv')[0];
 
 var rightImages = ["r0.png", "r1.png", "r2.png"];
 var leftImages = ["l0.png", "l1.png", "l2.png"];
 var downImages = ["d0.png", "d1.png", "d2.png"];
 var upImages = ["u0.png", "u1.png", "u2.png"];
 
-var divWidth = headerDiv.style.width;
-var imgWidth = headerDiv.offsetWidth;
-var imgHeight = headerDiv.offsetHeiht;
+var divWidth = walkDiv.style.width;
+var imgWidth = walkDiv.offsetWidth;
+var imgHeight = walkDiv.offsetHeight;
 
 var images = rightImages;
 var n = 0;
 
-function doKeyDown() {
-    var x = dealPx(headerDiv.style.left);
-    var y = dealPx(headerDiv.style.top);
+function doKeyDown(e) {
+    var x = dealPx(walkDiv.style.left);
+    var y = dealPx(walkDiv.style.top);
     var e = e || window.event;
     var keyID = e.keyCode ? e.keyCode : e.which;
     /* 向右方向走 */
@@ -34,7 +34,7 @@ function doKeyDown() {
     }
     /* 向上方向走 */
     if (keyID == 38 || keyID == 87) {
-        if (y - 10 >= 10) {
+        if (y - 10 >= 0) {
             y -= 10;
         }
         images = upImages;
@@ -54,8 +54,8 @@ function working(x, y) {
         n = 0;
     }
     walkGirl.src = 'img/walker/' + images[n];
-    headerDiv.style.left = x + 'px';
-    headerDiv.style.top = y + 'px';
+    walkDiv.style.left = x + 'px';
+    walkDiv.style.top = y + 'px';
     n++;
 }
 

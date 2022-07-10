@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8-14 Document 事件</title>
+    <link rel="stylesheet" href="./css/8-01windowProperty.css">
+    <style>
+        img{
+            width: 256px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>8-14 文档事件</h2>
+    <div class="header">
+        <img />
+        <img />
+        <img />
+        <img />
+    </div>
+    <script type="text/javascript">
+        var array = [3, 4, 6, 7];
+        function initImages() {
+            array.sort(randomSort);
+            var images = document.getElementsByTagName('img');
+            for (let i = 0; i < array.length; i++) {
+                images[i].src = 'img/time/num_' + array[i] + '.png';
+            }
+        }
+
+        function randomSort(a, b) {
+            return Math.random(0, 1) > 0.5 ? -1 : 1;
+        }
+
+        function resizeImages() {
+            var scale = 0.2;
+            var images = document.getElementsByTagName('img');
+
+            var resizeWidth = window.innerWidth * scale;
+            if (resizeWidth < 100) {
+                resizeWidth = 100;
+            }
+            for (let i = 0; i < images.length; i++) {
+                images[i].style.width = resizeWidth + "px";
+            }
+        }
+
+        window.onload = initImages;
+        window.onresize = resizeImages;
+    </script>
+</body>
+
+</html>

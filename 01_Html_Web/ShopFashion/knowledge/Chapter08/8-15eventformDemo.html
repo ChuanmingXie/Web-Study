@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8-15 表单及元素事件</title>
+    <link rel="stylesheet" href="./css/8-01windowProperty.css">
+    <link rel="stylesheet" href="./css/8-02windowDemo.css">
+    <style>
+        #showDiv{
+            width: 600px;
+            margin: 0 10px;
+            line-height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>8-15 表单及元素事件</h2>
+    <div>
+        <form action="http://101/132.152.252" 
+            onreset="return resetForm()" 
+            onsubmit="return checkForm()">
+            <div id="menuDiv">
+                <input type="button" value="购物">
+                <input type="button" value="影视">
+                <input type="button" value="餐饮">
+            </div>
+            <div id="menuDiv">
+                用户姓名：<input type="text" value="请输入用户名" id="userName" 
+                    onfocus="userNameOnFocus()"
+                    onblur="userNameOnBlur()" 
+                    onkeypress="showKeyPress(event)">
+            </div>
+            <div id="menuDiv">
+                账户类型：<select name="userType" id="userType" onchange="userTypeSelect()">
+                    <option value="">--请选择--</option>
+                    <option value="访客">访客</option>
+                    <option value="会员">会员</option>
+                    <option value="管理员">管理员</option>
+                </select>
+            </div>
+            <div id="btngroup">
+                <input type="submit" value="提交">
+                <input type="reset" value="重置">
+            </div>
+        </form>
+        <div class="panel" id="showDiv">
+            <span>表单框输入内容为</span> <br>
+        </div>
+    </div>
+    <script src="./js/8-15eventformDemo.js"></script>
+</body>
+
+</html>

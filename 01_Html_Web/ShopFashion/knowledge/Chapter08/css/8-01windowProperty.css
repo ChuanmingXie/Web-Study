@@ -6,7 +6,7 @@ body {
 }
 .clear {clear: both;}
 h4 {text-indent: 40px;}
-form {margin: 0 10px;}
+form {width: 620px;}
 img { width: 20px;}
 
 hr{
@@ -28,9 +28,10 @@ hr{
 }
 
 .walkingDiv{
-	position: relative;
 	width: 130px;
 	height: 130px;
+	position: relative;
+    margin: 0;      /* 纯div设置为居中对齐,导致行走的div居中，影响行走区域 */
 }
 
 .walkingDiv img{
@@ -74,9 +75,14 @@ div {
     height: 30px;
     font: bold 14px/30px Cambria, Microsoft Yahei;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     margin: 15px auto;
+}
+
+#menuDiv input[type="button"] {
+    border-radius: 0;
+    width: 210px;
 }
 
 #menuDiv span {
@@ -85,7 +91,7 @@ div {
     color: #FFF;
 }
 
-#menuDiv span:hover {
+#menuDiv span:hover{
     background: #EA4307;
 }
 
@@ -130,7 +136,8 @@ select:focus {
 
 .white,
 input[type='button'],
-input[type='submit'] {
+input[type='submit'],
+input[type='reset'] {
     width: 120px;
     height: 32px;
     color: #fff;
@@ -151,10 +158,12 @@ input[type='submit'] {
 
 .white:hover,
 input[type='submit']:hover,
-input[type='button']:hover {
+input[type='button']:hover,
+input[type='reset']:hover {
     background: #ea4307;
     border: 1px solid #ea4307;
 }
+
 
 table {
     width: 600px;

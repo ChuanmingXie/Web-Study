@@ -178,6 +178,39 @@ cellIndex | 返回行的单元格集合中单元格的位置
 innerHTML | 设置或返回单元格的开始和结束标签之间的HTML内容
 
 #### 8.9 DOM节点
+DOM节点的常用类型
+节点类型|nodeType|描述|示例
+:-----------:|:-----------:|:-----------:|:-----------:|
+元素(Element)|  1 | HTML标签 | &ltdiv&gt &ltdiv/&gt 
+元素(Element)|  1 | HTML标签 | &ltdiv&gt &ltdiv/&gt 
+元素(Element)|  1 | HTML标签 | &ltdiv&gt &ltdiv/&gt 
+元素(Element)|  1 | HTML标签 | &ltdiv&gt &ltdiv/&gt
+
+Element对象的常用属性
+属性|描述
+:---------------:|:---------------:|
+attributes       |
+childNodes       |
+children         |
+innerHTML        |
+className        |
+firstChild       |
+lastChild        |
+nextSibling      |
+previousSibling  |
+parentNode       |
+nodeType         |
+nodeValue        |
+tagName          |
+
+
+Element对象的常用方法
+方法|描述
+:---------------------:|:---------------------:|
+getAttribute()         | 返回指定属性对应的属性值
+getElementsByTagName() | 返回具有指定标签名的元素子元素集合，类型为NodeList
+getAttribute()         | 返回指定属性对应的属性值
+getElementsByTagName() | 返回具有指定标签名的元素子元素集合，类型为NodeList
 
 #### 8.10 事件处理
 	JS采用事件驱动的响应机制，用户在页面上进行交互操作会触发响应的事件。
