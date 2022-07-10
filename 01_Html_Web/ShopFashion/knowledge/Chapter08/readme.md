@@ -180,28 +180,30 @@ innerHTML | 设置或返回单元格的开始和结束标签之间的HTML内容
 #### 8.9 DOM节点
 DOM节点的常用类型
 节点类型|nodeType|描述|示例
-:-----------:|:-----------:|:-----------:|:-----------:|
-元素(Element)|  1 | HTML标签 | &lt;div&gt; &lt;div/&gt; 
-元素(Element)|  1 | HTML标签 | &lt;div&gt; &lt;div/&gt; 
-元素(Element)|  1 | HTML标签 | &lt;div&gt; &lt;div/&gt;
-元素(Element)|  1 | HTML标签 | &lt;div&gt; &lt;div/&gt;
+:---------------------:|:-------------:|:-------------:|:-------------:|
+元素(Element)          |  1  | HTML标签       | &lt;div&gt; &lt;div/&gt; 
+属性(Attribute         |  2  | HTML标签的属性 | type='button'
+文本(Text)             |  3  | 文本内容       | Hello HTML!
+注释(Comment)          |  8  | HTML注释段     | <!-- 注释 -->
+文档(Document)         |  9  | HTML文档根节点  | <html>
+文档类型(DocumentType) |  10 | 文档类型        | <!DOCTYPE HTML...>
 
 Element对象的常用属性
 属性|描述
 :---------------:|:---------------:|
-attributes       |
-childNodes       |
-children         |
-innerHTML        |
-className        |
-firstChild       |
-lastChild        |
-nextSibling      |
-previousSibling  |
-parentNode       |
-nodeType         |
-nodeValue        |
-tagName          |
+attributes       |返回指定节点的属性集合
+childNodes       |非标准属性，类型NodeList,返回直接后代的元素节点的集合
+children         |标准属性，类型Array,返回直接后代的元素节点的集合
+innerHTML        |设置或返回元素内部的HTML
+className        |设置或返回元素的class 属性
+firstChild       |返回指定节点的最前一个子节点
+lastChild        |返回指定节点的最后一个子节点
+nextSibling      |返回同一父节点的指定节点之后紧邻的一个节点
+previousSibling  |返回同一父节点的指定节点之前的一个节点
+parentNode       |返回指定节点的父节点;当没有父节点时,则返回null
+nodeType         |返回指定节点的节点类型(数值)
+nodeValue        | 设置或返回指定节点值
+tagName          | 返回元素的标签名(始终大写形式)
 
 
 Element对象的常用方法
@@ -209,8 +211,12 @@ Element对象的常用方法
 :---------------------:|:---------------------:|
 getAttribute()         | 返回指定属性对应的属性值
 getElementsByTagName() | 返回具有指定标签名的元素子元素集合，类型为NodeList
-getAttribute()         | 返回指定属性对应的属性值
-getElementsByTagName() | 返回具有指定标签名的元素子元素集合，类型为NodeList
+hasAttribute()         | 指定属性存在时返回true,否则返回false
+hasChildNodes()        | 检查元素是否右子节点
+removeAttribute()      | 删除指定的属性
+removeChild()          | 删除某个指定的子节点，并返回该节点
+replaceChild()         | 用新节点替换某个子节点
+setAttribute()         | 为节点添加属性,当属性存在时,进行替换
 
 #### 8.10 事件处理
 	JS采用事件驱动的响应机制，用户在页面上进行交互操作会触发响应的事件。
@@ -230,27 +236,25 @@ getElementsByTagName() | 返回具有指定标签名的元素子元素集合，�
         · stopPropagation()用于终止事件的进一步传播
 
 ##### 8.10.1 鼠标事件
-事件|含义
-:---------:|:---------:|
-onclick|        单机
-ondblclick|     双击
-onmouseover|    按下
-onmouseout|     松开
-onmousemove|    移动
-onmousedown|    移出
-onmouseup|      悬停
+事件|含义|事件|含义
+:---------:|:----------:|:---------:|:---------:|
+onclick    |    单机    |ondblclick |    双击    
+onmouseover|    按下    |onmouseout |    松开    
+onmousedown|    移出    |onmouseup  |    悬停    
+onmousemove|    移动    |...        |...
+
 
 ##### 8.10.1 键盘事件
 事件|含义
-:---------:|:---------:|
+:---------------:|:---------------:|
 window.onkeypress|  在键盘按键被按下并释放一个键时触发事件
-window.onkeydown|   在用户按下一个按键时触发
-window.onkeyup|     在键盘按钮送开始触发
+window.onkeydown |  在用户按下一个按键时触发
+window.onkeyup   |  在键盘按钮送开始触发
 
 
 ##### 8.10.1 文档事件
 事件|含义
-:---------:|:---------:|
+:--------------:|:--------------:|
 window.onload	|在页面或图像加载完成后立即触发事件
 window.onunload	|在用户推出页面时触发事件
 window.onresize	|在窗口和框架被调整大小时触发事件
@@ -276,11 +280,11 @@ Enter  |108 |*      |*	 |End       |35|/加竖线     |220
 
 ##### 8.10.1 表单及其元素事件
 事件|描述
-:------:|:------:|
-onblur	|在对象失去焦点时触发事件
-onfocus	|在对象获取焦点时触发事件
-onchange	|在域的文本内容改变时触发事件
-onselect	|在文本框的文本被选中时触发事件
-onreset	    	|在表单中的重置按钮被单击时触发事件
-onsubmit	|在表单中的确认按钮被单击时触发事件
+:--------:|:----------:|
+onblur	  |在对象失去焦点时触发事件
+onfocus   |在对象获取焦点时触发事件
+onchange  |在域的文本内容改变时触发事件
+onselect  |在文本框的文本被选中时触发事件
+onreset	  |在表单中的重置按钮被单击时触发事件
+onsubmit  |在表单中的确认按钮被单击时触发事件
 
