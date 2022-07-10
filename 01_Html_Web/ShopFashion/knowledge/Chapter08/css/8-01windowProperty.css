@@ -51,6 +51,7 @@ div {
     border: 1px solid #5CB3cc;
     border-radius: 10px;
     background: #5CB3cc;
+    margin: 0 10px;
 }
 
 #btngroup {
@@ -129,9 +130,11 @@ select:focus {
 }
 
 .checkboxgroup {
+    width: 280px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0 4px;
 }
 
 .white,

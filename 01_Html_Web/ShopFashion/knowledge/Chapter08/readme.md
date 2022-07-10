@@ -11,12 +11,12 @@
 ![](./doc/BOM-window.png)
 
 对象类别|作用
-:--------:|:--------:|
-window|是BOM模型中的最高一层,通过windows对象的属性和方法来实现对浏览器窗口的操作
-document|是BOM的核心对象,提供了访问HTML文档对象的属性、方法和事件处理
-location|包含了当前页面的URL地址，如协议，主机名，端口号和路径等信息
-navigator|包含与浏览器相关的信息，如浏览器类型和版本等
-history|包含历览器历史访问记录，如访问过的URL、访问数量信息等
+:----------:|:----------:|
+window      |  是BOM模型中的最高一层,通过windows对象的属性和方法来实现对浏览器窗口的操作
+document    |  是BOM的核心对象,提供了访问HTML文档对象的属性、方法和事件处理
+location    |  包含了当前页面的URL地址，如协议，主机名，端口号和路径等信息
+navigator   |  包含与浏览器相关的信息，如浏览器类型和版本等
+history     |  包含历览器历史访问记录，如访问过的URL、访问数量信息等
 
 ##### 8.1.2 DOM模型
     a. 文档对象模型(Document Object Model,DOM)属于BOM的一部分，
@@ -44,12 +44,12 @@ history|包含历览器历史访问记录，如访问过的URL、访问数量信
 ##### 8.1.2 window的属性
 ##### 8.1.2 window的方法
 方法|示例
-:---------:|:---------:|
-open()方法:|        1.open(url,name,features,relace); <br> var newWindow=window.open("http://www.baidu.com","弹出广告","width=1300,height=400,toolbar=no,menubar=no,location=no,status=no,resizable=yes");
-close()方法:|     newWindow.close();
-setTimeout()方法:|        var id_Of_timeout=setTimeout(code,millisec);
-clearTimeout()方法:|        clearTimeout(id_Of_timeout);
-setInterval()方法:|        var id_Of_Interval=setInterval(code,millisec);
+:------------------:|:------------------:|
+open()方法:         |        1.open(url,name,features,relace); <br> var newWindow=window.open("http://www.baidu.com","弹出广告","width=1300,height=400,toolbar=no,menubar=no,location=no,status=no,resizable=yes");
+close()方法:        |     newWindow.close();
+setTimeout()方法:   |        var id_Of_timeout=setTimeout(code,millisec);
+clearTimeout()方法: |        clearTimeout(id_Of_timeout);
+setInterval()方法:  |        var id_Of_Interval=setInterval(code,millisec);
 clearInterval()方法:|        clearInterval(id_Of_Interval);
 #### 8.3 location,history,navigator对象
 ##### 8.3.1 location对象
@@ -171,11 +171,14 @@ deleteCell() | 删除表格中的单元格
 TableCell对象的属性
 属性|描述
 :-----------:|:-----------:|
-width  | 设置或返回表元的宽度
-rowSpan| 设置或返回表元横跨的行数
-colSpan| 设置和返回表元横跨的列数
+width     | 设置或返回表元的宽度
+rowSpan   | 设置或返回表元横跨的行数
+colSpan   | 设置和返回表元横跨的列数
 cellIndex | 返回行的单元格集合中单元格的位置
 innerHTML | 设置或返回单元格的开始和结束标签之间的HTML内容
+
+![](./doc/DOM-table-node-0.png) 
+![](./doc/DOM-table-node-1.png)
 
 #### 8.9 DOM节点
 DOM节点的常用类型

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/8-01windowProperty.css">
     <link rel="stylesheet" href="./css/8-02windowDemo.css">
     <style>
-        #resultDiv{
+        #resultDiv {
             height: 250px;
         }
     </style>
@@ -24,23 +24,27 @@
     </div>
     <div>
         <form id="myform" action="" method="">
-            用户姓名：<input type="text" name="userName" id="userName" > <br>
-            <div class="checkboxgroup">
-            爱　　好：
-                <input type="checkbox" name="hobby" id="" value="看电影"> 看电影
-                <input type="checkbox" name="hobby" id="" value="购物"> 购物
-                <input type="checkbox" name="hobby" id="" value="评委美食"> 评委美食 <br>
+            <div id="menuDiv">
+                用户姓名：<input type="text" name="userName" id="userName">
+            </div>
+            <div id="menuDiv">
+                爱　　好：
+                <div class="checkboxgroup">
+                    <input type="checkbox" name="hobby" id="" value="看电影"> 看电影
+                    <input type="checkbox" name="hobby" id="" value="购物"> 购物
+                    <input type="checkbox" name="hobby" id="" value="评委美食"> 评委美食
+                </div>
             </div>
             <input type="button" value="统计按钮" onclick="countElement()">
         </form>
+        <div class="clear"></div>
+        <br>
+        <div id="resultDiv">
+            <span>显示result信息的Div</span>
+            <p>
+            </p>
+        </div>
     </div>
-    <div class="clear"></div>
-    <br>
-    <div id="resultDiv">
-        <span>显示result信息的Div</span>
-        <p>
-        </p>
-    </div> 
     <script type="text/javascript" src="./js/8-08documentMethod.js"></script>
 </body>
 

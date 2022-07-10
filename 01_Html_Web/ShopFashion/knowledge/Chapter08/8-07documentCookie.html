@@ -13,30 +13,36 @@
 <body>
     <h2>8-07 document Cookie</h2>
     <h4>8-07-1 cookie 属性的使用</h4>
-    <form id="myform" action="" method="">
-        <div>
-            用户姓名：<input type="text" name="userName"> <br>
-            密　　码：<input type="password" name="userPwd" autocomplete="off"> <br>
-            保存时间：<select name="saveTime" id="">
-                <option value="1">天</option>
-                <option value="7">周</option>
-                <option value="30">月</option>
-                <option value="-1">不保存</option>
-            </select><br>
+    <div>
+        <form id="myform" action="" method="">
+            <div id="menuDiv">
+                用户姓名：<input type="text" name="userName">
+            </div>
+            <div id="menuDiv">
+                密　　码：<input type="password" name="userPwd" autocomplete="off">
+            </div>
+            <div id="menuDiv">
+                保存时间：<select name="saveTime" id="">
+                    <option value="1">天</option>
+                    <option value="7">周</option>
+                    <option value="30">月</option>
+                    <option value="-1">不保存</option>
+                </select>
+            </div>
+            <div id="btngroup">
+                <input type="button" value="注册测试" onclick="saveCookie('register')">
+                <input type="button" value="获取注册" onclick="loadCookie('register')">
+                <input type="button" value="登录测试" onclick="saveCookie('login')">
+                <input type="button" value="加载登录" onclick="loadCookie('login')">
+            </div>
+        </form>
+        <div id="resultDiv">
+            <span>显示Cookie信息的Div</span>
+            <p>
+            </p>
         </div>
-        <div id="btngroup">
-            <input type="button" value="注册测试" onclick="saveCookie('register')">
-            <input type="button" value="获取注册" onclick="loadCookie('register')">
-            <input type="button" value="登录测试" onclick="saveCookie('login')">
-            <input type="button" value="加载登录" onclick="loadCookie('login')">
-        </div>
-    </form>
-    <div id="resultDiv">
-        <span>显示Cookie信息的Div</span>
-        <p>
-        </p>
-    </div>    
-    <div id="timeDiv"></div>
+        <div id="timeDiv"></div>
+    </div>
     <script src="./js/8-02windowMethod-timeWoker.js"></script>
 
     <h4>8-07-2 referrer 属性测试</h4>
