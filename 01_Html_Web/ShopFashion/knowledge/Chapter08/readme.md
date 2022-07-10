@@ -164,7 +164,7 @@ innerHTML       | 设置或返回表格行的开始和结束标签之间的HTML�
 TableRow对象的方法
 属性|描述
 :-----------:|:-----------:|
-insertCell() | 在HTML表的一行的指定位置插入一个空的<td>元素
+insertCell() | 在HTML表的一行的指定位置插入一个空的&lt;td&gt;元素
 deleteCell() | 删除表格中的单元格
 
 
@@ -184,9 +184,9 @@ DOM节点的常用类型
 元素(Element)          |  1  | HTML标签       | &lt;div&gt; &lt;div/&gt; 
 属性(Attribute         |  2  | HTML标签的属性 | type='button'
 文本(Text)             |  3  | 文本内容       | Hello HTML!
-注释(Comment)          |  8  | HTML注释段     | <!-- 注释 -->
-文档(Document)         |  9  | HTML文档根节点  | <html>
-文档类型(DocumentType) |  10 | 文档类型        | <!DOCTYPE HTML...>
+注释(Comment)          |  8  | HTML注释段     | &lt;!-- 注释 --&gt;
+文档(Document)         |  9  | HTML文档根节点  | &lt;html&gt;
+文档类型(DocumentType) |  10 | 文档类型        | &lt;!DOCTYPE HTML...&gt;
 
 Element对象的常用属性
 属性|描述
