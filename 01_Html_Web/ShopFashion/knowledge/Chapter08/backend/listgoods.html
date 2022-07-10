@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后台管理-商品列表</title>
+</head>
+<body>
+    
+    <div class="place">
+        <span>位置：</span>
+        <ul class="placeul">
+            <li><a href="../Pro-main.html">首页</a></li>
+            <li><a href="#">商品列表</a></li>
+        </ul>
+    </div>
+    <div class="rightinfo">
+        <div class="tools">
+            <ul class="toolbar">
+                <li class="click"><span><img src="img/t01.png" alt="">添加</span></li>
+                <li class="click"><span><img src="img/t02.png" alt="">修改</span></li>
+                <li><span><img src="img/t03.png" alt="">删除</span></li>
+                <li><span><img src="img/t04.png" alt="">统计</span></li>
+                <li><span><img src="img/t05.png" alt="">设置</span></li>
+            </ul>
+            <iframe src="./searchgood.html" frameborder="0" scrolling="no" width="400" height="42"></iframe>
+        </div>
+        <table class="tablelist">
+            <thead>
+                <tr>
+                    <th><input type="checkbox" name="" id="" checked></th>
+                    <th>缩略图</th>
+                    <th>商品名称</th>
+                    <th>商品类别</th>
+                    <th>数量（件）</th>
+                    <th>单价（元）</th>
+                    <th>发布时间</th>
+                    <th>是否审核</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" value="" name=""></td>
+                    <td class="imgtd"><img src="img/img06.png" alt=""></td>
+                    <td>七匹狼休闲春夏新款 时尚无褶休闲库</td>
+                    <td>男装</td>
+                    <td>450</td>
+                    <td>￥241</td>
+                    <td>2020-04-23</td>
+                    <td>已审核</td>
+                    <td>
+                        <a href="#" class="tablelink">查看</a>
+                        <a href="#" class="tablelink">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" value="" name=""></td>
+                    <td class="imgtd"><img src="img/img06.png" alt=""></td>
+                    <td>七匹狼休闲春夏新款 时尚无褶休闲库</td>
+                    <td>男装</td>
+                    <td>450</td>
+                    <td>￥241</td>
+                    <td>2020-04-23</td>
+                    <td>已审核</td>
+                    <td>
+                        <a href="#" class="tablelink">查看</a>
+                        <a href="#" class="tablelink">删除</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="pagin">
+            <div class="message">共<i class="bule">1345</i>条记录，当前显示第&nbsp;<i class="bule">2&nbsp;</i>页</div>
+            <ul class="paginList">
+                <li class="paginItem"><a href="javascript:;"><span class="pagePre">上一页</span></a></li>
+                <li class="paginItem"><a href="javascript:;">1</a></li>
+                <li class="paginItem current"><a href="javascript:;">2</a></li>
+                <li class="paginItem"><a href="javascript:;">3</a></li>
+                <li class="paginItem more"><a href="javascript:;">...</a></li>
+                <li class="paginItem"><a href="javascript:;">10</a></li>
+                <li class="paginItem"><a href="javascript:;"><span class="pageNext">下一页</span></a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
