@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-Walking Fashion E&amp;S - 用户注册</title>
+    <link rel="stylesheet" href="./css/Pro-common.css">
+    <link rel="stylesheet" href="./css/Pro-register.css">
+</head>
+
+<body>
+    <article>
+        <!-- header start -->
+        <header class="top_bg">
+            <div class="top_content">
+                <div class="floatleft">
+                    <img src="img/star.jpg">收藏|HI,欢迎订购！<a href="#" class="orange">[请登录]</a><a href="#" class="orange">[免费注册]</a>
+                </div>
+                <div class="floatright">
+                    客户服务<img src="img/arrow.gif">&nbsp;网站导航<img src="img/arrow.gif">&nbsp;
+                    <div class="shopcart_bg">
+                        <div class="droparrow"><span class="shopcart"></span>我的购物车<span class="orange">0</span>件<img src="img/arrow.gif"></div>
+                        <div class="dropdown">
+                            <ul class="shop_pic">
+                                <!-- <li>
+                                    <a href="#"><img src="img/goodshow/s1.jpg"></a>
+                                    <p>1件<a href="#"><span class="orange floatright">删除</span></a></p>
+                                </li> -->
+                                <script type="text/javascript">
+                                    var arrayimages = ['s1.jpg', 's2.jpg', 's3.jpg', 's4.jpg', 's5.jpg', 's6.jpg', 's7.jpg', 's8.jpg', 's9.jpg']
+                                    var arrayamount = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+                                    for (const key in arrayimages) {
+                                        if (Object.hasOwnProperty.call(arrayimages, key)) {
+                                            var element = '<li><a href="#"><img src="img/goodshow/' + arrayimages[key] + '"></a>' +
+                                                '<p>' + arrayamount[key] + '件<a href="#"><span class="orange floatright">删除</span></a></p></li>';
+                                            document.write(element);
+                                        }
+                                    }
+                                </script>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header end -->
+
+        <!-- logo and banner start -->
+        <div class="logo">
+            <img src="img/logo.jpg"><img src="img/banner.jpg">
+        </div>
+        <!-- logo and banner end -->
+
+        <!-- top nav start -->
+        <nav class="nav_bg redcaomeihong">
+            <div class="nav_content">
+                <ul class="nav">
+                    <li class="active"><a href="Pro-goodIndex.html" class="white">购物首页</a></li>
+                    <li><a href="Pro-goodShow.html" class="white">最新上架</a></li>
+                    <li><a href="#" class="white">品牌活动</a></li>
+                    <li><a href="#" class="white">厂家直供</a></li>
+                    <li><a href="#" class="white">团购</a></li>
+                    <li><a href="#" class="white">限时抢购</a></li>
+                    <li><a href="#" class="white">折价促销</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- top nav end -->
+
+        <!-- section start -->
+        <section class="content_bg">
+            <div class="content_align">
+                <table width="1000" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td valign="middle">
+                            <div class="title_margin">
+                                <h2 align="top">用户注册</h2>
+                            </div>
+                        </td>
+                        <td width="420" rowspan="2" valign="middle">
+                            <img src="img/register/zhuce_pic.jpg" align="right" alt="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top">
+                            <div class="hr_margin">
+                                <hr width="524" align="top" color="#ccc">
+                            </div>
+                            <form action="#" method="post" enctype="multipart/form-data">
+                                <table class="reg" width="90%" border="0" cellspacing="0" cellpadding="0" align="left">
+                                    <tr>
+                                        <td>用户昵称:</td>
+                                        <td><input type="text" name="userName" id="userName" value="请输入用户名"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>邮箱地址:</td>
+                                        <td><input type="text" name="email" id="email" value="请输入邮箱地址"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>设置密码:</td>
+                                        <td><input type="password" name="userPwd" id="userPwd" value=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td class="gray12">6-20个字符,由数字和符号的两种以上组合.&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>确认密码:</td>
+                                        <td><input type="password" name="userRePwd" id="userRePwd" value=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td>真实姓名:</td>
+                                        <td><input type="text" name="realName" id="realName" value="请输入真实姓名"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>您的性别:</td>
+                                        <td>
+                                            <input type="radio" name="sex" id="radio" checked> 男
+                                            <input type="radio" name="sex" id="radio" checked> 女
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>上传头像:</td>
+                                        <td><input type="file" name="headpic" id="headpic"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>您的手机:</td>
+                                        <td><input type="text" name="mobile" id="mobile" value="请输入你的手机号"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>单位名称:</td>
+                                        <td><input type="text" name="company" id="company" value="请输入单位名称"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>单位地址:</td>
+                                        <td>
+                                            <div class="vacation">
+                                                <select name="province" id="province">
+                                                    <option value="--请选择省份--"></option>
+                                                </select>
+                                                <select name="city" id="city">
+                                                    <option value="--请选择城市--"></option>
+                                                </select>
+                                                <select name="area" id="area">
+                                                    <option value="--请选择区域--"></option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td><input type="text" name="address" id="address" value="请输入街道地址"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>您的爱好:</td>
+                                        <td>
+                                            <input type="checkbox" name="hobby" value="购物" /> 购物
+                                            <input type="checkbox" name="hobby" value="影视" /> 影视
+                                            <input type="checkbox" name="hobby" value="餐饮" /> 餐饮
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>协议内容:</td>
+                                        <td><area rows="3" aria-colspan="30"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td><input type="submit" name="button" value="提交"></td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+                <div class="clear"></div>
+                <div class="bottom_pic">
+                    <a href="#"><img src="img/register/shop.jpg" class="bian"></a>
+                    <a href="#"><img src="img/register/food.jpg" class="bian"></a>
+                    <a href="#"><img src="img/register/movie.jpg" class="bian"></a>
+                </div>
+            </div>
+        </section>
+        <!-- section end -->
+        <div class="clear"></div>
+        <!-- footer start -->
+        <footer>
+            <div class="foot_title yellowxinghuang">
+                <ul class="foot_pic">
+                    <li><span class="red_dot"></span>正品保证</li>
+                    <li><span class="red_dot"></span>及买即送</li>
+                    <li><span class="red_dot"></span>货到付款</li>
+                    <li><span class="red_dot"></span>正规发票</li>
+                    <li><span class="red_dot"></span>全国联保</li>
+                </ul>
+            </div>
+            <ul class="foot_list">
+                <li>
+                    <div class="floatleft">
+                        <p class="red1"></p>
+                        <p class="line1"></p>
+                    </div>
+                    <ul class="floatleft">
+                        <li class="font16 padding-bottom">新手指导</li>
+                        <li>用户注册</li>
+                        <li>电话订单</li>
+                        <li>购物流程</li>
+                        <li>购物保证</li>
+                        <li>服务协议</li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="floatleft">
+                        <p class="red2"></p>
+                        <p class="line1"></p>
+                    </div>
+                    <ul class="floatleft">
+                        <li class="font16 padding-bottom">新手指导</li>
+                        <li>用户注册</li>
+                        <li>电话订单</li>
+                        <li>购物流程</li>
+                        <li>购物保证</li>
+                        <li>服务协议</li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="floatleft">
+                        <p class="red3"></p>
+                        <p class="line1"></p>
+                    </div>
+                    <ul class="floatleft">
+                        <li class="font16 padding-bottom">新手指导</li>
+                        <li>用户注册</li>
+                        <li>电话订单</li>
+                        <li>购物流程</li>
+                        <li>购物保证</li>
+                        <li>服务协议</li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="floatleft">
+                        <p class="red3"></p>
+                        <p class="line1"></p>
+                    </div>
+                    <ul class="floatleft">
+                        <li class="font16 padding-bottom">新手指导</li>
+                        <li>用户注册</li>
+                        <li>电话订单</li>
+                        <li>购物流程</li>
+                        <li>购物保证</li>
+                        <li>服务协议</li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="floatleft">
+                        <p class="red3"></p>
+                        <p class="line1"></p>
+                    </div>
+                    <ul class="floatleft">
+                        <li class="font16 padding-bottom">新手指导</li>
+                        <li>用户注册</li>
+                        <li>电话订单</li>
+                        <li>购物流程</li>
+                        <li>购物保证</li>
+                        <li>服务协议</li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="floatleft">
+                        <p class="red3"></p>
+                        <p class="line1"></p>
+                    </div>
+                    <ul class="floatleft">
+                        <li class="font16 padding-bottom">新手指导</li>
+                        <li>用户注册</li>
+                        <li>电话订单</li>
+                        <li>购物流程</li>
+                        <li>购物保证</li>
+                        <li>服务协议</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="foot_line"></div>
+            <p class="copyright">
+                Copyright 2018-2022 Q-Walking Fashion E&S 漫步时代广场(QST教育)版权所有<br>
+                中国青岛 高新区 广博路325号 轻软教育集团 咨询热线 400-658-343 400-234-4222 <br>
+            </p>
+            <p align="center"><img src="img/cloudwhales.png" width="120"></p>
+            <div class="clear"></div>
+        </footer>
+        <!-- footer end -->
+    </article>
+
+    <script type="text/javascript" src="./js/Pro-register.js"></script>
+</body>
+
+</html>
