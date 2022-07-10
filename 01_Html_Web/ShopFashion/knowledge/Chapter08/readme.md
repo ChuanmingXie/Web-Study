@@ -63,16 +63,16 @@ clearInterval()方法:|        clearInterval(id_Of_Interval);
 	其中n是当前窗口再框架集中的索引号.document常用的属性
 	有body、title、cookie、URL属性以及all[ ]、forms[ ]、images[ ]等集合属性
 属性|描述|
-:--------:|:--------:|
-body|       提供对body元素的直接访问。对于定义了框架集的文档，该属性引用最外层的frameset元素
-cookie|     设置和查询当前文档有关的所有cookie
-referrer|   返回载入当前文档的URL(即上一个页面的URL)
-URL|        返回当前文档URL
+:----------:|:----------:|
+body        |   提供对body元素的直接访问。对于定义了框架集的文档，该属性引用最外层的frameset元素
+cookie      |   设置和查询当前文档有关的所有cookie
+referrer    |   返回载入当前文档的URL(即上一个页面的URL)
+URL         |   返回当前文档URL
 lastModified|   返回文档最后被修改的日期和时间
-domain|     返回下载当前文档的服务器域名
-all[]|      返回文档中所有HTML元素，all[]已经被document对象的getElementById()等方法代替
-forms[]|    返回文档中所有form对象集合
-images[]|   返回文档中所有image对象集合，但不包含<object>标签内定义的图形
+domain      |   返回下载当前文档的服务器域名
+all[]       |   返回文档中所有HTML元素，all[]已经被document对象的getElementById()等方法代替
+forms[]     |   返回文档中所有form对象集合
+images[]    |   返回文档中所有image对象集合，但不包含<object>标签内定义的图形
 
     特别注意：
     a. referrer属性：返回加载了当前文档的URL地址。
@@ -99,14 +99,14 @@ images[]|   返回文档中所有image对象集合，但不包含<object>标签�
         · querySelectorAll()方法
     c. 方法应用表
 方法|描述
-:--------:|:--------:|
-open()|     打开一个新文档，并擦除当前文档的内容
-write()|    向闻到那中写入HTML或JS代码
-writeln()|  在使用&lt; pre &gt;标签是比较有用。添加的"\n"换行符再HTML中没有有效
-close()|    关闭一个由open()打开的输出流，并显示选定的数据
+:-----------------:|:--------:|
+open()             |    打开一个新文档，并擦除当前文档的内容
+write()            |    向闻到那中写入HTML或JS代码
+writeln()          |    在使用&lt; pre &gt;标签是比较有用。添加的"\n"换行符再HTML中没有有效
+close()            |    关闭一个由open()打开的输出流，并显示选定的数据
 getElementById() <br> getElementByName()<br> getElementByTagName()<br> getElementByClassName() | 返回一个拥有指定ID的首个对象<br>返回带有指定名称、指定标签名的对象集合<br>返回带有指定class属性的对象集合,该方法属于H5 DOM
-querySelector()|    返回满足条件的单个(首个元素)
-querySelectorAll()| 返回满足条件的元素集合
+querySelector()    | 返回满足条件的单个(首个元素)
+querySelectorAll() | 返回满足条件的元素集合
 
 
 #### 8.7 Form对象
@@ -130,7 +130,7 @@ name      | 返回表单的名称
 Table对象的属性
 属性|描述
 :---------:|:---------:|
-row[]      |返回表格中所有行(TableRow对象)的一个数组集合，包括<thead>、<tfoot>、<tbody>中定义的所有行
+row[]      |返回表格中所有行(TableRow对象)的一个数组集合，包括thead、tfoot、tbody中定义的所有行
 cells[]    |返回表格中所有单元格(TableCell对象)的一个数组集合
 border     |设置或返回表格边框的宽度(以像素为单位)
 caption    |设置或返回表格的caption元素
@@ -142,13 +142,13 @@ cellSpacing|设置或返回在表格中的单元格之间的间距
 Table对象的方法
 方法|描述
 :--------------:|:---------------:|
-createCaption() |在表格中获取或创建<caption>元素
-createTFoot()   |在表格中获取或创建<tfoot> 元素
-createTHead()   |在表格中获取或创建<thead> 元素
+createCaption() |在表格中获取或创建caption 元素
+createTFoot()   |在表格中获取或创建tfoot 元素
+createTHead()   |在表格中获取或创建thead> 元素
 insertRow()     |在表格中插入一新行，新行将被插入到index所在的行之前,index不在正确行数范围内,报错
-deleteCaption() |在表格中获取或删除<caption>元素及其内容
-deleteTFoot()   |在表格中获取或删除<tfoot> 元素
-deleteTHead()   |在表格中获取或删除<thead> 元素
+deleteCaption() |在表格中获取或删除caption>元素及其内容
+deleteTFoot()   |在表格中获取或删除tfoot 元素
+deleteTHead()   |在表格中获取或删除thead 元素
 deleteRow()     |从表格中删除指定位置的行
 
 
