@@ -181,10 +181,10 @@ innerHTML | 设置或返回单元格的开始和结束标签之间的HTML内容
 DOM节点的常用类型
 节点类型|nodeType|描述|示例
 :-----------:|:-----------:|:-----------:|:-----------:|
-元素(Element)|  1 | HTML标签 | &ltdiv&gt &ltdiv/&gt 
-元素(Element)|  1 | HTML标签 | &ltdiv&gt &ltdiv/&gt 
-元素(Element)|  1 | HTML标签 | &ltdiv&gt &ltdiv/&gt 
-元素(Element)|  1 | HTML标签 | &ltdiv&gt &ltdiv/&gt
+元素(Element)|  1 | HTML标签 | &lt;div&gt; &lt;div/&gt; 
+元素(Element)|  1 | HTML标签 | &lt;div&gt; &lt;div/&gt; 
+元素(Element)|  1 | HTML标签 | &lt;div&gt; &lt;div/&gt;
+元素(Element)|  1 | HTML标签 | &lt;div&gt; &lt;div/&gt;
 
 Element对象的常用属性
 属性|描述
