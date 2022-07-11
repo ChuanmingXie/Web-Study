@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9-00 H5的文档结构与div的变化比较</title>
+    <style>
+        body{
+            font:bold 14px/28px Cambria,'楷书'
+        }
+        .header,header{
+            background: #d8dbd8;
+            height: 30px;
+            width: 100%;
+            margin: 5px;
+            text-align: center;
+        }
+        .nav,nav{
+            background: #818581;
+            height: 30px;
+            width: 100%;
+            margin: 5px;
+            text-align: center;
+
+        }
+        .article,article{
+            background: #b4c1b4;
+            height: 180px;
+            width: 70%;
+            margin: 5px;
+            float: left;
+            text-align: center;
+
+        }
+
+        .article .header,
+        .article .section,
+        article header,
+        article section{
+            width: 99%;
+        }
+        .section,section{
+            background: #cbcecb;
+            height: 60px;
+            width: 69%;
+            margin: 5px;
+            float: left;            
+        }
+        .aside,aside{
+            background: #a8baa8;
+            height: 180px;
+            width: 28%;
+            float: right;
+            text-align: center;
+            margin:5px 0px 5px 5px;
+        }
+        .footer,footer{
+            background: #d8dbd8;
+            height: 30px;
+            width: 100%;
+            text-align: center;
+            margin: 5px;
+        }
+        .clear{
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <h2>9-01 H5的文档结构</h2>
+    <h4>9-01-1 H4借助div的文档布局</h4>
+    <div class="header"> &lt;div class="header"&gt; </div>
+    <div class="nav"> &lt;div class="nav"&gt; </div>
+    <div class="article">
+        &lt;div class="article"&gt;
+        <div class="header"> &lt;div class="header"&gt; </div>
+        <div class="section"> &lt;div class="section"&gt; </div>
+    </div>
+    <div class="aside">  &lt;div class="aside"&gt; </div>
+    <div class="clear"></div>
+    <div class="footer">  &lt;div class="footer"&gt; </div>
+
+    <h4>9-01-2 H5借助文档标签的布局</h4>
+    <header> &lt;header&gt; </header>
+    <nav> &lt;nav&gt; </nav>
+    <article>
+        &lt;article&gt;
+        <header> &lt;header&gt; </header>
+        <section> &lt;section&gt; </section>
+    </article>
+    <aside> &lt;aside&gt; </aside>
+    <div class="clear"></div>
+    <footer> &lt;footer&gt; </footer>
+</body>
+</html>
