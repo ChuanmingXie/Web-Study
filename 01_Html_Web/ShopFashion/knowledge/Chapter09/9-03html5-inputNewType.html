@@ -1,12 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>9-03 H5新增input类型</title>
+    <link rel="stylesheet" href="./css/8-01windowProperty.css">
+    <style>
+        .spandisplay{
+            width: 100px;
+            display: inline-grid;
+        }
+        span {
+            width: 40px;
+        }
+
+        input[type='date'],
+        input[type='datetime-local'],
+        input[type='week'],
+        input[type='month'],
+        input[type='time']{
+            width: 280px;
+            height: 25px;
+            font: 14px/25px Cambria, Times 'Times New Roman';
+            letter-spacing: 2px;
+            border-radius: 5px;
+            border: 1px solid #fcd304;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <h2>9-03 H5新增input类型</h2>
+    <h4>1. 文本框的不同类型</h4>
+    <div>
+        <form action="http://101.132.152.252:8002/Course/Create" method="post" asp-antiforgery="false">
+            <input name="__RequestVerificationToken" type="hidden"
+                value="JvkuzFigiciFdQojN9Ls_xZ7-LZslYHf7-uBgaf27K9Rc_Z0hQlFTEE_AYsSZBkVzv7hNtNjivpPusszxQ-V9menE_Hbb3LZFFwAgi6da_w1">
+            <div id="menuDiv">用户姓名 <input type="text" name="userName"><span> (Text):</span></div>
+            <div id="menuDiv">选修课程 <input type="text" name="Title" value="大学语文"><span> (Text):</span></div>
+            <div id="menuDiv">年　　龄 <input type="number" name="CourseID" min="1" max="10000" step="1" value="5010"><span>(number):</span></div>
+            <div id="menuDiv">学　　分 <input type="range" name="Credits" max="10" min="1" step="2" value="4"> <span> (range):</span> </div>
+            <div id="menuDiv">出生日期 <input type="date" name="userBrithday"> <span> (date):</span></div>
+            <div id="menuDiv">喜欢颜色 <input type="color" name="userLikeColor"><span> (color):</span></div>
+            <div id="menuDiv">邮　　箱 <input type="email" name="userEmail"><span> (email):</span></div>
+            <div id="menuDiv">个人主页 <input type="url" name="userUrl"><span> (url):</span></div>
+            <div id="menuDiv">所属院系 <input type="text" name="DepartmentID" list="departmentID"><span> (text):</span></div>
+            <datalist id="departmentID">
+                <option value="5">经济系</option>
+                <option value="3">数学系</option>
+                <option value="6">物理系</option>
+                <option value="2">英语系</option>
+            </datalist>
+            <input type="submit" value="提交">
+        </form>
+    </div>
+    <h4>2. datePicker的不同类型</h4>
+    <div>
+        <span class="spandisplay"> date: </span> <input type="date" name="birthday" /> <br>
+        <span class="spandisplay"> datetime-local: </span> <input type="datetime-local" name="beginTime" /> <br>
+        <span class="spandisplay"> week: </span> <input type="week" name="weekText" /> <br>
+        <span class="spandisplay"> month:</span> <input type="month" name="monthText" /> <br>
+        <span class="spandisplay"> time: </span> <input type="time" name="timeText" /> <br>
+    </div>
 </body>
+
 </html>

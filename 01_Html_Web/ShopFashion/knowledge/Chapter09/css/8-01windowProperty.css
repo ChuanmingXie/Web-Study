@@ -2,7 +2,7 @@
 
 body {
     font-family: Cambria, '楷体';
-    overflow: hidden;
+    overflow-y: auto;
 }
 .clear {clear: both;}
 h4 {text-indent: 20px;}
@@ -105,6 +105,10 @@ input[type='text'],
 input[type='password'],
 input[type='email'],
 input[type='tel'],
+input[type='url'],
+input[type='date'],
+input[type='range'],
+input[type='number'],
 select {
     width: 280px;
     height: 25px;
@@ -113,7 +117,7 @@ select {
     border-radius: 5px;
     border: 1px solid #fcd304;
 }
-
+input[type='color'],
 select {
     height: 30px;
     width: 285px;

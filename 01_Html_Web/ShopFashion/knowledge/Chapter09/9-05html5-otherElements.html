@@ -1,12 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>9-05 H5其他新增标签</title>
+    <link rel="stylesheet" href="./css/8-01windowProperty.css">
+    <style>
+        meter,
+        progress {
+            width: 200px;
+        }
+
+        rt {
+            margin-bottom: 5px;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <h2>9-05 H5其他新增标签</h2>
+    <h5>1. details标签：用户描述文档或文档某个部分的细节 具备收起 ▶ 和下展 ▼ 箭头 </h5>
+    <h5>2. summary标签：details标签的标题部分</h5>
+    <div>
+        <div id="menuDiv">
+            <details>
+                <summary>本网站版权Copyright &copy; 2022</summary>
+                <p>Q-Waling Fashion E&S 漫步时代广场（QST教育）版权所有</p>
+            </details>
+        </div>
+    </div>
+    <h5>3. mark：定义带有标记的文本</h5>
+    <div>
+        <div id="menuDiv">友情提示：每天一杯牛奶 <mark>milk</mark>,健康一整天 </div>
+    </div>
+    <h5>4. meter设定数值范围、progress标识任务进度</h5>
+    <div>
+        <div id="menuDiv">数值型：<meter value="3" min="0" max="10">3/10</meter></div>
+        <div id="menuDiv">百分比：<meter value="0.6">60%</meter></div>
+        <div id="menuDiv">进度条：<progress value="22" max="100"></progress></div>
+    </div>
+    <h5>5. ruby（rp）拼音注释、rt拼音</h5>
+    <div>
+        <div id="menuDiv">
+            ruby: <ruby>严<rp>(</rp>
+                <rt>yan</rt>
+                <rp>)</rp>
+            </ruby>
+            <ruby>筋<rp>(</rp>
+                <rt>jin</rt>
+                <rp>)</rp>
+            </ruby>
+            <ruby>柳<rp>(</rp>
+                <rt>liu</rt>
+                <rp>)</rp>
+            </ruby>
+            <ruby>骨<rp>(</rp>
+                <rt>gu</rt>
+                <rp>)</rp>
+            </ruby>
+        </div>
+    </div>
+    <h5>6. time-浏览器上不会产生效果,用于提高SEO</h5>
+    <div>
+        <div id="menuDiv">漫步时代广场于早上准备<time>9:00</time>开始营业</div>
+        <div id="menuDiv">漫步时代广场影视专区从<time datetime="2022-7-7">国耻日禁播</time>一天</div>
+    </div>
+    <h5>7. datalist-提供文本框备选数据的能力</h5>
+    <div>
+        <div id="menuDiv">
+            时尚广场datalist：<input type="text" id="myType" list="types" />
+            <datalist id="types">
+                <option value="购物"></option>
+                <option value="餐饮"></option>
+                <option value="影视"></option>
+            </datalist>
+        </div>
+    </div>
 </body>
+
 </html>
