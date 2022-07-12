@@ -1,12 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>9-02 H5新增的form属性</title>
+    <title>9-02 H5新增的form及其元素属性</title>
+    <link rel="stylesheet" href="./css/8-01windowProperty.css">
+    <link rel="stylesheet" href="./css/8-02windowDemo.css">
+    <style>
+        body {
+            overflow-y: auto;
+        }
+
+        .formlayout {
+            width: 580px;
+            float: left;
+            margin: 10px 25px 0 25px;
+            min-height: 100px;
+            border: 1px solid #a4dadb;
+        }
+
+        .formlayout div {
+            width: 570px;
+        }
+
+        form h5 {
+            margin: 20px -25px;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <h2>9-02 H5新增的form及其元素属性</h2>
+    <h4>9-02-1 H5的新增form属性</h4>
+    <h5>1 .novalidate 属性-忽略表单验证</h5>
+    <form class="formlayout" action="http://101.132.152.252:8081">
+        <div id="menuDiv"> 输入文本(验证限制)：<input type="text" name="validateText" required placeholder="必须输入"></div>
+        <input type="submit" value="验证后提交">
+    </form>
+    <form class="formlayout" action="http://101.132.152.252:8081" novalidate="novalidate">
+        <div id="menuDiv">输入文本(未用验证)：<input type="text" name="validateText"></div>
+        <input type="submit" value="不验证提交">
+    </form>
+
+    <div class="clear"></div>
+    <h5>2. autocomplete 属性-设置是否自动填充数据</h5>
+    <form class="formlayout" action="./9-00html5-articlewithdiv.html" method="post" autocomplete="on">
+        <div id="menuDiv"> 影片名称(自动填充)：<input type="text" name="filmName" id="filmName"> </div>
+        <div id="menuDiv"> 影片类型(自动填充)：<input type="text" name="filmType" id="filmType"> </div>
+        <div id="menuDiv"> 影片价格(不自动填)：<input type="text" name="filmPrice" id="filmPrice" autocomplete="off"> </div>
+        <input type="submit" value="提交">
+    </form>
+
+    <div class="clear"></div>
+    <h4>9-02-2 H5的新增input属性</h4>
+    <h5>1. form属性-为input设置具体提交到的form的id</h5>
+    <form id="goodForm" class="formlayout" action="./9-01html5-structure.html" method="">
+        <div id="menuDiv">商品名称(在form内)：<input type="text" name="goodName" id="" value=""></div>
+    </form>
+    <div class="formlayout">
+        <div id="menuDiv">
+            商品类型(在form外)：<input type="text" name="goodType" form="goodForm" value="我被关联到goodForm">
+        </div>
+        <input type="submit" name="btnSubmit" form="goodForm" value="关联goodForm表提交">
+    </div>
+
+    <div class="clear"></div>
+    <form class="formlayout" action="https://www.baidu.com/s" method="get">
+        <h5>2. formaction属性-为input设置具体提交到与form不同的动作地址</h5>
+        <div id="menuDiv"> 搜素关键字(form的)：<input type="text" name="q" value="汉字"></div>
+        <div id="menuDiv"> 搜素关键字(form的)：<input type="text" name="wd" value="汉字"></div>
+        <div id="menuDiv"> 搜素关键字(form的)：<input type="text" name="post" value="1"></div>
+        <div id="menuDiv"> 搜素关键字(form的)：<input type="text" name="action" value="edit"></div>
+        <div id="btngroup">
+            <input type="submit" value="提交到form搜素" formtarget="_blank" name="btnBaidu">
+            <input type="submit" value="提交到必应搜素" formtarget="_blank" name="btnbiying"
+                formaction="https://cn.bing.com/search">
+            <input type="submit" value="提交到网址搜素" formtarget="_blank" name="btnCloud"
+                formaction="http://101.132.152.252:8082/wp-admin/post.php">
+        </div>
+    </form>
+    <!-- <div class="clear"></div> -->
+    <form class="formlayout" action="http://101.132.152.252" method="post">
+        <h5>3. formmethod属性-为input设置具体提交的方式POST|GET</h5>
+        <div id="menuDiv">用户名：<input type="text" name="userName"></div>
+        <div id="menuDiv">密　码：<input type="text" name="userPwd"></div>
+        <div id="btngroup">
+            <input type="submit" value="Get提交" formmethod="get">
+            <input type="submit" value="post提交" formmethod="post">
+        </div>
+    </form>
+
+    <div class="clear"></div>
+    <form class="formlayout" action="http://101.132.152.252" method="post">
+        <h5>4. formtarget属性-为input设置具体提交地址的打开方式</h5>
+        <div id="menuDiv">用户名：<input type="text" name="userName"></div>
+        <div id="menuDiv">密　码：<input type="text" name="userPwd"></div>
+        <div id="btngroup">
+            <input type="submit" value="Get提交" formtarget="_blank" formmethod="get">
+            <input type="submit" value="post提交" formtarget="_self" formmethod="post">
+        </div>
+    </form>
+
+    <!-- <div class="clear"></div> -->
+    <form class="formlayout" action="http://101.132.152.252:8002">
+        <h5>5. formnovalidate属性-为input[type='submit']设置表单的提交不验证方式</h5>
+        <div id="menuDiv"> 输入文本(验证限制)：<input type="text" name="validateText" required placeholder="必须输入"></div>
+        <div id="btngroup">
+            <input type="submit" value="验证后提交">
+            <input type="submit" value="不验证提交" formnovalidate>
+        </div>
+    </form>
+
+    <div class="clear"></div>
+    <form class="formlayout" action="http://101.132.152.252:8081">
+        <h5>6. placeholder-为input设置文本框为获取焦点时,显示的输入提示信息</h5>
+        <div id="menuDiv"> 用户名：<input type="text" placeholder="请输入用户名" /> <br></div>
+        <div id="menuDiv"> 密　码：<input type="password" placeholder="请输入密码" /> <br></div>
+        <input type="submit" value="登录" />
+    </form>
+
+    <!-- <div class="clear"></div> -->
+    <form class="formlayout" action="http://101.132.152.252:8082/">
+        <h5>7. autofocus-为input设置文本框获取焦点,不可滥用</h5>
+        <div id="menuDiv">
+            用户名：<input type="text" name="userName" placeholder="请输入用户名" autofocus />
+        </div>
+    </form>
+
+    <div class="clear"></div>
+    <form class="formlayout" action="http://101.132.152.252:8083/index.php" method="post">
+        <h5>8. required-为input限定输入字段不能为空</h5>
+        <div id="menuDiv"> 用户名：<input type="text" placeholder="请输入用户名" required="required" /> <br></div>
+        <div id="menuDiv"> 密　码：<input type="password" placeholder="请输入密码" required="required" /> <br></div>
+        <input type="submit" value="登录" />
+    </form>
+
+    <!-- <div class="clear"></div> -->
+    <form class="formlayout" action="http://101.132.152.252:8083/WordPressCloud">
+        <h5>9. list-为input引用预定的datalist</h5>
+        <div id="menuDiv">影片类型：<input type="text" name="filmType" list="filmTypeList"></div>
+        <datalist id="filmTypeList">
+            <option value="科幻">科幻</option>
+            <option value="爱情">爱情</option>
+            <option value="动作">动作</option>
+        </datalist>
+    </form>
+
+    <div class="clear"></div>
+    <form class="formlayout" action="http://101.132.152.252:8085/category" method="get">
+        <h5>10. pattern-为input规定输入字段的值需要符合制定的模式</h5>
+        <div id="menuDiv">产品类型：<input type="text" name="category" pattern="[A-z]{5,}" title="请输入五位以上的因为字符" required>
+        </div>
+        <div id="menuDiv">密　　码：<input type="password" name="userPwd" pattern="[a-zA-Z0-9]{6,12}" required></div>
+        <input type="submit" value="登　录">
+    </form>
 </body>
+
 </html>

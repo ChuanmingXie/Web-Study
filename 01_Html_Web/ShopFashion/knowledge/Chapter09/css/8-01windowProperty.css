@@ -1,0 +1,242 @@
+@charset "UTF-8";
+
+body {
+    font-family: Cambria, '楷体';
+    overflow: hidden;
+}
+.clear {clear: both;}
+h4 {text-indent: 20px;}
+h5 {text-indent: 40px;}
+form {width: 620px;}
+img { width: 20px;}
+
+hr{
+    width: 1200px;
+    height: 1px;
+    background: #594;
+    border: none;
+    margin: 5px auto;
+}
+        
+.header {
+    text-align: center;
+}
+
+.header img {
+    margin: 0 auto;
+    width: 130px;
+    padding: 0 auto;
+}
+
+.walkingDiv{
+	width: 130px;
+	height: 130px;
+	position: relative;
+    margin: 0;      /* 纯div设置为居中对齐,导致行走的div居中，影响行走区域 */
+}
+
+.walkingDiv img{
+	width: 100%;
+	height: 100%;
+}
+
+div {
+    width: 600px;
+    margin: 0 auto;
+    display: block;
+    font: 14px/44px Cambria, Microsoft Yahei;
+}
+
+.formheight{
+    height: 80px;
+}
+
+#resultDiv {
+    height: 200px;
+    border: 1px solid #5CB3cc;
+    border-radius: 10px;
+    background: #5CB3cc;
+    margin: 0 10px;
+}
+
+#btngroup {
+    height: 40px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: center;
+}
+
+#timeDiv {
+    height: 22px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#menuDiv {
+    height: 30px;
+    font: bold 14px/30px Cambria, Microsoft Yahei;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 15px auto;
+}
+
+#menuDiv input[type="button"] {
+    border-radius: 0;
+    width: 210px;
+}
+
+#menuDiv span {
+    padding: 0 72px;
+    background: #1F638F;
+    color: #FFF;
+}
+
+#menuDiv span:hover{
+    background: #EA4307;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='tel'],
+select {
+    width: 280px;
+    height: 25px;
+    font: 14px/25px Cambria, Times 'Times New Roman';
+    letter-spacing: 2px;
+    border-radius: 5px;
+    border: 1px solid #fcd304;
+}
+
+select {
+    height: 30px;
+    width: 285px;
+}
+
+option {
+    line-height: 30px;
+    font-family: Cambria, '楷体';
+    font-size: 18px;
+}
+
+input[type='text']:focus,
+input[type='password']:focus,
+input[type='email']:focus,
+input[type='tel']:focus,
+select:focus {
+    border: none;
+    outline: 2px solid #EA4307;
+}
+
+.checkboxgroup {
+    width: 280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 4px;
+}
+
+.white,
+input[type='button'],
+input[type='submit'],
+input[type='reset'] {
+    width: 120px;
+    height: 32px;
+    color: #fff;
+    font-family: Cambria, Microsoft Yahei;
+    border: 1px solid #1F638F;
+    border-radius: 10px;
+    background: #1F638F;
+    float: right;
+}
+
+.white {
+    height: 30px;
+    width: 185px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 30px;
+}
+
+.white:hover,
+input[type='submit']:hover,
+input[type='button']:hover,
+input[type='reset']:hover {
+    background: #ea4307;
+    border: 1px solid #ea4307;
+}
+
+
+table {
+    width: 600px;
+    margin: 5px auto;
+    text-align: center;
+    font: 500 14px/28px Cambria, '楷体';
+    border: none;
+    border-bottom: 1px solid #BBB5AC;
+}
+table caption{
+    font: 700 16px/30px Cambria,'楷体';
+    margin: 10px auto;
+}
+table tfoot input{
+    float: left;
+}
+
+table th {
+    font: bold 16px/32px Cambria, Microsoft Yahei;
+    /* letter-spacing: 5px; */
+    color: #15559A;
+    /* background: #5CB3cc; */
+    border: none;
+    border-bottom: 1px solid #BBB5AC;
+}
+
+table td,
+table tr {
+    border: none;
+    border-bottom: 1px solid #BBB5AC;
+    padding: 3px;
+}
+
+/* table td:nth-child(2) {
+    text-align: left;
+} */
+
+/* table tr:nth-child(even) {
+    background: #F7DE98;
+} */
+
+table tbody tr:hover {
+    background: #F9F4DC;
+    border: 1px solid #F9F4DC;
+    cursor: pointer;
+}
+
+td input[type="image"] {
+    margin: 5px 5px -5px 5px;
+    width: 20px;
+}
+
+.dl_bg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dl_bg dl{
+    margin: 20px;
+}
+.dl_bg dl dd{
+    text-align: center;
+    margin: auto;
+}
+dl dt img{
+    width: 120px;
+}

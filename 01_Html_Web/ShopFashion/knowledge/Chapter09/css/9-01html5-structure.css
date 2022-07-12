@@ -50,10 +50,10 @@ aside{
     color: #FFFF;
     background: #579572;
     border: 1px solid #579572;
-    position: absolute;
-    padding-left: 10px;
-    right: 10px;
-    top:300px
+    position: fixed;
+    padding-left: 20px;
+    right: 75px;
+    top:400px;
 }
 .leftPic{
     float: left;
