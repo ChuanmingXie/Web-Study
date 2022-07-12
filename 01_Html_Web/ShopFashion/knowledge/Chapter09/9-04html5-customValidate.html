@@ -5,15 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>9-04 H5自定义验证</title>
+    <link rel="stylesheet" href="./css/8-01windowProperty.css">
 </head>
 <body>
     <h2>9-04 H5自定义验证</h2>
     <div>
-        <form action="http://101.132.152.252:8002/Crouse">
-            <div id="menuDiv"></div>
-            <div id="menuDiv"></div>
+        <form action="http://101.132.152.252:8002/Course" name="validateForm" method="post">
+            <div id="menuDiv">用户名：<input type="text" name="userName" id="userName" pattern="[A-z]{5,}" required></div>
+            <div id="menuDiv">密　码：<input type="password" name="userPwd" id="userPwd"></div>
             <input type="submit" value="提交" onclick="checkForm()">
         </form>
     </div>
+    <script type="text/javascript">
+        function checkForm() {
+            var username=document.getElementById('userName');
+            var userpwd=document.getElementById('userPwd');
+            if(!username.checkValidity()){
+                username.setCustomValidity('用户名必须为英文大小写字母且5位字符以上！');
+            }
+
+            if(userpwd.value.length==0){
+                userpwd.setCustomValidity('密码不能为空!');
+            }else if(userpwd.value.length<6){
+                userpwd.setCustomValidity('密码长度不能少于6位!');
+            }
+        }
+    </script>
 </body>
 </html>

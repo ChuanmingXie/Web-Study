@@ -1,12 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>9-06 H5拖住事件API</title>
+    <title>9-06 H5拖放事件API</title>
+    <link rel="stylesheet" href="./css/8-01windowProperty.css">
+    <style>
+        .header img {
+            margin: 0 auto;
+            width: 180px;
+            padding: 0 auto;
+            cursor: pointer;
+        }
+
+        section {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .shopcart {
+            width: 580px;
+            float: left;
+            margin: 0 10px;
+        }
+
+        .shopcart h5 {
+            width: 561px;
+            color: #FFF;
+            margin: 0;
+            padding: 0 10px;
+            background: #248067;
+        }
+
+        .shopcart .imgGroup {
+            height: 300px;
+            width: 579px;
+            border: 1px solid;
+        }
+        .imgGroup img{
+            margin: 46px 11px;
+            width: 120px;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <h2>9-06 H5拖放事件API</h2>
+    <article>
+        <h4>9-06-1 拖放事件 - 携带数据</h4>
+        <div class="header" draggable="true" ondragstart="divDrag(event)">
+            <img src="./img/cloudwhales.png" alt="">
+            <p></p>
+        </div>
+        
+        
+        <div class="clear"></div>
+        <h4>9-06-2 拖放事件 - 移动数据</h4>
+        <section>
+            <div class="shopcart">
+                <h5>商品陈列区</h5>
+                <div class="imgGroup" ondrop="dropByMove(event)" ondragover="allowDragByMove(event)">
+                    <img id="img1" src="img/goodshow/dress4.jpg" alt="" ondragstart="dragByMove(event)">
+                    <img id="img2" src="img/goodshow/dress5.jpg" alt="" ondragstart="dragByMove(event)">
+                    <img id="img3" src="img/goodshow/dress6.jpg" alt="" ondragstart="dragByMove(event)">
+                    <img id="img4" src="img/goodshow/dress8.jpg" alt="" ondragstart="dragByMove(event)">
+                </div>
+            </div>
+            <div class="shopcart">
+                <h5>备选购物车</h5>
+                <div class="imgGroup" ondrop="dropByMove(event)" ondragover="allowDragByMove(event)"></div>
+            </div>
+        </section>
+        
+        
+        <div class="clear"></div>
+        <h4>9-06-3 拖放事件 - 复制数据</h4>
+        <section>
+            <div class="shopcart">
+                <h5>商品陈列区</h5>
+                <div class="imgGroup" ondrop="dropByCopy(event)" ondragover="allowDragByCopy(event)">
+                    <img id="img1" src="img/goodshow/dress4.jpg" alt="" ondragstart="dragByCopy(event)">
+                    <img id="img2" src="img/goodshow/dress5.jpg" alt="" ondragstart="dragByCopy(event)">
+                    <img id="img3" src="img/goodshow/dress6.jpg" alt="" ondragstart="dragByCopy(event)">
+                    <img id="img4" src="img/goodshow/dress8.jpg" alt="" ondragstart="dragByCopy(event)">
+                </div>
+            </div>
+            <div class="shopcart">
+                <h5>备选购物车</h5>
+                <div class="imgGroup" ondrop="dropByCopy(event)" ondragover="allowDragByCopy(event)"></div>
+            </div>
+        </section>
+    </article>
+    <div class="clear"></div>
+    <br>
+    <br>
+    <script src="./js/9-06html5-drag-drop.js"></script>
 </body>
+
 </html>
