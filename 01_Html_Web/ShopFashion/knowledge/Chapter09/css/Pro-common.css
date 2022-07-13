@@ -1,1 +1,153 @@
 @charset "UTF-8";
+
+/* 全局样式 */
+*{padding: 0; margin: 0;}
+.floatleft{float: left;}
+.floatright{float: right;}
+.clear{clear: both;}
+
+body{font-family: Cambria,Microsoft Yahei; font-size: 12px;}
+ul,li{list-style: none;}
+a{text-decoration: none;}
+a:hover{color:#126E82;}
+
+/* 系统颜色 */
+.redyinzhu{background: #F43E60;}
+.redshizhong{background: #F24818;}
+.redcaomeihong{background: #EF6F48;}
+.reddanzhe{background: #BE7E4A;}
+
+.yellowxinghuang{background: #F28E16;}
+.yellowliuhuang{background: #F9A633;}
+.yellowzhizihuang{background: #DBBE0D;}
+
+.bluehuangqing{background:#2376B4;}
+.blueyuqinlan{background: #126E82;}
+.bluefeiyancao{background: #0F59A4;}
+
+.purpleluodian{background: #525288;}
+.purplejuzi{background: #74759B;}
+
+
+
+/* 头部状态栏 */
+header{
+    height: 30px;
+    font: 12px/30px '宋体';
+    background: #f7f7f7;
+    border-bottom: 1px solid #ccc;
+}
+.top_content{width: 90%; margin: 0 auto;}
+.orange{font-weight: 700; color: #f60;}
+.orange:hover{color: #2376B4;}
+
+/* 购物车 */
+.shopcart_bg{display: inline-block; position: relative;}
+.dropdown{display: none;}
+/* .shopcart{}
+.droparrow{}
+.shop_pic{} */
+
+/* section 样式 */
+.logo{width: 90%; height: 85px; margin: 5 auto;}
+.main{width: 90%; margin: 10px auto;}
+
+/* 顶部导航栏 */
+.nav_bg{width: 100%;}
+.nav_content{width: 90%;height: 40px;margin: 0 auto; line-height: 40px;}
+.menu_top{width: 900px; float: left; margin-left: 200px;}
+.menu_top li{
+    width: 80px;
+    font: 700 16px/40px Cambria,Microsoft Yahei;
+    color:#fff;
+    text-align: center;
+    float: left;
+    margin-left:15px;
+    padding: 0 5px;
+}
+.menu_top li a:hover{
+    color:#ff0;
+    border-bottom: 2px solid #41B349;
+    padding-bottom: 7px;
+}
+.active{background: #b12121;}
+a.white{font-weight: 700; color:#fff;padding: 0 5px;}
+
+/* 左侧导航栏 */
+.menu_left{width: 220px; float: left; border: 1px solid #e4e5e1;}
+.menu_left li{
+    width: 220px; 
+    height: 33px; 
+    font:small-caps 500 13px/33px Cambria,Microsoft Yahei;
+    text-align: left;
+    border-bottom: 1px solid #e4e5e1;
+    background: #FAFAFA;
+    float: left;
+}
+.menu_left li .title{
+    width: 100%;
+    min-height: 33px;
+    font: small-caps bold 15px/33px Cambria,Microsoft Yahei;
+    text-align: left;
+    text-indent: 20px;
+    color:#FFF;
+    display: inline-block;
+}
+
+.red_dot{
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    margin: 0 auto;
+    font-size: 25px;
+    background: url('../img/icon/red_dot.jpg');
+}
+.right_arrow{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: url('../img/icon/arrow_r.jpg');
+}
+
+/* 右侧推荐区 */
+.right_advise{width: 350px;border: 1px solid #eee; float: right;}
+.advise_title{
+    background: #eee;
+    line-height: 40px;
+    font-size: 16px;
+    text-indent: 20px;
+    text-align: left;
+}
+.advise_pic_list li{margin: 5px;float: left;width: 83px;height: 97.5px;}
+.advise_pic_list li img{border: 1px solid #ccc;}
+
+footer{width: 100%;background: #efefef; margin-top: 15px;}
+.foot_title{width: 100%;height: 40px;padding-top: 8px;}
+.foot_pic{width: 100%; display: inline-flex; align-items: center; justify-content: center;}
+.foot_pic li{
+    width: 210px;
+    font:small-caps lighter 24px/30px '华文琥珀';
+    text-align: center;
+    color:#fff;
+    float: left;
+}
+.foot_list{
+    width: 100%;
+    margin: 0;
+    padding-top:20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.foot_list>li{
+    width: 170px;
+    float: left;
+}
+.foot_list li ul{padding-left: 10px;}
+.red1{width: 35px; height: 31px;display: block;background: url('../img/icon/red1.jpg') no-repeat;}
+.line1{width: 2px; height: 70px; margin: 0 16px; background: #F24818;display: inline-block;}
+.font16{font-size: 16px;font-weight: 700;}
+.red2{width: 35px; height: 31px;display: block;background: url('../img/icon/red2.jpg') no-repeat;}
+.red3{width: 35px; height: 31px;display: block;background: url('../img/icon/red3.jpg') no-repeat;}
+.foot_line{font-size: 12px; margin-top: 10px; border-bottom: 1px solid #ccc;}
+.copyright{text-align: center; padding: 10px 0;}
