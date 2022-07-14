@@ -1,5 +1,114 @@
 @charset "UTF-8";
 
 /* 购物详情样式 */
-.middle_good{}
+.middle_good_detail{width: 690px;float: left;}
+
+.detail_pic_title{
+    width: 680px;
+    font:bold 14px/40px Cambria,Microsoft Yahei;
+    color: #fff;
+    text-indent: 20px;
+    text-align: left;
+    margin: 0 10px 5px 10px;
+    float: left;
+}
+
+.detail_pic_left{
+    position: relative;
+    margin-left: 10px;
+    float: left;
+}
+
+#box{
+    width: 400px;
+    height: 400px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+#shade{
+    width: 200px;
+    height: 200px;
+    background: #ffc;
+    position: absolute;
+    top:0px;
+    opacity: 0.7;
+    -moz-opactiy:0.7;
+    filter: alpha(Opacity=70);
+    z-index: 1000;
+    display: none;
+}
+
+.small_piclist li{margin-right: 10px; float: left;}
+.small_piclist li img{
+    width: 70px; 
+    height: 70px;
+    border: 1px solid #ccc;
+}
+#canvas{
+    top:0px; 
+    left:410px; 
+    background: wheat;
+    position: absolute; 
+    display: none;
+}
+
+.detail_tab{
+    height: 35px;
+    line-height: 35px;
+    margin: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.detail_tab li{
+    width: 90px;
+    float: left;
+    font-size: 14px;
+    text-align: center;
+}
+
+.tab_active{
+    width: 100px;
+    height: 33px;
+    font-weight: 700;
+    background: #f2f2f2;
+    border-top:3px solid red;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+
+.tab_content1 section{
+    width: 700px;
+    text-align: center;
+}
+.tab_content1 section img{width: 678px;}
+.goodparams li{
+    width: 205px;
+    height: 24px;
+    float:left;
+    margin-left:5px ;
+    display: inline;
+    line-height: 24px;
+    margin-right: 20px;
+    overflow: hidden;
+    text-indent: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.img_border{border:1px solid #ccc;}
+
+.tab_content2{}
+
+.tab_content3{width: 670px; margin: 0 auto;}
+.tab_content3 table th{height: 30px;text-align: center;background: #f2f2f2;}
+.tab_content3 table td{height: 40px; text-align: center; border-bottom: 1px dashed #ccc;}
+.none{display: none;}
+
+.detail_pic_list{
+    width: 690px;
+    margin-left: 5px;
+    display: inline-flex;
+}
+.detail_pic_list li{ margin: 5px 5px; float: left;}
+.detail_pic_list li img{ border:  1px solid #ccc; width: 123px;}
 

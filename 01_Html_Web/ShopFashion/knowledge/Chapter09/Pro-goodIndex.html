@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,7 @@
     <title>Q-Walking Fashion E&amp;S - 购物主页</title>
     <link rel="stylesheet" href="./css/Pro-common.css">
     <link rel="stylesheet" href="./css/Pro-index.css">
-    
+
     <!--[if IE]>
         <script type="text/javascript">
             document.createElement('header');
@@ -18,18 +19,21 @@
         </script>
     <[endif]-->
 </head>
-<body>    
+
+<body>
     <article>
         <!-- header start -->
         <header>
             <div class="top_content">
-                <div class="floatleft">
-                    <img src="img/start.jpg">收藏|HI,欢迎订购！<a href="#" class="orange">[请登录]</a><a href="#" class="orange">[免费注册]</a>
+                <div class="floatleft displayenter">
+                    <img src="img/icon/star.jpg">收藏|HI,欢迎订购！<a href="#" class="orange">[请登录]</a><a href="#"
+                        class="orange">[免费注册]</a>
                 </div>
-                <div class="floatright">
-                    客户服务<img src="img/arrow.gif">&nbsp;网站导航<img src="img/arrow.gif" >&nbsp;
+                <div class="floatright displayenter">
+                    客户服务<img src="img/icon/arrow.gif">&nbsp;网站导航<img src="img/icon/arrow.gif">&nbsp;
                     <div class="shopcart_bg">
-                        <div class="droparrow"><span class="shopcart"></span>我的购物车<span class="orang">0</span>件<img src="img/arrow.gif"></div>
+                        <div class="droparrow"><span class="shopcart"></span>我的购物车<span class="orange">0</span>件<img
+                                src="img/icon/arrow.gif"></div>
                         <div class="dropdown">
                             <ul class="shop_pic">
                                 <!-- <li>
@@ -37,11 +41,11 @@
                                     <p>1件<a href="#"><span class="orange floatright">删除</span></a></p>
                                 </li> -->
                                 <script type="text/javascript">
-                                    var arrayimgs=['s1.jpg','s2.jpg','s3.jpg','s4.jpg','s5.jpg','s6.jpg','s7.jpg','s8.jpg','s9.jpg'];
-                                    var arrayamount=[1,2,3,4,5,6,7,8,9];
+                                    var arrayimgs = ['s1.jpg', 's2.jpg', 's3.jpg', 's4.jpg', 's5.jpg', 's6.jpg', 's7.jpg', 's8.jpg', 's9.jpg'];
+                                    var arrayamount = [1, 2, 3, 4, 5, 6, 7, 8, 9];
                                     for (var key in arrayimgs) {
                                         if (Object.hasOwnProperty.call(arrayimgs, key)) {
-                                            var element =  '<li><a href="#"><img src="img/goodshow/' + arrayimgs[key] + '"></a>' +
+                                            var element = '<li><a href="#"><img src="img/goodadvise/' + arrayimgs[key] + '"></a>' +
                                                 '<p>' + arrayamount[key] + '件<a href="#"><span class="orange floatright">删除</span></a></p></li>';
                                             document.write(element);
                                         }
@@ -57,7 +61,7 @@
 
         <!-- logo start -->
         <section class="logo">
-            <img src="./img/logo.png" alt=""><img src="./img/banner.png" alt="">
+            <img src="./img/icon/logo.jpg" alt=""><img src="./img/icon/banner.jpg" alt="">
         </section>
         <!-- logo end -->
 
@@ -100,12 +104,105 @@
                     <li><span class="red_dot"></span><a href="#">运动衣</a><span class="right_arrow"></span></li>
                 </ul>
             </nav>
-            <div class="middle_good">
-
+            <div class="middle_good_index">
+                <div class="carousel_bg">
+                    <div class="carousel_pic_bg">
+                        <img src="img/goodindex/pic1.jpg" id="focusImg">
+                        <ul class="pic_foucsbox">
+                            <li onclick="showpic(1);"></li>
+                            <li onclick="showpic(2);"></li>
+                            <li onclick="showpic(3);"></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="message_list_bg">
+                            <div class="message_title purpleluodian">公告</div>
+                            <ul>
+                                <li>张文哲点赞第一书记</li>
+                                <li>网购维权一站式解决</li>
+                                <li>125国30万商品全球购</li>
+                                <li>面对新常态 惟有改革创新</li>
+                                <li>差评敲诈淘宝“差评师”获刑8个月</li>
+                                <li>交警淘宝集体获得公安部肯定</li>
+                            </ul>
+                        </div>
+                        <div class="brand_pic">
+                            <img src="img/goodindex/link1.gif">
+                            <img src="img/goodindex/link2.gif">
+                            <img src="img/goodindex/link3.gif">
+                            <img src="img/goodindex/link4.gif">
+                            <img src="img/goodindex/link5.jpg">
+                            <img src="img/goodindex/link6.jpg">
+                            <img src="img/goodindex/link7.jpg">
+                            <img src="img/goodindex/link8.jpg">
+                            <img src="img/goodindex/link9.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="good_type_bg">
+                    <ul>
+                        <li>
+                            <div class="type_pic">
+                                <div><img src="img/goodindex/pro1.jpg"></div>
+                                <span>热门品类<br>护肤彩妆启示</span>
+                            </div>
+                            <div class="type_name">
+                                <span>洗护套装　面部精华　香水</span>
+                                <span>粉底液　　面霜　　　洁面</span>
+                                <span>美容工具　复方精油　洗发水</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type_pic">
+                                <div><img src="img/goodindex/pro2.jpg"></div>
+                                <span>热门品类<br>护肤彩妆启示</span>
+                            </div>
+                            <div class="type_name">
+                                <span>洗护套装　面部精华　香水</span>
+                                <span>粉底液　　面霜　　　洁面</span>
+                                <span>美容工具　复方精油　洗发水</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type_pic">
+                                <div><img src="img/goodindex/pro3.jpg"></div>
+                                <span>热门品类<br>护肤彩妆启示</span>
+                            </div>
+                            <div class="type_name">
+                                <span>洗护套装　面部精华　香水</span>
+                                <span>粉底液　　面霜　　　洁面</span>
+                                <span>美容工具　复方精油　洗发水</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type_pic">
+                                <div><img src="img/goodindex/pro4.jpg"></div>
+                                <span>热门品类<br>护肤彩妆启示</span>
+                            </div>
+                            <div class="type_name">
+                                <span>洗护套装　面部精华　香水</span>
+                                <span>粉底液　　面霜　　　洁面</span>
+                                <span>美容工具　复方精油　洗发水</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type_pic">
+                                <div><img src="img/goodindex/pro5.jpg"></div>
+                                <span>热门品类<br>护肤彩妆启示</span>
+                            </div>
+                            <div class="type_name">
+                                <span>洗护套装　面部精华　香水</span>
+                                <span>粉底液　　面霜　　　洁面</span>
+                                <span>美容工具　复方精油　洗发水</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <aside class="right_advise">
+            <!-- <aside class="right_advise">
 
-            </aside>
+            </aside> -->
         </section>
         <!-- section end  -->
 
@@ -202,8 +299,16 @@
                     </ul>
                 </li>
             </ul>
+            <div class="foot_line"></div>
+            <p class="copyright">
+                Copyright 2018-2022 Q-Walking Fashion E&S 漫步时代广场(QST教育)版权所有<br>
+                中国青岛 高新区 广博路325号 轻软教育集团 咨询热线 400-658-343 400-234-4222 <br>
+            </p>
+            <p class="copyright"><img src="img/cloudwhales.png" width="120"></p>
+            <div class="clear"></div>
         </footer>
         <!-- footer end -->
     </article>
 </body>
+
 </html>

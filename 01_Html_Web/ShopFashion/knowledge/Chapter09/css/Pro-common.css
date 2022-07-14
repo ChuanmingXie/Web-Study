@@ -2,13 +2,14 @@
 
 /* 全局样式 */
 *{padding: 0; margin: 0;}
-.floatleft{float: left;}
+.displayenter{display: inline-flex; align-items: center;}
+.floatleft{float: left; }
 .floatright{float: right;}
 .clear{clear: both;}
 
 body{font-family: Cambria,Microsoft Yahei; font-size: 12px;}
 ul,li{list-style: none;}
-a{text-decoration: none;}
+a{text-decoration: none;color:#000;}
 a:hover{color:#126E82;}
 
 /* 系统颜色 */
@@ -49,7 +50,7 @@ header{
 .shop_pic{} */
 
 /* section 样式 */
-.logo{width: 90%; height: 85px; margin: 5 auto;}
+.logo{width: 90%; height: 85px; margin: 5px auto;}
 .main{width: 90%; margin: 10px auto;}
 
 /* 顶部导航栏 */
@@ -74,9 +75,9 @@ header{
 a.white{font-weight: 700; color:#fff;padding: 0 5px;}
 
 /* 左侧导航栏 */
-.menu_left{width: 220px; float: left; border: 1px solid #e4e5e1;}
+.menu_left{width: 18%; float: left; border: 1px solid #e4e5e1;}
 .menu_left li{
-    width: 220px; 
+    width: 100%; 
     height: 33px; 
     font:small-caps 500 13px/33px Cambria,Microsoft Yahei;
     text-align: left;
@@ -95,28 +96,35 @@ a.white{font-weight: 700; color:#fff;padding: 0 5px;}
 }
 
 .red_dot{
-    width: 8px;
-    height: 8px;
+    width: 16px;
+    height: 10px;
     display: inline-block;
     margin: 0 auto;
     font-size: 25px;
-    background: url('../img/icon/red_dot.jpg');
+    background: url('../img/icon/red_dot.jpg') no-repeat;
 }
 .right_arrow{
     width: 20px;
     height: 20px;
-    display: inline-block;
-    background: url('../img/icon/arrow_r.jpg');
+    display: inline-flex;
+    background: url('../img/icon/arrow_r.jpg') no-repeat;
+    float:right;
 }
 
 /* 右侧推荐区 */
-.right_advise{width: 350px;border: 1px solid #eee; float: right;}
+.right_advise{width: 24%; border: 1px solid #eee; float: right;}
 .advise_title{
     background: #eee;
     line-height: 40px;
     font-size: 16px;
     text-indent: 20px;
     text-align: left;
+}
+.advise_pic_list{
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 .advise_pic_list li{margin: 5px;float: left;width: 83px;height: 97.5px;}
 .advise_pic_list li img{border: 1px solid #ccc;}

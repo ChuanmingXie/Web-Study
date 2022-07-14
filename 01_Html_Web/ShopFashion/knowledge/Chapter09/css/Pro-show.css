@@ -1,1 +1,32 @@
 @charset "UTF-8";
+
+.middle_good{width: 690px; float: left;}
+.pic_title_good{
+    width: 680px;
+    font:small-caps bold 14px/40px Cambria,Microsoft Yahei;
+    color: #fff;
+    text-align: left;
+    text-indent: 20px;
+    margin: 0 10px 10px;
+}
+.pic_list_goood{float: left;}
+.pic_list_goood div{height: 220px;}
+.pic_list_goood dl{width: 152px; margin: 0 10px 10px; float: left;}
+.pic_list_goood dl img{border: 1px solid #ccc; padding: 5px; margin-bottom:10px ;}
+.pic_list_goood dl dd{float: left;}
+
+.pic_list_goood2{margin-left: 10px;}
+.pic_list_goood2 li{
+    width: 170px; 
+    height: 311px;
+    float: left;
+}
+.pic_list_goood2 div{
+    height: 280px;    
+    padding: 3px;
+    margin: 1px;
+    border: 1px solid #ccc;
+}
+
+.price{font-size: 15px;font-weight: 700; color: red; float: left;}
+.font12{font-size: 12px; color:#ccc; float: right;}

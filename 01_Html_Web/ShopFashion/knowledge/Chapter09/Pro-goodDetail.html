@@ -24,13 +24,15 @@
         <!-- header start -->
         <header>
             <div class="top_content">
-                <div class="floatleft">
-                    <img src="img/start.jpg">收藏|HI,欢迎订购！<a href="#" class="orange">[请登录]</a><a href="#" class="orange">[免费注册]</a>
+                <div class="floatleft displayenter">
+                    <img src="img/icon/star.jpg">收藏|HI,欢迎订购！<a href="#" class="orange">[请登录]</a><a href="#"
+                        class="orange">[免费注册]</a>
                 </div>
-                <div class="floatright">
-                    客户服务<img src="img/arrow.gif">&nbsp;网站导航<img src="img/arrow.gif" >&nbsp;
+                <div class="floatright displayenter">
+                    客户服务<img src="img/icon/arrow.gif">&nbsp;网站导航<img src="img/icon/arrow.gif">&nbsp;
                     <div class="shopcart_bg">
-                        <div class="droparrow"><span class="shopcart"></span>我的购物车<span class="orang">0</span>件<img src="img/arrow.gif"></div>
+                        <div class="droparrow"><span class="shopcart"></span>我的购物车<span class="orange">0</span>件<img
+                                src="img/icon/arrow.gif"></div>
                         <div class="dropdown">
                             <ul class="shop_pic">
                                 <!-- <li>
@@ -38,11 +40,11 @@
                                     <p>1件<a href="#"><span class="orange floatright">删除</span></a></p>
                                 </li> -->
                                 <script type="text/javascript">
-                                    var arrayimgs=['s1.jpg','s2.jpg','s3.jpg','s4.jpg','s5.jpg','s6.jpg','s7.jpg','s8.jpg','s9.jpg'];
-                                    var arrayamount=[1,2,3,4,5,6,7,8,9];
+                                    var arrayimgs = ['s1.jpg', 's2.jpg', 's3.jpg', 's4.jpg', 's5.jpg', 's6.jpg', 's7.jpg', 's8.jpg', 's9.jpg'];
+                                    var arrayamount = [1, 2, 3, 4, 5, 6, 7, 8, 9];
                                     for (var key in arrayimgs) {
                                         if (Object.hasOwnProperty.call(arrayimgs, key)) {
-                                            var element =  '<li><a href="#"><img src="img/goodshow/' + arrayimgs[key] + '"></a>' +
+                                            var element = '<li><a href="#"><img src="img/goodadvise/' + arrayimgs[key] + '"></a>' +
                                                 '<p>' + arrayamount[key] + '件<a href="#"><span class="orange floatright">删除</span></a></p></li>';
                                             document.write(element);
                                         }
@@ -58,7 +60,7 @@
 
         <!-- logo start -->
         <section class="logo">
-            <img src="./img/logo.png" alt=""><img src="./img/banner.png" alt="">
+            <img src="./img/icon/logo.jpg" alt=""><img src="./img/icon/banner.jpg" alt="">
         </section>
         <!-- logo end -->
 
@@ -101,11 +103,200 @@
                     <li><span class="red_dot"></span><a href="#">运动衣</a><span class="right_arrow"></span></li>
                 </ul>
             </nav>
-            <div class="middle_good">
-
+            <div class="middle_good_detail">
+                <h1 class="detail_pic_title blueyuqinlan">商品详情</h1>
+                <div class="detail_pic_left">
+                    <div id="box">
+                        <img src="img/gooddetail/dd1.jpg" width="400" height="400" id="showGoodsPicture">
+                        <div id="shade"></div>
+                    </div>
+                    <ul class="small_piclist">
+                        <li><img src="img/gooddetail/dd1.jpg" onclick="changeGoodsImg(this)"></li>
+                        <li><img src="img/gooddetail/dd2.jpg" onclick="changeGoodsImg(this)"></li>
+                        <li><img src="img/gooddetail/dd3.jpg" onclick="changeGoodsImg(this)"></li>
+                        <li><img src="img/gooddetail/dd4.jpg" onclick="changeGoodsImg(this)"></li>
+                        <li><img src="img/gooddetail/dd5.jpg" onclick="changeGoodsImg(this)"></li>
+                    </ul>
+                    <canvas id="canvas" width="400px" height="400px"></canvas>
+                </div>
+                <div>
+                    <h1 class="font16">冬季新款牛仔外套女中长款加厚<br> 女冬装连帽毛领加绒牛仔棉衣女风装</h1>
+                    <img src="img/gooddetail/pic_mess.jpg">
+                </div>
+                <div class="clear"></div>
+                <ul class="detail_tab">
+                    <li class="tab_active" onclick="changeGoodsInfo(this)">商品详情</li>
+                    <li onclick="changeGoodsInfo(this)">商品评价</li>
+                    <li onclick="changeGoodsInfo(this)">购物记录</li>
+                </ul>
+                <article class="tab_content1">
+                    <ul class="goodparams">
+                        <li title="修身">服装版型：修身</li>
+                        <li title="修身">服装版型：修身</li>
+                        <li title="修身">服装版型：修身</li>
+                        <li title="修身">服装版型：修身</li>
+                        <li title="修身">服装版型：修身</li>
+                        <li title="修身">服装版型：修身</li>
+                        <li title="修身">服装版型：修身</li>
+                        <li title="修身">服装版型：修身</li>
+                        <li title="修身">服装版型：修身</li>
+                        <li title="修身">服装版型：修身</li>
+                        <li title="修身">服装版型：修身</li>
+                        <li title="修身">服装版型：修身</li>
+                        <li title="修身">服装版型：修身</li>
+                        <li title="修身">服装版型：修身</li>
+                        <li title="修身">服装版型：修身</li>
+                    </ul>
+                    <section>
+                        <img src="img/gooddetail/detail1.jpg">
+                        <img src="img/gooddetail/detail2.jpg">
+                        <img src="img/gooddetail/detail3.jpg" class="img_border">
+                        <img src="img/gooddetail/detail4.jpg" class="img_border">
+                        <img src="img/gooddetail/detail5.jpg" class="img_border">
+                        <img src="img/gooddetail/detail6.jpg" class="img_border">
+                    </section>
+                </article>
+                <article class="tab_content2 none">
+                    <img src="img/gooddetail/plugin.jpg">
+                </article>
+                <article class="tab_content3 none">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <th>买家</th>
+                                <th>淘宝价</th>
+                                <th>数量</th>
+                                <th>付款时间</th>
+                                <th>款式和型号</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>a** 男(匿名)</td>
+                                <td><em class="price2">$198.00</em></td>
+                                <td>1</td>
+                                <td>2015-07-01 20:08:32</td>
+                                <td>
+                                    <div>
+                                        <p>颜色分类：深蓝色[前格纹衫]</p>
+                                        <p>尺寸：L</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>a** 男(匿名)</td>
+                                <td><em class="price2">$198.00</em></td>
+                                <td>1</td>
+                                <td>2015-07-01 20:08:32</td>
+                                <td>
+                                    <div>
+                                        <p>颜色分类：深蓝色[前格纹衫]</p>
+                                        <p>尺寸：L</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>a** 男(匿名)</td>
+                                <td><em class="price2">$198.00</em></td>
+                                <td>1</td>
+                                <td>2015-07-01 20:08:32</td>
+                                <td>
+                                    <div>
+                                        <p>颜色分类：深蓝色[前格纹衫]</p>
+                                        <p>尺寸：L</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>a** 男(匿名)</td>
+                                <td><em class="price2">$198.00</em></td>
+                                <td>1</td>
+                                <td>2015-07-01 20:08:32</td>
+                                <td>
+                                    <div>
+                                        <p>颜色分类：深蓝色[前格纹衫]</p>
+                                        <p>尺寸：L</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>a** 男(匿名)</td>
+                                <td><em class="price2">$198.00</em></td>
+                                <td>1</td>
+                                <td>2015-07-01 20:08:32</td>
+                                <td>
+                                    <div>
+                                        <p>颜色分类：深蓝色[前格纹衫]</p>
+                                        <p>尺寸：L</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>a** 男(匿名)</td>
+                                <td><em class="price2">$198.00</em></td>
+                                <td>1</td>
+                                <td>2015-07-01 20:08:32</td>
+                                <td>
+                                    <div>
+                                        <p>颜色分类：深蓝色[前格纹衫]</p>
+                                        <p>尺寸：L</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>a** 男(匿名)</td>
+                                <td><em class="price2">$198.00</em></td>
+                                <td>1</td>
+                                <td>2015-07-01 20:08:32</td>
+                                <td>
+                                    <div>
+                                        <p>颜色分类：深蓝色[前格纹衫]</p>
+                                        <p>尺寸：L</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+                <div class="clear"></div>
+                <article>
+                    <h1 class="detail_pic_title purpleluodian">看了又看</h1>
+                    <ul class="detail_pic_list">
+                        <li>
+                            <img src="img/gooddetail/ss1.jpg" title="2022新款条纹显瘦V领短袖毛衣宽松 oversize">
+                            <p>2022年新款条纹显瘦V领短袖毛衣宽松</p>
+                        </li>
+                        <li>
+                            <img src="img/gooddetail/ss2.jpg" title="2022新款条纹显瘦V领短袖毛衣宽松 oversize">
+                            <p>2022年新款条纹显瘦V领短袖毛衣宽松</p>
+                        </li>
+                        <li>
+                            <img src="img/gooddetail/ss3.jpg" title="2022新款条纹显瘦V领短袖毛衣宽松 oversize">
+                            <p>2022年新款条纹显瘦V领短袖毛衣宽松</p>
+                        </li>
+                        <li>
+                            <img src="img/gooddetail/ss4.jpg" title="2022新款条纹显瘦V领短袖毛衣宽松 oversize">
+                            <p>2022年新款条纹显瘦V领短袖毛衣宽松</p>
+                        </li>
+                        <li>
+                            <img src="img/gooddetail/ss5.jpg" title="2022新款条纹显瘦V领短袖毛衣宽松 oversize">
+                            <p>2022年新款条纹显瘦V领短袖毛衣宽松</p>
+                        </li>
+                    </ul>
+                </article>
             </div>
             <aside class="right_advise">
-
+                <h1 class="advise_title">热门推荐</h1>
+                <ul class="advise_pic_list">
+                    <li><a href="#"><img src="img/goodadvise/s1.jpg" ></a><p class="price2">￥56.00元</p></li>
+                    <li><a href="#"><img src="img/goodadvise/s1.jpg" ></a><p class="price2">￥56.00元</p></li>
+                    <li><a href="#"><img src="img/goodadvise/s1.jpg" ></a><p class="price2">￥56.00元</p></li>
+                    <li><a href="#"><img src="img/goodadvise/s1.jpg" ></a><p class="price2">￥56.00元</p></li>
+                    <li><a href="#"><img src="img/goodadvise/s1.jpg" ></a><p class="price2">￥56.00元</p></li>
+                    <li><a href="#"><img src="img/goodadvise/s1.jpg" ></a><p class="price2">￥56.00元</p></li>
+                    <li><a href="#"><img src="img/goodadvise/s1.jpg" ></a><p class="price2">￥56.00元</p></li>
+                    <li><a href="#"><img src="img/goodadvise/s1.jpg" ></a><p class="price2">￥56.00元</p></li>
+                </ul>
             </aside>
         </section>
         <!-- section end  -->
@@ -203,6 +394,13 @@
                     </ul>
                 </li>
             </ul>
+            <div class="foot_line"></div>
+            <p class="copyright">
+                Copyright 2018-2022 Q-Walking Fashion E&S 漫步时代广场(QST教育)版权所有<br>
+                中国青岛 高新区 广博路325号 轻软教育集团 咨询热线 400-658-343 400-234-4222 <br>
+            </p>
+            <p class="copyright"><img src="img/cloudwhales.png" width="120"></p>
+            <div class="clear"></div>
         </footer>
         <!-- footer end -->
     </article>
