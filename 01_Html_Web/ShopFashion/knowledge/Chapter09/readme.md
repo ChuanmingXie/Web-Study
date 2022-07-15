@@ -145,3 +145,5 @@ items	        |  返回一个包含拖拽数据的dataTransferItemList对象
 types	        |  返回一个DOMStringList，包含了存入dataTransfer对象中数据的所有类型
 files	        |  返回一个拖拽文件的集合，没有拖拽，该属性为空
 
+#### 9.6任务与上机
+[doc](./doc/readme.md '效果展示')

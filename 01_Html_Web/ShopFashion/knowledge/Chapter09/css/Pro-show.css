@@ -30,3 +30,62 @@
 
 .price{font-size: 15px;font-weight: 700; color: red; float: left;}
 .font12{font-size: 12px; color:#ccc; float: right;}
+
+/* 美食广场样式 */
+.middle_food{width: 80%; float: left;}
+.pic_title_food{width: 91%; height: 33px; margin: 1px 10px ;}
+.iconfood{display: inline-flex;justify-content: center;align-items: center;}
+.iconfood img{width: 40px;height: 40px;}
+.iconfood span{
+    font: bold 14px/40px Cambria,Microsoft Yahei;
+    letter-spacing: 4px;
+    margin: auto;
+    cursor: pointer;
+}
+.iconfood .orange{font-size: 10px; letter-spacing: 0;cursor: pointer;}
+.pic_list_food{
+    height: 440px;
+    border: 1px solid #f4f5f0;
+    padding: 20px;
+    margin: 10px;
+}
+
+.pic_list_food dl{width: 275px; margin: 10px; float: left;}
+.pic_list_food dl div{height: 140px;}
+.pic_list_food dl img{
+    width:269px;
+    height: 130px;
+    border: 1px solid #ccc; 
+    padding: 2px; 
+    /* margin: 5px; */
+}
+.pic_list_food dl dt{
+    font: small-caps bold 14px/40px Cambria, Yahei;
+    text-align: center;
+    background: #e4e5e1;
+}
+.pic_list_food dl dd{margin: 10px 0;}
+
+.price_food{font-weight: 700; color: red; float: left;}
+.pic_across{
+    width: 90%;
+    height: 180px;
+    margin: 0 auto;
+}
+.pic_across_list{
+    height: 140px;
+    border-top: 2px solid #41B349;
+    border-bottom: 2px solid #41B349;
+    position: relative;
+    display: inline-flex;
+    padding: 5px 10px;
+    margin: 0 10px;
+}
+.pic_across_list dl{margin: auto 5px; width: 180px;}
+.pic_across_list dl div{height: 100px;}
+.pic_across_list dl img{
+    height: 90px;
+    width: 170px;
+    border: 1px solid #ccc; 
+    padding: 5px; margin: auto; 
+}

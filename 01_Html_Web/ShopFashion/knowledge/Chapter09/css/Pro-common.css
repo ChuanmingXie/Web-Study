@@ -48,10 +48,16 @@ header{
 /* .shopcart{}
 .droparrow{}
 .shop_pic{} */
+.shop_pic img{ width: 80px; height: 80px;}
 
 /* section 样式 */
 .logo{width: 90%; height: 85px; margin: 5px auto;}
 .main{width: 90%; margin: 10px auto;}
+
+.logo img:nth-child(2){
+    width: 865px;
+    height: 85px;
+}
 
 /* 顶部导航栏 */
 .nav_bg{width: 100%;}
@@ -131,7 +137,11 @@ a.white{font-weight: 700; color:#fff;padding: 0 5px;}
 
 footer{width: 100%;background: #efefef; margin-top: 15px;}
 .foot_title{width: 100%;height: 40px;padding-top: 8px;}
-.foot_pic{width: 100%; display: inline-flex; align-items: center; justify-content: center;}
+.foot_pic{
+    width: 100%; display: 
+    inline-flex; align-items: center; 
+    justify-content: center;
+}
 .foot_pic li{
     width: 210px;
     font:small-caps lighter 24px/30px '华文琥珀';
