@@ -38,7 +38,7 @@ header{
     background: #f7f7f7;
     border-bottom: 1px solid #ccc;
 }
-.top_content{width: 90%; margin: 0 auto;}
+.top_content{width: 90%;min-width: 1200px; margin: 0 auto;}
 .orange{font-weight: 700; color: #f60;}
 .orange:hover{color: #2376B4;}
 
@@ -51,17 +51,18 @@ header{
 .shop_pic img{ width: 80px; height: 80px;}
 
 /* section 样式 */
-.logo{width: 90%; height: 85px; margin: 5px auto;}
-.main{width: 90%; margin: 10px auto;}
+.logo{width: 87.5%; min-width: 1200px; height: 85px; margin: 5px auto;}
+.main{width: 90%; min-width: 1200px; margin: 10px auto;}
 
 .logo img:nth-child(2){
     width: 865px;
     height: 85px;
+    float: right;
 }
 
 /* 顶部导航栏 */
-.nav_bg{width: 100%;}
-.nav_content{width: 90%;height: 40px;margin: 0 auto; line-height: 40px;}
+.nav_bg{width: 100%;min-width: 1200px;}
+.nav_content{width: 90%; min-width: 1200px; height: 40px;margin: 0 auto; line-height: 40px;}
 .menu_top{width: 900px; float: left; margin-left: 200px;}
 .menu_top li{
     width: 80px;
@@ -99,6 +100,7 @@ a.white{font-weight: 700; color:#fff;padding: 0 5px;}
     text-indent: 20px;
     color:#FFF;
     display: inline-block;
+    border-radius: 0 0 40px 0;
 }
 
 .red_dot{
@@ -135,7 +137,7 @@ a.white{font-weight: 700; color:#fff;padding: 0 5px;}
 .advise_pic_list li{margin: 5px;float: left;width: 83px;height: 97.5px;}
 .advise_pic_list li img{border: 1px solid #ccc;}
 
-footer{width: 100%;background: #efefef; margin-top: 15px;}
+footer{width: 100%; min-width: 1200px; background: #efefef; margin-top: 15px;}
 .foot_title{width: 100%;height: 40px;padding-top: 8px;}
 .foot_pic{
     width: 100%; display: 
