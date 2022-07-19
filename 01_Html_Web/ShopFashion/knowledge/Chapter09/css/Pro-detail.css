@@ -2,7 +2,6 @@
 
 /* 购物详情样式 */
 .middle_good_detail{width: 690px;float: left;}
-
 .detail_pic_title{
     width: 680px;
     font:bold 14px/40px Cambria,Microsoft Yahei;
@@ -12,20 +11,17 @@
     margin: 0 10px 5px 10px;
     float: left;
 }
-
 .detail_pic_left{
     position: relative;
     margin-left: 10px;
     float: left;
 }
-
 #box{
     width: 400px;
     height: 400px;
     position: relative;
     margin-bottom: 10px;
 }
-
 #shade{
     width: 200px;
     height: 200px;
@@ -33,17 +29,68 @@
     position: absolute;
     top:0px;
     opacity: 0.7;
-    -moz-opactiy:0.7;
     filter: alpha(Opacity=70);
     z-index: 1000;
     display: none;
+    -moz-opactiy:0.7;
 }
-
 .small_piclist li{margin-right: 10px; float: left;}
 .small_piclist li img{
     width: 70px; 
     height: 70px;
     border: 1px solid #ccc;
+}
+.good_info_bg{
+    width: 270px;
+    height: 400px;
+    font: 600 12px/30px Cambria,'楷体'; 
+    margin:20px auto auto 0;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-around; 
+}
+.line_info{
+    padding: 10px 5px;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.line_info:nth-child(1),
+.line_info:nth-child(2){background: #fff2e9;}
+.line_info:nth-child(3){background: #fef9f5;}
+.line_info span:first-child{width: 26%;display: inline-flex; font-size: 13px;}
+.line_info input[type='button']{
+    width: 30px; 
+    height: 28px;
+    font: 600 12px/28px Cambria,Microsoft Yahei;
+    border: 1px solid #12AA9C;
+    margin-right: 5px;
+}
+.line_info input[type='button']:hover{
+    color:#FFF;
+    background: #ea4307;
+    border: 1px solid #ea4307;
+}
+.line_info img{width: 40px; height: 40px; border:1px solid #12AA9C;}
+.pricesign{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: 0 50%/60% 60% url(../img/icon/red2.jpg) no-repeat;
+}
+.price_now{color: #F43E06;font-size: 20px;}
+.price_tip{color: #FFF; background: #ff8e1b;font: 700 12px/16px Cambria,'楷体';}
+.goldcoinicon{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: 0 50%/70% 70% url(../img/icon/red6.jpg) no-repeat;
+}
+.destined::after,
+.deliveryFee::after{
+    width: 17px;
+    content:url('../img/icon/arrow.gif');
+    display: inline-block;
 }
 #canvas{
     top:0px; 
@@ -52,7 +99,6 @@
     position: absolute; 
     display: none;
 }
-
 .detail_tab{
     height: 35px;
     line-height: 35px;
@@ -65,7 +111,6 @@
     font-size: 14px;
     text-align: center;
 }
-
 .tab_active{
     width: 100px;
     height: 33px;
@@ -75,7 +120,6 @@
     border-right: 1px solid #ccc;
     border-left: 1px solid #ccc;
 }
-
 .tab_content1 section{
     width: 700px;
     text-align: center;
@@ -94,16 +138,12 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
 .img_border{border:1px solid #ccc;}
-
-/* .tab_content2{} */
-
+.tab_content2{min-width: 670px; margin: 0 10px;}
 .tab_content3{width: 98%; min-width: 690px; margin: 0 10px;}
 .tab_content3 table th{height: 30px;text-align: center;background: #f2f2f2;}
 .tab_content3 table td{height: 40px; text-align: center; border-bottom: 1px dashed #ccc;}
 .none{display: none;}
-
 .detail_pic_list{
     width: 690px;
     margin-left: 5px;
@@ -115,9 +155,78 @@
 
 /* 美食详情页 */
 .middle_food_detail{width: 80%; min-width: 690px;float: left;}
-.middle_food_detail h1{font:900 14px/30px Cambria,Micrsoft Yahei; margin: 10px;}
-h1+p{margin: 10px;}
+.middle_food_detail h1{font:900 18px/30px Cambria,Micrsoft Yahei; margin: 10px;}
+h1+p{font-size: 14px; margin: 10px;}
 
+.food_info_bg{
+    font: 600 14px/60px Cambria,'楷体'; 
+    margin-left:30px;
+    height: 480px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.food_info_line{width: 470px;min-height: 60px;}
+.food_info_line span:first-child{ width: 25%;display: inline-flex; font-size: 16px;}
+.price_food{font-size: 20px;}
+.price_orign{text-decoration: line-through;font-weight: 400;}
+.food_info_line b{margin: 0 15px;}
+.addnum_tool{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.addnum_tool input[type='text'],
+.addnum_tool input[type='button']{
+    width: 30px;
+    height: 30px;
+    margin: -0.5px;
+    border: 1px solid #12AA9C;
+}
+.addnum_tool input[type='text']{
+    height: 28px;
+    width: 40px;
+    text-align: center;
+}
+.addnum_tool input[type='button']:hover{
+    color:#FFF;
+    background: #ea4307;
+    border: 1px solid #ea4307;
+}
+.buynow{ 
+    width:70px; 
+    height:30px; 
+    font-size: 14px;
+    color: #F9F4DC; 
+    text-align: center;
+    background: #12AA9C; 
+    border-radius: 5px;
+    margin-right:2% ; 
+    padding: 10px 20px;
+}
+.shop_icon_bg{
+    font-size: 14px;
+    color: #F9F4DC; 
+    background:#E83015;;
+    padding: 10px 10px;
+    border-radius: 5px;    
+    margin-right:2% ; 
+}
+.buynow:hover,.shop_icon_bg:hover{color:#FFF;}
+.addshopcart {
+    background:35% 50%/60% 50% url(../img/icon/shop_cart.png) no-repeat;
+    padding: 10px 20px;
+}
+.serviceicon{
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+}
+.serviceicon span:nth-child(even){
+    width: 40px;
+    height: 40px;
+    background: 120% 60%/ 130% 130% url(../img/icon/title2.png) no-repeat;
+}
 .comment_tool{
     display: flex; 
     justify-content:flex-start; 
