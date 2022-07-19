@@ -25,12 +25,14 @@
         <header>
             <div class="top_content">
                 <div class="floatleft displayenter">
-                    <img src="img/icon/star.jpg">收藏|HI,欢迎订购！<a href="#" class="orange">[请登录]</a><a href="#" class="orange">[免费注册]</a>
+                    <img src="img/icon/star.jpg">收藏|HI,欢迎订购！<a href="#" class="orange">[请登录]</a><a href="#"
+                        class="orange">[免费注册]</a>
                 </div>
                 <div class="floatright displayenter">
-                    客户服务<img src="img/icon/arrow.gif">&nbsp;<img src="img/icon/arrow.gif">&nbsp;
+                    客户服务<img src="img/icon/arrow.gif">&nbsp;网站导航<img src="img/icon/arrow.gif">&nbsp;
                     <div class="shopcart_bg">
-                        <div class="droparrow"><span class="shopcart"></span>我的购物车<span class="orange">0</span>件<img src="img/icon/arrow.gif" ></div>
+                        <div class="droparrow"><span class="shopcart"></span>我的购物车<span class="orange">0</span>件<img
+                                src="img/icon/arrow.gif"></div>
                         <div class="dropdown">
                             <ul>
                                 <li>
@@ -58,7 +60,7 @@
 
         <!-- logo start -->
         <section class="logo">
-            <img src="img/icon/logo.jpg" ><img src="img/icon/banner2.png" >
+            <img src="img/icon/logo.jpg"><img src="img/icon/banner2.png">
         </section>
         <!-- logo end -->
 
@@ -104,22 +106,273 @@
             </nav>
             <div class="middle_food_detail">
                 <h1>土大力休闲餐厅</h1>
-                <p>仅需85元！价值100元代金券,全场通用，可叠加使用.店内就餐提供免费wifi,部分地区，不限时段,畅享美食新体验</p>
-            </div>
-            <div class="detail_pic_left">
-                <div id="box">
-                    <img src="img/fooddetail/fooddetail1.jpg" width="400" height="400" id="showPicture">
-                    <div class="shade"></div>
-                </div>
-                <ul class="small_piclist">
-                    <li><img src="img/fooddetail/ff1.jpeg" onclick="changeImg(this)"></li>
-                    <li><img src="img/fooddetail/ff2.jpeg" onclick="changeImg(this)"></li>
-                    <li><img src="img/fooddetail/ff3.jpeg" onclick="changeImg(this)"></li>
-                    <li><img src="img/fooddetail/ff4.jpeg" onclick="changeImg(this)"></li>
-                    <li><img src="img/fooddetail/ff5.jpeg" onclick="changeImg(this)"></li>
-                </ul>
-            </div>
+                <p>仅需85元！价值100元代金券,全场通用，可叠加使用.店内就餐提供免费wifi,分地区，不限时段,畅享美食新体验</p>
 
+                <div class="detail_pic_left">
+                    <div id="box">
+                        <img src="img/fooddetail/fooddetail1.jpg" width="400" height=400" id="showPicture">
+                        <div class="shade"></div>
+                    </div>
+                    <ul class="small_piclist">
+                        <li><img src="img/fooddetail/fooddetail1.jpg" onclick="changeImg(this)"></li>
+                        <li><img src="img/fooddetail/ff2.jpg" onclick="changeImg(this)"></li>
+                        <li><img src="img/fooddetail/ff3.jpg" onclick="changeImg(this)"></li>
+                        <li><img src="img/fooddetail/ff4.jpg" onclick="changeImg(this)"></li>
+                        <li><img src="img/fooddetail/ff5.jpg" onclick="changeImg(this)"></li>
+                    </ul>
+                    <canvas id="canvas" width="400px" height="400px"></canvas>
+                </div>
+                <div>
+                    <div class="food_info_line">
+                        <span>售价</span> <span class="orange price_food">$85</span>
+                    </div>
+                    <div class="food_info_line">
+                        <span>销量</span> <span class="orange price_food">$85</span>
+                    </div>
+                    <div class="food_info_line">
+                        <span>优惠</span> <span class="orange price_food">$85</span>
+                    </div>
+                    <div class="food_info_line">
+                        <span>数量</span> <span class="orange price_food">$85</span>
+                    </div>
+                    <div class="food_info_line">
+                        <span>购买</span> <span class="buynow">立即购买</span><span class="addshopcart">加入购物车</span>
+                    </div>
+                    <div class="food_info_line">
+                        <span>服务保证</span>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <ul class="detail_tab">
+                    <li onclick="changeTabInfo(this)">餐厅位置</li>
+                    <li onclick="changeTabInfo(this)">餐厅详情</li>
+                    <li onclick="changeTabInfo(this)" class="tab_active">餐厅评价</li>
+                    <li onclick="changeTabInfo(this)">用餐记录</li>
+                </ul>
+                <article class="tab_content1 none">
+
+                </article>
+                <article class="tab_content2 none">
+                    <ul class="foodparams">
+                        <li title="菜品"></li>
+                        <li title="酒水"></li>
+                        <li title="主食"></li>
+                        <li title="口味"></li>
+                    </ul>
+                    <section>
+                        <img src="" alt="">
+                        <img src="" alt="">
+                        <img src="" alt="">
+                        <img src="" alt="">
+                        <img src="" alt="">
+                        <img src="" alt="">
+                    </section>
+                </article>
+                <article class="tab_content3 ">
+                    <div class="comment_tool">
+                        <input type="radio" name="comment_all" id="comment_all">全部
+                        <input type="radio" name="comment_pic" id="comment_pic">图片
+                        <input type="radio" name="comment_add" id="comment_add">追平
+                        <input type="radio" name="comment_better" id="comment_better">好评
+                        <input type="radio" name="comment_middle" id="comment_middle">中评
+                        <input type="radio" name="comment_bad" id="comment_bad">差评
+                        <input type="checkbox" name="comment_userful" id="comment_userful">有内容的评价
+                        <select name="comment_sortway" id="">
+                            <option value="0">推荐排序</option>
+                            <option value="1">好评</option>
+                            <option value="2">差评</option>
+                            <option value="3">图片</option>
+                            <option value="4">时间</option>
+                        </select>
+                    </div>
+                    <div class="comment_bg">
+                        <hr>
+                        <div class="floatleft usercommentpic">
+                            <img src="img/icon/commentheader.png" alt="">
+                            <p>C**s</p>
+                            <p>♥♥♥</p>
+                        </div>
+                        <div class="floatleft usercomment">
+                            <div class="comment_base">
+                                <span>体重：52公斤</span>
+                                <span>身高：152厘米</span>
+                                <span>色差：无色差</span>
+                                <span>是否合身：刚好</span>
+                            </div>
+                            <div class="comment_content">
+                                毛衣加绒特别厚,手感很软很舒服,老板服务一级棒有问必答,新款式质量好,时尚显瘦,大小合身
+                                毛衣加绒特别厚,手感很软很舒服,老板服务一级棒有问必答,新款式质量好,时尚显瘦,大小合身
+                                毛衣加绒特别厚,手感很软很舒服,老板服务一级棒有问必答,新款式质量好,时尚显瘦,大小合身
+                            </div>
+                            <div class="comment_footer timeandsize">
+                                <span>2022年04月23日 10:38</span>
+                                <span>颜色分类：蓝色</span>
+                                <span>尺码：L</span>
+                                <div class="floatright userfulprasie">有用<span>(0)</span><span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>                    
+                    <div class="comment_bg">
+                        <hr>
+                        <div class="floatleft usercommentpic">
+                            <img src="img/icon/commentheader.png" alt="">
+                            <p>C**s</p>
+                            <p style="color: #eda18ef8;;">♥♥♥</p>
+                        </div>
+                        <div class="floatleft usercomment">
+                            <div class="comment_base">
+                                <span>体重：52公斤</span>
+                                <span>身高：152厘米</span>
+                                <span>色差：无色差</span>
+                                <span>是否合身：刚好</span>
+                            </div>
+                            <div class="comment_content">
+                                毛衣加绒特别厚,手感很软很舒服,老板服务一级棒有问必答,新款式质量好,时尚显瘦,大小合身
+                                毛衣加绒特别厚,手感很软很舒服,老板服务一级棒有问必答,新款式质量好,时尚显瘦,大小合身
+                                毛衣加绒特别厚,手感很软很舒服,老板服务一级棒有问必答,新款式质量好,时尚显瘦,大小合身
+                            </div>
+                            <div class="comment_footer timeandsize">
+                                <span>2022年04月23日 10:38</span>
+                                <span>颜色分类：蓝色</span>
+                                <span>尺码：L</span>
+                                <div class="floatright userfulprasie">有用<span>(0)</span><span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>                    
+                    <div class="comment_bg">
+                        <hr>
+                        <div class="floatleft usercommentpic">
+                            <img src="img/icon/commentheader.png" alt="">
+                            <p>C**s</p>
+                            <p>♥♥♥</p>
+                        </div>
+                        <div class="floatleft usercomment">
+                            <div class="comment_base">
+                                <span>体重：52公斤</span>
+                                <span>身高：152厘米</span>
+                                <span>色差：无色差</span>
+                                <span>是否合身：刚好</span>
+                            </div>
+                            <div class="comment_content">
+                                毛衣加绒特别厚,手感很软很舒服,老板服务一级棒有问必答,新款式质量好,时尚显瘦,大小合身
+                                毛衣加绒特别厚,手感很软很舒服,老板服务一级棒有问必答,新款式质量好,时尚显瘦,大小合身
+                                毛衣加绒特别厚,手感很软很舒服,老板服务一级棒有问必答,新款式质量好,时尚显瘦,大小合身
+                            </div>
+                            <div class="comment_footer timeandsize">
+                                <span>2022年04月23日 10:38</span>
+                                <span>颜色分类：蓝色</span>
+                                <span>尺码：L</span>
+                                <div class="floatright userfulprasie">有用<span>(0)</span><span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </article>
+                <article class="tab_content4 none">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <th>买家</th>
+                                <th>淘宝价</th>
+                                <th>数量</th>
+                                <th>付款时间</th>
+                                <th>款式和型号</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>a** 男(匿名)</td>
+                                <td><em class="price2">$198.00</em></td>
+                                <td>1</td>
+                                <td>2015-07-01 20:08:32</td>
+                                <td>
+                                    <div>
+                                        <p>颜色分类：深蓝色[前格纹衫]</p>
+                                        <p>尺寸：L</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>a** 男(匿名)</td>
+                                <td><em class="price2">$198.00</em></td>
+                                <td>1</td>
+                                <td>2015-07-01 20:08:32</td>
+                                <td>
+                                    <div>
+                                        <p>颜色分类：深蓝色[前格纹衫]</p>
+                                        <p>尺寸：L</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>a** 男(匿名)</td>
+                                <td><em class="price2">$198.00</em></td>
+                                <td>1</td>
+                                <td>2015-07-01 20:08:32</td>
+                                <td>
+                                    <div>
+                                        <p>颜色分类：深蓝色[前格纹衫]</p>
+                                        <p>尺寸：L</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>a** 男(匿名)</td>
+                                <td><em class="price2">$198.00</em></td>
+                                <td>1</td>
+                                <td>2015-07-01 20:08:32</td>
+                                <td>
+                                    <div>
+                                        <p>颜色分类：深蓝色[前格纹衫]</p>
+                                        <p>尺寸：L</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>a** 男(匿名)</td>
+                                <td><em class="price2">$198.00</em></td>
+                                <td>1</td>
+                                <td>2015-07-01 20:08:32</td>
+                                <td>
+                                    <div>
+                                        <p>颜色分类：深蓝色[前格纹衫]</p>
+                                        <p>尺寸：L</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>a** 男(匿名)</td>
+                                <td><em class="price2">$198.00</em></td>
+                                <td>1</td>
+                                <td>2015-07-01 20:08:32</td>
+                                <td>
+                                    <div>
+                                        <p>颜色分类：深蓝色[前格纹衫]</p>
+                                        <p>尺寸：L</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>a** 男(匿名)</td>
+                                <td><em class="price2">$198.00</em></td>
+                                <td>1</td>
+                                <td>2015-07-01 20:08:32</td>
+                                <td>
+                                    <div>
+                                        <p>颜色分类：深蓝色[前格纹衫]</p>
+                                        <p>尺寸：L</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+            </div>
         </section>
 
         <div class="clear"></div>

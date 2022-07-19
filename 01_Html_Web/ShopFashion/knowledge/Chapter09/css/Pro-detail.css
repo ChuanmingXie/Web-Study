@@ -99,7 +99,7 @@
 
 /* .tab_content2{} */
 
-.tab_content3{width: 670px; margin: 0 auto;}
+.tab_content3{width: 98%; min-width: 690px; margin: 0 10px;}
 .tab_content3 table th{height: 30px;text-align: center;background: #f2f2f2;}
 .tab_content3 table td{height: 40px; text-align: center; border-bottom: 1px dashed #ccc;}
 .none{display: none;}
@@ -112,3 +112,49 @@
 .detail_pic_list li{ margin: 5px 5px; float: left;}
 .detail_pic_list li img{ border:  1px solid #ccc; width: 123px;}
 
+
+/* 美食详情页 */
+.middle_food_detail{width: 80%; min-width: 690px;float: left;}
+.middle_food_detail h1{font:900 14px/30px Cambria,Micrsoft Yahei; margin: 10px;}
+h1+p{margin: 10px;}
+
+.comment_tool{
+    display: flex; 
+    justify-content:flex-start; 
+    align-items: center;
+}
+.comment_tool input[type='radio'],
+.comment_tool input[type='checkbox']{
+    width: 30px;
+    font: 500 12px/24px Cambria,'楷体';
+    margin: 0 10px;
+}
+.comment_tool select{ width: 100px; margin: 0 20px;}
+.usercommentpic{width: 20%; text-align: center;}
+.usercomment{ width: 80%;}
+.comment_bg hr{
+    width: 100%;
+    height: 1px;
+    background: #594;
+    border: none;
+    margin: 5px 0 10px 0;
+}
+.usercommentpic p:last-child{
+    color: #F43106;
+    font-size: 20px;
+}
+.comment_base,
+.comment_content,
+.comment_footer{ padding: 5px 0;}
+.comment_base{
+    background: #ffc;
+    color: gray;
+    font:500 12px/20px Cambria,'楷体';
+}
+.comment_base span,
+.timeandsize span{margin: 10px;}
+.comment_content{font: 700 13px/20px Cambria,'楷体';}
+.comment_content::first-letter{margin-left: 10px;}
+.comment_footer,.userfulprasie span{color: gray;}
+.timeandsize{font:500 12px/20px Cambria,'楷体';}
+.userfulprasie{color: blue;}
