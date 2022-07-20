@@ -1,9 +1,32 @@
 @charset "UTF-8";
 
+body{font-family: Cambria, '楷体';}
+h2{font: 700 18px/28px Cambria, '楷体';}
+h3{font: 700 16px/28px Cambria, '楷体';}
+h4{font: 700 14px/24px Cambria, '楷体';}
+.panel_bg{
+    display: inline-table;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.panel_bg .panel{
+    width: 600px;
+    float: left;
+}
+.panel_bg .panel h4{
+    margin-left:20px ;
+}
+.panel_bg .panel canvas{
+    margin-left: 40px;
+}
+
 #canvasbase,
 #canvasfillRect,
 #canvasstrokeRect{
-    width: 200px;
-    height: 200px;
-    border: 1px solid #000;
+    /* width: 420px;
+    height: 200px; */
+    border: 1px solid #856D72;
+    border-radius: 10px;
 }
