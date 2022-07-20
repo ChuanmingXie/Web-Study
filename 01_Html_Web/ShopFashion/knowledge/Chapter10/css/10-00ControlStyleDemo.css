@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+#canvasbase,
+#canvasfillRect,
+#canvasstrokeRect{
+    width: 200px;
+    height: 200px;
+    border: 1px solid #000;
+}
