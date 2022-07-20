@@ -23,6 +23,7 @@ h4{font: 700 14px/24px Cambria, '楷体';}
 }
 
 #canvasbase,
+#canvasgeneral,
 #canvasfillRect,
 #canvasstrokeRect{
     /* width: 420px;
