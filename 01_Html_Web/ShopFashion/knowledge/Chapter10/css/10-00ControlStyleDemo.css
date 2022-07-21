@@ -4,6 +4,8 @@ body{font-family: Cambria, '楷体';}
 h2{font: 700 18px/28px Cambria, '楷体';}
 h3{font: 700 16px/28px Cambria, '楷体';}
 h4{font: 700 14px/24px Cambria, '楷体';}
+.clear{clear: both;}
+
 .panel_bg{
     display: inline-table;
     flex-direction: column;
@@ -11,23 +13,57 @@ h4{font: 700 14px/24px Cambria, '楷体';}
     align-items: center;
     flex-wrap: wrap;
 }
-.panel_bg .panel{
-    width: 600px;
-    float: left;
-}
+.panel_bg .panel{width: 650px; float: left;}
 .panel_bg .panel h4{
-    margin-left:20px ;
+    width: 610px;
+    position: absolute;
+    margin: 0 0 10px 20px;
 }
-.panel_bg .panel canvas{
-    margin-left: 40px;
-}
+.panel_bg .panel canvas{margin:40px 0 0 20px;}
 
 #canvasbase,
+#canvasPixel,
 #canvasgeneral,
 #canvasfillRect,
 #canvasstrokeRect{
-    /* width: 420px;
-    height: 200px; */
     border: 1px solid #856D72;
     border-radius: 10px;
+}
+.canvasGroup,
+.btnGroup {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: center;
+}
+.btnGroup{width: 600px; height: 40px;}
+
+input[type='button'],
+input[type='submit'],
+input[type='reset'],
+.white{
+    width: 120px;
+    height: 32px;
+    color: #fff;
+    font-family: Cambria, Microsoft Yahei;
+    border: 1px solid #1F638F;
+    border-radius: 10px;
+    background: #1F638F;
+    float: right;
+}
+.white {
+    height: 30px;
+    width: 185px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 30px;
+}
+.white:hover,
+input[type='submit']:hover,
+input[type='button']:hover,
+input[type='reset']:hover {
+    background: #ea4307;
+    border: 1px solid #ea4307;
 }

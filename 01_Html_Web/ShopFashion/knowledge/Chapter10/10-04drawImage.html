@@ -7,7 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>10-04 绘制图像</title>
     <link rel="stylesheet" href="./css/10-00ControlStyleDemo.css">
-    <script src="./js/10-04drawImage.js"></script>
+    <style type="text/css">
+        .canvasGroup {
+            height: 320px;
+        }
+        input[type='button'] {
+            width: 80px;
+        }
+    </style>
 </head>
 
 <body>
@@ -19,8 +26,23 @@
         </div>
         <div class="panel">
             <h4>10-04-2 图片平铺设置</h4>
-            <canvas id="canvasgeneral" width="300" height="300"></canvas>
-            <canvas id="canvasgeneral" width="300" height="300"></canvas>
+            <div class="canvasGroup">
+                <canvas id="canvasgeneral" width="300" height="300"></canvas>
+                <canvas id="canvasgeneral" width="300" height="300"></canvas>
+            </div>
+        </div>
+        <div class="panel">
+            <h4>10-04-3 像素处理</h4>
+            <canvas id="canvasPixel" width="600" height="170"></canvas>
+            <div class="btnGroup">
+                <input type="button" value="原图" onclick="showNormalImage()">
+                <input type="button" value="红色通道" onclick="showChannel('red')">
+                <input type="button" value="绿色通道" onclick="showChannel('green')">
+                <input type="button" value="蓝色通道" onclick="showChannel('blue')">
+                <input type="button" value="反向显示" onclick="showChannel('reverse')">
+                <input type="button" value="半透明" onclick="showChannel('transparent')">
+                <input type="button" value="清空画布" onclick="clearCanvas()">
+            </div>
         </div>
     </div>
     <script type="text/javascript">
@@ -30,7 +52,7 @@
         img.src = './img/demo/girl_little.jpg';
         var width = 80;
         var height = 100;
-        img.onload=function(){
+        img.onload = function () {
             contextbase.drawImage(img, 10, 10);
             contextbase.drawImage(img, 120, 10, 80, 120);
             contextbase.drawImage(img, 10, 10, width, height, 210, 10, width, height);

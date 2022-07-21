@@ -5,8 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>10-06 绘制文本</title>
+    <link rel="stylesheet" href="./css/10-00ControlStyleDemo.css">
 </head>
 <body>
-    
+    <h2>10-06 绘制文本</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h4>10-06-1 绘制文本的基准线</h4>
+            <canvas id="canvasbase" width="600" height="200"></canvas>
+        </div>
+        <div class="panel">
+            <h4>10-06-1 绘制基本文字</h4>
+            <canvas id="canvasstrokeRect" width="600" height="200"></canvas>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var canvas=document.getElementById('canvasbase');
+        var context=canvas.getContext('2d');
+        context.strokeStyle='blue';
+        context.moveTo(5,100);
+        context.lineTo(570,100);
+        context.stroke();
+
+        context.font='20px Arial';
+
+        context.textBaseline='top';
+        context.fillText("Top",5,100);
+        
+        context.textBaseline='bottom';
+        context.fillText('Bottom',120,100);
+        
+        context.textBaseline='middle';
+        context.fillText("Middle",240,100);
+        
+        context.textBaseline='alphabetic';
+        context.fillText('Alphabetic',370,100);
+
+        context.textBaseline='hanging';
+        context.fillText('Hanging',500,100);
+    </script>
+    <script src="./js/10-06drawText.js"></script>
 </body>
 </html>
