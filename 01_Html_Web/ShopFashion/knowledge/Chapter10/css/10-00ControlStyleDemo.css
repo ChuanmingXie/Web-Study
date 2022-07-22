@@ -5,7 +5,13 @@ h2{font: 700 18px/28px Cambria, '楷体';}
 h3{font: 700 16px/28px Cambria, '楷体';}
 h4{font: 700 14px/24px Cambria, '楷体';}
 .clear{clear: both;}
-
+hr{
+    width: 90%;
+    height: 1px;
+    background: #594;
+    border: none;
+    margin: 5px auto;
+}
 .panel_bg{
     display: inline-table;
     flex-direction: column;
@@ -24,14 +30,17 @@ h4{font: 700 14px/24px Cambria, '楷体';}
 }
 .panel_bg .panel canvas{margin:20px 0 0 20px;}
 
+.formclass,
 .mediaclass,
 .canvasbase{
     border: 1px solid #856D72;
     border-radius: 10px;
 }
+.formclass,
 .mediaclass{
     width: 600px;
-    height: 200px;
+    height: auto;
+    min-height: 200px;
     margin:20px 0 0 20px;
     float: left;
     display: flex;    
@@ -42,6 +51,14 @@ h4{font: 700 14px/24px Cambria, '楷体';}
 audio{
     width: 500px;
     margin: 10px auto;
+}
+.formclass .forminline{
+    height: 15px;
+    font: bold 14px/30px Cambria, Microsoft Yahei;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 15px auto;
 }
 .canvasGroup,
 .btnGroup {
@@ -95,3 +112,57 @@ input[type='text']:focus{
     border: none;
     outline: 2px solid #EA4307;
 }
+
+
+table {
+    width: 600px;
+    margin: 5px auto;
+    text-align: center;
+    font: 500 14px/28px Cambria, '楷体';
+    border: none;
+    border-bottom: 1px solid #BBB5AC;
+}
+table caption{
+    font: 700 14px/30px Cambria,'楷体';
+    margin: 10px auto;
+}
+table tfoot input{ float: left;}
+table th {
+    font: bold 14px/32px Cambria, Microsoft Yahei;
+    /* letter-spacing: 5px; */
+    color: #15559A;
+    /* background: #5CB3cc; */
+    border: none;
+    border-bottom: 1px solid #BBB5AC;
+}
+
+table td,
+table tr {
+    border: none;
+    border-bottom: 1px solid #BBB5AC;
+    padding: 3px;
+}
+/* table td:nth-child(2) {
+    text-align: left;
+} */
+/* table tr:nth-child(even) {
+    background: #F7DE98;
+} */
+table tbody tr:hover {
+    background: #F9F4DC;
+    border: 1px solid #F9F4DC;
+    cursor: pointer;
+}
+
+td input[type="image"] {
+    margin: 5px 5px -5px 5px;
+    width: 20px;
+}
+.dl_bg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dl_bg dl{margin: 20px;}
+.dl_bg dl dd{text-align: center;margin: auto;}
+dl dt img{width: 120px;}

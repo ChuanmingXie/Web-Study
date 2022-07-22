@@ -1,12 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>10-15 session Storage web存储</title>
+    <title>10-15 web存储-session Storage|local Storage</title>
+    <link rel="stylesheet" href="./css/10-00ControlStyleDemo.css">
+    <style>
+        table,
+        .btnGroup {
+            width: 90%;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <h2>10-15 Web 存储</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h4>10-15-1 Session Storage - 商品名称记录</h4>
+            <div class="formclass"></div>
+        </div>
+
+        <div class="panel">
+            <h4>10-15-2 local Storage - 购物车维护</h4>
+            <div class="formclass">
+                <div class="forminline"> 商品名称：<input type="text" id="goodName"> </div>
+                <div class="forminline"> 商品价格：<input type="text" id="goodPrice"> </div>
+                <div class="forminline"> 商品数量：<input type="text" id="goodAmount"> </div>
+                <div class="btnGroup">
+                    <input type="button" id="shopCartRecord" value="录入购物车">
+                    <input type="button" id="shopCartShow" value="显示购物车">
+                    <input type="button" id="shopCartClear" value="清空购物车">
+                </div>
+                <hr>
+                <table class="table" rules="all">
+                    <thead>
+                        <tr>
+                            <th>商品名称</th>
+                            <th>商品价格</th>
+                            <th>商品数量</th>
+                        </tr>
+                    </thead>
+                    <tbody id="showbody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var shopCartRecord = document.getElementById('shopCartRecord');
+        var shopCartShow = document.getElementById('shopCartShow');
+        var shopCartClear = document.getElementById('shopCartClear');
+        /* 使用localStorage实现购物车的添加 */
+        shopCartRecord.onclick = function () {
+            var goodName = document.getElementById('goodName');
+            var goodPrice = document.getElementById('goodPrice');
+            var goodAmount = document.getElementById('goodAmount');
+            var msg = {
+                name: goodName.value,
+                price: goodPrice.value,
+                amount: goodAmount.value,
+            };
+            var time = new Date().getTime();
+            localStorage.setItem(time, JSON.stringify(msg));
+            goodName.value = "";
+            goodPrice.value = "";
+            goodAmount.value = "";
+            loadCart();
+        }
+        /* 将localStorage的数据显示在表格中 */
+        shopCartShow.onclick = loadCart();
+        function loadCart() {
+            var showBody = document.getElementById("showbody");
+            showBody.innerHTML = "";
+            if (localStorage.length != 0) {
+                for (var i = 0; i < localStorage.length; i++) {
+                    var key = localStorage.key(i);
+                    var jsonStr = localStorage.getItem(key);
+                    var json = JSON.parse(jsonStr);
+                    var row = showBody.insertRow(i);
+                    row.insertCell(0).innerHTML = json.name;
+                    row.insertCell(1).innerHTML = json.price;
+                    row.insertCell(2).innerHTML = json.amount;
+                }
+            }
+        }
+        /* 清空购物车 */
+        shopCartClear.onclick = function () {
+            localStorage.clear();
+            loadCart();
+        }
+    </script>
 </body>
+
 </html>
