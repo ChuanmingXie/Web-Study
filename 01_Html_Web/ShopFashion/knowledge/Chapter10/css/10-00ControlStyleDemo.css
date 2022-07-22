@@ -13,17 +13,35 @@ h4{font: 700 14px/24px Cambria, '楷体';}
     align-items: center;
     flex-wrap: wrap;
 }
-.panel_bg .panel{width: 650px; float: left;}
-.panel_bg .panel h4{
+.panel_bg .panel,
+.panel_bg .panelinline{float: left;}
+.panel_bg .panel{width: 650px;}
+.panel_bg .panel h4,
+.panel_bg .panelinline h4{
     width: 610px;
-    position: absolute;
-    margin: 0 0 10px 20px;
+    /* position: absolute; */
+    margin: 10px 0 0px 20px;
 }
-.panel_bg .panel canvas{margin:40px 0 0 20px;}
+.panel_bg .panel canvas{margin:20px 0 0 20px;}
 
+.mediaclass,
 .canvasbase{
     border: 1px solid #856D72;
     border-radius: 10px;
+}
+.mediaclass{
+    width: 600px;
+    height: 200px;
+    margin:20px 0 0 20px;
+    float: left;
+    display: flex;    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+audio{
+    width: 500px;
+    margin: 10px auto;
 }
 .canvasGroup,
 .btnGroup {
@@ -62,4 +80,18 @@ input[type='button']:hover,
 input[type='reset']:hover {
     background: #ea4307;
     border: 1px solid #ea4307;
+}
+
+input[type='text'],
+input[type='range']{
+    width: 280px;
+    height: 25px;
+    font: 600 14px/25px  Cambria,'Times New Roman';
+    letter-spacing: 2px;
+    border-radius: 5px;
+    border: 1px solid #fcd304;
+}
+input[type='text']:focus{
+    border: none;
+    outline: 2px solid #EA4307;
 }

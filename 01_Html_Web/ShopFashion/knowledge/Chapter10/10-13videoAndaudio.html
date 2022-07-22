@@ -1,12 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>10-13 video和audio标签的使用</title>
+    <link rel="stylesheet" href="./css/10-00ControlStyleDemo.css">
 </head>
+
 <body>
-    
+    <h2>10-13 video和audio标签的使用</h2>
+    <div class="panel_bg">
+        <div class="panelinline">
+            <h4>10-13-1 播放视频</h4>
+            <video class="mediaclass" poster="img/demo/iceage3.jpg" controls>
+                <source src="media/video/iceage4.mp4" type="video/mp4">
+                <source src="media/video/iceage4.webm" type="video/webm">
+                <source src="media/video/iceage4.ogv" type="video/ogg">
+                您的浏览器不支持video标签
+                
+            </video>
+            <video class="mediaclass" poster="img/demo/iceage3.jpg" controls>
+                <source src="media/video/如何学习.mp4" type="video/mp4">
+                您的浏览器不支持video标签
+            </video>
+            <video class="mediaclass" poster="img/demo/iceage3.jpg" controls>
+                <source src="media/video/journey.mp4" type="video/mp4">
+                您的浏览器不支持video标签
+            </video>
+        </div>
+        <div class="panel">
+            <h4>10-13-2 播放音频</h4>
+            <div class="mediaclass">
+                <audio controls>
+                    <source src="media/audio/我只在乎你.mp3" type="audio/mpeg">
+                    <source src="media/audio/我只在乎你.ogg" type="audio/ogg">
+                    <source src="media/audio/我只在乎你.wav" type="audio/x-wav">
+                    您的浏览器不支持audio标签
+                </audio>
+                <audio controls>
+                    <source src="media/audio/我与春风皆过客.mp3" type="audio/mpeg">
+                    您的浏览器不支持audio标签
+                </audio>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

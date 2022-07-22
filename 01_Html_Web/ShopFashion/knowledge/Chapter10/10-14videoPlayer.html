@@ -1,12 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>10-14 video播放器</title>
+    <title>10-14 video播放器控件自定义</title>
+    <link rel="stylesheet" href="./css/10-00ControlStyleDemo.css">
+    <style>
+        input[type='text'] {
+            width: 90px;
+            height: 25px;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <h2>10-14 自定义播放器</h2>
+    <div class="panel_bg">
+        <div class="panelinline">
+            <h4>10-14-1 自定义播放实现示例</h4>
+            <video class="mediaclass" id="myvideo" poster="img/demo/iceage3.jpg" controls>
+                <source src="media/video/iceage4.mp4" type="video/mp4" />
+                <source src="media/video/iceage4.ogv" type="video/ogg" />
+                <source src="media/video/iceage4.webm" type="video/webm" />
+                您的浏览器不支持video标签
+            </video>
+        </div>
+        <div class="clear"></div>
+        <div class="btnGroup">
+            <input id="videoPlayer" type="button" value="开始播放">
+            <input id="videoRange" type="range" value="0" max="100" width="450px">
+            <input id="videoInfo" type="text" disabled>
+            <input id="videoVoice" type="button" value="无声播放">
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var myvideo = document.getElementById('myvideo');
+        var videoPlayer = document.getElementById('videoPlayer');
+        var videoRange = document.getElementById('videoRange');
+        var videoInfo = document.getElementById('videoInfo');
+        var videoVoice = document.getElementById('videoVoice');
+        /* 播放与暂停按钮切换 */
+        videoPlayer.onclick = function () {
+            if (myvideo.paused) {
+                myvideo.play();
+                videoPlayer.value = '暂停播放';
+            } else {
+                myvideo.pause();
+                videoPlayer.value = '开始播放';
+            }
+        }
+        /* 无声播放和有声播放切换 */
+        videoVoice.onclick = function () {
+            if (!myvideo.muted) {
+                videoVoice.value = '有声播放';
+                myvideo.muted = true;
+            } else {
+                videoVoice.value = '静音播放';
+                myvideo.muted = false;
+            }
+        }
+
+        /* 视频播放,滚动条同步 */
+        myvideo.ontimeupdate = function () {
+            var currentTime = Math.round(myvideo.currentTime * Math.pow(10, 2) / Math.pow(10, 2));
+            var taotalTime = Math.round(myvideo.duration * Math.pow(10, 2) / Math.pow(10, 2));
+            videoInfo.value = currentTime + "/" + taotalTime;
+            videoRange.value = (currentTime / taotalTime) * 100;
+            if (myvideo.ended) {
+                videoRange.value = 0;
+            }
+        }
+        videoRange.onmousedown = function () {
+            myvideo.pause();
+        }
+        videoRange.onmouseup = function () {
+            myvideo.currentTime = myvideo.duration * (videoRange.value / videoRange.max);
+            myvideo.play();
+        }
+    </script>
 </body>
+
 </html>
