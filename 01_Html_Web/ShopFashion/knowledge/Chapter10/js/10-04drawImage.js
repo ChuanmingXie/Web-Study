@@ -1,3 +1,20 @@
+/* 设置图片大小 */
+function drawImageSize() {
+    var canvasbase = document.getElementById('canvasimgbase');
+    var contextbase = canvasbase.getContext('2d');
+    var img = new Image();
+    img.src = '../img/demo/girl_little.jpg';
+    var width = 80;
+    var height = 100;
+    img.onload = function () {
+        contextbase.drawImage(img, 10, 10);
+        contextbase.drawImage(img, 120, 10, 80, 120);
+        contextbase.drawImage(img, 10, 10, width, height, 210, 10, width, height);
+        contextbase.drawImage(img, 10, 10, width, height, 310, 10, width * 1.1, height * 1.1);
+        contextbase.drawImage(img, 10, 10, width, height, 410, 10, width * 0.8, height * 0.8);
+    }
+}
+
 /* 图像平铺 */
 function fillImageContext() {
     var contextfill = cavansList[1].getContext('2d');
