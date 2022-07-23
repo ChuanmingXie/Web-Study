@@ -100,7 +100,9 @@ input[type='reset']:hover {
 }
 
 input[type='text'],
-input[type='range']{
+input[type='range'],
+select,
+.textinline{
     width: 280px;
     height: 25px;
     font: 600 14px/25px  Cambria,'Times New Roman';
@@ -108,12 +110,30 @@ input[type='range']{
     border-radius: 5px;
     border: 1px solid #fcd304;
 }
-input[type='text']:focus{
+select {
+    width: 285px;
+    height: 30px;
+}
+option {
+    line-height: 30px;
+    font-family: Cambria, '楷体';
+    font-size: 18px;
+}
+input[type='text']:focus,
+select:focus,
+.textinline:focus{
     border: none;
     outline: 2px solid #EA4307;
 }
+.textinline{
+    height: 50px;
+}
 
 
+.resultdiv {
+    min-height: 95px;
+    width: 90%;
+}
 table {
     width: 600px;
     margin: 5px auto;
@@ -135,7 +155,6 @@ table th {
     border: none;
     border-bottom: 1px solid #BBB5AC;
 }
-
 table td,
 table tr {
     border: none;

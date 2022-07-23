@@ -1,12 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>10-17 本地数据库-SQLite</title>
+    <title>10-17 本地数据库-SQLite|IndexDB</title>
+    <link rel="stylesheet" href="./css/10-00ControlStyleDemo.css">
+    <style>
+        table,
+        .btnGroup {
+            width: 90%;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <h2>10-17 本地数据库</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h4>10-17-1 SQLite数据库 - 商品销售系统</h4>
+            <div class="formclass">
+                <div class="forminline">商品名称：<input type="text" id="goodNameSQlite"></div>
+                <div class="forminline">商品价格：<input type="text" id="goodpriceSQlite"></div>
+                <div class="forminline">商品数量：<input type="text" id="goodSaleSQlite"></div>
+                <div class="btnGroup">
+                    <input type="button" value="提交订单" onclick="saleDataReord()">
+                    <input type="button" value="历史销售" onclick="saleDataShow()">
+                    <input type="button" value="清空历史" onclick="saleDataClear()">
+                </div>
+                <hr>
+                <div class="resultdiv" id="resutlSQlite"></div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h4>10-17-2 IndexDB 数据库 - 商品评价记录</h4>
+            <div class="formclass">
+                <div class="forminline">商品名称：<input type="text" id="goodNameDB">　　　</div>
+                <div class="forminline">商品评价：<textarea id="goodContent" class="textinline"></textarea>　　　</div>
+                <div class="forminline">商品星级：
+                    <select id="goodGrade">
+                        <option value="5">5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>　⭐&nbsp;&nbsp;&nbsp;
+                </div>
+                <div class="btnGroup">
+                    <input type="button" id="commentRecord" value="提交评价" onclick="commentDataRecord()">
+                    <input type="button" id="commentShow" value="显示评价" onclick="commentDataShow()">
+                    <input type="button" id="commentClear" value="清空评价" onclick="commentDataClear('goodCommentDB')">
+                </div>
+                <hr>
+                <div class="resultdiv" id="resultindexDB"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        //创建SQLite数据库访问对象
+        var db = openDatabase("goodSQLiteDB", '1.0', 'walking Fashion E&S Database', 2 * 1024 * 1024);
+        /* 调用初始化函数,表saleDetail不存在时创建 */
+        initSQLite();
+        function initSQLite() {
+            db.transaction(function (tx) {
+                tx.executeSql("Create table if not exists saleDetail("
+                    + "goodName text not null,"
+                    + "goodPrice real,"
+                    + "goodSale int,"
+                    + "time integer)", []);
+            });
+        }
+        /* 保存数据函数 */
+        function saleDataReord() {
+            var goodName = document.getElementById('goodNameSQlite');
+            var goodPrice = document.getElementById('goodpriceSQlite');
+            var goodSale = document.getElementById('goodSaleSQlite');
+            var time = new Date().getTime();
+            //将数据保存到数据库中
+            db.transaction(function (tx) {
+                tx.executeSql('insert into saleDetail(goodName,goodPrice,goodSale,time) values(?,?,?,?)',
+                    [goodName.value, goodPrice.value, goodSale.value, time],
+                    function (tx, rs) {
+                        alert('数据保存成功');
+                        saleDataShow();
+                        goodName.value = "";
+                        goodPrice.value = "";
+                        goodSale.value = "";
+                    },
+                    function (tx, error) {
+                        alert('数据保存失败：' + error.message);
+                    });
+            });
+        }
+        /* 显示数据函数 */
+        function saleDataShow() {
+            // 先清空历史内容
+            var resultdiv = document.getElementById('resutlSQlite');
+            resultdiv.innerHTML = "";
+            // 追加HTML内容
+            var result = '<table rules="all">';
+            var caption = '<caption>销售历史订单</caption>';
+            var title = '<thead><tr><th>商品名称</th><th>商品价格</th><th>销售数量</th><th>销售时间</th></tr></thead>'
+            result += caption + title;
+            result += '<tbody>';
+            // 从数据库中查询数据
+            db.transaction(function (tx) {
+                tx.executeSql("select goodName,goodPrice,goodSale,time as time from saleDetail", [],
+                    function (tx, rs) {
+                        for (let i = 0; i < rs.rows.length; i++) {
+                            result += '<tr><td>' + rs.rows[i].goodName +
+                                '</td><td>' + rs.rows[i].goodPrice +
+                                '</td><td>' + rs.rows[i].goodSale +
+                                '</td><td>' + getFormatTime(rs.rows[i].time) +
+                                '</td></tr>'
+                        }
+                        result += '</tbody></table>';
+                        resultdiv.innerHTML = result;
+                    }, function (tx, error) {
+                        alert('数据读取失败：' + error.message);
+                    });
+            });
+        }
+        /* 清空数据库中数据 */
+        function saleDataClear() {
+            db.transaction(function (tx) {
+                tx.executeSql('delete from saleDetail', [],
+                    function (tx, rs) {
+                        alert('销售订单数据清空完成');
+                        saleDataShow();
+                    }, function (tx, error) {
+                        alert('销售订单数据清空失败' + error.message);
+                    });
+            });
+        }
+
+        /* 创建IndexDB数据访问对象 */
+        var indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.msIndexedDB;
+        var dbName = 'goodCommentDB';
+        var dbVersion = 1;
+        var storeName = 'commentStore';
+        var idb = null;
+        /* 代码初始化 */
+        init();
+        function init() {
+            var dbRequest = indexedDB.open(dbName, dbVersion);
+            dbRequest.onsuccess = function (e) {
+                idb = e.target.result;
+                alert('数据库连接成功');
+            }
+            dbRequest.onerror = function (e) {
+                alert('数据库连接失败');
+            }
+            dbRequest.onupgradeneeded = function (e) {
+                idb = e.target.result;
+                if (!idb.objectStoreNames.contains(storeName)) {
+                    var optionalParameters = {
+                        keyPath: "id",
+                        autoIncrement: true
+                    };
+                    var objectStore = idb.createObjectStore(storeName, optionalParameters);
+                    alert('对象仓库创建成功');
+                }
+                var tx = e.target.transaction;
+                alert('数据库版本更新成功！版本' + e.oldVersion + "=>版本" + e.newVersion);
+            }
+        }
+
+        function commentDataRecord() {
+            var goodNameDB = document.getElementById('goodNameDB');
+            var goodContent = document.getElementById('goodContent');
+            var goodGrade = document.getElementById('goodGrade');
+            var commenttime = new Date().getTime();
+            var comment = {
+                goodNameDB: goodNameDB.value,
+                goodContent: goodContent.value,
+                goodGrade: goodGrade.value,
+                commentTime: commenttime
+            };
+            var tx = idb.transaction(storeName, 'readwrite');
+            tx.oncomplete = function () {
+                alert('数据保存成功');
+            }
+            tx.onabort = function () {
+                alert('数据保存失败');
+            };
+            var objectStore = tx.objectStore(storeName);
+            objectStore.add(comment);
+        }
+        function commentDataShow() {
+            var resultdiv = document.getElementById('resultindexDB');
+            resultdiv.innerHTML = "";
+            var result = '<table rules="all">';
+            var caption = '<caption>商品评价表</caption>';
+            var title = '<thead><tr><th>商品名称</th><th>商品评价</th><th>评价星级</th><th>销售时间</th></tr></thead>'
+            result += caption + title;
+            result += '<tbody>';
+            var tx = idb.transaction(storeName, 'readonly');
+            var objectStore = tx.objectStore(storeName);
+            var dbRequest = objectStore.openCursor();
+            dbRequest.onsuccess = function (e) {
+                var cursor = e.target.result;
+                if (cursor) {
+                    result += '<tr><td>' + cursor.value.goodNameDB +
+                        '</td><td>' + cursor.value.goodContent +
+                        '</td><td>' + cursor.value.goodGrade +
+                        '</td><td>' + getFormatTime(cursor.value.commentTime) +
+                        '</td></tr>';
+                    cursor.continue();
+                } else {
+                    console.log("检索结束！");
+                }
+                result += '</tbody></table>';
+                resultdiv.innerHTML = result;
+            };
+            dbRequest.onerror = function (e) {
+                console.log('检索失败！');
+            }
+        }
+        function commentDataClear(databaseName) {
+            var dbRequest = indexedDB.deleteDatabase(databaseName);
+            var result = document.getElementById('resultindexDB');
+            result.innerHTML = "";
+        }
+        function createStar(goodGrade) {
+            var stars = '';
+            for (let i = 0; i < goodGrade; i++) {
+                stars += "⭐";
+            }
+            return stars;
+        }
+
+        //将长整形日期数据格式化显示
+        function getFormatTime(myDateTime) {
+            var myDate = new Date(myDateTime);
+            var dateStr = "";
+            var year = myDate.getFullYear();
+            var month = myDate.getMonth() + 1;
+            var date = myDate.getDate();
+            var hour = myDate.getHours();
+            var minute = myDate.getMinutes();
+            var second = myDate.getSeconds();
+            dateStr = dateStr + year + "年" + month + "月" + date + "日 " + hour + ":" + minute + ":" + second + "<br/>";
+            return dateStr;
+        }
+    </script>
+
 </body>
+
 </html>

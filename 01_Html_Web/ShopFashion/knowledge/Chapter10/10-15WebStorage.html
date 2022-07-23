@@ -8,11 +8,6 @@
     <title>10-15 web存储-session Storage|local Storage</title>
     <link rel="stylesheet" href="./css/10-00ControlStyleDemo.css">
     <style>
-        #resultdiv {
-            min-height: 95px;
-            width: 90%;
-        }
-
         table,
         .btnGroup {
             width: 90%;
@@ -34,7 +29,7 @@
                     <input type="button" id="goodShow" value="显示商品">
                 </div>
                 <hr>
-                <div id="resultdiv"></div>
+                <div id="result" class="resultdiv"></div>
             </div>
         </div>
 
@@ -98,7 +93,7 @@
                 }
             }
             result += '</tbody></table>';
-            var resultdiv = document.getElementById('resultdiv');
+            var resultdiv = document.getElementById('result');
             resultdiv.innerHTML = result;
         }
 

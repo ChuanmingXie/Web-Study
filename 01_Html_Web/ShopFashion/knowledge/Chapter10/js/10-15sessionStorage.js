@@ -29,6 +29,6 @@ goodShow.onclick = function () {
         }
     }
     result += '</tbody></table>';
-    var resultdiv = document.getElementById('resultdiv');
+    var resultdiv = document.getElementById('result');
     resultdiv.innerHTML = result;
 }
