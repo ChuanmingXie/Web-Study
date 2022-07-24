@@ -206,15 +206,16 @@
                 if (cursor) {
                     result += '<tr><td>' + cursor.value.goodNameDB +
                         '</td><td>' + cursor.value.goodContent +
-                        '</td><td>' + cursor.value.goodGrade +
+                        '</td><td>' + createStar(cursor.value.goodGrade) +
                         '</td><td>' + getFormatTime(cursor.value.commentTime) +
                         '</td></tr>';
                     cursor.continue();
+
+                    result += '</tbody></table>';
+                    resultdiv.innerHTML = result;
                 } else {
                     console.log("检索结束！");
                 }
-                result += '</tbody></table>';
-                resultdiv.innerHTML = result;
             };
             dbRequest.onerror = function (e) {
                 console.log('检索失败！');
