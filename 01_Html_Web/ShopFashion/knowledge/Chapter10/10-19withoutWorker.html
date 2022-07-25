@@ -1,12 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>10-19 不使用多线程</title>
+    <title>10-19 未使用Worker多线程</title>
+    <link rel="stylesheet" href="./css/10-00ControlStyleDemo.css">
 </head>
+
 <body>
-    
+    <h2>10-19 未使用Worker多线程</h2>
+    <div class="panel_bg">
+        <h4>10-19-1 示例：</h4>
+        <div class="formclass">
+            <div class="forminline">
+                请输入一个整数n： <input type="text" name="number" id="number" />
+            </div>
+            <div class="forminline">
+                N项和计算结果为： <input type="text" name="result" id="result" />
+            </div>
+            <div class="forminline">
+                <input type="button" value="计算0-N的和" onclick="sum()">
+            </div>
+        </div>
+    </div>
+    <div class="panel_bg">
+        <h4>10-19-2 示例：</h4>
+        <div class="formclass">
+            <div class="forminline">请输入后天发送的数据: <input type="text" id="num"> </div>
+            <div class="forminline">多线程获取到的数据为: <span id="resultspan"></span> </div>
+            <div class="btnGriup">
+                <input type="button" id="sendGBtn" value="发送数据">
+                <input type="button" id="getBtn" value="获取结果">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function sum() {
+            var num = parseInt(document.getElementById('number').value);
+            var sum = 0;
+            for (let i = 0; i < num; i++) {
+                sum += i;
+            }
+            document.getElementById('result').value = sum;
+        }
+    </script>
 </body>
+
 </html>

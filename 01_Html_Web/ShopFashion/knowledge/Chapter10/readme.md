@@ -1,6 +1,10 @@
 ### 10.HTML5进阶
 
 #### 10.1 Canvas绘图
+HTML 5中新增了<canvas>标签，用于在页面中绘制图形
+<canvas>标签是一块空白的“画布”并不会绘制，需要通过JavaScript脚本进行绘制
+![](./doc/CanvasRenderingContent2D.png)
+
 ##### 10.1.1 canvas标签
 ##### 10.1.2 CanvasRendingContext2D对象
 ##### 10.1.3 绘制图形
