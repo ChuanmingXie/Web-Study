@@ -1,0 +1,13 @@
+onmessage = function (e) {
+    var intArray = JSON.parse(e.data);
+    console.long(e.data);
+    var luckyNum = "";
+    for (let i = 0; i < intArray.length; i++) {
+        if (intArray[i] % 2 == 0 && intArray[i] % 3 == 0 && intArray[i] != 0) {
+            if (luckyNum != "") {
+                luckyNum += ";"
+            }
+        }
+        luckyNum += intArray[i];
+    }
+}

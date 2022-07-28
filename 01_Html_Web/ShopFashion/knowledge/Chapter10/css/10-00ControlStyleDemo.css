@@ -60,6 +60,12 @@ audio{
     align-items: center;
     margin: 15px auto;
 }
+.forminline span {
+    width: 280px;
+    height: 28px;
+    margin: 0 3px;
+    border-bottom: 1px solid #edb132;
+}
 .canvasGroup,
 .btnGroup {
     margin: 0 auto;

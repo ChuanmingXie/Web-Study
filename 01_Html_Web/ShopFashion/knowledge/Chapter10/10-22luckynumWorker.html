@@ -1,12 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>10-22 多线程显示幸运数字</title>
+    <link rel="stylesheet" href="./css/10-00ControlStyleDemo.css">
 </head>
+
 <body>
-    
+    <h2>10-22 多线曾显示幸运数字</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h4>10-22 彩票开奖</h4>
+            <table rules="all" border="1">
+                <caption>本次彩票的中奖号码为</caption>
+                <thead>
+                    <tr>
+                        <th>开奖等级</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                    </tr>
+                </thead>
+                <tbody id="showBody">
+                    <tr>
+                        <td>一等奖</td>
+                        <td>24</td>
+                        <td>45</td>
+                        <td>05</td>
+                        <td>54</td>
+                        <td>16</td>
+                        <td>29</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var size = 6;
+        var worker = new Worker('js/10-22luckyNumCreator.js');
+        worker.postMessage("");
+        worker.onmessage = function (e) {
+            var showBody = document.getElementById('showBody');
+            // var luckyNum = '二等奖,1,2,3,4,5,6'.split(',');
+            var luckyNum = e.data;
+            var k = 0;
+            var row;
+            for (let i = 0; i < luckyNum.length / size; i++) {
+                row = showBody.insertRow(showBody.rows.length);
+                for (let j = 0; j <= size; j++) {
+                    if(k<luckyNum.length){
+                        row.insertCell(j).innerHTML = luckyNum[k++];
+                    }
+                    else{
+                        break;
+                    }
+                }
+            }
+        }
+    </script>
 </body>
+
 </html>

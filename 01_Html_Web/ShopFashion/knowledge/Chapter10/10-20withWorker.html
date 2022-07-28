@@ -1,12 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>10-20 使用多线程</title>
+    <link rel="stylesheet" href="./css/10-00ControlStyleDemo.css">
+    <style>
+        .formclass .btnGroup {
+            width: 90%;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <h2>10-20 使用多线程</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h4>10-20 使用多线程计算</h4>
+            <div class="formclass">
+                <div class="forminline">请输入数据计算前N项和：<input type="text" id="amountNum"></div>
+                <div class="forminline">通过多线程计算后N项和：<span id="resultAmount"></span></div>
+                <div class="btnGroup">
+                    <input type="button" id="sumBtn" value="开始计算">
+                    <input type="button" id="stopBtn" value="停止计算">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var worker = new Worker('./js/10-20withworkerExecSum.js');
+        var sumBtn = document.getElementById('sumBtn');
+        var stopBtn = document.getElementById('stopBtn');
+        sumBtn.onclick = function (e) {
+            var num = parseInt(document.getElementById('amountNum').value);
+            worker.postMessage(num);
+        }
+        worker.onmessage = function (e) {
+            document.getElementById('resultAmount').innerHTML = e.data;
+        }
+        stopBtn.onclick=function(e){
+            console.log('已停止计算');
+            worker.terminate();
+            console.log('重新开辟worker线程')
+            worker = new Worker('./js/10-20withworkerExecSum.js');
+        }
+    </script>
 </body>
+
 </html>
