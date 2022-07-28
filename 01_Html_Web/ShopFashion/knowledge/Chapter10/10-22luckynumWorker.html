@@ -29,7 +29,7 @@
                 </thead>
                 <tbody id="showBody">
                     <tr>
-                        <td>一等奖</td>
+                        <td>特等奖</td>
                         <td>24</td>
                         <td>45</td>
                         <td>05</td>
@@ -49,7 +49,7 @@
         worker.onmessage = function (e) {
             var showBody = document.getElementById('showBody');
             // var luckyNum = '二等奖,1,2,3,4,5,6'.split(',');
-            var luckyNum = e.data;
+            var luckyNum = e.data.split(',');
             var k = 0;
             var row;
             for (let i = 0; i < luckyNum.length / size; i++) {
