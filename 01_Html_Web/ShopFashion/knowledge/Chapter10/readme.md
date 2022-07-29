@@ -30,7 +30,7 @@
     drawImage(image, x, y, width, height)
     drawImage(image, sourceX, sourceY, sourceWidth, sourceHeight, destX, destY,destWidth, destHeight)
 
-         参数               |            含义
+参数               |            含义
 :--------------------------:|:--------------------------:|
 image                       |所要绘制的图像；
 (sourceX,sourceY)           |表示在绘制图像时，从源图像的哪个位置开始绘制；
@@ -173,7 +173,7 @@ destWidth,destHeight        |所绘图像区域的宽度与高度。
     i. HTML5的多媒体标签<video/>和<audio/>
 	    使用这两种标签非常简单，只需要指定src，controls等属性即可。语法如下:
 
-    属性    |	  描述
+属性    |	  描述
 :----------:|:----------:|
 src 	    | 指定播放的视频或音频的URL地址
 autoplay	| 指定视频和音频加载完成后会自动播放
@@ -388,7 +388,7 @@ type	|指定媒体资源的MIME类型，即设定视频type="video/webm|ogg|mp4"
 ##### 10.5.1 Worker 基本应用
     应用步骤：
 
-    步骤　|　示例　
+步骤　|　示例　
 :---------------------------:|:---------------------------:|
 创建Worker对象		          |参数URL表示后台线程执行的脚本文件的URL，<br>如：var worker = new Worker('js/10-22luckyNumCreator.js');
 Worker对象的postMessage()方法 |通过Worker对象的postMessage()方法向后台线程发送消息
