@@ -193,29 +193,28 @@
         function commentDataShow() {
             var resultdiv = document.getElementById('resultindexDB');
             resultdiv.innerHTML = "";
-            var result = '<table rules="all">';
+            var results = '<table rules="all">';
             var caption = '<caption>商品评价表</caption>';
             var title = '<thead><tr><th>商品名称</th><th>商品评价</th><th>评价星级</th><th>销售时间</th></tr></thead>'
-            result += caption + title;
-            result += '<tbody>';
+            results += caption + title;
+            results += '<tbody>';
             var tx = idb.transaction(storeName, 'readonly');
             var objectStore = tx.objectStore(storeName);
             var dbRequest = objectStore.openCursor();
             dbRequest.onsuccess = function (e) {
                 var cursor = e.target.result;
                 if (cursor) {
-                    result += '<tr><td>' + cursor.value.goodNameDB +
+                    results += '<tr><td>' + cursor.value.goodNameDB +
                         '</td><td>' + cursor.value.goodContent +
                         '</td><td>' + createStar(cursor.value.goodGrade) +
                         '</td><td>' + getFormatTime(cursor.value.commentTime) +
                         '</td></tr>';
                     cursor.continue();
-
-                    result += '</tbody></table>';
-                    resultdiv.innerHTML = result;
                 } else {
+                    results += '</tbody></table>';
                     console.log("检索结束！");
                 }
+                resultdiv.innerHTML = results;
             };
             dbRequest.onerror = function (e) {
                 console.log('检索失败！');
