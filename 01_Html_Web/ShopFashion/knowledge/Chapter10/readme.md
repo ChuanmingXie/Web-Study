@@ -6,7 +6,8 @@
 		A. 绘制的步骤如下：
             ○ 在页面中定义<canvas>标签，并为其添加width和Height
             ○ 在js脚本中通过getElementById()等方法获得该canvas对象
-            ○ 调用canvas对象的getContext()方法,返回一个图像上下文对象(GraphicsContext)，Content提供了getcontext("2D")返回一个CanvasRenderingContent2D对象，用于绘制二维图形
+            ○ 调用canvas对象的getContext()方法,返回一个图像上下文对象(GraphicsContext)，
+	    Content提供了getcontext("2D")返回一个CanvasRenderingContent2D对象，用于绘制二维图形
             ○ 调用CanvasRenderingContent2D响应的绘制方法，实现图形绘制
 
 ##### 10.1.1 canvas标签
@@ -28,6 +29,7 @@
     drawImage(image, x, y)
     drawImage(image, x, y, width, height)
     drawImage(image, sourceX, sourceY, sourceWidth, sourceHeight, destX, destY,destWidth, destHeight)
+
          参数               |            含义
 :--------------------------:|:--------------------------:|
 image                       |所要绘制的图像；
@@ -109,6 +111,7 @@ destWidth,destHeight        |所绘图像区域的宽度与高度。
         参数endAngle表示沿着圆指定弧的结束点的角度；
         参数counterClockWise表示弧沿着圆周的逆时针方向（true）还是顺时针方向（false）。
 ![](./doc/arc.png)
+
     B. 语法： arcTo(x1, y1, x2, y2, radius)
         其中P0为起始点；
         参数x1、y1分别是点P1的x、y坐标，P0P1为圆弧的切线，P0为切点；
@@ -169,6 +172,7 @@ destWidth,destHeight        |所绘图像区域的宽度与高度。
 ##### 10.2.1 H5的多媒体支持
     i. HTML5的多媒体标签<video/>和<audio/>
 	    使用这两种标签非常简单，只需要指定src，controls等属性即可。语法如下:
+
     属性    |	  描述
 :----------:|:----------:|
 src 	    | 指定播放的视频或音频的URL地址
@@ -221,8 +225,11 @@ type	|指定媒体资源的MIME类型，即设定视频type="video/webm|ogg|mp4"
 #### 10.3 Web存储
     Web 存储指的是Session Storage 和Local Storage
 	iii. Web Storage 技术用于在客户端本地保存数据，有如下两种数据存储形式
-		A. Session Storage ，将数据保存在Session对象中，Session是指用户在浏览某个网站时，从进入网站到浏览器关闭所经历的时间，即用户浏览该网页所花费的时间。而Session对象则用于保存用户浏览网页这段时间所需要保存的任何数据，当用户会话失效时，Session Storage保存的数据也随之丢失
-		B. Local Storage，将数据保存在客户端的硬件设备中，当浏览器关闭后，数据仍然存在，在下次打开浏览器访问页面时仍然可以继续使用，除非用户显示清除该数据
+		A. Session Storage ，将数据保存在Session对象中，Session是指用户在浏览某个网站时，从进入网站到浏览器关闭所经历的时间，
+		即用户浏览该网页所花费的时间。而Session对象则用于保存用户浏览网页这段时间所需要保存的任何数据，
+		当用户会话失效时，Session Storage保存的数据也随之丢失
+		B. Local Storage，将数据保存在客户端的硬件设备中，当浏览器关闭后，数据仍然存在，
+		在下次打开浏览器访问页面时仍然可以继续使用，除非用户显示清除该数据
 		C. sessionStorage和localStorage两个对象都是Storage的实例，两者对应的属性和方法基本相同，区别在于保存数据的声明周期不同
     
     在HTML4中浏览器的主要功能是负责HTML内容的呈现，当客户端有少量的数据存储时，需要通过cookie技术实现，Cookie有一下几个缺点：
@@ -380,6 +387,7 @@ type	|指定媒体资源的MIME类型，即设定视频type="video/webm|ogg|mp4"
 
 ##### 10.5.1 Worker 基本应用
     应用步骤：
+
     步骤　|　示例　
 :---------------------------:|:---------------------------:|
 创建Worker对象		          |参数URL表示后台线程执行的脚本文件的URL，<br>如：var worker = new Worker('js/10-22luckyNumCreator.js');
@@ -391,4 +399,4 @@ Worker对象的postMessage()方法 |通过Worker对象的postMessage()方法向�
     H5中，worker线程允许嵌套子线程。通过线程的嵌套将一个较大的功能切分成多个子线程，
     每个子线程完成各自相对独立的工作。章节实例中给出的是以选取100个随机数中能够同时
     被2和3除尽的数据显示与界面上的程序为示例演示线程嵌套：
-！[](./doc/worker-nest.png)
+![](./doc/worker-nest.png)
