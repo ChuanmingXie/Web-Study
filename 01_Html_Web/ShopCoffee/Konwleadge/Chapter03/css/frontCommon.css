@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+body {font-family: Cambria, '楷体';}
+h2 {font: 700 18px/28px Cambria, '楷体'}
+h3 {font: 700 16px/26px Cambria, '楷体'}
+h4 {font: 700 14px/24px Cambria, '楷体'}
+
+input[type='button'],
+input[type='password'],
+input[type='email'],
+input[type='text'] {
+	padding: 0px 10px;
+	width: 150px;
+}
+
+input[type='submit']{
+    width: 100px;
+    background-color: #b2f1e4fd;
+}
+
+a{
+    font-size: small;
+}
+
+input[type="checked"] {
+	width: 20px;
+}
+select {
+	width: 174px;
+	height: 22px;    
+	padding: 0px 10px;
+}

@@ -164,16 +164,16 @@
 ##### 4.4.4 表格属性
 功 能|属性名|描 述
 :---------:|:---------:|:---------:|
-宽度|width|宽
-高度|height|高
-标题位置|caption-side|设置表格标题的位置,取值top,bottom
-边框|border|设置表格边框宽度
-折叠边框|border-collapse|设置将表格边框折叠为单一边框（separate双边框,默认;collapse 单边框）
-单元格间距|border-spacing|设置相邻单元格的边框间的距离，仅用于双边模式
-内边距|padding|设置表格中内容与边框的距离
-内容水平对齐方式|text-align|设置表格单元格的内容水平对齐方式
-内容垂直对齐方式|vertical-align|设置表格单元格内容的垂直对齐方式
-表格元素内居中|margin:auto|将表格在父元素内设置为居中对齐
+宽度            |width           |宽
+高度            |height          |高
+标题位置        |caption-side    |设置表格标题的位置,取值top,bottom
+边框            |border          |设置表格边框宽度
+折叠边框        |border-collapse |设置将表格边框折叠为单一边框（separate双边框,默认;collapse 单边框）
+单元格间距      |border-spacing  |设置相邻单元格的边框间的距离，仅用于双边模式
+内边距          |padding         |设置表格中内容与边框的距离
+内容水平对齐方式 |text-align      |设置表格单元格的内容水平对齐方式
+内容垂直对齐方式 |vertical-align  |设置表格单元格内容的垂直对齐方式
+表格元素内居中   |margin:auto     |将表格在父元素内设置为居中对齐
 
 ##### 4.4.5 ul列表li的属性
 功 能|属性名|描 述
