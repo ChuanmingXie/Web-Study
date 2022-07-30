@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4-2-3 学校简介-文字及字体属性</title>
+    <style type="text/css">
+        * {margin: 0; padding: 0;}
+        h2 {
+            font-size: 20px;
+            font-family: 华文细黑;
+        }
+        h3 {
+            font-size: 18px;
+            font-family: 华文细黑;
+            color: #4f4f4f;
+            margin: 20px 0;
+        }
+        p {text-indent: 2em;line-height: 1.5em;}
+        
+        .nav_bg {
+            width: 100%;
+            height: 40px;
+            display: block;
+            background: #FECC11;
+            ;
+        }
+        ul li {
+            list-style: none;
+            float: left;
+            width: 150px;
+            margin:0 60px;
+            text-align: center;
+        }
+        a {
+            text-decoration: none;
+            color: green;
+            font-family: 微软雅黑;
+            line-height: 40px;
+            padding: 0 20px 8px 20px;
+            
+        }
+        a:hover{
+            border-bottom:1px solid #438244;
+            color: #2486B9;
+            
+        }
+        .carousel{
+            width: 100%;
+            text-align: center;
+        }
+        .em {
+            font-size: 20px;
+            font-family: 隶书;
+            font-style: italic;
+            color: red;
+        }
+
+        .title{
+            font:600 30px/40px Cambria,'Microsoft Yahei';
+            text-indent: 2em;
+            text-shadow: 3px 3px 4px #333;     
+        }
+        .content{
+            font:300 26px/30px 隶书;
+            color: gray;
+        }
+    </style>
+
+</head>
+
+<body>
+    <article>
+        <header>
+            <h2>介绍我的学校</h2>
+        </header>
+        <nav class="nav_bg">
+            <ul>
+                <li><a href="#intro">学校简介</a></li>
+                <li><a href="#spirit">大学精神</a></li>
+                <li><a href="#campus">校园风光</a></li>
+            </ul>
+        </nav>
+        <div class="logo">
+
+        </div>
+        <section>
+            <article>
+                <header>
+                    <h3 id="intro">学校简介</h3>
+                </header>
+                <div class="carousel">
+                    <img src="./img/schoolbulid.jpg" alt="">
+                </div>
+                <p>学校坐落于美丽的海滨城市大连，地处大连软件园核心区域，占地面积60.3万平方米，总建筑面积39.9万平方米，现有在校生14000余人。学校现设有15个教学机构，学科专业涵盖工学、管理学、艺术学、文学4个学科门类，共设置了28个本科专业，面向29个省市招生，同时还有13个高职专科专业面向15个省市招生。
+                </p>
+            </article>
+            <article>
+                <header>
+                    <h3 id="spirit">大学精神</h3>
+                </header>
+                <p><span
+                        class="em">我们的校训是：精勤博学，学以致用。</span>“精勤博学”强调的是为学为人的态度和原则，并诠释了“学”的程度、方式方法和范畴。“学以致用”旨在倡导将学与用紧密联系起来，学用结合，知行合一，将知识运用于实际应用，并在应用中敢为人先，勇于创新，使所学能够真正为社会创造价值，从而实现个人价值和社会价值的统一，达成“教育创造学生价值，学生创造社会价值”的目标，彰显教育的价值和使命。
+                </p>
+            </article>
+            <article>
+                <header>
+                    <h3 id="campus">校园风光</h3>
+                </header>
+                <img src="./img/schoolcarve.jpg" alt="">
+            </article>
+        </section>
+        <footer>
+            <div class="title">精勤博学</div>
+            <div class="content">
+                <p>有志者，事竟成</p>
+                <p>破釜沉舟，百二秦关终归楚</p>
+                <p>苦心人，天不负</p>
+                <p>卧薪尝胆，三千越甲可吞吴</p>
+            </div>
+        </footer>
+    </article>
+
+</body>
+
+</html>

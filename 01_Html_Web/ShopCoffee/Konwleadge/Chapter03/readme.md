@@ -173,6 +173,16 @@ value   | number | 规定默认值
             formmethod - 重写表单的 method 属性
             formnovalidate - 重写表单的 novalidate 属性
             formtarget - 重写表单的 target 属性
+    list属性
+        <datalist> 标签定义选项列表。请与 input 元素配合使用该元素，来定义 input 可能的值，datalist 及其选项不会被显示出来，它仅仅是合法的输入值列表。
+        请使用 input 元素的 list 属性来绑定 datalist。
+            <input list="cars" />
+            <datalist id="cars">
+                <option value="BMW">
+                <option value="Ford">
+                <option value="Volvo">
+            </datalist>
+
 
 
 

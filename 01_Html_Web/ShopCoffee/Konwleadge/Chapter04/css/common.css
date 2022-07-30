@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+body{font-family: Cmabria,'楷体';}
+
+h2{font: 700 18px/28px Cambria, '楷体';}
+h3{font: 700 16px/28px Cambria, '楷体';}
+h4{font: 700 14px/24px Cambria, '楷体';}
+.clear{clear: both;}
+
+hr{
+    width: 90%;
+    height: 1px;
+    background: #594;
+    border: none;
+    margin: 5px auto;
+}
+
+.panel_bg{
+    display: inline-table;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.panel_bg .panel{
+    float: left;
+    width: 650px;
+}
+.panel_bg .panel h4{
+    width: 610px;
+    margin: 10px 0 0 20px;
+}

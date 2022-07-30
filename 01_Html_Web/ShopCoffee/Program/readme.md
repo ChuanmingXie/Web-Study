@@ -17,9 +17,12 @@
 * Chapter01：开发工具
 * Chapter02：Html基础
 * Chapter03：H5新标签元素及属性特性
-* Chapter04-06：CSS基础，基本语法，选择符，常用属性使用，样式定义。CSS盒子模型的常用属性、定位、display；CSS3新引入动画、Animation、Transaction
-* Chapter07-09：JS基础，JS基本语法，JS函数定义、事件和事件处理、内置对象、BOM对象、DOM对象的常用属性和方法
-* Chapter10：H5新增内容Canvas画布，Canvas元素的使用，利用Canvas绘制基本图形、绘制图像、Canvas动画的实现
+* Chapter04-06：CSS基础，基本语法，选择符，常用属性使用，样式定义。
+    CSS盒子模型的常用属性、定位、display；CSS3新引入动画、Animation、Transaction
+* Chapter07-09：JS基础，JS基本语法，JS函数定义、事件和事件处理、
+    内置对象、BOM对象、DOM对象的常用属性和方法
+* Chapter10：H5新增内容Canvas画布，Canvas元素的使用，
+    利用Canvas绘制基本图形、绘制图像、Canvas动画的实现
 * Chapter11：H5本地存储技术，Web Storage和Local　Database
 * Chapter12：jQuery基础，JSON数据结构和Ajax用法
 * Chapter13：HBuilder建立、打包、发布APP
@@ -48,7 +51,8 @@
 * H5的video标签播放MP4视频文件
 
     （2） 商品详情页
-* 商品购买区根据选中商品进行缩略图和图片大图的切换、使用JS的onmousemove事件处理函数响应鼠标行为，H5的Canvas进行图像绘制
+* 商品购买区根据选中商品进行缩略图和图片大图的切换、
+    使用JS的onmousemove事件处理函数响应鼠标行为，H5的Canvas进行图像绘制
 * 商品大图区域，使用H5的Canvas进行图像的剪裁、放大、绘制、实现图片放大镜功能
 * 加入购物车的功能，使用H5的本地数据库存储购物车中的商品
 
