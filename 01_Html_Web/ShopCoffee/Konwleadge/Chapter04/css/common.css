@@ -25,9 +25,10 @@ hr{
 
 .panel_bg .panel{
     float: left;
-    width: 650px;
+    width: 630px;
+    margin-left: 20px;
 }
 .panel_bg .panel h4{
     width: 610px;
-    margin: 10px 0 0 20px;
+    margin: 10px 0 0 10px;
 }

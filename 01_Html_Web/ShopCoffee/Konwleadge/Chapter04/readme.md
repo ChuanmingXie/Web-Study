@@ -48,6 +48,27 @@ color		|  指定阴影颜色
 
 #### 4.3 背景和边框相关属性
 #### 4.3.1 边框
+    边框有三个属性：
+        颜色:border-color
+        粗细:border-width
+        样式:border-style
+    示例：
+        .borderinfo{
+            width: 800px;
+            height: 400px;
+            margin: 0 auto;
+            border-style: solid double dotted dotted;
+            border-width: thin 10px thick medium
+        }
+    说明：
+        border-style 方法是按照规定的顺序，给出1个、2个、3个或者4个属性值，它们的含义将有所区别，具体含义如下：   
+        1.如果给出1个属性值，表示四个边框的属性一样
+        2.如果给出2个属性值，前者表示上下边框的属性，后者表示左右边框的属性；
+        3.如果给出3个属性值，前者表示上边框的属性，中间的数值表示左右边框的属性，后者表示下边框的属性；
+        4.如果给出4个属性值，依次表示上、右、下、左边框的属性，即顺时针排序。
+        注：也可以对某一个边框单独定义属性如：border-left
+
+
 #### 4.3.2 边框阴影
     语法：box-shadow: h-shadow v-shadow blur spread color inset;
 参数        |    含义
@@ -59,7 +80,74 @@ spread		|  指定阴影尺寸
 color		|  指定阴影颜色
 inset		|  指定外部或内部阴影
 
-
 #### 4.3.3 圆角边框
+    为了美化效果，通常会对一个边框使用圆角属性，使用border-radius可以
+    设计元素以圆角的样式显示，其基本语法如下：
+        border-radius:10px;  <!—设置圆角半径为10像素 --> 
+    示例：
+        .radiusdiv{
+            width: 100%;
+            height: 100px;
+            margin: 0 auto;
+            border: 1px solid gray;
+            border-radius: 10px;
+            box-shadow: 10px 10px 5px #888888;
+        }
+    说明：
+        有时候会对元素不同的位置定义圆角，这样就需要分别设置。
+        borde-radius属性派生了4个子属性：
+            borde-top-right-radius：定义右上角的圆角
+            borde-top-left-radius：定义左上角的圆角
+            borde-bottom-right-radius：定义右下角的圆角
+            borde-bottom-left-radius：定义左下角的圆角
+
 #### 4.3.4 图形边框
+    border-image是CSS3新增的属性，用于定义图形边框，可以制作出更加多样化的边框效果。
+    示例：
+        .borderimage{
+            border: 15px solid transparent;
+            width: 90%;
+            height: 200px;
+            border-image:url('./img/border-image.png') 30 30 round;
+        }
+    说明：
+        此例中，图片的路径为img/g2.jpg，剪裁位置向内偏移30像素，
+        图片填充宽度为30像素，平铺方式。
+
 #### 4.3.5 背景
+    i. 背景色:通过使用background-color属性进行设置，比如使用如下语句设置了纯色背景：
+        p {background-color: gray;} <!—段落背景设置为灰色 --> 
+    ii. 图像背景: 使用background-image属性，必须为这个属性设置一个url值：
+        p{background-image: url(../image/2009.jpg); } 
+    上面语句中，将名字为2009.jpg的图片作为背景，但是一定要注意文件存放的位置，
+    如果图片文件路径不正确将无法正确显示。
+
+    iii.背景图像的起始位置: 由background-position属性设置背景图像的起始位置，也就是如何定位背景图片。
+    示例:
+        .backpicbox{
+            height: 200px;
+            width: 200px;
+            border: 1px solid #000;
+            border-image: url('./img/star.png');
+            background-position:75% 0%; /*x轴偏移75%*/
+            background-repeat: no-repeat;
+        }
+    iv.背景图像的尺寸: 由background-size规定背景图像的尺寸。
+    例如：
+        div{
+            background:url(img_flwr.gif);
+            background-size: 63px 100px;
+            background-repeat:no-repeat;
+        }
+    v. 背景图像重复：background-repeat设置背景图像是否及如何重复。
+    默认地，背景图像在水平和垂直方向上重复。
+        p{
+            background-image: url(img/33.jpg); 
+            background-repeat: no-repeat;
+        }
+    取值：
+        no-repeat(不平铺)、repeat-x(横向平铺)、repeat-y(纵向平铺)、
+        repeat(横向和纵向平铺)、inheirt(继承自父元素)
+    
+
+

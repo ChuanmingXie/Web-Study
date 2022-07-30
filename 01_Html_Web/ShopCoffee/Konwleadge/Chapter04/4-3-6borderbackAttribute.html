@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>4-3背景及边框属性</title>
+    <link rel="stylesheet" href="./css/common.css">
     <style type="text/css">
         .logo_bg {
             background: #438244;
@@ -27,15 +28,76 @@
             color: white;
             text-align: center;
         }
+
+        .borderdiv{
+            width: 100%;
+            height: 240px;
+            margin: 0 auto;
+            border-style: solid double dotted dotted ;
+            border-width: thin 10px thick medium;
+            box-shadow: 10px 10px 5px #888888;
+        }
+
+        .radiusdiv{
+            width: 100%;
+            height: 200px;
+            margin: 0 auto;
+            border: 1px solid gray;
+            border-radius: 10px;
+            box-shadow: 10px 10px 5px #888888;
+        }
+        .borderimage{
+            border: 15px solid transparent;
+            width: 90%;
+            height: 200px;
+            border-image:url('./img/border-image.png') 30 30 round;
+        }
+        .backgrounddiv{
+            height: 204px;
+            width: 963px;
+            background-image:url('./img/bg2.png');  /*原图填充*/ 
+        }
+        .backpicbox{
+            height: 200px;
+            border: 1px solid #000;
+            background-image: url('./img/star.png');
+            background-position:75% 0%; /*x轴偏移75%*/
+            background-size: 10% 100%;
+            background-repeat: no-repeat;
+        }
     </style>
 </head>
 
 <body>
-    <h2>4-3-6 校训logo</h2>
-    <div class="logo_bg">
-        <div class="logo"></div>
-        <div class="motto">精勤博学，学以致用</div>
+    <h2>4-3 边框与背景属性</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h4>4-3-6 校训logo</h4>
+            <div class="logo_bg">
+                <div class="logo"></div>
+                <div class="motto">精勤博学，学以致用</div>
+            </div>
+        </div>
+        <div class="panel">
+            <h4>4-3-1 边框</h4>
+            <div class="borderdiv"> </div>
+        </div>
+        <div class="panel">
+            <h4>4-3-2 圆角</h4>
+            <div class="radiusdiv"></div>
+        </div>
+        <div class="panel">
+            <h4>4-3-3 图形边框</h4>
+            <div class="borderimage"></div>
+        </div>
+        <div class="panel">
+            <h4>4-4-4 背景</h4>
+            <div class="backgrounddiv">
+                <div class="backpicbox"></div>
+            </div>
+        </div>
     </div>
+
 </body>
 
 </html>
