@@ -1,14 +1,47 @@
 ### 第四章：CSS基础
 #### 4.1 CSS基本语法
+    CSS概念
+        CSS是Cascading Style Sheets 的缩写，中文的意思是层叠样式表或级联样式表。
+    CSS功能简介
+        CSS可以用来精确的控制页面里每一个元素的字体样式、背景、排列方式、区域尺寸、边框等。
+        使用CSS能够简化网页的格式代码，加快下载显示的速度，外部链接样式可以同时定义多个页面，
+        大大减少了重复劳动的工作量。 
+
 ##### 4.1.1 CSS语句格式
+    css语句格式如下：
+        selector {property: value} (选择符 {属性：值})
+        选择符的作用：限制样式作用的范围
+        p {font-size:15}
+    当属性的值是多个单词组成时，必须在值上加引号
+        h1 {font-family: "Courier New"}
+    如果需要对一个选择符指定多个属性时，使用分号隔开。
+        p {font-size:15;color:red}
+
 ##### 4.1.2 CSS选择符
     基本选择器
+    id选择符和class选择符的区别
+        区别 1：一个id只能在文档中使用一次，而class可以重复使用。
+        区别 2：不能使用id词列表。id 选择符不能结合使用，因为id属性不允许有以空格分隔的词列表。而class选择符可以结合使用，一个HTML元素可以同时具有多个class属性值。
+        注意，class选择符和 id 选择符可能是区分大小写的。这取决于文档的语言。HTML和XHTML将class和id值定义为区分大小写，所以class和id值的大小写必须与文档中的相应值匹配。
+
     组合选择器
     属性选择器
     伪类选择器
     伪元素
 
 #### 4.2 文本和字体相关属性
+    字体 (Font)
+    文本 (Text)
+    背景 (Background)
+    定位 (Positioning)
+    布局 (Layout)
+    外补丁 (Margins)
+    轮廓 (Outlines)
+    边框 (Border)
+    内补丁 (Padding)
+    表格 (Table)
+    滚动条 (Scrollbar)
+
 #### 4.2.1 字体属性
     常用字体属性
 功 能       |属性名       |描 述
