@@ -1,12 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>5-2 浮动定位属性</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <style type="text/css">
+        .panel_bg .panel{width: 400px;height: 380px;}
+        .withbg .panel{width: 630px;}
+        .outter {
+            width: 350px;
+            padding: 10px;
+            border: 1px solid #000;
+            background: yellow;
+        }
+        .outter div {
+            margin: 10px;
+            padding: 10px;
+            border: 1px dashed #000;
+            background: #00CCFF;
+        }
+        .outter p {
+            margin: 10px;
+            padding: 0px;
+            border: 1px dashed grey;
+            background: pink;
+        }
+
+        .box1-1{float: left;}
+        .box1-2,.box2-2{float: left;}
+        .box1-3,.box2-3,.box3-3{float: left;}
+
+        .box1-4,.box2-4{float: left;}
+        .box3-4{float: right;}
+
+        .box1-5,.box3-5{float: left;}
+        .box2-5{float: right;}
+
+        .box1-6,.box2-6,.box3-6{float: left;}
+
+        .box1-7,.box2-7{float: left;}
+        .box3-7{float: right;}
+        /* .box3-7+p{clear:both} */
+        .box2-7~.ptext{clear: left;}
+
+        .box1-8,.box2-8,.box3-8{
+            float: left;
+            width: 80px;
+        }
+        .outter-8{height: 40px;}
+
+        .photoframe{
+            background: #15aa30;
+            width: 620px;
+            height: 280px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .photoframe img{
+            width: 150px;
+            margin: 10px;
+            padding: 10px;
+            background: #FFF;
+            border: 5px solid #00CCFF;
+            float: left;
+        }
+
+        .control_bg{
+            width: 320px;
+            height: 250px;
+            padding:10px 20px;
+            margin: 10px;
+            background: #066;
+            border: 1px solid black;
+            border-radius: 20px;
+            
+        }
+        .control_info{
+            width: 70px;
+            width: 70px;
+            background: #FFF;
+            border-radius: 20px;
+            float: left;
+            margin: 10px;
+            padding: 5px;
+            text-align: center;
+        }
+        .control_info p{
+            margin: 0;
+            padding: 0;
+        }
+        .control_info img{
+            width: 40px;
+            height: 40px;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <h2>5-2 浮动定位属性</h2>
+    <article class="panel_bg">
+        <div class="panel">
+            <h4>5-2-1-0 盒子模式</h4>
+            <div class="outter">
+                <div class="box1">Box-1</div>
+                <div class="box2">Box-2</div>
+                <div class="box3">Box-3</div>
+                <p>在网页设计时，需要我们注意使用内容,填充,边框,边界等属性,对盒子的内容
+                    、样式、布局有一个合理的表示方法,是界面整洁规范</p>
+            </div>
+        </div>
+        <div class="panel">
+            <h4>5-2-1-1 浮动第一个盒子</h4>
+            <div class="outter">
+                <div class="box1-1">Box-1</div>
+                <div class="box2">Box-2</div>
+                <div class="box3">Box-3</div>
+                <p>
+                    在设计网页时,需要我们注意使用内容,填充,边框,边界等属性
+                    对盒子的内容、样式、布局有一个合理的表示方法，使界面整洁规范
+                </p>
+            </div>
+        </div>
+        <div class="panel">
+            <h4>5-2-1-2 浮动前二盒子</h4>
+            <div class="outter">
+                <div class="box1-2">Box-1</div>
+                <div class="box2-2">Box-2</div>
+                <div class="box3">Box-3</div>
+                <p>
+                    在设计网页时,需要我们注意使用内容,填充,边框,边界等属性
+                    对盒子的内容、样式、布局有一个合理的表示方法，使界面整洁规范
+                </p>
+            </div>
+        </div>
+        <div class="panel">
+            <h4>5-2-1-3 浮动三个盒子</h4>
+            <div class="outter">
+                <div class="box1-3">Box-1</div>
+                <div class="box2-3">Box-2</div>
+                <div class="box3-3">Box-3</div>
+                <p>
+                    在设计网页时,需要我们注意使用内容,填充,边框,边界等属性
+                    对盒子的内容、样式、布局有一个合理的表示方法，使界面整洁规范
+                </p>
+            </div>
+        </div>
+        <div class="panel">
+            <h4>5-2-1-4 改变浮动第三个盒子的方向</h4>
+            <div class="outter">
+                <div class="box1-4">Box-1</div>
+                <div class="box2-4">Box-2</div>
+                <div class="box3-4">Box-3</div>
+                <p>
+                    在设计网页时,需要我们注意使用内容,填充,边框,边界等属性
+                    对盒子的内容、样式、布局有一个合理的表示方法，使界面整洁规范
+                </p>
+            </div>
+        </div>
+        <div class="panel">
+            <h4>5-2-1-5 改变浮动第二个盒子的方向</h4>
+            <div class="outter">
+                <div class="box1-5">Box-1</div>
+                <div class="box2-5">Box-2</div>
+                <div class="box3-5">Box-3</div>
+                <p>
+                    在设计网页时,需要我们注意使用内容,填充,边框,边界等属性
+                    对盒子的内容、样式、布局有一个合理的表示方法，使界面整洁规范
+                </p>
+            </div>
+        </div>
+        <div class="panel">
+            <h4>5-2-1-6 浮动全部盒子向左</h4>
+            <div class="outter">
+                <div class="box1-6">Box-1 <br> Box-1</div>
+                <div class="box2-6">Box-2</div>
+                <div class="box3-6">Box-3</div>
+                <p>
+                    在设计网页时,需要我们注意使用内容,填充,边框,边界等属性
+                    对盒子的内容、样式、布局有一个合理的表示方法，使界面整洁规范
+                </p>
+            </div>
+        </div>
+        <div class="panel">
+            <h4>5-2-1-7 使用clear浮动对p元素的影响(对比)</h4>
+            <div class="outter">
+                <div class="box1-7">Box-1</div>
+                <div class="box2-7">Box-2</div>
+                <div class="box3-7">Box-3 <br>Box-3 <br>Box-3 <br>Box-3 </div>
+                <p>
+                    在设计网页时,需要我们注意使用内容,填充,边框,边界等属性
+                    对盒子的内容、样式、布局有一个合理的表示方法，使界面整洁规范
+                </p>
+            </div>
+            <br>
+            <div class="outter">
+                <div class="box1-7">Box-1</div>
+                <div class="box2-7">Box-2</div>
+                <div class="box3-7">Box-3 <br>Box-3 <br>Box-3 <br>Box-3 </div>
+                <p class="ptext">
+                    在设计网页时,需要我们注意使用内容,填充,边框,边界等属性
+                    对盒子的内容、样式、布局有一个合理的表示方法，使界面整洁规范
+                </p>
+            </div>
+        </div>
+        <div class="panel">
+            <h4>5-2-1-8 扩展盒子高度</h4>
+            <div class="outter outter-8">
+                <div class="box1-8">Box-1</div>
+                <div class="box2-8">Box-2</div>
+                <div class="box3-8">Box-3</div>
+                <p>
+                    在设计网页时,需要我们注意使用内容,填充,边框,边界等属性
+                    对盒子的内容、样式、布局有一个合理的表示方法，使界面整洁规范
+                </p>
+            </div>
+        </div>
+    </article>
+    <article class="panel_bg withbg">
+        <div class="panel">
+            <h4>5-2-3 相框</h4>
+            <div class="photoframe">
+                <img src="./img/float/sea.jpg" alt="">
+                <img src="./img/float/bridge.jpg" alt="">
+                <img src="./img/float/tower.jpg" alt="">
+            </div>
+        </div>
+        <div class="panel">
+            <h4>5-2-3 智能家居</h4>
+            <div class="control_bg">
+                <div class="control_info">
+                    <img src="./img/float/star.png" alt="">
+                    <p>智能提醒</p>
+                </div>
+                <div class="control_info">
+                    <img src="./img/float/star.png" alt="">
+                    <p>影视娱乐</p>
+                </div>
+                <div class="control_info">
+                    <img src="./img/float/star.png" alt="">
+                    <p>节能控制</p>
+                </div>
+                <div class="control_info">
+                    <img src="./img/float/star.png" alt="">
+                    <p>实时监控</p>
+                </div>
+                <div class="control_info">
+                    <img src="./img/float/star.png" alt="">
+                    <p>报警系统</p>
+                </div>
+                <div class="control_info">
+                    <img src="./img/float/star.png" alt="">
+                    <p>网络管理</p>
+                </div>
+            </div>
+        </div>
+    </article>
 </body>
+
 </html>

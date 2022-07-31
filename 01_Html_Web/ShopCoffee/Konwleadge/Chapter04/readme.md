@@ -65,7 +65,7 @@
 行间距      |line-height    |设置文本的行高
 字间距      |word-spacing   |设置单词之间的间隔
 字符间距    |letter-spacing |设置字符（汉字）之间的间隔
-字符转换    |text-transform |设置段落中需要强调的文字，取值uppercase,lowercase,capitalize,
+字符转换    |text-transform |设置段落中需要强调的文字，取值uppercase,lowercase,capitalize(把…首字母大写),
 文本修饰符  |text-decoration|设置段落中需要强调的文字,取值underline,overline,line-through,
 文本溢出符  |text-overflow  |规定当前我呢本溢出时发生的事情
 文本阴影    |text-shadow    |给页面添加阴影效果

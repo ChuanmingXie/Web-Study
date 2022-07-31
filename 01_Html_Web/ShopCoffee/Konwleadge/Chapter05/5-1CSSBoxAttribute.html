@@ -5,8 +5,102 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>5-1 CSS盒子属性相关</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <style type="text/css">
+        .outter{
+            width: 350px;
+            padding: 10px;
+            border: 1px solid #000;
+            background: yellow;
+        }
+        .outter div{
+            margin: 10px;
+            padding: 10px;
+            border: 1px dashed #000;
+            background: #00CCFF;
+        }
+        .outter p{
+            margin: 10px;
+            padding: 0px;
+            border: 1px dashed grey;
+            background: pink;
+        }
+
+        .boxbody{
+            width: 562px;
+        }
+        .boxbody .header{
+            font: 700 20px/50px "Times";
+            text-transform: uppercase;
+            color: #FFF;
+            background: #CE5777;
+        }
+        .boxbody .middle{
+            width: 560px;
+            height: 180px;
+            font:800 16px/90px "Times";
+            border: 1px dotted #2376b7;
+            border-top:none;
+            border-bottom:none;
+            background: #FFF;
+            text-transform: uppercase;
+        }
+        .middle .nav_bg{
+            width: 30%;
+            height: 50%;
+            float: left;
+        }
+        .middle .content{
+            width: 50%;
+            height: 50%;
+            float: left;
+            font-size: 18px;
+            background: #74759B;
+            color: #FFF;
+        }
+        .clear{clear: both;}
+        .hotadvise{
+            width: 30%;
+            height: 50%;
+            background:#2C9678 ;
+            text-transform: lowercase;
+            color: #FFF;
+        }
+        footer{
+            width: 100%;
+            color: #FFF;
+            line-height: 20px;
+            font-size: 12px;
+            background: #5E7987;
+        }
+    </style>
 </head>
 <body>
-    
+    <h2>5-1 CSS盒子属性</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h4>5-1-3 盒子模型</h4>
+            <div class="outter">
+                <div class="box1">Box-1</div>
+                <div class="box2">Box-2</div>
+                <div class="box3">Box-3</div>
+                <p>在网页设计时，需要我们注意使用内容,填充,边框,边界等属性,对盒子的内容
+                、样式、布局有一个合理的表示方法,是界面整洁规范</p>
+            </div>
+        </div>
+        <div class="panel">
+            <h4>5-1-4 知识运用</h4>
+            <div class="boxbody">
+                <header class="header">this is header</header>
+                <section class="middle">
+                    <nav class="nav_bg">this is left</nav>
+                    <article class="content">this is content</article>
+                    <div class="clear"></div>
+                    <aside class="hotadvise">This is  aside</aside>
+                </section>
+                <footer>This is footer</footer>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

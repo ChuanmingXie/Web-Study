@@ -1,12 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>5-3 位置定位属性</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <style type="text/css">
+        .absolutediv,
+        .relativediv {
+            width: 420px;
+            height: 180px;
+            padding: 10px;
+            border: 1px dotted black;
+            background: #9bb8e3;
+        }
+        .absolutediv div,
+        .relativediv div {
+            padding: 10px;
+            background: yellow;
+            border: 1px dotted black;
+        }
+        .absolutediv .box2-2,
+        .absolutediv .box2-3 {position: absolute;}
+        .box2-2 {top: 50px;left: 470px;}
+        .box2-3 {top: 313px;left: 430px;}
+        .relativediv .box {
+            background: transparent;
+            color: transparent;
+            border: 1px solid red;
+        }
+        .relativediv .box1 {
+            position: relative;
+            top: -20px;
+            left: 20px;
+        }
+        .relativediv .box1-1 {
+            position: relative;
+            width: 140px;
+            height: 120px;
+        }
+        .relativediv .box2-1 {
+            position: relative;
+            width: 140px;
+            height: 120px;
+            top: -110px;
+            left: 175px;
+            z-index: 2;
+        }
+        .relativediv .box3-1 {
+            position: relative;
+            width: 140px;
+            height: 120px;
+            top: -285px;
+            left: 262px;
+            zoom: 1;
+            z-index: 1
+        }
+
+        .photoWall{position: relative;top: 10px;left: -100px;}
+        .photoWall img{
+            position: absolute;
+            border: 5px solid;
+            border-image:url(./img/position/33.png) 5 5 5 5 round round;
+            padding: 8px;
+            margin: 10px;
+        }
+        .candel {left: 410px;}
+        .fire {left: 200px; top: 120px;}
+        .sweet {left: 105px; top: 270px;}
+        .food {left: 515px; top: 283px;}
+        .turkey {left: 395px; top: 375px;}
+        .fruit {left: 200px; top: 375px;}
+
+        .stampAlbum{
+            width: 400px;
+            height: 260px;
+            background:  #c9aade;
+            padding: 10px;
+            display: inline-flex;
+            justify-content: center;
+            position: relative; 
+            top:10px;
+            /* left: 10px; */
+        }
+        .stampAlbum div{
+            width: 100px;
+            height: 145px;         
+            position: relative;
+            background: 0 0/100% 100% url('./img/position/stamp.jpg') no-repeat;
+            border: 1px dotted #000;
+            float: left;
+            margin: 10px;
+        }
+        .box1-4{top:80px;}
+        .box2-4{top:40px;}
+    </style>
 </head>
+
 <body>
-    
+    <h2>5-3 位置定位属性</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h4>5-3-1-1 绝对定位</h4>
+            <div class="absolutediv">
+                <div class="box1-2">Box-1</div>
+                <div class="box2-2">Box-2</div>
+                <div class="box3-2">Box-3</div>
+            </div>
+            <br>
+            <div class="absolutediv">
+                <div class="box1-3">Box-1</div>
+                <div class="box2-3">Box-2</div>
+                <div class="box3-3">Box-3</div>
+            </div>
+        </div>
+        <div class="panel">
+            <h4>5-3-1-2 相对定位</h4>
+            <div class="relativediv">
+                <div class="box">Box-0</div>
+                <div class="box1">Box-1</div>
+            </div>
+            <br>
+            <div class="relativediv">
+                <div class="box1-1">Box-1</div>
+                <div class="box2-1">Box-2</div>
+                <div class="box3-1">Box-3</div>
+            </div>
+        </div>
+        <div class="panel">
+            <h4>5-3-3照片墙</h4>
+            <div class="photoWall">
+                <img class="candel" src="./img/position/蜡烛.gif" width="75" height="94" alt="该图像无法显示,请查看文件地址">
+                <img class="sweet" src="./img/position/甜点.jpg" width="70" height="73" alt="该图像无法显示,请查看文件地址">
+                <img class="fire" src="./img/position/炉火.jpg" width="289" height="226" alt="该图像无法显示,请查看文件地址">
+                <img class="food" src="./img/position/佳肴.gif" width="95" border="0" alt="该图像无法显示,请查看文件地址">
+                <img class="turkey" src="./img/position/火鸡.gif" width="94" border="0"  alt="该图像无法显示,请查看文件地址">
+                <img class="fruit" src="./img/position/水果.jpg" width="95" border="0"  alt="该图像无法显示,请查看文件地址">
+            </div>
+        </div>
+        <br>
+        <div class="panel">
+            <h4>5-3-4邮票集</h4>
+            <div class="stampAlbum">
+                <div class="box1-4">Box-1</div>
+                <div class="box2-4">Box-2</div>
+                <div class="box3-4">Box-3</div>
+            </div>
+        </div>
+    </div>
+
 </body>
+
 </html>
