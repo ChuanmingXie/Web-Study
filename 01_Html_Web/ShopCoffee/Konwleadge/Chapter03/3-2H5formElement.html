@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3-2 新增表单元素</title>
+    <link rel="stylesheet" href="./css/common.css">
+</head>
+
+<body>
+    <h2>3-2 新增表单元素</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h4>3-2-1 订货人个人信息页</h4>
+            <form action="" name="form1" class="formclass">
+                <div class="forminline">
+                    <label for="username">用户姓名：</label>
+                    <input type="text" id="username"> <br>
+                </div>
+                <div class="forminline">
+                    <label for="userAge">用户年龄：</label>
+                    <input type="number" id="userAge" min="0" max="150"> <br>
+                </div>
+                <div class="forminline">
+                    <label for="userBrithday">出生期日：</label>
+                    <input type="date" id="userBirthday"> <br>
+                </div>
+                <div class="forminline">
+                    <label for="userEmail">用户邮箱：</label>
+                    <input type="email" id="userEmail" required> <br>
+                </div>
+                <div class="forminline">
+                    <label for="userSite">个人主页：</label>
+                    <input type="url" id="userSite"> <br>
+                </div>
+                <div class="textarealine forminline">
+                    <label for="userInfo">用户简介：</label>
+                    <textarea name="" id="userInfo" cols="40" rows="3" required></textarea> <br>
+                </div>
+                <input type="button" value="提交查询内容">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
