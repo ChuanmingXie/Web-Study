@@ -1,13 +1,322 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>6-2 Transition 动画</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <style type="text/css">
+        .panel_bg .panel {
+            width: 1200px;
+        }
+
+        .transitionSize {
+            height: 400px;
+            border: 1px solid #238524;
+            display: inline-flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .hoverdiv {
+            height: 200px;
+            width: 100px;
+            margin: 10px 50px;
+            float: left;
+            background-color: rgb(8, 113, 217);
+            transition: all 1s;
+            /* transition: width 2s,height 2s; */
+        }
+
+        .hoverdiv:hover {
+            height: 380px;
+            width: 100px;
+            transform: rotate(180deg);
+        }
+
+        .navSlider {
+            height: 600px;
+            border: 1px solid #238524;
+        }
+
+        header {
+            height: 40px;
+            margin: -17px 0 20px 0;
+        }
+
+        .navtop_bg {
+            width: 100%;
+            margin: 0;
+            height: 40px;
+            background: #525188;
+            color: #FFF;
+            z-index: 10;
+            -moz-z-index: 10;
+            -webkit-z-index: 10;
+        }
+        .navtop_bg li {
+            width: 120px;
+            list-style: none;
+            font: 600 16px/40px 'Times', '楷体';
+            float: left;
+            padding: 0 10px;
+            margin-bottom: -3px;
+            text-align: center;
+            position: relative;
+        }
+        .navtop_bg li:hover {
+            background: #2775b6;
+            color: #FFF;
+            border-bottom: 1px solid #FFF;
+            cursor: pointer;
+        }
+
+        ul#threelevel {
+            margin-left: 25px;
+        }
+        
+        #threelevel ul{
+            display: none;
+            position: absolute;
+            margin: 0;
+            top: 40px;
+            left: 0;
+        }
+        #threelevel li ul li ul{
+            display: none;
+            position: absolute;
+            margin: 0;
+            top: 0;
+            left:140px;
+        }
+        #threelevel li:hover>ul,
+        #threelevel li ul li:hover>ul{
+            display: block;
+            background: #2775b6;
+            color: #D7C4BB;
+            width: 140px;
+            margin: 0;
+            padding:0;
+            z-index: inherit;
+        }
+
+        .middle_bg {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        ul#nav_left {margin: 0;
+            padding: 0;
+        }
+
+        .nav_bg {
+            width: 30%;
+            height: 530px;
+            background: #ecebeb94;
+            box-shadow: 1px 0px 0px 1px #d4d3d3;
+            border-bottom: 1px solid #d4d4d3;
+            float: left;
+            z-index: 3;
+            -o-z-index: 3;
+            -moz-z-index: 3;
+            -webkit-z-index: 3;
+        }
+
+        .nav_bg ul li {
+            list-style: none;
+            font: 800 14px/40px Cambria, '楷体';
+            border-bottom: 1px solid #74759B;
+            border-radius: 0 0 50px 0;
+            /* background: #5284; */
+        }
+
+        .nav_bg ul li a {
+            text-decoration: none;
+            margin: 0px;
+            padding: 0 20px;
+        }
+
+        .middle_content {
+            width: 680px;
+            height: 530px;
+            float: left;
+            margin-left: 20px;
+        }
+
+        .content {
+            width: 680px;
+            height: 530px;
+            position: absolute;
+            /* left: 10px; */
+            /* top: 0px; */
+            background: #ecebeb94;
+            box-shadow: 1px 1px 0px 1px #68686933;
+        }
+
+        .content p {
+            color: #000;
+            font: 600 14px/30px Cambria, '楷体';
+            margin: 50px 0 0 50px;
+        }
+
+        .middle_content .carousel {
+            width: 680px;
+            height: 500px;
+            position: absolute;
+            margin-left: -102%;
+            transition: all .6s ease-in-out;
+            background: white;
+            z-index: 1;
+            -o-z-index: 1;
+            -moz-z-index: 1;
+            -webkit-z-index: 1;
+        }
+
+        .middle_content .carousel:target {
+            margin-left: 0%;
+        }
+
+        .userAdmin {
+            position: relative;
+            /* background: #537283; */
+            bottom: -286px;
+        }
+
+        .cloumnNav .columndiv{
+            width: 40px;
+            height: 40px;
+            transition: width .2s;
+            /* margin: 0 0 0 20px; */
+            overflow:hidden;
+            font: 600 14px/40px Cambria,'楷书';
+            color: #FFF;
+            display: flex;
+            flex-direction: row-reverse;
+            cursor: pointer;
+        }
+        .cloumnNav .columndiv:nth-child(1){background:#0088cc;}
+        .cloumnNav .columndiv:nth-child(2){background: #e74c3c;}
+        .cloumnNav .columndiv img{width: 40px;height: 40px;margin: 0 3px;}
+        .cloumnNav .columndiv:hover{
+            width: 180px;
+            cursor: pointer;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <h2>6-2 过渡动画 transition</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h4>6-2-1 过渡动画示例</h4>
+            <div class="transitionSize">
+                <div class="hoverdiv"></div>
+                <div class="hoverdiv"></div>
+                <div class="hoverdiv"></div>
+                <div class="hoverdiv"></div>
+                <div class="hoverdiv"></div>
+                <div class="hoverdiv"></div>
+            </div>
+        </div>
+        <div class="panel">
+            <h4>6-2-2 导航切换页面</h4>
+            <div class="navSlider">
+                <header>
+                    <div class="navtop_bg">
+                        <nav>
+                            <ul id="threelevel">
+                                <li>下拉选项1
+                                    <ul>
+                                        <li>二级菜单1
+                                            <ul>
+                                                <li>三级菜单1</li>
+                                                <li>三级菜单2</li>
+                                                <li>三级菜单3</li>
+                                            </ul>
+                                        </li>
+                                        <li>二级菜单2</li>
+                                        <li>二级菜单3</li>
+                                    </ul>
+                                </li>
+                                <li>下拉选项2
+                                    <ul>
+                                        <li>二级菜单1
+                                            <ul>
+                                                <li>三级菜单1</li>
+                                                <li>三级菜单2</li>
+                                                <li>三级菜单3</li>
+                                            </ul>
+                                        </li>
+                                        <li>二级菜单2</li>
+                                        <li>二级菜单3</li>
+                                    </ul>
+                                </li>
+                                <li>下拉选项3
+                                    <ul>
+                                        <li>二级菜单1
+                                            <ul>
+                                                <li>三级菜单1</li>
+                                                <li>三级菜单2</li>
+                                                <li>三级菜单3</li>
+                                            </ul>
+                                        </li>
+                                        <li>二级菜单2</li>
+                                        <li>二级菜单3</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </header>
+                <section class="middle_bg">
+                    <nav class="nav_bg">
+                        <!-- <h4>导航栏</h4> -->
+                        <ul id="nav_left">
+                            <li><a href="#home" id="link-home">作者简介</a></li>
+                            <li><a href="#proinfo" id="link-proinfo">作品展示</a></li>
+                            <li><a href="#about" id="link-about">作者生平</a></li>
+                            <li><a href="#contact" id="link-contact">联系我们</a></li>
+                            <li class="userAdmin">
+                                <div class="cloumnNav">
+                                    <div class="columndiv"><img src="./img/transition/vistor.png" alt="">访客Vistor　　</div>
+                                    <div class="columndiv"><img src="./img/transition/student.png" alt="">学生Student　　</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                    <article class="middle_content">
+                        <div id="home" class="content">
+                            <p>这里是作者简介的页面，在这里可以对作者有个简单的了解</p>
+                        </div>
+                        <div id="proinfo" class="carousel">
+                            <div class="content">
+                                <p>这里是作者的作评展示集页面，这里这可以看到作者的作品</p>
+                            </div>
+                        </div>
+                        <div id="about" class="carousel">
+                            <div class="content">
+                                <p>这里可以进一步的了解作者的性格特点和生平经历，有助于理解作品的写作背景</p>
+                            </div>
+                        </div>
+                        <div id="contact" class="carousel">
+                            <div class="content">
+                                <p>这里是我们的联系方式页面</p>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+            </div>
+        </div>
+        <div class="panel">
+            <h4>6-2-3 伸缩菜单栏</h4>
+            <div class="cloumnNav">
+                <div class="columndiv"><img src="./img/transition/vistor.png" alt="">访客Vistor　　</div>
+                <div class="columndiv"><img src="./img/transition/student.png" alt="">学生Student　　</div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

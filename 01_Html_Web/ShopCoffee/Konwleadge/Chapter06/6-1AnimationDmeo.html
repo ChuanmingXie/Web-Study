@@ -6,8 +6,126 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>6-1 Animation 动画</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <style type="text/css">
+        .path_bg{
+            width: 620px;
+            height: 400px;
+            background:0 0 /100% 100% url(./img/animation/path.png) no-repeat;}
+        
+        .path_bg img{
+            width: 130px;
+            height: 120px;
+            position: relative;
+            animation: carruning 8s,transform 2s infinite;
+            -o-animation: carruning 8s infinite;
+            -webkit-animation: carruning 8s infinite;
+            -moz-animation: carruning 8s infinite;
+        }
+        .path_bg img:hover{
+            transform: rotate(90deg);
+        }
+        @keyframes carruning{
+            0%{left:20px;top:0px;}
+            25%{left:450px;top:0px;}
+            50%{left:450px;top:290px;}
+            75%{left:20px;top:290px;}
+            100%{left:20px;top:0px;}
+        }
+        @-webkit-keyframes carruning{
+            0%{left:20px;top:0px;}
+            25%{left:450px;top:0px;}
+            50%{left:450px;top:290px;}
+            75%{left:20px;top:290px;}
+            100%{left:20px;top:0px;}
+        }
+        .backgroundchange{
+            width: 600px;
+            height: 180px;
+            margin: 20px;
+            border: 2px solid #c9deec;
+            border-radius: 20px;
+        }
+        .areaheight{height: 355px;}
+        .colorbox-1,.colorbox-2,.colorbox-3{
+            width: 100px;
+            height: 100px;
+            font:900 16px/100px Cmabria,'楷书';
+            color: #FFF;
+            text-align: center;
+            margin: 40px;
+            position: relative;
+            background: transparent;
+            border-radius: 10px;
+        }
+        
+        .colorbox-1{
+            animation: boxbackchange 3s infinite;
+            -o-animation: boxbackchange 3s infinite;        /*Opera*/
+            -moz-animation: boxbackchange 3s infinite;      /*Firefox*/
+            -webkit-animation: boxbackchange 3s infinite;   /*safari and Chrome*/
+        }
+        @keyframes boxbackchange{
+            from{background: #FB8B05; left: 0px;top: 0px;}
+            to{background: #00ffff; left: 400px; top: 0px;}
+        }
+
+        .colorbox-2{
+            animation: boxrotate 3s infinite;
+            -o-animation: boxrotate 3s infinite;        /*Opera*/
+            -moz-animation: boxrotate 3s infinite;      /*Firefox*/
+            -webkit-animation: boxrotate 3s infinite;   /*safari and Chrome*/
+        }
+        @keyframes boxrotate{
+            0% {background: #808000; left: 0px; top:0px}
+            50% {background: #008080; left: 200px; top:0px;transform: rotate(-180deg);}
+            100% {background: #00ffff; left: 400px; top:0px}
+        }
+
+
+        .colorbox-3{
+            animation: boxroundruning 10s infinite;
+            -o-animation: boxroundruning 10s infinite;      /*Opera*/
+            -moz-animation: boxroundruning 10s infinite;    /*Firefox*/
+            -webkit-animation: boxroundruning 10s infinite; /*safari and Chrome*/
+        }
+        @keyframes boxroundruning {
+            0% {background: red;left:0px;top:0px;}
+            25% {background: yellow;left:400px;top:0px;color: #000;}
+            50% {background: olive;left:400px;top:180px;}
+            75% {background: green;left:0px;top:180px;}
+            100% {background: red;left:0px;top:0px;}
+        }
+
+    </style>
 </head>
 <body>
-    
+    <h2>6-1 animation动画</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h4>6-1-2 示例：变换的背景</h4>
+            <div class="backgroundchange">
+                <div class="colorbox-1">CSS3 动画</div>
+            </div>
+        </div>
+        <div class="panel">
+            <h4>6-1-3 示例：变换且运动的旋转背景</h4>
+            <div class="backgroundchange">
+                <div class="colorbox-2">CSS3 动画</div>
+            </div>
+        </div>
+        <div class="panel">
+            <h4>6-1-1 示例：跑动的汽车</h4>
+            <div class="path_bg">
+                <img src="./img/animation/car.png" alt="">
+            </div>
+        </div>
+        <div class="panel">
+            <h4>6-1-4 示例：变换且移动的背景</h4>
+            <div class="backgroundchange areaheight">
+                <div class="colorbox-3">CSS3 动画</div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

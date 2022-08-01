@@ -42,7 +42,7 @@
     表格 (Table)
     滚动条 (Scrollbar)
 
-#### 4.2.1 字体属性
+##### 4.2.1 字体属性
     常用字体属性
 功 能       |属性名       |描 述
 :---------:|:-----------:|:---------:|
@@ -53,7 +53,7 @@
 字体大小    |font-size    |设置文本的大小,取值可以为数字、或者xx-small、x-samll、samll、medium、large、x-large、xx-large
 属性合并简写 |font:        |font-style font-variant font-weight font-size/line-height font-family;<br>font:oblique small-caps xx-small 14px/20px Cambria,Microsoft Yahei;
 
-#### 4.2.2 文本属性
+##### 4.2.2 文本属性
     常用文本属性
 功 能      |   属性名   |    描 述    
 :---------:|:---------:|:---------:|
@@ -80,7 +80,7 @@ blur		|  指定模糊距离
 color		|  指定阴影颜色
 
 #### 4.3 背景和边框相关属性
-#### 4.3.1 边框
+##### 4.3.1 边框
     边框有三个属性：
         颜色:border-color
         粗细:border-width
@@ -102,7 +102,7 @@ color		|  指定阴影颜色
         注：也可以对某一个边框单独定义属性如：border-left
 
 
-#### 4.3.2 边框阴影
+##### 4.3.2 边框阴影
     语法：box-shadow: h-shadow v-shadow blur spread color inset;
 参数        |    含义
 :----------:|:---------:|
@@ -113,7 +113,7 @@ spread		|  指定阴影尺寸
 color		|  指定阴影颜色
 inset		|  指定外部或内部阴影
 
-#### 4.3.3 圆角边框
+##### 4.3.3 圆角边框
     为了美化效果，通常会对一个边框使用圆角属性，使用border-radius可以
     设计元素以圆角的样式显示，其基本语法如下：
         border-radius:10px;  <!—设置圆角半径为10像素 --> 
@@ -134,7 +134,7 @@ inset		|  指定外部或内部阴影
             borde-bottom-right-radius：定义右下角的圆角
             borde-bottom-left-radius：定义左下角的圆角
 
-#### 4.3.4 图形边框
+##### 4.3.4 图形边框
     border-image是CSS3新增的属性，用于定义图形边框，可以制作出更加多样化的边框效果。
     示例：
         .borderimage{
@@ -147,7 +147,7 @@ inset		|  指定外部或内部阴影
         此例中，图片的路径为img/g2.jpg，剪裁位置向内偏移30像素，
         图片填充宽度为30像素，平铺方式。
 
-#### 4.3.5 背景
+##### 4.3.5 背景
     i. 背景色:通过使用background-color属性进行设置，比如使用如下语句设置了纯色背景：
         p {background-color: gray;} <!—段落背景设置为灰色 --> 
     ii. 图像背景: 使用background-image属性，必须为这个属性设置一个url值：
@@ -181,6 +181,25 @@ inset		|  指定外部或内部阴影
     取值：
         no-repeat(不平铺)、repeat-x(横向平铺)、repeat-y(纵向平铺)、
         repeat(横向和纵向平铺)、inheirt(继承自父元素)
+
+##### 4.3.6 浏览器内核
+    i. 关于兼容性问题，需要明确格浏览器内核及添加的CSS属性前缀
+        A. Trident 内核
+            该内核在IE4中首次被采用，是微软在Mosaic代码的基础上修改来的，并从IE6沿用至IE11,
+            也普遍的被称为IE内核。因其接口设计的成熟和开放性被很多非IE浏览器使用，
+            如猎豹安全、360(安全、极速)、搜狗高速等
+        B. Webkit 内核
+            Webkit内核常见的浏览器右Apple Safari、Symbian手机浏览器、Android默认浏览器、
+            Google Chrome、360极速浏览器、搜狗浏览器高速模式
+        C. Blink 内核
+            Blink是一个由Google和Opera 一起开发的浏览器引擎版本，
+            使用的是开源引擎Wbekit中WebCore组件的一个分支，
+            并在chrome28及以后、Opera15及以后、Yandex浏览器中使用。
+    ii. 针对浏览器内核不同导致CSS样式不兼容问题，需要添加对应前缀，以animation属性为例
+            animation: boxrotate 3s infinite; 
+            -o-animation: boxrotate 3s infinite;        /*Opera*/
+            -moz-animation: boxrotate 3s infinite;      /*Firefox*/
+            -webkit-animation: boxrotate 3s infinite;   /*safari and Chrome*/
     
 
 
