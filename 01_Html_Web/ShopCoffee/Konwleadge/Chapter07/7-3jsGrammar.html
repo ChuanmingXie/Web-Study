@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>7-3 js语法规则</title>
+    <link rel="stylesheet" href="./css/common.css">
 </head>
+
 <body>
-    
+    <h2>7-3 js语法规则</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h4>7-3-1 输出信息-通过嵌入到HTML中</h4>
+            <p>
+                <script type="text/javascript">
+                    document.write('现在复习JS相关知识点，JS的语法');
+                </script>
+            </p>
+        </div>
+        <div class="panel">
+            <h4>7-3-2 输出信息-通过外部引用文件</h4>
+            <p><script src="./js/7-3jsGrammar.js"></script></p>
+        </div>
+        <div class="panel">
+            <h4>7-3-3 输出信息-通过事件的形式引用</h4>
+            <p onmouseover="javascript:this.innerText='现在复习JS相关知识点，行内引用'">鼠标移动到此</p>
+            <!-- <p onmouseover="javascript:document.write('现在复习JS相关知识点,行内引用')">鼠标移动到此</p> -->
+        </div>
+    </div>
 </body>
+
 </html>

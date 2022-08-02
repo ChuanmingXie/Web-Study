@@ -5,5 +5,5 @@ function textGlobleScope(){
 }
 
 textGlobleScope();
-alert('名称'+name+',地址'+address);
-// alert(tel);
+console.log('名称'+name+',地址'+address);
+// console.log(tel);

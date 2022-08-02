@@ -1,0 +1,1 @@
+document.write('现在复习JS相关知识，JS的外部引用')

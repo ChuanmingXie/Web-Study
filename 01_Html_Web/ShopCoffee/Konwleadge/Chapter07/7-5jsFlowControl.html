@@ -1,12 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>7-5 js流程控制-变量|运算符|流程控制</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <style type="text/css">
+        img {
+            width: 40px;
+        }
+        .whilediv{
+            height: 230px;
+        }
+        .picBorder{
+            width: 480px;
+            margin: 10px auto;
+        }
+        .picBorder img{
+            width: 120px;
+            margin: -2px auto;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <h2>7-5 流程控制语句</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h4>7-5-0 条件语句 分支语句</h4>
+            <div>
+                <script type="text/javascript">
+                    var authority = 1;
+                    if (authority == 1) {
+                        document.writeln("<p>你的权限是<b>管理员</b>,欢迎使用漫步时代广场后台管理系统</p>");
+                    } else if (authority == 2) {
+                        document.writeln("<p>你的权限是<b>店长</b>,欢迎使用漫步时代广场后台管理系统</p>");
+                    } else if (authority == 3) {
+                        document.writeln("<p>你的权限是<b>普通会员</b>,欢迎进入漫步时代广场</p>");
+                    } else {
+                        document.writeln("<p><b>游客</b>你好,欢迎使用漫步时代广场后台管理系统</p>");
+                    }
+                </script>
+                <script type="text/javascript">
+                    var authority1 = "管理员";
+                    document.writeln("<h4>" + authority1 + "的权限如下</h4>");
+                    switch (authority1) {
+                        case "管理员": document.writeln("<p>用户管理<br />商品管理<br />商品类型管理<br />系统管理<br />个人管理<br />退出系统</p>"); break;
+                        case "店长": document.writeln("<p>商品管理<br />商品类型管理<br />个人管理<br />退出系统</p>"); break;
+                        case "普通会员": document.writeln("<p>个人管理<br />退出系统</p>"); break;
+                        default: document.writeln("漫步时代广场"); break;
+                    }
+                </script>
+            </div>
+        </div>
+        <div class="panel">
+            <h4>7-5-1 while循环</h4>
+            <div class="whilediv">
+                <script type="text/javascript">
+                    document.write("<table border='1' rules='all'>");
+                    document.write("<tr>");
+                    document.write("<th>ID</th><th>商品编号</th><th>价格</th>")
+                    document.write("</tr>");
+                    var i = 1;
+                    while (i <= 4) {
+                        document.write('<tr>');
+                        document.write('<td>' + i + '</td>');
+                        document.write('<td>FZ00' + i + '</td>');
+                        document.write('<td>' + (Math.random() * 100).toFixed(2) + '</td>')
+                        document.write('</tr>');
+                        i++;
+                    }
+                    document.write("</table>");
+                </script>
+            </div>
+        </div>
+        <div class="panel">
+            <h4>7-5-3 for 循环</h4>
+            <div><p>
+                <script type="text/javascript">
+                    for (let index = 0; index < 7; index++) {
+                        // 次数注意条件为  j<=index, 实现 下三角
+                        for (let j = 1; j <= index; j++) {
+                            document.write("T T T ");
+                        }
+                        document.write('<img src="img/flowControl/w' + (index % 9 + 1) + '.png" /><br/>')
+                    }
+                    for (let i = 0; i < 7; i++) {
+                        for (let k = 6; k > i; k--) {
+                            document.write('T T T ');
+                        }
+                        document.write("<img src='img/flowControl/w" + (i % 9 + 1) + ".png' /><br />");
+                    }
+                </script>
+            </p></div>
+        </div>
+        <div class="panel">
+            <h4>7-5-2 do...while循环</h4>
+            <div class="picBorder">
+                <script type="text/javascript">
+                    var imgpre = 'picList';
+                    var imgrear = '.png';
+                    var i = 1;
+                    do {
+                        var j = 1;
+                        do {
+                            var imgname = imgpre + "_r" + i + "_c" + j + imgrear;
+                            document.write('<img src="img/flowControl/' + imgname + '"/>');
+                            j++;
+                        } while (j <= 4);
+                        // document.write('<br>');
+                        i++;
+                    } while (i <= 3);
+                </script>
+            </div>
+        </div>
+        <div class="panel">
+            <h4>7-5-4 for in 循环</h4>
+            <div>
+                <script type="text/javascript">
+                    var name = "我从小生活在一个纷争不断的家庭，父母给我的生活造成了很多烦恼。"
+                    document.write('<p>');
+                    for (const i in name) {
+                        if (Object.hasOwnProperty.call(name, i)) {
+                            var size = (i % 7);
+                            document.write("<font size='" + size + "'>" + name.substr(i, 1) + "</font>");
+                        }
+                    }
+
+                    var family = ['丈夫', '妻子', '父亲', '母亲', '儿子', '女儿', '妹妹'];
+                    document.write("</p><h4>家庭成员主要包括：</h4><p>");
+                    for (const t in family) {
+                        if (Object.hasOwnProperty.call(family, t)) {
+                            document.write(family[t] + "  ");
+                        }
+                    }
+
+                    document.write('</p><h4>管理员信息如下：</h4>')
+                    var person = {
+                        name: 'CloudWhales',
+                        authority: '管理员',
+                        address: '青岛',
+                        tel: '15824355399'
+                    };
+                    document.write("<table><thead><th>信息项</th><th>信息内容</th></thead><tbody>");
+                    for (const property in person) {
+                        if (Object.hasOwnProperty.call(person, property)) {
+                            document.write("<tr><td>" + property + ":</td><td>" + person[property] + "</td></tr>");
+                        }
+                    }
+                    document.write("</tbody></table>");
+                </script>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

@@ -1,12 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>7-8 js函数</title>
+    <link rel="stylesheet" href="./css/common.css">
+
+    <script language="JavaScript">
+        /* 定义函数 */
+        function clickme(str) {
+            alert(str + "按钮被点击");
+        }
+    </script>
 </head>
+
 <body>
-    
+    <h2>7-8 js函数</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h4>7-8-1 点击事件</h4>
+            <div>
+                <input type="button" onclick="clickme('this')" value="点击我">
+                <input type="button" onclick="clickme('that')" value="点击我">
+            </div>
+        </div>
+        
+        <div class="panel">
+            <h4>7-8-2 点击事件</h4>
+            <div>
+                <input type="button" onclick="clickme('this')" value="点击我">
+                <input type="button" onclick="clickme('that')" value="点击我">
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
