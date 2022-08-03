@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+body{font-family: Cambria,'楷体';}
+
+h2,h3,h4{font: 700 18px/28px Cambria,'楷体';}
+h3{font-size: 16px;line-height: 26px;}
+h4{font-size: 14px;line-height: 24px;}
+.clear{clear: both;}
+
+hr{
+    width: 90%;
+    height: 1px;
+    border: none;
+    background: #594;
+    margin: 5px auto;
+}
+
+.panel_bg{
+    display: inline-table;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.panel_bg .panel{
+    float: left;
+    width: 630px;
+    margin-left: 20px;
+}
+.panel_bg .panel h4{margin: 10px 0 0 10px;}
+.panel_bg .panel p{margin: 10px 10px 10px 20px;}
+
+
+table {
+    width: 600px;
+    margin: 5px auto;
+    text-align: center;
+    font: 500 14px/28px Cambria, '楷体';
+    border: none;
+    border-bottom: 1px solid #BBB5AC;
+}
+table caption{
+    font: 700 16px/30px Cambria,'楷体';
+    margin: 10px auto;
+}
+table tfoot input{
+    float: left;
+}
+
+table th {
+    font: bold 16px/32px Cambria, Microsoft Yahei;
+    /* letter-spacing: 5px; */
+    color: #15559A;
+    /* background: #5CB3cc; */
+    border: none;
+    border-bottom: 1px solid #BBB5AC;
+}
+
+table td,
+table tr {
+    border: none;
+    border-bottom: 1px solid #BBB5AC;
+    padding: 3px;
+}
+
+/* table td:nth-child(2) {
+    text-align: left;
+} */
+
+/* table tr:nth-child(even) {
+    background: #F7DE98;
+} */
+
+table tbody tr:hover {
+    background: #F9F4DC;
+    border: 1px solid #F9F4DC;
+    cursor: pointer;
+}
+
+td input[type="image"] {
+    margin: 5px 5px -5px 5px;
+    width: 20px;
+}

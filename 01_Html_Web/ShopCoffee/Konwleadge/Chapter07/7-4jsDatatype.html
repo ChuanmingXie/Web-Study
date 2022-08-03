@@ -28,47 +28,6 @@
     <h2>7-4 js 数据类型</h2>
     <div class="panel_bg">
         <div class="panel">
-            <h4>7-4-1 声明不同的数据类型</h4>
-            <div><p>
-                <script type="text/javascript">
-                    var a = '计算机科学与技术';
-                    var b = 2 == 3;
-                    var c = null;
-                    var x = undefined;
-                    var y = [1, 2, 3, '数组'];
-                    var y1 = new Array("1", "2", "3", "4");
-                    var z = 30;
-                    document.write(a + ' 的数据类型为：' + typeof a + '<br>');
-                    document.write(b + ' 的数据类型为：' + typeof b + '<br>');
-                    document.write(c + ' 的数据类型为：' + typeof c + '<br>');
-                    document.write(x + ' 的数据类型为：' + typeof x + '<br>');
-                    document.write(y + ' 的数据类型为：' + y1.constructor + '<br>');
-                    document.write(z + ' 的数据类型为：' + typeof z + '<br>');
-                </script>
-                </p>
-            </div>
-        </div>
-        <div class="panel">
-            <h4>7-4-2 变量的作用域</h4>
-            <div><p>
-                <script type="text/javascript" src="./js/7-4jsDataType.js"></script>
-                <script type="text/javascript">
-                    var name2 = "此处为全局变量的信息";
-                    function testPart() {
-                        var name3 = '此处为局部变量的作用域';
-                        console.log(name3);
-                    }
-                    testPart();
-                    console.log(name2);
-                </script>
-                <script type="text/javascript">
-                    document.write(name2 + '<br>');
-                    document.write('名称' + name + ',地址' + address);
-                </script>
-                </p>
-            </div>
-        </div>
-        <div class="panel">
             <h4>7-4-3 运算符</h4>
             <script type="text/javascript">
                 var goodsName = '护手霜';
@@ -99,10 +58,47 @@
             </script>
         </div>
         <div class="panel">
-            <h4>7-4-2 变量的作用域</h4>
+            <h4>7-4-1 声明不同的数据类型</h4>
+            <div>
+                <p>
+                    <script type="text/javascript">
+                        var a = '计算机科学与技术';
+                        var b = 2 == 3;
+                        var c = null;
+                        var x = undefined;
+                        var y = [1, 2, 3, '数组'];
+                        var y1 = new Array("1", "2", "3", "4");
+                        var z = 30;
+                        document.write(a + ' 的数据类型为：' + typeof a + '<br>');
+                        document.write(b + ' 的数据类型为：' + typeof b + '<br>');
+                        document.write(c + ' 的数据类型为：' + typeof c + '<br>');
+                        document.write(x + ' 的数据类型为：' + typeof x + '<br>');
+                        document.write(y + ' 的数据类型为：' + y1.constructor + '<br>');
+                        document.write(z + ' 的数据类型为：' + typeof z + '<br>');
+                    </script>
+                </p>
+            </div>
         </div>
         <div class="panel">
             <h4>7-4-2 变量的作用域</h4>
+            <div>
+                <p>
+                    <script type="text/javascript" src="./js/7-4jsDataType.js"></script>
+                    <script type="text/javascript">
+                        var name2 = "此处为全局变量的信息";
+                        function testPart() {
+                            var name3 = '此处为局部变量的作用域';
+                            console.log(name3);
+                        }
+                        testPart();
+                        console.log(name2);
+                    </script>
+                    <script type="text/javascript">
+                        document.write(name2 + '<br>');
+                        document.write('名称' + name + ',地址' + address);
+                    </script>
+                </p>
+            </div>
         </div>
     </div>
 </body>
