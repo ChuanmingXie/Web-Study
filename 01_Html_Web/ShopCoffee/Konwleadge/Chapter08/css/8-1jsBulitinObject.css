@@ -1,0 +1,120 @@
+#randomball {
+    width: 90px;
+    height: 90px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+    border-radius: 90px;
+    background: #CE5777;
+    box-shadow: 0px -2px 20px 1px inset;
+}
+
+#randomball span {
+    font: 900 24px/95px Cambria;
+    color: #FFF;
+}
+
+.calendardiv {
+    width: 360px;
+    height: 550px;
+    padding: 20px;
+    box-shadow: -1px 1px 2px 1px #d4d3d3;
+    background: #e4e4e4;
+}
+
+.calendardiv hr {
+    background: #bdb7b7;
+    width: 100%;
+    padding:0 20px;
+    margin-left:-20px;
+}
+
+.datetime { height: 15%;}
+
+.timeinterval {
+    font: lighter 38px/40px 'Microsoft JhengHei UI';
+    margin-bottom: 5px;
+}
+
+.dateinterval {
+    font: 400 14px/18px 'Microsoft Yahei UI';
+    color: #2c618a;
+}
+
+.datecontent {height: 57.5%;}
+.monthtool {
+    height: 5%; 
+    margin: 20px 0;
+    font-family: 'Microsoft JhengHei UI';
+}
+.monthtool a{
+    text-decoration: none;
+    margin:0 10px;
+}
+.monthtool a img{width: 30px; height: 20px;}
+.calendarday {
+    width: 100%;
+    margin-top: 5px;
+    /* margin: 5px -18px; */
+    border-collapse: separate;
+    border: none;
+    font-family:'Microsoft Yahei UI';
+    line-height: 27px;
+    font-size: 12px;
+}
+.calendarday tr td,
+.calendarday tr th{
+    border: 0px solid transparent;
+    padding: 0;
+    margin: 0;
+}
+.calendarday tr td span{
+    display: block;
+    width: 15px;
+    font-size: 14px;
+    margin: 0 auto;
+    margin-bottom: -14px;
+    padding: 0;
+}
+.calendarday tr th{
+    font:600 14px/12px 'Microsoft JhengHei UI','Microsoft Yahei UI';
+    color: #000;
+    padding-bottom: 5px;
+}
+table tbody tr:hover,
+.calendarday td:hover {
+    background: none;
+}
+.calendarday .daybox{
+    width: 44px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+.calendarday .daycontent{
+    width: 40px;
+    height: 36px;
+    margin: 0 auto;
+    border: 1px solid transparent;
+    display: inline-block;
+}
+.calendarday .daybox:hover{
+    border: 2px solid #FFF;
+}
+.calendarday .daycontent:hover{
+    /* border: 2px solid #FFF; */
+}
+.calendarday .active{background: #0078d7;}
+.calendarday .daybox .active{
+    border: 2px solid #FFF;
+    background: #0078d7;
+    cursor: pointer;
+    color: #FFF;
+}
+
+#birthday {
+    height: 15%;
+}

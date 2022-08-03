@@ -1,13 +1,421 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>8-1内置对象</title>
     <link rel="stylesheet" href="./css/common.css">
+    <script type="text/javascript" src="./js/solartolunar.js"></script>
+    <style>
+        #randomball {
+            width: 90px;
+            height: 90px;
+            text-align: center;
+            margin: 0 auto;
+            padding: 0;
+            border-radius: 90px;
+            background: #CE5777;
+            box-shadow: 0px -2px 20px 1px inset;
+        }
+
+        #randomball span {
+            font: 900 24px/95px Cambria;
+            color: #FFF;
+        }
+
+        .calendardiv {
+            width: 360px;
+            height: 550px;
+            padding: 20px;
+            box-shadow: -1px 1px 2px 1px #d4d3d3;
+            background: #e4e4e4;
+        }
+
+        .calendardiv hr {
+            background: #bdb7b7;
+            width: 100%;
+            padding: 0 20px;
+            margin-left: -20px;
+        }
+
+        .datetime {
+            height: 15%;
+        }
+
+        .timeinterval {
+            font: lighter 38px/40px 'Microsoft JhengHei UI';
+            margin-bottom: 5px;
+            letter-spacing: 3px;
+        }
+
+        .dateinterval {
+            font: 400 14px/18px 'Microsoft Yahei UI';
+            color: #2c618a;
+        }
+
+        .datecontent {
+            height: 57.5%;
+        }
+
+        .monthtool {
+            height: 5%;
+            margin: 20px 0;
+            font-family: 'Microsoft JhengHei UI';
+        }
+
+        .monthtool a {
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .monthtool a img {
+            width: 30px;
+            height: 20px;
+        }
+
+        .calendarday {
+            width: 100%;
+            margin-top: 5px;
+            /* margin: 5px -18px; */
+            border-collapse: separate;
+            border: none;
+            font-family: 'Microsoft Yahei UI';
+            line-height: 27px;
+            font-size: 12px;
+        }
+
+        .calendarday tr td,
+        .calendarday tr th {
+            border: 0px solid transparent;
+            padding: 0;
+            margin: 0;
+        }
+
+        .calendarday tr td span {
+            display: block;
+            width: 15px;
+            font-size: 14px;
+            margin: 0 auto;
+            margin-bottom: -14px;
+            padding: 0;
+        }
+
+        .calendarday tr th {
+            font: 600 14px/12px 'Microsoft JhengHei UI', 'Microsoft Yahei UI';
+            color: #000;
+            padding-bottom: 5px;
+        }
+
+        table tbody tr:hover,
+        .calendarday td:hover {
+            background: none;
+        }
+
+        .calendarday .daybox {
+            width: 44px;
+            height: 40px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .calendarday .daycontent {
+            width: 40px;
+            height: 36px;
+            margin: 0 auto;
+            border: 1px solid transparent;
+            display: inline-block;
+        }
+
+        .calendarday .daybox:hover {
+            border: 2px solid #FFF;
+        }
+
+        .calendarday .daycontent:hover {
+            /* border: 2px solid #FFF; */
+        }
+
+        .calendarday .active {
+            background: #0078d7;
+        }
+
+        .calendarday .daybox .active {
+            border: 2px solid #FFF;
+            background: #0078d7;
+            cursor: pointer;
+            color: #FFF;
+        }
+
+        #birthday {
+            height: 15%;
+        }
+    </style>
 </head>
+
 <body>
     <h2>8-1 内置对象</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h4>8-1-1 随机球 - Math</h4>
+            <div>
+                <p id="randomball"><span>00</span></p>
+                <div class="btnGroup">
+                    <input type="button" id="btnStartRandom" ` onclick="startRandom();" value="开始随机">
+                    <input type="button" id="btnStopRandom" onclick="stopRandom();" value="停止随机">
+                    <input type="button" id="btnAutoRandom" onclick="autoRandom();" value="自动选取">
+                </div>
+                <script type="text/javascript">
+                    var random;
+                    function startRandom() {
+                        random = setInterval('randomNum()', 100);
+                        btnAutoRandom.disabled = true;
+                    }
+                    function randomNum() {
+                        randomball.innerHTML = '<span>' + Math.floor(Math.random() * 99 + 1) + '</span>';
+                    }
+                    function stopRandom() {
+                        clearTimeout(random);
+                        btnAutoRandom.disabled = false;
+                    }
+                    function autoRandom() {
+                        random = setInterval('randomNum()', 100);
+                        btnStartRandom.disabled = true;
+                        var i = 0;
+                        var timecount = setInterval(() => {
+                            i++;
+                            btnAutoRandom.value = 10 - i;
+                            if (i > 9) {
+                                btnAutoRandom.value = '自动选取';
+                                btnStartRandom.disabled = false;
+                                clearTimeout(random);
+                                clearTimeout(timecount);
+                            }
+                        }, 1000);
+                    }
+                </script>
+            </div>
+        </div>
+        <div class="panel">
+            <h4>8-1-2 月历 - Date</h4>
+            <div class="calendardiv">
+                <div class="datetime">
+                    <div class="timeinterval" id="timeinterval">13:26:33</div>
+                    <div class="dateinterval" id="dateinterval">2022年8月3日 七月初六</div>
+                </div>
+                <hr>
+                <div class="datecontent">
+                    <div class="monthtool">
+                        <script type="text/javascript">
+                            function monthChange(direction) {
+                                var monthtool = timetool.innerHTML.match(/年([\s\S]*?)月/)[1];
+                                var monthtemp = parseInt(monthtool);
+                                switch (direction) {
+                                    case "down":
+                                        timetool.innerHTML = year + '年' + monthtemp - 1 + '月';
+                                        tablebody(monthtemp - 1);
+                                        break;
+                                    case "up":
+                                        timetool.innerHTML = year + '年' + monthtemp + 1 + '月';
+                                        tablebody(monthtemp + 1);
+                                        break;
+                                }
+                            }
+                        </script>
+                        <span id="timetool">2022年8月</span>
+                        <span class="floatright">
+                            <a href="" onclick="monthChange('up');"><img src="./img/arrowup.png" alt=""></a>
+                            <a href="" onclick="monthChange('down');"><img src="./img/arrowdown.png" alt=""></a>
+                        </span>
+                    </div>
+                    <table class="calendarday">
+                        <thead>
+                            <tr>
+                                <th>一</th>
+                                <th>二</th>
+                                <th>三</th>
+                                <th>四</th>
+                                <th>五</th>
+                                <th>六</th>
+                                <th>日</th>
+                            </tr>
+                        </thead>
+                        <tbody id="showbody">
+                            <tr>
+                                <td>
+                                    <div class="daybox active">
+                                        <div class="daycontent active">
+                                            <span>1</span>初四
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="daybox">
+                                        <div class="daycontent">
+                                            <span>2</span>初五
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="daybox">
+                                        <div class="daycontent">
+                                            <span>3</span>初六
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="daybox">
+                                        <div class="daycontent">
+                                            <span>4</span>初七
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="daybox">
+                                        <div class="daycontent">
+                                            <span>5</span>初八
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="daybox">
+                                        <div class="daycontent">
+                                            <span>6</span>初九
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="daybox">
+                                        <div class="daycontent">
+                                            <span>7</span>立秋
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span>8</span>初四</td>
+                                <td><span>9</span>初五</td>
+                                <td><span>10</span>初六</td>
+                                <td><span>11</span>初七</td>
+                                <td><span>12</span>初八</td>
+                                <td><span>13</span>初九</td>
+                                <td><span>14</span>立秋</td>
+                            </tr>
+                            <tr>
+                                <td><span>15</span>初四</td>
+                                <td><span>16</span>初五</td>
+                                <td><span>17</span>初六</td>
+                                <td><span>18</span>初七</td>
+                                <td><span>19</span>初八</td>
+                                <td><span>20</span>初九</td>
+                                <td><span>21</span>立秋</td>
+                            </tr>
+                            <tr>
+                                <td><span>22</span>初四</td>
+                                <td><span>23</span>初五</td>
+                                <td><span>24</span>初六</td>
+                                <td><span>25</span>初七</td>
+                                <td><span>26</span>初八</td>
+                                <td><span>27</span>初九</td>
+                                <td><span>28</span>立秋</td>
+                            </tr>
+                            <tr>
+                                <td><span>29</span>初四</td>
+                                <td><span>30</span>初五</td>
+                                <td><span>31</span>初六</td>
+                                <td><span>1</span>初七</td>
+                                <td><span>2</span>初八</td>
+                                <td><span>3</span>初九</td>
+                                <td><span>4</span>立秋</td>
+                            </tr>
+                            <tr>
+                                <td><span>5</span>初四</td>
+                                <td><span>6</span>初五</td>
+                                <td><span>7</span>初六</td>
+                                <td><span>8</span>初七</td>
+                                <td><span>9</span>初八</td>
+                                <td><span>10</span>初九</td>
+                                <td><span>11</span>立秋</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <script type="text/javascript">
+                        var date = new Date();
+                        var year = date.getFullYear();
+                        var month = date.getMonth() + 1;
+                        var day = date.getDate();
+
+                        function dateConvert() {
+                            var sloar = year + '年' + month + '月' + day + '日';
+                            var lunar = sloarToLunar(year, month, day).lunarMonth + "月" +
+                                sloarToLunar(year, month, day).lunarDay;
+                            dateinterval.innerHTML = sloar + " " + lunar;
+                            timetool.innerHTML = year + '年' + month + '月';
+                        }
+                        function timerCount() {
+                            var date = new Date();
+                            timeinterval.innerHTML = date.getHours() + ":" +
+                                date.getMinutes() + ":" + date.getSeconds();
+                        }
+                        function tablebody(monthTurn) {
+                            if (monthTurn != 0) {
+                                month = monthTurn;
+                            }
+                            var j = 0;
+                            showbody.innerHTML = "";
+                            var days = new Date(year, month, 0).getDate();
+                            for (let i = 1; i <= days; i++) {
+                                var week = (new Date(year, month - 1, i)).getDay();
+                                if (week == 0) week = 7;
+                                var lunarday = sloarToLunar(year, month, i).lunarDay;
+                                var row;
+                                if (week == 1 || j == 0) {
+                                    var row = showbody.insertRow(j);
+                                    if (j == 0) {
+                                        for (let k = 0; k < week - 1; k++) {
+                                            row.insertCell(k).innerHTML = '&nbsp;';
+                                        }
+                                    }
+                                    j++;
+                                }
+                                if (i == day) {
+                                    row.insertCell(week - 1).innerHTML = '<div class="daybox active">' +
+                                        '<div class="daycontent active"><span>' + i + '</span>' + lunarday + '</div>' +
+                                        '</div>';
+                                } else {
+                                    row.insertCell(week - 1).innerHTML = '<div class="daybox">' +
+                                        '<div class="daycontent"><span>' + i + '</span>' + lunarday + '</div>' +
+                                        '</div>';
+                                }
+
+                            }
+                        }
+
+                        dateConvert();
+                        setInterval('timerCount()', 1000);
+                        tablebody(0);
+                    </script>
+                </div>
+                <hr>
+                <div id="birthday"></div>
+            </div>
+        </div>
+        <div class="panel">
+            <h4>8-1-3 时钟 - Date</h4>
+            <div>
+            </div>
+        </div>
+        <div class="panel">
+            <h4>8-1-4 生日 - Date</h4>
+            <div>
+                <!-- <img src="./img/win10calendar.png" width="372px" height="550px" alt=""> -->
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
