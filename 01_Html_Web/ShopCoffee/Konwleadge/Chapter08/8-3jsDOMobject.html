@@ -1,13 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>8-2 DOM对象</title>
     <link rel="stylesheet" href="./css/common.css">
+    <script>
+        function changecolor() {
+            var color = document.getElementsByName("colorpanel");
+            document.getElementById("box2").style.color = color[0].value;
+        }
+
+        function changecontent() {
+            var t1 = document.getElementsByName("txt1");
+            var div1 = document.getElementsByTagName("div");
+            div1[1].innerHTML = "<p>" + t1[0].value + "<p>";
+        }
+        function hide() {
+            document.getElementById("box2").style.display = "none";
+        }
+        function show() {
+            document.getElementById("box2").style.display = "block";
+        }
+
+        function add() {
+            var t2 = document.getElementsByName("txt2");
+            var div2 = document.getElementsByTagName("div");
+            div2[1].innerHTML += "<p>" + t2[0].value + "</p>";
+        }
+        function clr(event) {
+            event.srcElement.value = "";
+        }
+
+    </script>
 </head>
+
 <body>
     <h2>8-2 DOM对象</h2>
 </body>
+
 </html>
