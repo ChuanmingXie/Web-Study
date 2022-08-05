@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8-3-1 DOM对象</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <style type="text/css">
+        .poems_bg {
+            background: 0 0 /100% 100% url(./img/poem_bg.jpg) no-repeat;
+            height: 400px;
+        }
+
+        .poem_carousel {
+            height: 100%;
+            width: 521px;
+            position: absolute;
+            top: 170px;
+            left: 78px;
+        }
+
+        .poem_carousel .leftarrow {
+            border: 1px solid #000;
+            float: left;
+            width: 40px;
+            height: 244px;
+            display: block;
+        }
+
+        .poem_carousel .rightarrow {
+            border: 1px solid #000;
+            float: right;
+            width: 40px;
+            height: 244px;
+            display: block;
+        }
+
+        .poem_title {
+            height: 10%;
+            width: 55%;
+            position: relative;
+            top: 100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .poem_content {
+            height: 200px;
+            width: 80%;
+            position: relative;
+            top: 100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .poem_tool {
+            width: 80%;
+            position: relative;
+            top: 0;
+            margin: 20px auto;
+        }
+
+        input[type='button'] {
+            width: 100px;
+        }
+
+        input[type='color'] {
+            width: 100px;
+            height: 32px;
+            border-radius: 10px;
+        }
+
+        .btnGroup {
+            width: 443px;
+        }
+    </style>
+    <script>
+        var poemList = [
+            { title: '赋得古原草送别', autor: '白居易', content: '离离原上草，一岁一枯荣。野火烧不尽，春风吹又生。远芳侵古道，晴翠接荒城。又送王孙去，萋萋满别情。' },
+            { name: '绝句二首', autor: '杜甫', amount: '迟日江山丽，春风花草香。泥融飞燕子，沙暖睡鸳鸯。江碧鸟逾白，山青花欲燃。今春看又过，何日是归年。' },
+            { name: '山行', autor: '杜牧', amount: '远上寒山石径斜，白云生处有人家。停车坐爱枫林晚，霜叶红于二月花。' },
+        ];
+    </script>
+
+</head>
+
+<body>
+    <h2>8-2 DOM对象</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h4>8-3-1 古诗</h4>
+            <div class="poems_bg">
+                <div class="poem_carousel">
+                    <span class="leftarrow"></span>
+                    <span class="rightarrow"></span>
+                </div>
+                <header class="poem_title">赋得古原草送别</header>
+                <div class="poem_content">
+                    <p>离离原上草，一岁一枯荣。</p>
+                    <p>野火烧不尽，春风吹又生。</p>
+                    <p>远芳侵古道，晴翠接荒城。</p>
+                    <p>又送王孙去，萋萋满别情。</p>
+                </div>
+                <div class="poem_tool">
+                    <div class="btnGroup">
+                        <!--背景色-->
+                        <input type="button" onclick="changecolor()" value="变色"> <br><br>
+                        <input type="color" name="colorpanel"> |
+                        <!--隐藏、显示-->
+                        <input type="button" onclick="hide()" value="隐藏">
+                        <input type="button" onclick="show()" value="显示"><br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

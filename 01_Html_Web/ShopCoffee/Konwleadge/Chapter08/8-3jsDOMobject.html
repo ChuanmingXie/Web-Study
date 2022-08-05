@@ -7,6 +7,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>8-2 DOM对象</title>
     <link rel="stylesheet" href="./css/common.css">
+    <style>
+        body {
+            background: url(./img/poem_bg.jpg) no-repeat;
+            background-position: 50% 0;
+        }
+
+        #box1 {
+            width: 750px;
+            height: 350px;
+            padding: 10px;
+            margin: 140px auto;
+        }
+
+        #box2 {
+            font-family: 隶书;
+            font-size: 1.5em;
+            font-weight: bold;
+            width: 300px;
+            height: 250px;
+            float: left;
+            margin: 40px 10px;
+            padding: 10px;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        #box3 {
+            width: 350px;
+            height: 250px;
+            padding: 100px 10px;
+            float: right
+        }
+
+        img {
+            position: relative;
+            right: -150px;
+            border-radius: 15px
+        }
+    </style>
     <script>
         function changecolor() {
             var color = document.getElementsByName("colorpanel");
@@ -39,6 +78,29 @@
 
 <body>
     <h2>8-2 DOM对象</h2>
+
+    <div id="box1">
+        <div id="box2">
+            <p>离离原上草</p>
+        </div>
+        <div id="box3">
+            <!--改内容-->
+            <input TYPE="text" NAME="txt1" onfocus="clr(event)">
+            <button onclick="changecontent()">换一首诗</button><br><br>
+            <!--添加内容-->
+            下一句诗
+            <input TYPE="text" NAME="txt2" onfocus="clr(event)">
+            <button onclick="add()">添加</button><br><br>
+            <!--背景色-->
+            <input type="color" name="colorpanel">
+            <button onclick="changecolor()">改颜色</button> <br><br>
+            <!--隐藏、显示-->
+            <button onclick="hide()">隐藏</button>
+            <button onclick="show()">显示</button><br><br>
+
+        </div>
+
+    </div>
 </body>
 
 </html>
