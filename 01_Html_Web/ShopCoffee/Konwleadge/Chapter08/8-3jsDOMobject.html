@@ -5,102 +5,135 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>8-2 DOM对象</title>
+    <title>8-3-1 DOM对象</title>
     <link rel="stylesheet" href="./css/common.css">
-    <style>
-        body {
-            background: url(./img/poem_bg.jpg) no-repeat;
-            background-position: 50% 0;
+    <style type="text/css">
+        .poems_bg {
+            background: 0 0 /100% 100% url(./img/poem_bg.jpg) no-repeat;
+            height: 400px;
         }
 
-        #box1 {
-            width: 750px;
-            height: 350px;
-            padding: 10px;
-            margin: 140px auto;
+        .poem_carousel {
+            height: 100%;
+            width: 521px;
+            position: absolute;
+            top: 170px;
+            left: 78px;
         }
 
-        #box2 {
-            font-family: 隶书;
-            font-size: 1.5em;
-            font-weight: bold;
-            width: 300px;
-            height: 250px;
+        .poem_carousel .leftarrow,
+        .poem_carousel .rightarrow {
+            
+            width: 40px;
+            height: 244px;
+            border: 1px solid #000;
+            display: none;
+        }
+        .poem_carousel .leftarrow{
             float: left;
-            margin: 40px 10px;
-            padding: 10px;
-            text-align: center;
-            letter-spacing: 2px;
+        }
+        .poem_carousel .rightarrow{
+            float: right;
+        }
+        .poem_carousel .leftarrow :hover,
+        .poem_carousel .rightarrow:hover{
+            display: block;
+            border: 1px solid rgb(218, 225, 155);
         }
 
-        #box3 {
-            width: 350px;
-            height: 250px;
-            padding: 100px 10px;
-            float: right
-        }
-
-        img {
+        .poem_title {
+            height: 10%;
+            width: 55%;
             position: relative;
-            right: -150px;
-            border-radius: 15px
+            top: 100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .poem_content {
+            height: 200px;
+            width: 80%;
+            position: relative;
+            top: 100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .poem_tool {
+            width: 80%;
+            position: relative;
+            top: 0;
+            margin: 20px auto;
+        }
+
+        input[type='button'] {
+            width: 100px;
+        }
+
+        input[type='color'] {
+            width: 100px;
+            height: 32px;
+            border-radius: 10px;
+        }
+
+        .btnGroup {
+            width: 443px;
         }
     </style>
     <script>
-        function changecolor() {
-            var color = document.getElementsByName("colorpanel");
-            document.getElementById("box2").style.color = color[0].value;
-        }
-
-        function changecontent() {
-            var t1 = document.getElementsByName("txt1");
-            var div1 = document.getElementsByTagName("div");
-            div1[1].innerHTML = "<p>" + t1[0].value + "<p>";
-        }
-        function hide() {
-            document.getElementById("box2").style.display = "none";
-        }
-        function show() {
-            document.getElementById("box2").style.display = "block";
-        }
-
-        function add() {
-            var t2 = document.getElementsByName("txt2");
-            var div2 = document.getElementsByTagName("div");
-            div2[1].innerHTML += "<p>" + t2[0].value + "</p>";
-        }
-        function clr(event) {
-            event.srcElement.value = "";
-        }
-
+        var poemList = [
+            { title: '赋得古原草送别', autor: '白居易', content: '离离原上草，一岁一枯荣。野火烧不尽，春风吹又生。远芳侵古道，晴翠接荒城。又送王孙去，萋萋满别情。' },
+            { name: '绝句二首', autor: '杜甫', amount: '迟日江山丽，春风花草香。泥融飞燕子，沙暖睡鸳鸯。江碧鸟逾白，山青花欲燃。今春看又过，何日是归年。' },
+            { name: '山行', autor: '杜牧', amount: '远上寒山石径斜，白云生处有人家。停车坐爱枫林晚，霜叶红于二月花。' },
+        ];
     </script>
+
 </head>
 
 <body>
     <h2>8-2 DOM对象</h2>
-
-    <div id="box1">
-        <div id="box2">
-            <p>离离原上草</p>
+    <div class="panel_bg">
+        <div class="panel">
+            <h4>8-3-1 古诗</h4>
+            <div class="poems_bg">
+                <div class="poem_carousel">
+                    <span class="leftarrow"></span>
+                    <span class="rightarrow"></span>
+                </div>
+                <header class="poem_title">赋得古原草送别</header>
+                <div class="poem_content">
+                    <p>离离原上草，一岁一枯荣。</p>
+                    <p>野火烧不尽，春风吹又生。</p>
+                    <p>远芳侵古道，晴翠接荒城。</p>
+                    <p>又送王孙去，萋萋满别情。</p>
+                </div>
+                <div class="poem_tool">
+                    <div class="btnGroup">
+                        <!--背景色-->
+                        <input type="button" onclick="changecolor()" value="变色"> <br><br>
+                        <input type="color" name="colorpanel"> |
+                        <!--隐藏、显示-->
+                        <input type="button" id="btnhidden" onclick="hide()" value="隐藏">
+                        <input type="button" id="btnshow" onclick="show()" value="显示"><br><br>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="box3">
-            <!--改内容-->
-            <input TYPE="text" NAME="txt1" onfocus="clr(event)">
-            <button onclick="changecontent()">换一首诗</button><br><br>
-            <!--添加内容-->
-            下一句诗
-            <input TYPE="text" NAME="txt2" onfocus="clr(event)">
-            <button onclick="add()">添加</button><br><br>
-            <!--背景色-->
-            <input type="color" name="colorpanel">
-            <button onclick="changecolor()">改颜色</button> <br><br>
-            <!--隐藏、显示-->
-            <button onclick="hide()">隐藏</button>
-            <button onclick="show()">显示</button><br><br>
-
-        </div>
-
     </div>
+    <script type="text/javascript">
+        function hide(){
+            var poem_content=document.getElementsByClassName('poem_content')[0];
+            poem_content.style.visibility='hidden';
+        }
+        function show(){
+            var poem_content=document.getElementsByClassName('poem_content')[0];
+            poem_content.style.visibility='visible';
+        }
+        function changecolor(){
+            var color=document.getElementsByName('colorpanel')[0];
+            document.getElementsByClassName('poem_content')[0].style.color=color.value;
+        }
+    </script>
 </body>
 
 </html>

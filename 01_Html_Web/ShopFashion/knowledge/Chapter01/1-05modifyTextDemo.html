@@ -1,105 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1-05文本修饰标签与特殊字符</title>
-
+    <link rel="stylesheet" href="./css/democommon.css">
 </head>
+
 <body>
-    <h2>1-05-1 font标签修饰字体样式</h2>
-    <font face="隶书" size="10" color="blue"> 通过font标签设置字体样式</font>
-    <font face="楷书" size="+3" color="#FF0000"> 通过font标签设置字体样式</font>
-    <font face="黑体" size="-1" color="gray"> 通过font标签设置字体样式</font>
+    <h2>1-05-1文本修饰标签与特殊字符</h2>
+    <div class='panel_bg'>
+        <div class="panel">
+            <h4>1-05-1 font标签修饰字体样式</h4>
+            <font face="隶书" size="10" color="blue"> 通过font标签设置字体样式</font>
+            <font face="楷书" size="+3" color="#FF0000"> 通过font标签设置字体样式</font>
+            <font face="黑体" size="-1" color="gray"> 通过font标签设置字体样式</font>
+            
+            <h4>1-05-1 dbo 文本方向标签</h4>
+            <bdo dir="ltr">123456789</bdo> <br>
+            <bdo dir="rtl">123456789</bdo>
 
-    <h2>1-05-2 文本修饰符</h2>
-    2012年08月25号，<b>我从家乡安徽淮北</b>到<big>河北廊坊</big>防灾科技学院报道，大学的
-    招生<i>办公室</i>工作人员，组织我们进行学籍建立，以及自行决定是否进行<small>校园集体户口</small>
-    的办理。随着事件的推移，2016年从大学毕业，本来规画了一条人生 V<sub>1.0</sub> 版本的学术道路
-    最后未能如愿以偿，走向了一天V<sup>2.0</sup>.这样的选择虽然是不得已，但也是 <u>无怨无悔的付出和努力</u>。
-    人都没有前后眼，面对未来不能想出来，只能走出来，<s>迷茫与内耗只会浪费光阴</s>
+            <h4>1-05-2 文本修饰符</h4>
+            2012年08月25号，<b>我从家乡安徽淮北</b>到<big>河北廊坊</big>防灾科技学院报道，大学的
+            招生<i>办公室</i>工作人员，组织我们进行学籍建立，以及自行决定是否进行<small>校园集体户口</small>
+            的办理。随着事件的推移，2016年从大学毕业，本来规画了一条人生 V<sub>1.0</sub> 版本的学术道路
+            最后未能如愿以偿，走向了一天V<sup>2.0</sup>.这样的选择虽然是不得已，但也是 <u>无怨无悔的付出和努力</u>。
+            人都没有前后眼，面对未来不能想出来，只能走出来，<s>迷茫与内耗只会浪费光阴</s>
+        </div>
 
-    <h2>1-05-3 特殊字符</h2>
-    <table width="600" border="1" rules="all">
-        <tr>
-            <th>特殊字符</th>
-            <th>写法</th>
-            <th>特殊字符</th>
-            <th>写法</th>
-        </tr>
-        <tr align="center">
-            <td>左箭头（&larr;）</td>
-            <td>& larr ; </td>
-            <td>右箭头（&rarr;）</td>
-            <td>& rarr ; </td>
-        </tr>
-        <tr align="center">
-            <td>上箭头（&uarr;）</td>
-            <td>& uarr ; </td>
-            <td>下箭头（&darr;）</td>
-            <td>& darr ; </td>
-        </tr>
-        <tr align="center">
-            <td>左右箭头（&harr;）</td>
-            <td>& harr ; </td>
-            <td>↙左下箭头（&crarr;）</td>
-            <td>& ararr ; </td>
-        </tr>
-        <tr align="center">
-            <td>左双箭头（&lArr;）</td>
-            <td>& lArr ; </td>
-            <td>右双箭头（&rArr;）</td>
-            <td>& rArr ; </td>
-        </tr>
-        <tr align="center">
-            <td>上双箭头（&uArr;）</td>
-            <td>& uArr ; </td>
-            <td>下双箭头（&dArr;）</td>
-            <td>& dArr ; </td>
-        </tr>
-        <tr align="center">
-            <td>大于号（&lt;）</td>
-            <td>& lt ; </td>
-            <td>小于号（&gt;）</td>
-            <td>& gt ; </td>
-        </tr>
-        <tr align="center">
-            <td>小于等于（&le;）</td>
-            <td>& le ; </td>
-            <td>大于等于（&ge;）</td>
-            <td>& ge ; </td>
-        </tr>
-        <tr align="center">
-            <td>交集（&cap;）</td>
-            <td>& cap ; </td>
-            <td>并集（&cup;）</td>
-            <td>& cup ; </td>
-        </tr>
-        <tr align="center">
-            <td>空格(&nbsp;)</td>
-            <td>& nbsp ; </td>
-            <td>&号（&amp;）</td>
-            <td>& amp ; </td>
-        </tr>
-        <tr align="center">
-            <td>双引号（&quot;）</td>
-            <td>& quot ; </td>
-            <td>版权（&copy;）</td>
-            <td>& copy ; </td>
-        </tr>
-        <tr align="center">
-            <td>商标（&trade;）</td>
-            <td>& trade ; </td>
-            <td>注册商标（&reg;）</td>
-            <td>& reg ; </td>
-        </tr>
-        <tr>
-            <td>1/4 分数（&frac14;）</td>
-            <td>& frac14 ;</td>
-            <td>1/2 分数（&frac12;）</td>
-            <td>& frac12 ;</td>
-        </tr>
-    </table>
+        <div class="panel">
+
+            <h4>1-05-3 特殊字符</h4>
+            <table width="600" border="1" rules="all">
+                <tr>
+                    <th>特殊字符</th>
+                    <th>写法</th>
+                    <th>特殊字符</th>
+                    <th>写法</th>
+                </tr>
+                <tr align="center">
+                    <td>左箭头（&larr;）</td>
+                    <td>& larr ; </td>
+                    <td>右箭头（&rarr;）</td>
+                    <td>& rarr ; </td>
+                </tr>
+                <tr align="center">
+                    <td>上箭头（&uarr;）</td>
+                    <td>& uarr ; </td>
+                    <td>下箭头（&darr;）</td>
+                    <td>& darr ; </td>
+                </tr>
+                <tr align="center">
+                    <td>左右箭头（&harr;）</td>
+                    <td>& harr ; </td>
+                    <td>↙左下箭头（&crarr;）</td>
+                    <td>& ararr ; </td>
+                </tr>
+                <tr align="center">
+                    <td>左双箭头（&lArr;）</td>
+                    <td>& lArr ; </td>
+                    <td>右双箭头（&rArr;）</td>
+                    <td>& rArr ; </td>
+                </tr>
+                <tr align="center">
+                    <td>上双箭头（&uArr;）</td>
+                    <td>& uArr ; </td>
+                    <td>下双箭头（&dArr;）</td>
+                    <td>& dArr ; </td>
+                </tr>
+                <tr align="center">
+                    <td>大于号（&lt;）</td>
+                    <td>& lt ; </td>
+                    <td>小于号（&gt;）</td>
+                    <td>& gt ; </td>
+                </tr>
+                <tr align="center">
+                    <td>小于等于（&le;）</td>
+                    <td>& le ; </td>
+                    <td>大于等于（&ge;）</td>
+                    <td>& ge ; </td>
+                </tr>
+                <tr align="center">
+                    <td>交集（&cap;）</td>
+                    <td>& cap ; </td>
+                    <td>并集（&cup;）</td>
+                    <td>& cup ; </td>
+                </tr>
+                <tr align="center">
+                    <td>空格(&nbsp;)</td>
+                    <td>& nbsp ; </td>
+                    <td>&号（&amp;）</td>
+                    <td>& amp ; </td>
+                </tr>
+                <tr align="center">
+                    <td>双引号（&quot;）</td>
+                    <td>& quot ; </td>
+                    <td>版权（&copy;）</td>
+                    <td>& copy ; </td>
+                </tr>
+                <tr align="center">
+                    <td>商标（&trade;）</td>
+                    <td>& trade ; </td>
+                    <td>注册商标（&reg;）</td>
+                    <td>& reg ; </td>
+                </tr>
+                <tr>
+                    <td>1/4 分数（&frac14;）</td>
+                    <td>& frac14 ;</td>
+                    <td>1/2 分数（&frac12;）</td>
+                    <td>& frac12 ;</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
 </body>
+
 </html>

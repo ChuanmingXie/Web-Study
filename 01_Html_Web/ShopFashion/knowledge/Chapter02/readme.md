@@ -41,14 +41,14 @@
 ##### 2.1.3 单元格标签 td 属性
 属性|描述
 :------:|:------:|
-align|		设置单元格内容的水平对齐方式：left、center、right、justify、
-valign|		设置单元格内容的垂直对齐方式：top、middle、bottom、baseline
-rowspan|	设置单元格跨越的行数：指表格内某个单元格在水平方向向右的跨越单元格的列数
-colspan|	设置单元格跨越的列数：指单元格在垂直方向向下所跨的行数
-scope|		定义将表头数据与单元数据相关联的办法
-width|		设置单元格的宽度
-height|		设置单元格的高度
-bgcolor|	设置单元格背景颜色
+align   |	设置单元格内容的水平对齐方式：left、center、right、justify、
+valign  |	设置单元格内容的垂直对齐方式：top、middle、bottom、baseline
+rowspan |	设置单元格跨越的行数：指表格内某个单元格在水平方向向右的跨越单元格的列数
+colspan |	设置单元格跨越的列数：指单元格在垂直方向向下所跨的行数
+scope   |	定义将表头数据与单元数据相关联的办法
+width   |	设置单元格的宽度
+height  |	设置单元格的高度
+bgcolor |	设置单元格背景颜色
 
 ##### 2.1.4 行表单 tr 属性
 属性|描述
@@ -74,15 +74,14 @@ bordercolorlight|	设置单元格内的右下边框颜色
    	纵向分组又称列分组，在HTML中使用<colgroup/>标签。该标签将表格按列进行分组，colgroup 标签的属性如下:
 属性|描述
 :------:|:------:|
-align|	设置单元格内容水平对齐方式：left、center、right、justify、
-valign|	设置单元格内容垂直对齐方式：top、middle、bottom、baseline
-span|	规定该列分组可以跨越的列个数，默认值为1
-width|	设置列组合的宽度
+align	|	设置单元格内容水平对齐方式：left、center、right、justify、
+valign  |	设置单元格内容垂直对齐方式：top、middle、bottom、baseline
+span    |	规定该列分组可以跨越的列个数，默认值为1
+width   |	设置列组合的宽度
 
 ##### 2.1.7 表格的嵌套 
     a. 页面排版比较复杂时，通常使用一个表格从整体上控制布局，内部细节也嵌套一个新的表格进行设计，防止在一个表格中引起列宽高的冲突
     b. 多层嵌套时不利于搜索引擎对页面的检索，因此表格嵌套的层数不能过多，一般不要超过3-4层
-
 
 #### 2.2 框架
 	框架能够让浏览器窗口划分为多个独立的窗格，每个窗格包含一个独立的HTML页。它的出现可以让用户通过框架加载单个窗格的内容，
@@ -94,10 +93,10 @@ width|	设置列组合的宽度
 	框架集属性包括行、列、边框、边框颜色、空白距离等属性
 属性|描述
 :------:|:------:|
-rows|	设置框架集中包含的行数，以及对应的高度
-cols|	设置框架集中包含的列数，以及对应的宽度
-frameborder|	设置框架集的边框是否显示，取值为1，0或yes，no，边框本身不能调整宽度
-bordercolor|	设置框架集的边款颜色
+rows	|	设置框架集中包含的行数，以及对应的高度
+cols	|	设置框架集中包含的列数，以及对应的宽度
+frameborder |	设置框架集的边框是否显示，取值为1，0或yes，no，边框本身不能调整宽度
+bordercolor |	设置框架集的边款颜色
 framespacing|	框架与框架间的空白距离
 * 框架集的rows和cols 属性 及其 四种取值方式
 	* 一个frameset可以包含多个frame框架窗口，rows和cols可以单独使用也可以一起使用。rows属性用于设置框架中包含的行数，
@@ -120,13 +119,13 @@ framespacing|	框架与框架间的空白距离
 	b. frame属性
 属性|描述
 :------:|:------:|
-name|	设置框架的名称，在设置超链接时用作框架的标记
-src|	设置框架中显示的URL界面
-frameborder|	设置框架边框是否显示
+name  	|	设置框架的名称，在设置超链接时用作框架的标记
+src  	|	设置框架中显示的URL界面
+frameborder |	设置框架边框是否显示
 marginheight|	定义内容与框架山下边缘的高度
-marginwidth|	定义内容与框架左右边缘的高度
-scrolling|	设置框架是否显示滚动条
-noresize|	设置框架不能调整大小取值只有noresize
+marginwidth |	定义内容与框架左右边缘的高度
+scrolling   |	设置框架是否显示滚动条
+noresize    |	设置框架不能调整大小取值只有noresize
 
 ##### 2.2.4 框架集的嵌套 
 	与table一样，对于复杂的页面结构，需要通过嵌套框架集来实现。
@@ -137,16 +136,16 @@ noresize|	设置框架不能调整大小取值只有noresize
 		<iframe src="" name="" width="" height=""></iframe>
 	b. 内联框架属性
 属性|描述
-:------:|:------:|
-align  |设置iframe与周围文本的对齐方式，取值left、right、top、middle、bottom
-frameborder|	设置iframe是否显示边框，取值0 或 1
+:----------:|:----------:|
+align  		|设置iframe与周围文本的对齐方式，取值left、right、top、middle、bottom
+frameborder |	设置iframe是否显示边框，取值0 或 1
 marginheight|	顶部和底部的边距
-marginwidth|	左侧和右侧的边距
-height|	高度
-width|	设置iframe的宽度
-scrolling|	设置iframe中是否显示滚动条，取值yes、no、auto
-src|	设置iframe中显示的URL
-name|	设置iframe的名称
+marginwidth |	左侧和右侧的边距
+height      |	高度
+width       |	设置iframe的宽度
+scrolling   |	设置iframe中是否显示滚动条，取值yes、no、auto
+src         |	设置iframe中显示的URL
+name        |	设置iframe的名称
 
 ##### 2.2.6 框架之间的链接
 	通过 a标签 使用target属性指向框架名称，实现框架内对页面的直接链接
