@@ -85,7 +85,7 @@ placeholder	    |   设置文本框未输入且未获得焦点时，显示的而
 list	        |   引用预定义的datalist，类似缓存功能
 multiple	    |   允许一个以上的值
 required	    |   输入的字符按不能为空
-attern	        |   规定输入字段的值需要符合指定的模式				
+pattern	        |   规定输入字段的值需要符合指定的模式				
 
     ii. input新增H5标签类型
 类型	    |     描述

@@ -23,20 +23,23 @@
 
         .poem_carousel .leftarrow,
         .poem_carousel .rightarrow {
-            
+
             width: 40px;
             height: 244px;
             border: 1px solid #000;
             display: none;
         }
-        .poem_carousel .leftarrow{
+
+        .poem_carousel .leftarrow {
             float: left;
         }
-        .poem_carousel .rightarrow{
+
+        .poem_carousel .rightarrow {
             float: right;
         }
+
         .poem_carousel .leftarrow :hover,
-        .poem_carousel .rightarrow:hover{
+        .poem_carousel .rightarrow:hover {
             display: block;
             border: 1px solid rgb(218, 225, 155);
         }
@@ -91,7 +94,7 @@
 </head>
 
 <body>
-    <h2>8-2 DOM对象</h2>
+    <h2>8-3 DOM对象</h2>
     <div class="panel_bg">
         <div class="panel">
             <h4>8-3-1 古诗</h4>
@@ -118,22 +121,79 @@
                     </div>
                 </div>
             </div>
+            <script type="text/javascript">
+                function hide() {
+                    var poem_content = document.getElementsByClassName('poem_content')[0];
+                    poem_content.style.visibility = 'hidden';
+                }
+                function show() {
+                    var poem_content = document.getElementsByClassName('poem_content')[0];
+                    poem_content.style.visibility = 'visible';
+                }
+                function changecolor() {
+                    var color = document.getElementsByName('colorpanel')[0];
+                    document.getElementsByClassName('poem_content')[0].style.color = color.value;
+                }
+            </script>
+        </div>
+
+        <div class="panel">
+            <h4>8-3-2 密码验证测试</h4>
+            <form class="formclass" method="post" onsubmit="javascript:return event.preventDefault();">
+                <!-- <div class="formclass"> -->
+                <div class="forminline">
+                    用户姓名　 <input type="text" id="userName" required>
+                </div>
+                <div class="forminline">
+                    输入密码　 <input type="password" id="pwd" pattern="[a-zA-Z0-9]{6,}">
+                </div>
+                <div class="forminline">
+                    确认密码　 <input type="password" id="pwdagain" pattern="[a-zA-Z0-9]{6,}">
+                </div>
+                <div class="resultdiv forminline"></div>
+                <input type="submit" value="提  交" onclick="pwdValidity();">
+            </form>
+            <script>
+                function pwdValidity() {
+                    if (pwd.value != pwdagain.value) {
+                        pwdagain.setCustomValidity('两次密码输入不一致');
+                        var formline = document.getElementsByClassName("resultdiv")[0];
+                        var pElement=formline.getElementsByTagName('p')[0];
+                        formline.removeChild(pElement);
+                    }
+                    else if (pwd.value.length > 0) {
+                        pwdagain.setCustomValidity('');
+                        var formline = document.getElementsByClassName("resultdiv")[0];
+                        if (formline.getElementsByTagName('p').length == 0) {
+                            var paragraph = document.createElement('p');
+                            var textnode = document.createTextNode('密码相同');
+                            paragraph.appendChild(textnode);
+                            formline.appendChild(paragraph);
+                        }
+                    }
+                    // return false;
+                    // event.preventdefault();
+                }
+            </script>
+        </div>
+
+        <div class="panel">
+            <h4>8-3-3 复制文本框内容</h4>
+            <div class="formclass">
+                <div class="forminline">输入文本　<input type="text" name="firsttext" id="firsttext"></div>
+                <div class="forminline">复制文本　<input type="text" name="copytext" id="copytext"></div>
+                <div class="resultdiv forminline"></div>
+            </div>
+            <script>
+                firsttext.onchange=function(){
+                    copytext.value=firsttext.value;
+                    var result=document.getElementsByClassName('resultdiv')[1];
+                    result.innerHTML='复制成功';
+                }
+            </script>
         </div>
     </div>
-    <script type="text/javascript">
-        function hide(){
-            var poem_content=document.getElementsByClassName('poem_content')[0];
-            poem_content.style.visibility='hidden';
-        }
-        function show(){
-            var poem_content=document.getElementsByClassName('poem_content')[0];
-            poem_content.style.visibility='visible';
-        }
-        function changecolor(){
-            var color=document.getElementsByName('colorpanel')[0];
-            document.getElementsByClassName('poem_content')[0].style.color=color.value;
-        }
-    </script>
+
 </body>
 
 </html>

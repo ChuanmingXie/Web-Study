@@ -52,10 +52,6 @@ hr{
     align-items: center;
     justify-content: center;
 }
-audio{
-    width: 500px;
-    margin: 10px auto;
-}
 .formclass .forminline{
     height: 15px;
     font: bold 14px/30px Cambria, Microsoft Yahei;
@@ -84,6 +80,10 @@ audio{
 }
 .btnGroup{width: 600px; height: 40px;}
 
+audio{
+    width: 500px;
+    margin: 10px auto;
+}
 
 input[type='button'],
 input[type='submit'],

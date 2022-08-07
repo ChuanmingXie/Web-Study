@@ -31,6 +31,38 @@
                 <input type="button" value="关闭窗口" onclick="closewindow()">
             </div>
         </div>
+        <div class="panel">
+            <h4>8-2-2 提示框 对话框</h4>
+            <div class="btnGroup">
+                <input type="button" value="输入姓名" onclick="promptandTip();">
+                <input type="button" value="删除记录" onclick="">
+                <input type="button" value="提出信息" onclick="javascript:alert('message-confirm');">
+            </div>
+            <script>
+                // alert('message-alert');
+                // confirm('message-confirm');
+                function promptandTip() {
+                    var info = prompt('你喜欢的演员是谁?');
+                    alert(info);
+                    confirm(info);
+                }
+            </script>
+        </div>
+        <div class="panel">
+            <h4>8-2-3 location</h4>
+            <script>
+                var date= new Date();
+                var year=date.getFullYear();
+                var month=date.getMonth()+1;
+                var day=date.getDate();
+                var hours=date.getHours();
+                var minutes= date.getMinutes();
+                var seconds=date.getSeconds();
+                document.writeln("location.href = " + window.location+'<br>');
+                document.writeln('location.protocol = '+window.location.protocol+"<br>");
+                document.writeln('当前时间：'+year+'年'+month+'月'+day+" "+hours+':'+minutes+":"+seconds);
+            </script>
+        </div>
     </div>
 </body>
 
