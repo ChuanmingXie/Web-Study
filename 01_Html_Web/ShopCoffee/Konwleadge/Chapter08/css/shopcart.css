@@ -1,0 +1,59 @@
+
+
+.middle{width: 80%; margin: auto;}
+
+.tools_header{text-align: center;margin: 10px;}
+.select_all{
+    width: 280xp; 
+    text-align: left;
+    vertical-align: top;
+    margin-top: 0px;
+    float: left;
+}
+.good_info{width: 180px; color: #FFF;float: left;}
+.info_content{font-size: 12px; color: gray;}
+.good_title{width: 115px; text-align: center; float: left;}
+.good_operate{width: 100px; float: left;}
+.checkitem{margin: 10px;}
+.gooditem{
+    background: #f7cf92;
+    border-top:solid 1px gray;
+    border-bottom: solid 1px #778899;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+}
+.good_intro{
+    font: 12px;
+    width: 100px;
+    vertical-align: top;
+    display: inline-block;
+}
+input[type='number']{
+    width: 60px;
+    text-align: center;
+}
+.operate_bg{
+    font-size: 12px/20px  arial,'宋体';
+    text-align: center;
+}
+.checkOut_bg{text-align: right;}
+.selectnum,.price{
+    font:bolder 2em/25px verdana,'宋体';
+    color: #d2691e; 
+}
+.checkOutBtn{
+    width: 120px;
+    height: 30px;
+    font: bold 20px/25px '黑体';
+    text-align: center;
+    color: #FFF;
+    padding: 10px;
+    background: #d2691e;
+    display: inline-block;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+.footer{
+    font-size:12px;line-height: 20px;text-align: center;
+}

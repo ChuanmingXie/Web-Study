@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>咖啡商城</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/shopcart.css">
+</head>
+
+<body>
+    <article>
+        <!-- header start -->
+        <header>
+            <div class="header_bg" id="header_bg">
+                <div class="logo_bg" title="咖啡商城-白咖啡,咖啡豆,咖啡机,Coffee18.com">
+                    <a href="#" hidefocus="true">
+                        <img src="./img/coffee/logo.gif" alt="咖啡商城-白咖啡,咖啡豆,咖啡机,Coffee18.com">
+                    </a>
+                </div>
+                <div class="search_bg">
+                    <div class="search_content">
+                        <div class="formclass">
+                            <form action="" method="GET">
+                                <input type="text" class="search_text" name="keyword" autocomplete="off">
+                                <input type="submit" class="search_btn" value="搜索" hidefocus="true">
+                                <input type="hidden" name="act" id="" value="index">
+                                <input type="hidden" name="app" id="" value="search">
+                            </form>
+                        </div>
+                    </div>
+                    <div id="hotwords">
+                        <strong>热门搜索：</strong>
+                        <a href="">白咖啡</a>
+                        <a href="">咖啡豆</a>
+                        <a href="">咖啡机</a>
+                        <a href="">咖啡杯</a>
+                        <a href="">咖啡厅</a>
+                    </div>
+                </div>
+                <div class="shopcart_link">
+                    <dl>
+                        <dt class="dtclass">
+                            <a href="">购物车<strong id="good_amount">4</strong>种商品</a><b></b>
+                        </dt>
+                    </dl>
+                </div>
+                <div class="orderlink_bg">
+                    <dl>
+                        <dt class="dtclass"><s></s><a href="orders.html">我的订单</a></dt>
+                    </dl>
+                </div>
+            </div>
+        </header>
+        <!-- header end -->
+
+        <!-- middle section start -->
+        <section class="middle">
+            <div class="tools_header">
+                <div class="select_all"><input type="checkbox" name="selectAll" onchange="checkAll(e);">全选</div>
+                <div class="good_info">商品信息简介</div>
+                <div class="good_title">单价(元)</div>
+                <div class="good_title">数量</div>
+                <div class="good_title">金额(元)</div>
+                <div class="good_operate">操作</div>
+                <div class="clear"></div>
+            </div>
+            <form action="">
+                <div class="checkitem">
+                    <input type="checkbox" name="checkGroup" id="checkGroup1" onchange="check(event);">品牌：麦克威尔
+                </div>
+                <div class="gooditem">
+                    <div class="good_info">
+                        <input type="checkbox" name="goods" onchange="checkthis(event);">
+                        <img src="./img/coffee/shoppcart/1.jpg" width="79" height="80" alt="" onmouseover="showBigPic(bigPic1);" onmouseout="hideBigPic(bigPic);">
+                        <div class="itemPic" id="bigPic1">
+                            <img src="./img/coffee/shoppcart/11.jpg" width="238" height="240" alt="大图">
+                        </div>
+                        <div class="good_intro">
+                            <a href="" alt="麦斯威尔Maxwell House三合一速溶咖啡粉 特浓咖啡 3盒装 共90条">
+                                麦斯威尔Maxwell House三合一速溶咖啡粉 特浓咖啡 3盒装 共90条
+                            </a>
+                        </div>
+                    </div>
+                    <div class="good_info info_content">特浓咖啡 3和装 共90条</div>
+                    <div class="good_title">89.2</div>
+                    <div class="good_title">
+                        <input type="number" name="shopCount" id="amount" value="1" onchange="goodCount(1)">
+                    </div>
+                    <div class="good_title">89.2</div>
+                    <div class="good_operate operate_bg">
+                        <a href="">移入收藏夹</a>
+                        <a href="">删除</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="gooditem">
+                    <div class="good_info">
+                        <input type="checkbox" name="goods" onchange="checkthis(event);">
+                        <img src="./img/coffee/shoppcart/2.jpg" width="79" height="80" alt="" onmouseover="showBigPic(33);" onmouseout="hideBigPic(bigPic2);">
+                        <div class="itemPic" id="bigPic2">
+                            <img src="./img/coffee/shoppcart/22.jpg" width="238" height="240" alt="大图">
+                        </div>
+                        <div class="good_intro">
+                            <a href="" alt="麦斯威尔Maxwell House三合一速溶咖啡粉 特浓咖啡 3盒装 共90条">
+                                麦斯威尔Maxwell House三合一速溶咖啡粉 特浓咖啡 3盒装 共90条
+                            </a>
+                        </div>
+                    </div>
+                    <div class="good_info">特浓咖啡 3和装 共90条</div>
+                    <div class="good_title">89.2</div>
+                    <div class="good_title">
+                        <input type="number" name="shopCount" id="amount" value="1" onchange="goodCount(1)">
+                    </div>
+                    <div class="good_title">89.2</div>
+                    <div class="good_operate operate_bg">
+                        <a href="">移入收藏夹</a>
+                        <a href="">删除</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </form>
+            <form action="">
+                <div class="checkitem">
+                    <input type="checkbox" name="checkGroup" id="checkGroup2" onchange="check(event);">品牌：雀巢咖啡
+                </div>
+                <div class="gooditem">
+                    <div class="good_info">
+                        <input type="checkbox" name="goods" onchange="checkthis(event);">
+                        <img src="./img/coffee/shoppcart/3.jpg" width="79" height="80" alt="" onmouseover="showBigPic(33);" onmouseout="hideBigPic(bigPic3);">
+                        <div class="itemPic" id="bigPic3">
+                            <img src="./img/coffee/shoppcart/33.jpg" width="238" height="240" alt="大图">
+                        </div>
+                        <div class="good_intro">
+                            <a href="" alt="麦斯威尔Maxwell House三合一速溶咖啡粉 特浓咖啡 3盒装 共90条">
+                                麦斯威尔Maxwell House三合一速溶咖啡粉 特浓咖啡 3盒装 共90条
+                            </a>
+                        </div>
+                    </div>
+                    <div class="good_info">特浓咖啡 3和装 共90条</div>
+                    <div class="good_title">89.2</div>
+                    <div class="good_title">
+                        <input type="number" name="shopCount" id="amount" value="1" onchange="goodCount(1)">
+                    </div>
+                    <div class="good_title">89.2</div>
+                    <div class="good_operate operate_bg">
+                        <a href="">移入收藏夹</a>
+                        <a href="">删除</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="gooditem">
+                    <div class="good_info">
+                        <input type="checkbox" name="goods" onchange="checkthis(event);">
+                        <img src="./img/coffee/shoppcart/4.jpg" width="79" height="80" alt="" onmouseover="showBigPic(33);" onmouseout="hideBigPic(bigPic4);">
+                        <div class="itemPic" id="bigPic4">
+                            <img src="./img/coffee/shoppcart/44.jpg" width="238" height="240" alt="大图">
+                        </div>
+                        <div class="good_intro">
+                            <a href="" alt="麦斯威尔Maxwell House三合一速溶咖啡粉 特浓咖啡 3盒装 共90条">
+                                麦斯威尔Maxwell House三合一速溶咖啡粉 特浓咖啡 3盒装 共90条
+                            </a>
+                        </div>
+                    </div>
+                    <div class="good_info">特浓咖啡 3和装 共90条</div>
+                    <div class="good_title">89.2</div>
+                    <div class="good_title">
+                        <input type="number" name="shopCount" id="amount" value="1" onchange="goodCount(1)">
+                    </div>
+                    <div class="good_title">89.2</div>
+                    <div class="good_operate operate_bg">
+                        <a href="">移入收藏夹</a>
+                        <a href="">删除</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </form>
+            <div class="checkOut_bg">
+                已选商品<span class="selectnum">0</span>件
+                合计(不含运费) <span class="price">￥<span id="money">0</span></span>
+                <a href="">
+                    <div class="checkOutBtn">结算</div>
+                </a>
+            </div>
+        </section>
+        <!-- middle section end -->
+
+        <!-- footer start -->
+        <footer class="footer">
+            营销中心廉正举报联系客服开放平台诚征英 2022 &copy; CofeeShop.com 版权所有 关于咖啡商城商务合作请联系 021-133453254 <br>
+            电商网络经营许可证：coffee web[2018]004 号|增值电信业务经营许可证：沪A2-20180004-1|信息网络传播视听节目许可证：1801004号
+        </footer>
+        <!-- footer end -->
+    </article>
+
+    <script>
+
+    </script>
+</body>
+
+</html>
