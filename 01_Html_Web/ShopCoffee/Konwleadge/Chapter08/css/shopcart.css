@@ -4,7 +4,7 @@
 
 .tools_header{text-align: center;margin: 10px;}
 .select_all{
-    width: 280xp; 
+    width: 280px; 
     text-align: left;
     vertical-align: top;
     margin-top: 0px;
@@ -24,7 +24,7 @@
     position: relative;
 }
 .good_intro{
-    font: 12px;
+    font-size: 12px;
     width: 100px;
     vertical-align: top;
     display: inline-block;
@@ -38,7 +38,7 @@ input[type='number']{
     text-align: center;
 }
 .checkOut_bg{text-align: right;}
-.selectnum,.price{
+#selectnum,.price{
     font:bolder 2em/25px verdana,'宋体';
     color: #d2691e; 
 }
