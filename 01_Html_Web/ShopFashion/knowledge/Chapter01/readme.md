@@ -85,7 +85,10 @@
 
 #### 1.6 列表元素
 ##### 1.6.1 有序列表 ol
+	type:circle、disc、square、none
 ##### 1.6.2 无序列表 ul
+	type : 1、i、I、A、a
+	start : 3
 ##### 1.6.3 定义列表 dl..dt..dd
 
 #### 1.7 div和span
