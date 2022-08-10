@@ -1,10 +1,38 @@
 @charset "UTF-8";
 
-div{
-    width: 600px;
-    margin: 0 auto;
-    font: 14px/33px  Cambria,Microsoft Yahei;
+
+body{font-family: Cambria,'楷体';}
+
+h2,h3,h4{font: 700 18px/28px Cambria,'楷体';}
+h3{font-size: 16px;line-height: 26px;}
+h4{font-size: 14px;line-height: 24px;}
+.clear{clear: both;}
+.floatleft{float: left;}
+.floatright{float: right;}
+
+hr{
+    width: 90%;
+    height: 1px;
+    border: none;
+    background: #594;
+    margin: 5px auto;
 }
+
+.panel_bg{
+    display: inline-table;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.panel_bg .panel{
+    float: left;
+    width: 630px;
+    margin-left: 20px;
+}
+.panel_bg .panel h4{margin: 10px 0 0 10px;}
+.panel_bg .panel p{margin: 10px 10px 10px 20px;}
+
 
 input[type='text']{
     width: 180px;
