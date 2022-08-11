@@ -12,7 +12,7 @@
         .changeTools {
             margin-left: 20px;
             float: left;
-            width: 140px;
+            width: 180px;
             height: 280px;
         }
 
@@ -41,14 +41,14 @@
             </div>
 
             <div class="panel">
-                <h4>习题2-弹出对话框时显示自身是第几个</h4>
+                <h4>习题2-弹出对话框时显示选中的是第几个单选按钮</h4>
                 <div class="formclass">
                     <form name="form1" onsubmit="returnfoo();">
                         <div class="textinline">
-                            <input type="radio" name="radioGroup" id=""> 骑行
-                            <input type="radio" name="radioGroup" id=""> 长跑
-                            <input type="radio" name="radioGroup" id=""> 健身
-                            <input type="radio" name="radioGroup" id=""> 瑜伽
+                            <input type="radio" name="radioGroup" id="" value="骑行"> 骑行
+                            <input type="radio" name="radioGroup" id="" value="长跑" checked> 长跑
+                            <input type="radio" name="radioGroup" id="" value="健身"> 健身
+                            <input type="radio" name="radioGroup" id="" value="瑜伽"> 瑜伽
                         </div>
                         <input type="submit" value="提交">
                     </form>
@@ -58,11 +58,11 @@
             <div class="panel">
                 <h4>练习3-根据下拉框更新图片</h4>
                 <div>
-                    <img id="pic" src="" alt="" width="200" height="200"><br>
-                    <select name="" id="sel" onchange="showImage(this);">
-                        <option value="img1">城市生活</option>
-                        <option value="img2">都市早报</option>
-                        <option value="img3">青山绿水</option>
+                    <img id="pic" src="" alt="" width="200" height="300"><br>
+                    <select name="" id="sel" onchange="showImage(event);">
+                        <option value="11.jpg">城市生活</option>
+                        <option value="12.jpg">都市早报</option>
+                        <option value="13.jpg">青山绿水</option>
                     </select>
                 </div>
             </div>
@@ -70,17 +70,17 @@
             <div class="panel">
                 <h4>练习5-交换多选框内容</h4>
                 <div>
-                    <select name="multiSelect" id="multiSelect" multiple="multiple">
+                    <select name="multiSelect" id="multiSelectLeft" multiple="multiple">
                         <option value="0">选项1</option>
                         <option value="1">选项2</option>
                         <option value="2">选项3</option>
                         <option value="3">选项4</option>
                     </select>
                     <div class="changeTools">
-                        <input type="button" value=">>">
-                        <input type="button" value="<<">
+                        <input type="button" id="btnTurnRight" value=">>">
+                        <input type="button" id="btnTurnLeft" value="<<">
                     </div>
-                    <select name="multiSelect" id="multiSelect" multiple="multiple">
+                    <select name="multiSelect" id="multiSelectRight" multiple="multiple">
                     </select>
                 </div>
             </div>

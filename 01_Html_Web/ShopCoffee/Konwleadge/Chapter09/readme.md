@@ -167,7 +167,7 @@
             {
                 alert(this.id);//undefined
                 alert(thisDom.id);//outsetA
-                    }
+            }
         </script>
         <div id="outsetA" onclick="buttonHandler(this)"></div>
         在事件处理函数中的this代表的是Window对象，而在onclick属性值中的this，则是代表DOM对象并作为参数传递。
@@ -250,6 +250,13 @@
         可以通过addEventListener(type, listener, useCapture)的useCapture来设定，
         useCapture=false代表着事件冒泡，useCapture=true代表着采用事件捕获。
         例如：
+        function closeWin() {
+            if (confirm("确定关闭?")) {
+                window.opener=null;
+                window.open("","_self");
+                this.close();
+            }
+        }
             <script>
             window.onload = function(){
                 var outA = document.getElementById("outA");  
