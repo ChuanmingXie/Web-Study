@@ -125,10 +125,11 @@ textarea,
 select {
     width: 280px;
     height: 25px;
-    font: 14px/25px Cambria, Times 'Times New Roman';
+    font: 14px/25px Cambria, 'Times New Roman';
     letter-spacing: 2px;
     border-radius: 5px;
     border: 1px solid #fcd304;
+    outline: 2px solid transparent;
 }
 input[type='color'],
 select {
@@ -153,7 +154,7 @@ input[type='range']:focus,
 input[type='number']:focus,
 textarea:focus,
 select:focus{
-    border: none;
+    border: 1px solid transparent;
     outline: 2px solid #EA4307;
 }
 
@@ -220,7 +221,6 @@ td input[type="image"] {
     margin: 5px 5px -5px 5px;
     width: 20px;
 }
-
 .dl_bg{
     display: flex;
     align-items: center;

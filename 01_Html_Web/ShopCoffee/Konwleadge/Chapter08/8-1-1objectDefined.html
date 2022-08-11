@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8-1-1 对象的创建</title>
+    <link rel="stylesheet" href="./css/democommon.css">
+</head>
+
+<body>
+    <h2>8-1-1 对象的创建</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h4>1. 原型拓展法</h4>
+            <div class="formclass">
+                <p>
+                    <script>
+                        var person = new Object();
+                        person.name = '王一';
+                        person.age = 21;
+                        person.color = '蓝色'
+                        person.run = function () {
+                            document.write('正在跑' + "<br>");
+                        }
+                        person.jump = function () {
+                            document.write('正在跳' + "<br>");
+                        }
+                        document.write(person.name + "<br>");
+                        person.run();
+                    </script>
+                </p>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h4>2. 直接定义法</h4>
+            <div class="formclass">
+                <p>
+                    <script>
+                        var person = {
+                            name: '张大',
+                            age: 22,
+                            color: '红色',
+                            run: function () {
+                                document.write('正在跑' + '<br>');
+                            },
+                            jump: function () {
+                                document.write('正在跳' + '<br>');
+                            },
+                            showName: function () {
+                                document.write(this.name);
+                            }
+                        }
+                        console.log(person);
+                        document.write(person);
+                        document.write(person.name);
+                        person.run()
+                        person.age = 23;
+                        document.write(person.age);
+                        person.name = "哈哈";
+                        person.showName();
+                    </script>
+                </p>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h4>3. 基本数据类型 </h4>
+            <div class="formclass">
+                <P>基本数据类型：Number、String、boolean、undefined、NULL(空对象 object)</P>
+                <P>引用数据类型：Array Function Object</P>
+                <script>
+                    var x = null;
+                    var y;
+                    document.write("x=null 和 y的值相同  x == y :" + (x == y) + '<br>');
+                    document.write(typeof (y) + '<br>');
+                    document.write(typeof (x) + '<br>');
+                    document.write("x=null 和 未赋值的y 的类型不同 x===y  : " + (x === y) + "<br>");
+                </script>
+                <p>基本数据类型 只传递值</p>
+                <p>
+                    var x=50; <br>
+                    var y=x; <br>
+                    var y=30; <br>
+                    console.log(x); <br>
+                    console.log(y); <br>
+                </p>
+                <script>
+                    var x=50;
+                    var y=x;
+                    var y=30;
+                    console.log(x);
+                    console.log(y);
+                </script>
+                <p>引用数据类型 只传递存储变量的地址</p>
+                <p>
+                    var arr=[1,2,3]; <br>
+                    var arrs=arr; <br>
+                    arr[1]=30; <br>
+                    console.log(arr); <br>
+                    console.log(arrs); <br>
+                </p>
+                <script>
+                    var arr=[1,2,3];
+                    var arrs=arr;
+                    arr[1]=30;
+                    console.log(arr);
+                    console.log(arrs);
+                </script>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

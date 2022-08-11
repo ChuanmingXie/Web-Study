@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8-1-2 内置对象</title>
+    <link rel="stylesheet" href="./css/democommon.css">
+</head>
+
+<body>
+    <h2>8-1-2 内置对象</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h4>1. Math</h4>
+            <div>
+                <p>属性
+                    <script>
+                        document.write(Math.PI);
+                    </script>
+                </p>
+                <p>
+                    方法 Math.max()、Math.min()、Math.ceil()、Math.floor()、Math.random()
+                    <script>
+                        function minAndmax(param) {
+                            var arr = [1, 43, 245, 112, 45];
+                            document.write(arr + '<br>');
+                            document.write("min = " + Math.min(1, 43, 245, 112, 45) + '<br>');
+                            document.write("max = " + Math.max(1, 43, 245, 112, 45) + '<br>');
+                        }
+                        function ceilAndfloor(param) {
+                            var x = 10.1;
+                            var y = Math.ceil(x);
+                            var z = Math.floor(x);
+                            document.write('10.1的ceil=' + y + '<br>');
+                            document.write('10.1的floor=' + z + '<br>');
+                        }
+                        function rounds(params) {
+                            var a = 10.4;
+                            var b = 10.8;
+                            var c = Math.round(a);
+                            var d = Math.round(b);
+                            document.write(a + 'round=' + c + '<br>');
+                            document.write(b + 'round=' + d + '<br>');
+                        }
+
+                        function randoms() {
+                            /* 产生0-1的数据 */
+                            var r1 = Math.random();
+                            document.write(r1 + '<br>');
+                            /* 产生0-100的数 */
+                            var r = Math.random() * 100;
+                            document.write(r + '<br>');
+
+                            /* 产生0-100的整数 */
+                            var r2 = Math.ceil(Math.random() * 100);
+                            document.write(r2 + '<br>');
+
+                            /* 产生200-400的数 */
+                            var r3 = Math.ceil(Math.random() * 100) + 200;
+                            document.write(r3 + '<br>');
+
+                            /* 产生100-400的数 */
+                            var r4 = Math.ceil(Math.random() * 300) + 100;
+                            document.write(r4 + '<br>');
+                        }
+
+                        function calcfun() {
+                            var d = -3;
+                            document.write(d + '的abs=' + Math.abs(d) + '<br>');
+                            document.write(d + '的exp=' + Math.exp(d) + '<br>');
+                            document.write(Math.abs(d) + '的log=' + Math.log(Math.abs(d)) + '<br>');
+                            document.write(Math.abs(d) + '的-2次方 =' + Math.log(Math.abs(d), -2) + '<br>');
+                            document.write(Math.abs(d) + '的平方 =' + Math.sqrt(Math.abs(d)) + '<br>');
+                        }
+                        minAndmax();
+                        ceilAndfloor();
+                        rounds();
+                        randoms();
+                        calcfun();
+                    </script>
+                </p>
+            </div>
+        </div>
+        <div class="panel">
+            <h4>2. Date</h4>
+            <div>
+                <p>
+                    <script>
+                        var d = new Date();
+                        document.write("不传递参数时：date=" + d + "<br>");
+                        var d2 = new Date(2012, 3, 34, 2, 34, 3);
+                        document.write("传递参数(2012, 3, 34, 2, 34, 3)时：date=" + d2 + "<br>");
+
+                        document.write('获取当前日期的年='+d.getFullYear()+'<br>');
+                        document.write('设置当前日期的年：'+d.setFullYear(2019)+"<br>")
+                        document.write("设置了年的时间：date=" + d + "<br>");
+
+                        document.write('获取当前日期的月='+(d.getMonth()+1)+'<br>');
+                        document.write('获取月份得到0-11,所以需要加1'+'<br>');
+                        document.write('设置当前日期的月：'+d.setMonth(0)+"<br>")
+                        document.write("设置了月的时间：date=" + d + "<br>")
+
+                        document.write('获取当前日期的日='+d.getDate()+'<br>');
+                        document.write('设置当前日期的日：'+d.setDate(4)+"<br>")
+                        document.write("设置了日的时间：date=" + d + "<br>")
+
+                        document.write('获取当前日期的星期='+d.getDay()+'<br>');
+                        document.write('获取星期得到0-7,其中0代表星期天'+'<br>');
+                        document.write('设置当前日期的日：'+d.setDate(3)+"<br>")
+                        document.write("设置了日的时间：date=" + d + "<br>")
+
+                        var t= d.getTime();
+                        document.write("从1970-1-1 0 点据今的时间"+t+"<br>");
+                        var dd=new Date(t);
+                        document.write(dd+'<br>');
+                        dd.setTime(1000*60*60*60);
+                        var dds=new Date(dd);
+                        document.write(dds+'<br>');
+                    </script>
+                </p>
+            </div>
+        </div>
+        <div class="panel">
+            <h4>3. Math</h4>
+        </div>
+        <div class="panel">
+            <h4>4. Math</h4>
+        </div>
+    </div>
+</body>
+
+</html>
