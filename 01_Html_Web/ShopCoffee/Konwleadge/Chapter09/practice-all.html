@@ -58,8 +58,9 @@
             <div class="panel">
                 <h4>练习3-根据下拉框更新图片</h4>
                 <div>
-                    <img id="pic" src="" alt="" width="200" height="300"><br>
+                    <img id="pic" src="./img/card//01.jpg" alt="" width="200" height="300"><br>
                     <select name="" id="sel" onchange="showImage(event);">
+                        <option value="01.jpg">-请选择-</option>
                         <option value="11.jpg">城市生活</option>
                         <option value="12.jpg">都市早报</option>
                         <option value="13.jpg">青山绿水</option>
@@ -71,16 +72,16 @@
                 <h4>练习5-交换多选框内容</h4>
                 <div>
                     <select name="multiSelect" id="multiSelectLeft" multiple="multiple">
-                        <option value="0">选项1</option>
-                        <option value="1">选项2</option>
-                        <option value="2">选项3</option>
-                        <option value="3">选项4</option>
                     </select>
                     <div class="changeTools">
                         <input type="button" id="btnTurnRight" value=">>">
                         <input type="button" id="btnTurnLeft" value="<<">
                     </div>
                     <select name="multiSelect" id="multiSelectRight" multiple="multiple">
+                        <option value="0">选项1</option>
+                        <option value="1">选项2</option>
+                        <option value="2">选项3</option>
+                        <option value="3">选项4</option>
                     </select>
                 </div>
             </div>

@@ -12,12 +12,12 @@
     大多数event对象的属性是只读的,因为Event是事件动作的快照。
  */
 this.onmousemove = function (event) {
-
     var mouseX = event.screenX;
     var mouseY = event.screenY;
     showMouseInfo.value = mouseX + ',' + mouseY;
 };
 
+/* 习题1-确认用户退出,关闭窗口 */
 function closeWin() {
     if (confirm("确定关闭?")) {
         window.opener = null;
@@ -26,16 +26,68 @@ function closeWin() {
     }
 }
 
+/* 练习3-根据下拉框更新图片 */
 function showImage(e) {
     var index = e.srcElement.selectedIndex;
     pic.src = "./img/card/" + e.srcElement[index].value;
 }
 
+/* 习题2-弹出对话框时显示选中的是第几个单选按钮 */
 function returnfoo() {
     var radioGroups = document.getElementsByName('radioGroup');
     for (let i = 0; i < radioGroups.length; i++) {
         if (radioGroups[i].checked) {
-            alert((i+1) + "---->" +radioGroups[i].value);
+            alert((i + 1) + "---->" + radioGroups[i].value);
         }
     }
+}
+
+/* 练习5-交换多选框内容 */
+btnTurnRight.onclick = function TurnRight(params) {
+    var srcSelect = document.getElementById("multiSelectLeft");
+    var desSelect = document.getElementById("multiSelectRight")
+    TurnExchange(srcSelect, desSelect);
+}
+btnTurnLeft.onclick = function TurnLeft(params) {
+    var srcSelect = document.getElementById("multiSelectRight");
+    var desSelect = document.getElementById("multiSelectLeft");
+    TurnExchange(srcSelect, desSelect);
+}
+
+function TurnExchange(srcSelect, desSelect) {
+    console.log(srcSelect.selectedIndex);
+    if (srcSelect.selectedIndex == -1) {
+        alert('请选择移动项');
+    }
+    for (let i = 0; i < srcSelect.options.length; i++) {
+        if (srcSelect.options[i].selected) {
+            var exist = false;
+            for (let j = 0; j < desSelect.options.length; j++) {
+                if (desSelect.options[j].value == srcSelect.options[i].value) {
+                    exist = true;
+                    break;
+                }
+            }
+            if (!exist) {
+                var srcOptions = document.createElement('option');
+                srcOptions.value = srcSelect.options[i].value;
+                srcOptions.text = srcSelect.options[i].text;
+                desSelect.appendChild(srcOptions);
+
+                // srcSelect.options[i]=null;
+                // srcSelect.removeChild(srcOptions);
+                // srcSelect.removeChild(srcSelect.options[i]);
+            }
+        }
+    }
+    var indexArray = [];
+    for (let i = 0; i < desSelect.options.length; i++) {
+        for (let j = 0; j < srcSelect.options.length; j++) {
+            if (srcSelect.options[j].innerText == desSelect.options[i].innerText) {
+                indexArray.push(j);
+                srcSelect.options[j] = null;
+            }
+        }
+    }
+    console.log(indexArray);
 }

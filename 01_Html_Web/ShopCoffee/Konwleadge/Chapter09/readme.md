@@ -44,10 +44,10 @@
                 var pElement=document.createElement('p);
             b. 创建一个带文本的p元素
                 var node=document.createTextNode("这是新段落。");
-                para.appendChild(node);
+                pElement.appendChild(node);
             c. 创建一个带子元素的块元素div
                 var element=document.getElementById("div1");
-                element.appendChild(para);
+                element.appendChild(pElement);
             d. 删除已有的HTML标签
                 假如div中拥有两个p，希望从div1中删除p1，需要分别找到父子两个元素
                     <div id="div1">

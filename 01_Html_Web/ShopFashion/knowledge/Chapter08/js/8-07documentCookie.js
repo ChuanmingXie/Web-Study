@@ -4,7 +4,7 @@ var cookieSplit = "@";
 function saveCookie(cookieName) {
     var userName = document.forms[0].userName.value;
     var userPwd = document.forms[0].userPwd.value;
-    var saveTime = +document.forms[0].saveTime.value;
+    var saveTime = document.forms[0].saveTime.value;
     var expireDate = new Date();
     if (saveTime != "-1") {
         var day = expireDate.getDate() - 0;

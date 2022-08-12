@@ -26,8 +26,7 @@ function deleteRow(btndelete) {
 }
 
 function appendCaption() {
-    var mytable = myTable;
-    var caption = mytable.createCaption();
+    var caption = myTable.createCaption();
     caption.innerHTML = '注册会员用户信息表';
 }
 

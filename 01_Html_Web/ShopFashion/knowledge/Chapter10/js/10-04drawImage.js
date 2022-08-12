@@ -57,7 +57,7 @@ function showNormalImage() {
         context.drawImage(img, 10, 10);
     }
 }
-
+/* 通道处理 */
 function showChannel(channel) {
     var canvas = document.getElementById('canvasPixel');
     var context = canvas.getContext('2d');
@@ -91,7 +91,7 @@ function showChannel(channel) {
         context.putImageData(imgData, x, y);
     }
 }
-
+/* 清空画布 */
 function clearCanvas() {
     var canvas = document.getElementById('canvasPixel');
     var context = canvas.getContext('2d');

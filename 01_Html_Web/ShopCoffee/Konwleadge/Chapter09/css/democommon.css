@@ -33,13 +33,17 @@ hr{
 .panel_bg .panel p{margin: 10px 10px 10px 20px;}
 
 
-
+.frameclass{
+    border-radius: 10px;
+}
 .formclass,
 .mediaclass,
 .canvasbase{
     border: 1px solid #856D72;
     border-radius: 10px;
 }
+
+.frameclass,
 .formclass,
 .mediaclass{
     width: 600px;
@@ -79,7 +83,7 @@ hr{
     justify-content: center;
 }
 .btnGroup{width: 600px; height: 40px;}
-
+.resultDiv{height: 100px;width: 580px; margin: 10px;}
 audio{
     width: 500px;
     margin: 10px auto;

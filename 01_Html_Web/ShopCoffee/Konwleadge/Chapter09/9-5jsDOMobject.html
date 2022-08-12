@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9-5 DOM对象-综合示例</title>
+    <link rel="stylesheet" href="./css/democommon.css">
+    <script src="./js/9-5jsDOMObject.js"></script>
+    <style>
+        .forminline {
+            text-align: center;
+        }
+
+        .forminline img {
+            width: 100px;
+        }
+        table{
+            min-height: 80px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>9-6 DOM 对象综合示例：</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h3>1. DOM对象Cookie属性</h3>
+            <div>
+                <form class="formclass" action="">
+                    <div class="forminline">用户姓名：<input type="text" name="userName"></div>
+                    <div class="forminline">密　　码：<input type="password" name="userPwd" autocomplete="off"></div>
+                    <div class="forminline">
+                        保存时间：<select name="saveTime" id="">
+                            <option value="1">天</option>
+                            <option value="7">周</option>
+                            <option value="30">月</option>
+                            <option value="-1">不保存</option>
+                        </select>
+                    </div>
+                    <div class="btnGroup">
+                        <input type="button" value="注册测试" onclick="saveCookie('register')">
+                        <input type="button" value="获取注册" onclick="loadCookie('register')">
+                        <input type="button" value="登陆注册" onclick="saveCookie('login')">
+                        <input type="button" value="登陆加载" onclick="loadCookie('login')">
+                    </div>
+                    <hr>
+                    <div class="resultDiv"></div>
+                </form>
+            </div>
+        </div>
+        <div class="panel">
+            <h3>2. Table对象</h3>
+            <div class="formclass">
+                <div class="forminline"><img src="./img/cloudwhales.png" alt=""></div>
+                <div class="forminline">编号：<input type="text" name="userID" id="userID" placeholder="请输入"></div>
+                <div class="forminline">姓名：<input type="text" name="userName" id="userName" value="路人甲"></div>
+                <div class="btnGroup">
+                    <input type="button" value="添加新行至头部" onclick="insertFirstRow();">
+                    <input type="button" value="添加新行至尾部" onclick="insertRearRow();">
+                    <input type="button" value="添加表格的标题" onclick="appendCaption();">
+                    <input type="button" value="移除表格的标题" onclick="removeCaption();">
+                </div>
+                <hr>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>编号：</th>
+                            <th>姓名：</th>
+                            <th>操作：</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>张三</td>
+                            <td>
+                                <input type="image" src="./img/filetool/delete.png" alt="" onclick="deleteRow(event);">
+                                <input type="image" src="./img/filetool/create.png" alt="">
+                                <input type="image" src="./img/filetool/detail.png" alt="">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="panel">
+            <h3>3. Form对象</h3>
+            <form class="formclass" name="myform" method="post" action="http://101.132.152.252" onsubmit="return CheckFormSubmit();">
+                <div class="forminline"><img src="./img/cloudwhales.png" alt=""></div>
+                <div class="forminline">用户名：<input type="text" name="userNameform" id="userNameform"></div>
+                <div class="forminline">密　码：<input type="password" name="userPwdform" id="userPwdform"></div>
+                <div class="forminline">手机号：<input type="tel" name="userPhone" id="userPhone"></div>
+                <div class="forminline">邮　箱：<input type="email" name="userEmail" id="userEmail"></div>
+                <div class="btnGroup">
+                    <input type="submit" value="submit 提交">、
+                    <input type="button" value="button 提交" onclick="CheckFormbyBtn();">
+                </div>
+            </form>
+        </div>
+        <div class="panel">
+            <h3>4. DOM节点对象</h3>
+        </div>
+    </div>
+</body>
+
+</html>

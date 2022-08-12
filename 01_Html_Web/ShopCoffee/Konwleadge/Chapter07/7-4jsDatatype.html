@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/common.css">
     <style>
         .panel_bg .panel {
-            min-height: 190px;
+            /* min-height: 190px; */
         }
 
         .panel_bg .panel div {
@@ -98,6 +98,38 @@
                         document.write('名称' + name + ',地址' + address);
                     </script>
                 </p>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h4>7-4-3 数组查找</h4>
+            <div class="formclass">
+                <div class="forminline">备选数组：<input type="text" name="arrayItem" id="arrayItem"></div>
+                <div class="forminline">查找数值：<input type="text" name="arrayItem" id="arraySearch"></div>
+                <div class="forminline">查找方式：
+                    <seLect name="searchMethod">
+                        <option value="0">线性查找</option>
+                        <option value="1">二分法查找</option>
+                        <option value="2">求数组最大最小值</option>
+                    </seLect>
+                </div>
+                <div class="forminline"><input type="button" value="点击查找"></div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h4>7-4-3 数组排序</h4>
+            <div class="formclass">
+                <div class="forminline">备选数组：<input type="text" name="arrayItem" id="arrayItem"></div>
+                <div class="forminline">排序数组：<input type="text" name="arrayItem" id="arraySearch"></div>
+                <div class="forminline">排序方式：
+                    <seLect name="searchMethod">
+                        <option value="0">冒泡</option>
+                        <option value="1">选择</option>
+                        <option value="2">插入</option>
+                    </seLect>
+                </div>
+                <div class="forminline"><input type="button" value="点击排序"></div>
             </div>
         </div>
     </div>

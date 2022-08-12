@@ -60,7 +60,7 @@ function checkForm() {
 
 function chcekForm1() {
     if (checkuserName() && checkUserPwd() && checkPhone() && checkEmail()) {
-        document.myform.action = "http://101.132.152.252";
+        document.myform.action = "http://www.baidu.com";
         document.myform.target = '_blank';
         document.myform.submit();
     }
