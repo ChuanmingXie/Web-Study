@@ -53,7 +53,7 @@ btnTurnLeft.onclick = function TurnLeft(params) {
     var desSelect = document.getElementById("multiSelectLeft");
     TurnExchange(srcSelect, desSelect);
 }
-
+/* 交换连个多选下拉列表的选项 */
 function TurnExchange(srcSelect, desSelect) {
     console.log(srcSelect.selectedIndex);
     if (srcSelect.selectedIndex == -1) {
