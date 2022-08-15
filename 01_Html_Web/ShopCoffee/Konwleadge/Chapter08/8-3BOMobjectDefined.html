@@ -1,30 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>8-3 自定义对象-综合示例</title>
     <link rel="stylesheet" href="./css/democommon.css">
+    <script src="./js/8-2BOMobjectDefined.js"></script>
 </head>
+
 <body>
     <h2>8-3 自定义Object-综合示例</h2>
     <div class="panel_bg">
         <div class="panel">
             <h4>1. 原始定义法</h4>
+            <div>
+                <p>
+                    原理：首选定义一个object对象,然后为对象添加所需的属性和方法 <br>
+                    1. 使用object创建一个Object对象 <br>
+                    2. prototypeName表示为object对象添加的属性名 <br>
+                    3. methodNamr 表示为object添加的方法名，<br>
+                    4. 方法名的值可以是预先定义好的函数，也可以是匿名函数 <br>
+                    语法：<br>
+                    var object=new Object(); <br>
+                    object.propertyName=value; <br>
+                    object.methodName=functionName|function(){}; <br>
+                </p>
+                <p>
+                    <script>
+                        goodOption.showInfo();
+                        goodOption.showColor();
+                    </script>
+                </p>
+            </div>
         </div>
         <div class="panel">
             <h4>2. 构造函数法</h4>
+            <div>
+                <p>
+                    原理：使用构造函数construcor function创建一个JS对象 <br>
+                    语法：构造函数名即为类名，使用时通过new运算符和构造函数参数创建 <br>
+                    function ClassName([param1],[param2],...){ <br>
+                    this.propertyName=value; <br>
+                    this.MethodName=functionName|function(){ }; <br>
+                    }
+                    <br><br><br><br><br>
+                </p>
+                <p>
+                    <script>
+                        var good1 = new goodContent('女士长裙', '女士', '2330', '红色');
+                        good1.showInfo();
+                        good1.showColor();
+                    </script>
+                </p>
+            </div>
         </div>
         <div class="panel">
             <h4>3. 原型拓展法</h4>
-        </div>
-        <div class="panel">
-            <h4>4. 混合定义法</h4>
+            <div>
+                <p>
+                    原理:通过prototype属性对象添加新的属性和方法 <br>
+                    语法：object.prototype.name = value; <br>
+                    object表示被扩展的对象,包括系统内置对象和自定义对象 <br>
+                    prototype 表示对象的原型 <br>
+                    name 表示所添加的属性或方法. <br>
+                    当添加属性时,value为属性值;当添加方法时,value为函数的引用 <br>
+                </p>
+                <p>
+                    <script>
+                        var array = [91, 23, 4, 3, 54, 3, 12, 43, 11, 34];
+                        var sortArray = array.SortBubble();
+                        document.write(sortArray.join(', '));
+                        document.write('<br>');
+
+                        var array = [91, 23, 4, 356, 54, 3, 12, 43, 211, 34];
+                        var sortArray = array.SortSelect();
+                        document.write(sortArray.join(', '));
+                        document.write('<br>');
+
+                        var array = [91, 23, 47, 96, 54, 3, 12, 43, 0, 34];
+                        var sortArray = array.SortInsert();
+                        document.write(sortArray.join(', '));
+                        document.write('<br>');
+
+                    </script>
+                </p>
+            </div>
         </div>
         <div class="panel">
             <h4>5. JSON定义法(直接定义)</h4>
+            <div>
+                <p>
+                    是一种基于ECAMScript的轻量级数据交换格式,采用完全独立于语言的文本格式, <br>
+                    能够以更加简明的方式创建对象JSON对象以{开始,以}结束。属性名和属性值之间使用冒号隔开，<br>
+                    属性的类型可以是字符串、数值、日期、数组或自定义对象等类型 <br>
+                    方法部分是由方法和匿名函数构造，并使用冒号（":"）隔开， <br>
+                    属性或方法之间使用逗号（,）隔开,最后一项不需要逗号 <br>
+                </p>
+                <p> 
+                    与XML数据相比,JSON数据格式具有简洁易读,数据体积小、传输速度快等的特点。 <br>
+                    JSON对象是一种轻量级的数据交换格式，是理想的数据交换格式。 <br>
+                    在传输过程中，JSON对象往往以字符串的形式进行传输， <br>
+                    所以在页面中需要通过JavaScript中的evel()方式或者 <br>
+                    Function对象的方式将字符串解析成JavaScript <br>
+                    注意： <br>
+                    alert(typeof(evel("{}"))) //return undefined <br>
+                    alert(typeof(evel("({})"))) //return object[object] <br>
+                    即进行JSON转化时，要添加一对小括号才能进行正常转化 <br>
+                </p>
+                <p>
+                    <script>
+                        customerData.consumption();
+                        customerData.userfeature();
+                        document.write("<br>")
+                        var movies=eval("("+movieJsonStr+")")
+                        movies.showInfo();
+                        document.write('<br>');
+                        var movieF1=(new Function("","return"+movieJsonStr))();
+                        movieF1.showInfo();
+                        var movieF2=new Function("","return"+movieJsonStr);
+                        var movie=new movieF2();
+                        movie.showInfo();
+                    </script>
+                </p>
+            </div>
+        </div>
+        <div class="panel">
+            <h4>4. 混合定义法</h4>
+            <div>
+                <p>
+                    例如使用默认构造函数创建对象的属性,使用原型拓展法动态添加方法
+                </p>
+                <p>
+                    <script>
+                        var good1 = new goodMuddy('儿童潮服', '童装', '230', '活力橙');
+                        good1.showInfo();
+                        good1.showColor();
+                    </script>
+                </p>
+            </div>
         </div>
     </div>
 </body>
+
 </html>
