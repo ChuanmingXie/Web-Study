@@ -1,3 +1,4 @@
+/* DOM 鼠标事件示例 */
 function changeImage(event) {
     var e = event || window.event;
     var imgList = document.getElementsByTagName('img');
@@ -16,3 +17,11 @@ function changeImage(event) {
         imgchange.src = './img/card/14.jpg';
     }
 }
+
+/* DOM 键盘事件示例： */
+
+
+/* DOM 窗口事件示例 */
+
+
+/* DOM 表单事件示例 */

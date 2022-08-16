@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>9-6Event-综合示例</title>
     <link rel="stylesheet" href="./css/democommon.css">
-    <!-- <script src="./js/9-6jsDOMEvent.js"></script> -->
+    <script src="./js/9-6jsDOMEvent.js"></script>
     <style>
         .panel_bg .panel .paragraph p::first-letter {
             margin-left: 2em;
@@ -21,27 +21,6 @@
             text-align: center;
         }
     </style>
-    <script type="text/javascript">
-        function changeImage(e) {
-            var e = e || window.event;
-
-            var imgList = document.getElementsByTagName("img");
-            var imgUser = imgList[imgList.length - 1];
-
-            var x = e.clientX - imgUser.offsetLeft;
-            var y = e.clientY - imgUser.offsetTop;
-
-            if (x < imgUser.width / 2 && y > imgUser.height / 2) {
-                imgUser.src = './img/card/11.jpg';
-            } else if (x < imgUser.width / 2 && y < imgUser.height / 2) {
-                imgUser.src = './img/card/12.jpg';
-            } else if (x > imgUser.width / 2 && y > imgUser.height / 2) {
-                imgUser.src = './img/card/13.jpg';
-            } else {
-                imgUser.src = './img/card/14.jpg';
-            }
-        }
-    </script>
 </head>
 
 <body>
