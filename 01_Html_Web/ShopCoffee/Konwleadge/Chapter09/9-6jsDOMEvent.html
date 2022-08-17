@@ -12,13 +12,38 @@
         .panel_bg .panel .paragraph p::first-letter {
             margin-left: 2em;
         }
-        .dldiv{
+
+        .dldiv {
             display: flex;
             flex-wrap: wrap;
         }
-        .dldiv dl dd{
+
+        .dldiv dl dd {
             margin: 0;
             text-align: center;
+        }
+
+        .imgdoc {
+            width: 180px;
+        }
+
+        .windowEvent {
+            height: 220px;
+            margin-top: 40px;
+        }
+
+        #walkingDiv {
+            width: 130px;
+            height: 130px;
+            position:absolute;
+            top: 670px;
+            left: 150px;
+            margin: 0;
+        }
+
+        #walkingDiv img {
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
@@ -40,43 +65,80 @@
                 </p>
             </div>
         </div>
+
         <div class="panel">
             <h3>9-6-2 鼠标事件</h3>
             <div class="dldiv">
                 <dl>
-                    <dt><img src="img/card/01.jpg" onclick="this.src='./img/card/10.jpg'"></dt>
+                    <dt><img class="mouseimg" src="img/card/01.jpg" onclick="this.src='./img/card/10.jpg'"></dt>
                     <dd>单机</dd>
                 </dl>
                 <dl>
-                    <dt><img src="img/card/01.jpg" ondblclick="this.src='./img/card/11.jpg';alert('您双击了图片')"></dt>
+                    <dt><img class="mouseimg" src="img/card/01.jpg"
+                            ondblclick="this.src='./img/card/11.jpg';alert('您双击了图片')"></dt>
                     <dd>双击</dd>
                 </dl>
                 <dl>
-                    <dt><img src="img/card/01.jpg" onmouseover="this.src='./img/card/12.jpg'"
+                    <dt><img class="mouseimg" src="img/card/01.jpg" onmouseover="this.src='./img/card/12.jpg'"
                             onmouseout="this.src='./img/card/13.jpg'">
                     </dt>
                     <dd>移动悬停</dd>
                 </dl>
                 <dl>
-                    <dt><img src="img/card/01.jpg" onmousedown="this.src='./img/card/10.jpg'"
+                    <dt><img class="mouseimg" src="img/card/01.jpg" onmousedown="this.src='./img/card/10.jpg'"
                             onmouseup="this.src='./img/card/01.jpg'">
                     </dt>
                     <dd>按下松开</dd>
                 </dl>
                 <dl>
-                    <dt><img src="img/card/01.jpg" onmousemove="changeImage(event);"></dt>
+                    <dt><img class="mouseimg" src="img/card/01.jpg" onmousemove="changeImage(event);"></dt>
                     <dd>鼠标移动四角</dd>
                 </dl>
             </div>
         </div>
-        <div class="panel">
-            <h3>9-6-3 键盘事件</h3>
-        </div>
-        <div class="panel">
-            <h3>9-6-4 窗口事件</h3>
-        </div>
+
         <div class="panel">
             <h3>9-6-5 表单事件</h3>
+            <form class="formclass" action="http://101.132.152.252" method="post" onsubmit="return submitForm()"
+                onreset="return resetForm()">
+                <div class="forminline">
+                    账户：<input type="text" name="" id="userName" placeholder="请输入用户名" onfocus="userNameFocus()"
+                        onblur="userNameOnBlur()" onkeypress="showKeyPress(event)">
+                </div>
+                <div class="forminline">
+                    身份：<select name="" id="userType" onchange="selectUserType()">
+                        <option value="0">---请选择---</option>
+                        <option value="管理员">管理员</option>
+                        <option value="普通会员">普通会员</option>
+                    </select>
+                </div>
+                <div class="forminline" id="showDiv"></div>
+                <div class="btnGroup">
+                    <input type="button" value="购物">
+                    <input type="button" value="餐饮">
+                    <input type="button" value="影视">
+                </div>
+                <div class="btnGroup">
+                    <input type="submit" value="提交">
+                    <input type="reset" value="重置">
+                </div>
+            </form>
+        </div>
+
+        <div class="panel">
+            <h3>9-6-4 窗口事件</h3>
+            <div class="windowEvent">
+                <img class="imgdoc" src="" alt="">
+                <img class="imgdoc" src="" alt="">
+                <img class="imgdoc" src="" alt="">
+            </div>
+        </div>
+
+        <div class="panel">
+            <h3>9-6-3 键盘事件</h3>
+            <div id="walkingDiv">
+                <img id="walkPerson" src="./img/walker/d0.png" alt="">
+            </div>
         </div>
     </div>
 </body>

@@ -16,7 +16,8 @@
         .forminline img {
             width: 100px;
         }
-        table{
+
+        table {
             min-height: 80px;
             margin: 20px 0;
         }
@@ -47,7 +48,7 @@
                         <input type="button" value="登陆加载" onclick="loadCookie('login')">
                     </div>
                     <hr>
-                    <div class="resultDiv"></div>
+                    <div class="resultDiv">需发布后通过Http协议浏览</div>
                 </form>
             </div>
         </div>
@@ -67,9 +68,9 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>编号：</th>
-                            <th>姓名：</th>
-                            <th>操作：</th>
+                            <th>编号</th>
+                            <th>姓名</th>
+                            <th>操作</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -88,7 +89,8 @@
         </div>
         <div class="panel">
             <h3>3. Form对象</h3>
-            <form class="formclass" name="myform" method="post" action="http://101.132.152.252" onsubmit="return CheckFormSubmit();">
+            <form class="formclass" name="myform" method="post" action="http://101.132.152.252"
+                onsubmit="return CheckFormSubmit();">
                 <div class="forminline"><img src="./img/cloudwhales.png" alt=""></div>
                 <div class="forminline">用户名：<input type="text" name="userNameform" id="userNameform"></div>
                 <div class="forminline">密　码：<input type="password" name="userPwdform" id="userPwdform"></div>
@@ -102,6 +104,45 @@
         </div>
         <div class="panel">
             <h3>4. DOM节点对象</h3>
+            <div class="formclass">
+                <table id="nodeTable">
+                    <caption>统计表内销售额</caption>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>姓名</th>
+                            <th>销售额度(W)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>政恩泽</td>
+                            <td>3540</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>李文叔</td>
+                            <td>2860</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>郭首义</td>
+                            <td>5069</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>合计</td>
+                            <td></td>
+                            <td>
+                                <input type="button" onclick="CalcAmount();" value="统计">
+                                <input type="button" id="btnCalcSale" value="统计" hidden>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
         </div>
     </div>
 </body>

@@ -1,6 +1,5 @@
 /* Docuemnt对象属性 使用 Cookie */
 var cookieSplit = "@";
-
 function saveCookie(cookieName) {
     var userName = document.forms[0].userName.value;
     var userPwd = document.forms[0].userPwd.value;
@@ -17,7 +16,6 @@ function saveCookie(cookieName) {
         + expireDate.toLocaleTimeString() + ";\r\n";
     loadCookie(cookieName);
 }
-
 function loadCookie(cookieName) {
     var currentCookie = document.cookie;
     var beginPart = cookieSplit + cookieName + "=";
@@ -39,12 +37,9 @@ function loadCookie(cookieName) {
         document.cookie == "" ? "<font color='red'>暂无cookie信息</font>" : document.cookie;
 }
 
-
 /* ********************************************************* */
 
-/*
- Document对象的 Table 对象的操作 
- */
+/* Document对象的 Table 对象的操作 */
 function insertFirstRow() {
     appendRow(1);
 }
@@ -79,11 +74,13 @@ function removeCaption() {
     tabeldoc.deleteCaption();
 }
 
-/* document对象的 Form 对象操作 */
+/* ********************************************************* */
 
+/* document对象的 Form 对象操作 */
 function CheckFormSubmit() {
     return checkUserName() && checkUserPwd() && checkPhone() && checkEmai();
 }
+
 function CheckFormbyBtn() {
     if (checkUserName() && checkUserPwd() && checkPhone() && checkEmai()) {
         document.myform.action = "http://www.baidu.com";
@@ -91,6 +88,7 @@ function CheckFormbyBtn() {
         document.myform.submit();
     }
 }
+
 function checkUserName() {
     if (userNameform.value.length == 0) {
         alert('用户名不可为空');
@@ -117,14 +115,6 @@ function checkUserPwd() {
         userPwdform.focus();
         return false;
     }
-    // for (let i = 0; i < userPwdform.length; i++) {
-    //     var temp = userPwdform.value[i];
-    //     if (isNaN(temp)) {
-    //         alert("密码必须为数字");
-    //         userPwdform.focus();
-    //         return false;
-    //     }
-    // }
     return true;
 }
 
@@ -146,4 +136,58 @@ function checkEmai() {
         return false;
     }
     return true;
+}
+
+/* ********************************************************* */
+
+/* doucument 对象节点操作 - 以table 为例 */
+window.onload = function () {
+    // 方法1
+    var btnCalcSale = document.getElementById('btnCalcSale');
+    btnCalcSale.onclick = function () {
+        var sum = 0;
+        var nodeTable = document.getElementById('nodeTable');
+        var rows = nodeTable.rows;
+        for (let i = 0; i < rows.length; i++) {
+            var num = parseInt(rows[i].cells[2].innerHTML);
+            if (!isNaN(num)) {
+                sum += num;
+            }
+        }
+        console.log(sum);
+        nodeTable.rows[nodeTable.rows.length - 1].cells[1].innerHTML = sum + "W";
+    }
+}
+// 方法2 
+function CalcAmount(params) {
+    var sum = 0;
+    var nodeTable = document.getElementById('nodeTable');
+    // 获取表格中tbody节点中的全部信息，包括元素节点 和 tbody标签节点
+    var tbodyList = nodeTable.childNodes;
+    console.log('tbody的元素长度并非tr的行数,而是：' + tbodyList.length);
+    for (let i = 0; i < tbodyList.length; i++) {
+        var tbody = tbodyList.item(i);
+        // 筛选出元素节点，过滤掉文本节点
+        if (tbody.nodeType == 1) {
+            var rowList = tbody.childNodes;
+            console.log('row的元素个数并非td的列数，而是:' + rowList.length);
+            for (let j = 0; j < rowList.length; j++) {
+                var row = rowList.item(j);
+                // 筛选出元素节点，过滤掉文本节点
+                if (row.nodeType == 1) {
+                    var cellList = row.childNodes;
+                    console.log("cell的元素个数并不是只有一个内容，而是：" + cellList.length);
+                    var lastCell = parseInt(cellList.item(5).innerHTML);
+                    if (!isNaN(lastCell)) {
+                        var saleAmout = lastCell;
+                        sum += saleAmout;
+                    }
+                }
+            }
+        }
+    }
+    console.log(sum);
+    // 最后通过遍历节点法，设置金额
+    nodeTable.children[3].children[0].children[1].innerHTML = sum + "(W) ￥";
+
 }

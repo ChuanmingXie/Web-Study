@@ -181,7 +181,7 @@ table {
     text-align: center;
     font: 500 14px/28px Cambria, '楷体';
     border: none;
-    border-bottom: 1px solid #BBB5AC;
+    border-collapse: collapse;
 }
 table caption{
     font: 700 16px/30px Cambria,'楷体';
@@ -200,11 +200,10 @@ table th {
     border-bottom: 1px solid #BBB5AC;
 }
 
-table td,
-table tr {
+table td{
     border: none;
     border-bottom: 1px solid #BBB5AC;
-    padding: 3px;
+    padding: 3px 0;
 }
 
 /* table td:nth-child(2) {
@@ -238,6 +237,6 @@ td input[type="image"] {
     text-align: center;
     margin: auto;
 }
-dl dt img{
+dl dt .mouseimg{
     width: 120px;
 }
