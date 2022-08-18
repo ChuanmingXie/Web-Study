@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10-1canvas基本语法示例</title>
+    <link rel="stylesheet" href="./css/democommon.css">
+</head>
+
+<body>
+    <h2>10-1 Canvas基本语法示例</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h4>1.绘制矩形与填充矩形</h4>
+            <canvas id="canvasFillRect" class="canvasbase" width="600px" height="200px"></canvas>
+        </div>
+        <div class="panel">
+            <h4>2.绘制直线与填充直线区域</h4>
+            <canvas id="cancasDrawLine" class="canvasbase" width="600px" height="200px"></canvas>
+        </div>
+
+        <div class="panel">
+            <h4>3.绘制圆弧与填充圆弧</h4>
+            <canvas id="cancasDrawCricle" class="canvasbase" width="600px" height="200px"></canvas>
+        </div>
+        <div class="panel">
+            <h4>4.绘制路径</h4>
+            <canvas id="canvasDrawPath" class="canvasbase" width="600px" height="200px"></canvas>
+        </div>
+        <div class="panel">
+            <h4>5.绘制渐变-线性渐变</h4>
+            <canvas id="canvasLinearGradient" class="canvasbase" width="600px" height="200px"></canvas>
+        </div>
+        <div class="panel">
+            <h4>5.绘制渐变-径向渐变</h4>
+            <canvas id="canvasRadialGradient" class="canvasbase" width="600px" height="200px"></canvas>
+        </div>
+        <div class="panel">
+            <h4>6.加载图片-onload</h4>
+            <canvas id="canvasLoadImg" class="canvasbase" width="600px" height="200px"></canvas>
+        </div>
+        <div class="panel">
+            <h4>6.加载图片-平铺图片</h4>
+            <canvas id="canvasFillImg" class="canvasbase" width="600px" height="200px"></canvas>
+        </div>
+        <div class="panel">
+            <h4>6.加载图片-像素处理</h4>
+            <canvas id="canvasPixelImg" class="canvasbase" width="600px" height="200px"></canvas>
+        </div>
+        <div class="panel">
+            <h4>7.绘制文字</h4>
+            <canvas id="canvasDrawText" class="canvasbase" width="600px" height="200px"></canvas>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function drawFillRect() {
+            canvasFillRect = document.getElementById('canvasFillRect');
+            var context = canvasFillRect.getContext('2d');
+            // 绘制矩形区域
+            context.fillStyle = '#2983BB';
+            context.fillRect(10, 10, 300, 100);
+            // 绘制矩形边框
+            context.lineWidth = 10;
+            context.strokeStyle = "#EE4866";
+            context.lineJoin = "round";
+            context.strokeRect(320, 15, 260, 90);
+
+            context.strokeStyle = '#EF3473';
+            context.lineJoin = 'bevel';
+            context.strokeRect(15, 120, 290, 70);
+
+            context.lineJoin = 'miter';
+            context.strokeRect(320, 120, 260, 70);
+        }
+
+        function drawDrawLine() {
+            cancasDrawLine = document.getElementById('cancasDrawLine');
+            var context = cancasDrawLine.getContext('2d');
+            // 绘制直线
+            context.strokeStyle = '#2983BB';
+            context.beginPath();
+            context.moveTo(10, 10);
+            context.lineTo(200, 100);
+            context.lineTo(400, 10);
+            context.stroke();
+
+            context.beginPath();
+            context.moveTo(410, 100);
+            context.lineTo(500, 190);
+            context.lineTo(590, 100);
+            context.lineTo(500, 10);
+            context.lineTo(410, 100);
+            context.stroke();
+
+            // 填充直线区域
+            context.beginPath();
+            context.moveTo(10, 190);
+            context.lineTo(100, 100);
+            context.lineTo(200, 190);
+            context.lineTo(300, 100);
+            context.lineTo(400, 190);
+            context.fillStyle = "#EF3473";
+            context.fill();
+        }
+
+        function drawDrawCricle() {
+            cancasDrawCricle = document.getElementById('cancasDrawCricle');
+            var context = cancasDrawCricle.getContext('2d');
+            // 绘制弧线
+            context.strokeStyle = '#2983BB';
+            context.beginPath();
+            context.arc(100, 100, 80, Math.PI * 0.1, Math.PI * 0.9, false);
+            context.stroke();
+
+            // 绘制弧线
+            context.beginPath();
+            context.arc(400, 90, 80, Math.PI * (-0.3), Math.PI * 1.5, false);
+            // context.lineTo(400,10);
+            context.arcTo(560, 10, 560, 110, 160);
+            context.stroke();
+
+            // 绘制圆饼图
+            var color = ['#126E82', "#F2481B", "#BE7E4A", "#DBBE0D", "#74759B", "#0F59A4"];
+            var data = [15, 20, 15, 20, 20];
+            var sum = (function (datas) { var sum = 0; datas.forEach(d => sum += d); return sum; })(data);
+            console.log(sum);
+            var startPoint = Math.PI * 3 / 2;
+            for (let i = 0; i < data.length; i++) {
+                context.fillStyle = color[i];
+                context.strokeStyle = color[i];
+                context.beginPath();
+                context.moveTo(260, 100);
+                context.arc(260, 100, 90, startPoint, startPoint - Math.PI * 2 * (data[i] / sum), true);
+                context.fill();
+                context.stroke();
+                startPoint -= Math.PI * 2 * (data[i] / sum);
+            }
+        }
+
+        function drawDrawPath() {
+            canvasDrawPath = document.getElementById('canvasDrawPath');
+            var context = canvasDrawPath.getContext('2d');
+            // bezier曲线
+            context.strokeStyle = '#2983BB';
+            context.bezierCurveTo(20, 100, 200, 100, 200, 20);
+            context.stroke();
+
+            // quadratic曲线
+            context.beginPath()
+            context.moveTo(200, 130);
+            context.quadraticCurveTo(288, 10, 400, 150);
+            // context.closePath();
+            context.stroke();
+            
+            //绘制矩形路径
+            context.beginPath();
+            context.rect(460, 40, 50, 120);
+            context.stroke();
+        }
+
+        function drawDrawGradient() {
+            canvasLinearGradient = document.getElementById('canvasLinearGradient');
+            var context = canvasLinearGradient.getContext('2d');
+            context.fillStyle = '#2983BB';
+            context.fillRect(10, 10, 300, 100);
+        }
+
+        function drawDrawImg() {
+            canvasLoadImg = document.getElementById('canvasLoadImg');
+            var context = canvasLoadImg.getContext('2d');
+            context.fillStyle = '#2983BB';
+            context.fillRect(10, 10, 300, 100);
+        }
+
+        function drawDrawText() {
+            canvasDrawText = document.getElementById('canvasDrawText');
+            var context = canvasDrawText.getContext('2d');
+            context.fillStyle = '#2983BB';
+            context.fillRect(10, 10, 300, 100);
+        }
+
+        function onloadAll() {
+            drawFillRect();
+            drawDrawLine();
+            drawDrawCricle();
+            drawDrawPath();
+            drawDrawGradient();
+            drawDrawImg();
+            drawDrawText();
+        }
+        window.onload = onloadAll();
+
+    </script>
+</body>
+
+</html>

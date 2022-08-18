@@ -182,8 +182,11 @@ function btnBoundClick() {
         }
     }
 }
-// 此处还使用了窗体事件
-// window.onload =btnBoundClick ;
-window.onload = initImage;
 
+function onloadAll(){
+    btnBoundClick();
+    initImage();
+}
+// 此处还使用了窗体事件
+window.onload =onloadAll;
 window.onkeydown = doKeyDown;
