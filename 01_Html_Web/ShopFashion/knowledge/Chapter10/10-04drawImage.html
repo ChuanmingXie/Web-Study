@@ -46,19 +46,19 @@
         </div>
     </div>
     <script type="text/javascript">
-var canvasbase = document.getElementById('canvasimgbase');
-var contextbase = canvasbase.getContext('2d');
-var img = new Image();
-img.src = './img/demo/girl_little.jpg';
-var width = 80;
-var height = 100;
-img.onload = function () {
-    contextbase.drawImage(img, 10, 10);
-    contextbase.drawImage(img, 120, 10, 80, 120);
-    contextbase.drawImage(img, 10, 10, width, height, 210, 10, width, height);
-    contextbase.drawImage(img, 10, 10, width, height, 310, 10, width * 1.1, height * 1.1);
-    contextbase.drawImage(img, 10, 10, width, height, 410, 10, width * 0.8, height * 0.8);
-}
+        var canvasbase = document.getElementById('canvasimgbase');
+        var contextbase = canvasbase.getContext('2d');
+        var img = new Image();
+        img.src = './img/demo/girl_little.jpg';
+        var width = 80;
+        var height = 100;
+        img.onload = function () {
+            contextbase.drawImage(img, 10, 10);
+            contextbase.drawImage(img, 120, 10, 80, 120);
+            contextbase.drawImage(img, 10, 10, width, height, 210, 10, width, height);
+            contextbase.drawImage(img, 10, 10, width, height, 310, 10, width * 1.1, height * 1.1);
+            contextbase.drawImage(img, 10, 10, width, height, 410, 10, width * 0.8, height * 0.8);
+        }
     </script>
     <script src="./js/10-04drawImage.js"></script>
 </body>

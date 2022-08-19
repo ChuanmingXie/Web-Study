@@ -56,3 +56,139 @@ hr{
     align-content:space-between;
     justify-content: center;
 }
+audio{
+    width: 500px;
+    margin: 10px auto;
+}
+
+input[type='button'],
+input[type='submit'],
+input[type='reset'],
+.white{
+    width: 120px;
+    height: 32px;
+    color: #fff;
+    font-family: Cambria, Microsoft Yahei;
+    border: 1px solid #1F638F;
+    border-radius: 10px;
+    background: #1F638F;
+    float: right;
+}
+.white {
+    height: 30px;
+    width: 185px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 30px;
+}
+.white:hover,
+input[type='submit']:hover,
+input[type='button']:hover,
+input[type='reset']:hover {
+    background: #ea4307;
+    border: 1px solid #ea4307;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='tel'],
+input[type='url'],
+input[type='date'],
+input[type='range'],
+input[type='number'],
+textarea,
+select {
+    width: 280px;
+    height: 25px;
+    font: 14px/25px Cambria, 'Times New Roman';
+    letter-spacing: 2px;
+    border-radius: 5px;
+    border: 1px solid #fcd304;
+    outline: 2px solid transparent;
+}
+input[type='color'],
+select {
+    height: 30px;
+    width: 285px;
+}
+option {
+    line-height: 30px;
+    font-family: Cambria, '楷体';
+    font-size: 18px;
+}
+.formclass textarea{
+	height: 40px;
+}
+input[type='text']:focus,
+input[type='password']:focus,
+input[type='email']:focus,
+input[type='tel']:focus,
+input[type='url']:focus,
+input[type='date']:focus,
+input[type='range']:focus,
+input[type='number']:focus,
+textarea:focus,
+select:focus{
+    border: 1px solid transparent;
+    outline: 2px solid #EA4307;
+}
+
+.checkboxgroup {
+    width: 280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 4px;
+}
+
+.textinline{
+    height: 50px;
+}
+
+
+table {
+    width: 600px;
+    margin: 5px auto;
+    text-align: center;
+    font: 500 14px/28px Cambria, '楷体';
+    border: none;
+    border-collapse: collapse;
+}
+table caption{
+    font: 700 16px/30px Cambria,'楷体';
+    margin: 10px auto;
+}
+table tfoot input{
+    float: left;
+}
+
+table th {
+    font: bold 16px/32px Cambria, Microsoft Yahei;
+    /* letter-spacing: 5px; */
+    color: #15559A;
+    /* background: #5CB3cc; */
+    border: none;
+    border-bottom: 1px solid #BBB5AC;
+}
+
+table td{
+    border: none;
+    border-bottom: 1px solid #BBB5AC;
+    padding: 3px 0;
+}
+
+/* table td:nth-child(2) {
+    text-align: left;
+} */
+
+/* table tr:nth-child(even) {
+    background: #F7DE98;
+} */
+
+table tbody tr:hover {
+    background: #F9F4DC;
+    border: 1px solid #F9F4DC;
+    cursor: pointer;
+}
+

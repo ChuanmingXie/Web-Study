@@ -146,7 +146,7 @@ table {
     text-align: center;
     font: 500 14px/28px Cambria, '楷体';
     border: none;
-    border-bottom: 1px solid #BBB5AC;
+    border-collapse: collapse;
 }
 table caption{
     font: 700 14px/30px Cambria,'楷体';

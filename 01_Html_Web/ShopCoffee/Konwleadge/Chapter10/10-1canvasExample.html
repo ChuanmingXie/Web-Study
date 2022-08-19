@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>10-1canvas基本语法示例</title>
     <link rel="stylesheet" href="./css/democommon.css">
+    <style>
+        input[type='button'] {
+            width: 80px;
+        }
+    </style>
 </head>
 
 <body>
@@ -48,10 +53,27 @@
         <div class="panel">
             <h4>6.加载图片-像素处理</h4>
             <canvas id="canvasPixelImg" class="canvasbase" width="600px" height="200px"></canvas>
+            <div class="btnGroup">
+                <input type="button" value="原图" onclick="showNormalImage()">
+                <input type="button" value="红色通道" onclick="showChannel('red')">
+                <input type="button" value="绿色通道" onclick="showChannel('green')">
+                <input type="button" value="蓝色通道" onclick="showChannel('blue')">
+                <input type="button" value="反向显示" onclick="showChannel('reverse')">
+                <input type="button" value="半透明" onclick="showChannel('transparent')">
+                <input type="button" value="清空画布" onclick="clearCanvas()">
+            </div>
         </div>
         <div class="panel">
             <h4>7.绘制文字</h4>
-            <canvas id="canvasDrawText" class="canvasbase" width="600px" height="200px"></canvas>
+            <canvas id="canvasDrawText" class="canvasbase" width="600px" height="250px"></canvas>
+        </div>
+        <div class="panel">
+            <h4>8.坐标系转换-平移放缩</h4>
+            <canvas id="canvasTransform" class="canvasbase" width="600px" height="200px"></canvas>
+        </div>
+        <div class="panel">
+            <h4>8.坐标系转换-旋转</h4>
+            <canvas id="canvasTransformRotate" class="canvasbase" width="600px" height="200px"></canvas>
         </div>
     </div>
 
@@ -61,19 +83,19 @@
             var context = canvasFillRect.getContext('2d');
             // 绘制矩形区域
             context.fillStyle = '#2983BB';
-            context.fillRect(10, 10, 300, 100);
+            context.fillRect(10, 10, 300, 90);
             // 绘制矩形边框
             context.lineWidth = 10;
             context.strokeStyle = "#EE4866";
             context.lineJoin = "round";
-            context.strokeRect(320, 15, 260, 90);
+            context.strokeRect(320, 15, 260, 80);
 
             context.strokeStyle = '#EF3473';
             context.lineJoin = 'bevel';
-            context.strokeRect(15, 120, 290, 70);
+            context.strokeRect(15, 110, 290, 80);
 
             context.lineJoin = 'miter';
-            context.strokeRect(320, 120, 260, 70);
+            context.strokeRect(320, 110, 260, 80);
         }
 
         function drawDrawLine() {
@@ -112,7 +134,11 @@
             // 绘制弧线
             context.strokeStyle = '#2983BB';
             context.beginPath();
-            context.arc(100, 100, 80, Math.PI * 0.1, Math.PI * 0.9, false);
+            context.arc(100, 100, 80, Math.PI * (0.1), Math.PI * 0.9, false);
+            context.lineTo(25, 90);
+            context.arcTo(25, 10, 200, 10, 80);
+            context.arcTo(186, 10, 180, 90, 80);
+            context.lineTo(176, 130)
             context.stroke();
 
             // 绘制弧线
@@ -123,7 +149,7 @@
             context.stroke();
 
             // 绘制圆饼图
-            var color = ['#126E82', "#F2481B", "#BE7E4A", "#DBBE0D", "#74759B", "#0F59A4"];
+            var color = ['#126E82bb', "#F2481Bbb", "#BE7E4Abb", "#DBBE0Dbb", "#74759Bbb", "#0F59A4bb"];
             var data = [15, 20, 15, 20, 20];
             var sum = (function (datas) { var sum = 0; datas.forEach(d => sum += d); return sum; })(data);
             console.log(sum);
@@ -154,7 +180,7 @@
             context.quadraticCurveTo(288, 10, 400, 150);
             // context.closePath();
             context.stroke();
-            
+
             //绘制矩形路径
             context.beginPath();
             context.rect(460, 40, 50, 120);
@@ -162,26 +188,245 @@
         }
 
         function drawDrawGradient() {
+            /* **************5-1 线性渐变**************** */
             canvasLinearGradient = document.getElementById('canvasLinearGradient');
             var context = canvasLinearGradient.getContext('2d');
-            context.fillStyle = '#2983BB';
-            context.fillRect(10, 10, 300, 100);
+            /* 创建水平向右的渐变 */
+            var gradientLinear = context.createLinearGradient(10, 20, 290, 20);
+            /* 设置渐变色 */
+            gradientLinear.addColorStop(0.0, 'yellow');
+            gradientLinear.addColorStop(0.25, 'green');
+            gradientLinear.addColorStop(0.5, 'yellow');
+            gradientLinear.addColorStop(0.75, 'green');
+            gradientLinear.addColorStop(1.0, 'yellow');
+            context.fillStyle = gradientLinear;
+            context.fillRect(10, 20, 280, 160)
+
+            /* 创建从左上到右下的对角线渐变 */
+            var gradientLinear2 = context.createLinearGradient(310, 20, 600, 160);
+            gradientLinear2.addColorStop(0.0, 'yellow');
+            gradientLinear2.addColorStop(0.25, 'green');
+            gradientLinear2.addColorStop(0.5, 'yellow');
+            gradientLinear2.addColorStop(0.75, 'green');
+            gradientLinear2.addColorStop(1.0, 'yellow');
+            context.fillStyle = gradientLinear2;
+            context.fillRect(310, 20, 280, 160);
+
+            /* **************5-2 径向渐变**************** */
+            canvasRadialGradient = document.getElementById('canvasRadialGradient');
+            var context = canvasRadialGradient.getContext('2d');
+            /* 创建从圆点到四周的径向渐变 */
+            var gradientRadial1 = context.createRadialGradient(140, 100, 20, 140, 100, 180);
+            gradientRadial1.addColorStop(0.0, 'red')
+            gradientRadial1.addColorStop(0.25, 'yellow');
+            gradientRadial1.addColorStop(1.0, '#008000bb');
+            context.fillStyle = gradientRadial1;
+            context.fillRect(20, 20, 250, 160);
+
+            /* 创建非同心圆的渐变 */
+            var gradientRadial2 = context.createRadialGradient(320, 100, 5, 600, 100, 80);
+            gradientRadial2.addColorStop(0.0, 'red');
+            gradientRadial2.addColorStop(0.7, 'yellow');
+            gradientRadial2.addColorStop(1.0, 'green');
+            context.fillStyle = gradientRadial2;
+            context.fillRect(300, 20, 280, 160);
         }
 
         function drawDrawImg() {
-            canvasLoadImg = document.getElementById('canvasLoadImg');
+            var canvasLoadImg = document.getElementById('canvasLoadImg');
             var context = canvasLoadImg.getContext('2d');
-            context.fillStyle = '#2983BB';
-            context.fillRect(10, 10, 300, 100);
+            /* 设置图片 */
+            var img = new Image();
+            img.src = "./img/girl_little.jpg";
+            var width = 80;
+            var height = 100;
+            /* 加载图片 */
+            img.onload = function () {
+                context.drawImage(img, 10, 10);
+                context.drawImage(img, 120, 10, 80, 120);
+                context.drawImage(img, 10, 10, width, height, 310, 10, width, height);
+                context.drawImage(img, 10, 10, width, height, 210, 10, width * 1.1, height * 1.1);
+                context.drawImage(img, 10, 10, width, height, 410, 10, width * 0.8, height * 0.8);
+            }
+
+            var canvasFillImg = document.getElementById('canvasFillImg');
+            var contextFill = canvasFillImg.getContext('2d');
+            /* 设置图片 */
+            var imgfill = new Image();
+            imgfill.src = "./img/girl_little.jpg";
+            /* 图片平铺 */
+            imgfill.onload = function () {
+                var pattern = contextFill.createPattern(imgfill, 'repeat');
+                contextFill.fillStyle = pattern;
+                contextFill.fillRect(0, 0, 300, 200);
+            }
+
+            /* 设置图片 */
+            var imgborder = new Image();
+            imgborder.src = "./img/girl_little.jpg";
+            /* 图片边框 */
+            contextFill.lineWidth = 30;
+            contextFill.lineJoin = "round";
+            contextFill.fillStyle = "#FFF";
+            contextFill.fillRect(300, 0, 600, 300);
+            imgborder.onload = function () {
+                var pattern = contextFill.createPattern(imgborder, 'repeat');
+                contextFill.strokeStyle = pattern;
+                contextFill.strokeRect(320, 20, 260, 160);
+            }
+            showNormalImage();
+        }
+        function showNormalImage() {
+            var canvasPixelImg = document.getElementById('canvasPixelImg');
+            var contextPiexl = canvasPixelImg.getContext('2d');
+            var imgPixel = new Image();
+            imgPixel.src = './img/girl_little.jpg';
+            clearCanvas()
+            imgPixel.onload = function () {
+                contextPiexl.drawImage(imgPixel, 10, 10);
+            }
+        }
+        function showChannel(channel) {
+            var canvas = document.getElementById('canvasPixelImg');
+            var context = canvas.getContext('2d');
+            var x = 0, y = 10;
+            var img = new Image();
+            img.src = './img/girl_little.jpg';
+            img.onload = function () {
+                context.drawImage(img, x, y);
+                var imgData = context.getImageData(x, y, img.width, img.height);
+                var num = imgData.data.length;
+                console.log(num);
+                for (let i = 0; i < num; i += 4) {
+                    switch (channel) {
+                        case 'red': imgData.data[i + 0] = 225; x = 100; break;
+                        case 'green': imgData.data[i + 1] = 255; x = 200; break;
+                        case 'blue': imgData.data[i + 2] = 255; x = 300; break;
+                        case 'reverse':
+                            imgData.data[i + 0] = 255 - imgData.data[i + 0];
+                            imgData.data[i + 1] = 255 - imgData.data[i + 1];
+                            imgData.data[i + 2] = 255 - imgData.data[i + 2];
+                            x = 400;
+                            break;
+                        case 'transparent': imgData.data[i + 3] = 125; x = 500; break;
+                        default: console.log('没有对应的通道处理'); break;
+                    }
+                }
+                context.putImageData(imgData, x, y);
+            }
+        }
+        function clearCanvas() {
+            var canvas = document.getElementById('canvasPixelImg');
+            var context = canvas.getContext('2d');
+            context.clearRect(0, 0, 600, 200);
         }
 
         function drawDrawText() {
-            canvasDrawText = document.getElementById('canvasDrawText');
+            var canvasDrawText = document.getElementById('canvasDrawText');
             var context = canvasDrawText.getContext('2d');
-            context.fillStyle = '#2983BB';
-            context.fillRect(10, 10, 300, 100);
+            /* 画一条准线 */
+            context.strokeStyle = 'blue';
+            context.moveTo(5, 40);
+            context.lineTo(590, 40);
+            context.stroke();
+            context.font = '20px Cambria';
+            /* 在准线上下方设置文字位置 */
+            context.textBaseline = 'top';
+            context.fillText('Top', 5, 40);
+            context.textBaseline = 'bottom';
+            context.fillText('Bottom', 110, 40);
+            context.textBaseline = 'middle';
+            context.fillText('Middle', 240, 40);
+            context.textBaseline = 'alphabetic';
+            context.fillText('Alphabetic', 370, 40);
+            context.textBaseline = 'hanging';
+            context.fillText('Hanging', 520, 40);
+
+            /* 添加一段文字 */
+            var text = '疾风之劲草,修己以安人';
+            context.fillText(text, 5, 80, 280);
+            /* 添加一段带字体和颜色文字 */
+            context.fillStyle = 'red';
+            context.font = 'bold 20px 楷体';
+            context.fillText(text, 260, 80, 280);
+            /* 添加一段通过不同颜色填充内容和描绘边框的文字 */
+            context.font = '55px 华文琥珀';
+            context.lineWidth = 3;
+            context.fillStyle = '#FCD217';
+            context.fillText(text, 5, 120);
+            context.strokeStyle = "#2983BB";
+            context.strokeText(text, 5, 120);
+            /* 添加一段具有背景图片的文字 */
+            var img = new Image();
+            img.src = './img/text_bg.jpg';
+            img.onload = function () {
+                /* 设置阴影 */
+                context.shadowOffsetX = 5;
+                context.shadowOffsetY = 5;
+                context.shadowBlur = 5;
+                context.shadowColor = 'gray';
+                /* 设置背景图 */
+                var pattern = context.createPattern(img, 'repeat');
+                context.strokeStyle = pattern;
+                context.strokeText(text, 5, 190);
+            }
         }
 
+        function drawTransform() {
+            var canvasTransform = document.getElementById('canvasTransform');
+            var context = canvasTransform.getContext('2d');
+            /* 绘制参照图 */
+            context.fillStyle = "#ececec";
+            context.beginPath();
+            context.arc(60, 60, 60, 0, Math.PI * 2, true);
+            context.stroke();
+            context.fill();
+            /* 平移 */
+            context.globalAlpha = 0.6;
+            context.translate(60, 30); //　首先调用平移
+            context.beginPath();
+            context.fillStyle = "#ababab";
+            context.arc(60, 60, 60, 0, Math.PI * 2, true);
+            context.stroke();
+            context.fill();
+
+            /* 还原位置 */
+            context.translate(-60, -30);
+            context.globalAlpha = 1;
+            /* 绘制参照图 */
+            context.fillStyle = "#ececec";
+            context.beginPath();
+            context.arc(360, 60, 60, 0, Math.PI * 2, true);
+            context.stroke();
+            context.fill();
+            /* 放缩 */
+            context.globalAlpha = 0.6;
+            context.scale(0.4, 0.4);
+            context.fillStyle = "#ababab";
+            context.beginPath();
+            context.arc(360 / (0.5), 60, 60, 0, Math.PI * 2, true);
+            context.stroke();
+            context.fill();
+
+
+            var canvasTransformRotate = document.getElementById('canvasTransformRotate');
+            var context = canvasTransformRotate.getContext('2d');
+            /* 绘制参照图 */
+            context.fillStyle = "#525288";
+            context.fillRect(300, 00, 150, 100);
+
+            var colorList = ['#F6DEAD', '#EF632b', '#40A070', '#F1AC17', '#FA7E23',
+                '#2376B7', '#EF632b', '#40A070', '#F6DEAD', '#EF632b', '#40A070',
+                '#F1AC17', '#F1AC17', '#FA7E23', '#2376B7',];
+            for (let i = 0; i < colorList.length; i++) {
+                /* 旋转 Π/20 */
+                context.rotate(Math.PI / 20);
+                context.translate(10, 5);
+                context.scale(0.8, 0.8);
+                context.fillStyle = colorList[i];
+                context.fillRect(300, 00, 150, 100);
+            }
+        }
         function onloadAll() {
             drawFillRect();
             drawDrawLine();
@@ -190,6 +435,7 @@
             drawDrawGradient();
             drawDrawImg();
             drawDrawText();
+            drawTransform();
         }
         window.onload = onloadAll();
 
