@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>案例1-canvas半动画-robot机器人</title>
+    <style>
+        body{margin: 0;overflow: hidden;}
+        #canvas{background: antiquewhite;}
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="600" height="700">
+</canvas>
+<script>
+    const canvas=document.getElementById('canvas');
+    canvas.width=window.innerWidth;
+    canvas.height=window.innerHeight;
+    const  ctx=canvas.getContext('2d');
+    function render(color='red'){
+        ctx.fillStyle=color;
+        ctx.lineWidth=40;
+        ctx.fillRect(50,250,400,200);
+        ctx.strokeRect(50,250,400,200);
+        ctx.clearRect(50,300,400,60);
+ 
+        ctx.beginPath();
+        ctx.moveTo(350,400);
+        ctx.bezierCurveTo(350,400,250,420,150,400);
+        ctx.stroke();
+ 
+        ctx.beginPath();
+        ctx.fillStyle="#00aece"
+        ctx.arc(150,330,20,0,Math.PI*2);
+        ctx.fill();
+ 
+        ctx.beginPath();
+        ctx.arc(350,340,20,-Math.PI,0);
+        ctx.fill();
+ 
+        ctx.save();
+        ctx.setLineDash([50]);
+        ctx.beginPath();
+        ctx.moveTo(50,50);
+        ctx.bezierCurveTo(150,50,150,250,250,250);
+        ctx.moveTo(450,50);
+        ctx.bezierCurveTo(350,50,350,250,250,250);
+        ctx.stroke();
+        ctx.restore();
+    }
+ 
+    let color='red';
+    render(color);
+ 
+    canvas.addEventListener('mousemove',function(event){
+        const {left,top}=canvas.getBoundingClientRect();
+        const x=event.clientX-left;
+        const y=event.clientY-top;
+        let curColor='red';
+        if(x>30&&x<470&&y>230&&y<470){
+            curColor='black';
+        }else{
+            curColor='red';
+        }
+        if(color!==curColor){
+            color=curColor;
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            render(color);
+        }
+    })
+  
+</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>案例3-Canvas动画大风车</title>
+    <style type="text/css">
+        #canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="400" height="400">
+        <!--//浏览器不支持canvas时，显示p标签中的内容-->
+        <p>你的浏览器不支持canvas</p>
+    </canvas>
+
+    <script type="text/javascript">
+        //初始化颜色
+        let colors = ["#FF0000", "#FF7D00", "#FFFF00", "#00FF00", "#0000FF", "#00FFFF", "#FF00FF"];
+        let canvas = document.getElementById("canvas");//获取canvas样式（获取画布）
+        let context = canvas.getContext("2d");//获取绘图上下文
+
+        //平移坐标原点
+        context.translate(200, 200);
+        //绘制动画-旋转大风车
+        //1.绘制大风车
+        drawWindmill();
+        //2.设置动画方法
+
+        //3.调用setInterval
+        setInterval(animate, 20);
+        //动画方法
+        function animate() {
+            //清除画布
+            context.clearRect(-200, -200, 400, 400);
+            //再绘制大风车
+            //每调用一次就旋转一度
+            context.rotate(1 * Math.PI / 180);
+            drawWindmill();
+
+        }
+        //绘制大风车
+        function drawWindmill() {
+            for (let i = 0; i < 6; i++) {
+                //画扇叶
+                context.fillStyle = colors[i];
+                context.beginPath();
+                context.arc(80, 0, 80, 0, Math.PI, false)
+                context.fill();
+
+                //将坐标系旋转60度
+                context.rotate(60 * Math.PI / 180);
+            }
+
+            //画中心圆
+            context.fillStyle = "white";
+            context.beginPath();
+            context.arc(0, 0, 40, 0, Math.PI * 2, true);
+            context.fill();
+
+        }
+    </script>
+</body>
+
+</html>

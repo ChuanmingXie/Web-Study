@@ -1,12 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>10-1 机器人绘制案例</title>
+    <link rel="stylesheet" href="./css/democommon.css">
+    <style>
+        canvas {
+            position: absolute;
+        }
+
+        #drawRobot_bg {
+            z-index: -1;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <h2>10-1 案例：机器人绘制</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h4>10.1.1 机器人绘制</h4>
+            <canvas id="drawRobot_bg" class="canvasbase" width="1300" height="650"></canvas>
+            <canvas id="drawRobot" class="canvasbase" width="1300" height="650"></canvas>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        window.onload = init;
+        function init() {
+            var drawRobotbg = document.getElementById('drawRobot_bg');
+            var contextbg = drawRobotbg.getContext('2d');
+            var img = new Image();
+            img.src = './img/space.jpg';
+            img.onload = function () {
+                contextbg.drawImage(img, 0, 0, 1300, 650);
+            }
+            var drawRobotcanvas = document.getElementById('drawRobot');
+            this.contextRobot = drawRobotcanvas.getContext('2d');
+            drawRobot(70, 70);
+        }
+        function drawRobot(x, y) {
+            // 头
+            contextRobot.fillStyle = '#3399FF';
+            contextRobot.fillRect(x, y, 200, 100);
+
+            // 天线
+            contextRobot.strokeStyle = '#FB8B05';
+            contextRobot.moveTo(x + 50, y);
+            contextRobot.lineTo(x, y - 60);
+            contextRobot.stroke();
+
+            contextRobot.moveTo(150 + x, y);
+            contextRobot.lineTo(200 + x, y - 60);
+            contextRobot.stroke();
+
+            // 眼睛
+            contextRobot.fillStyle = '#FFFF00';
+            contextRobot.beginPath();
+            contextRobot.arc(x + 50, y + 30, 15, 0, Math.PI * 2, true);
+            contextRobot.closePath();
+            contextRobot.fill();
+
+            contextRobot.beginPath();
+            contextRobot.arc(x + 150, y + 30, 15, 0, Math.PI * 2, true);
+            contextRobot.closePath();
+            contextRobot.fill();
+
+            // 嘴巴
+            contextRobot.beginPath();
+            contextRobot.arc(x + 100, y + 50, 20, 0, Math.PI * 1, false);
+            contextRobot.closePath();
+            contextRobot.strokeStyle = "0000FF";
+
+            // 身体
+            contextRobot.beginPath();
+            contextRobot.fillRect(x + 30, y + 100, 140, 140);
+
+            // 胳膊
+            contextRobot.fillStyle = '#3399FF';
+            contextRobot.fillRect(x - 10, y + 120, 40, 150);
+            contextRobot.fillRect(x + 170, y + 120, 40, 150);
+
+            // 腿
+            contextRobot.fillRect(x + 50, y + 240, 40, 150);
+            contextRobot.fillRect(x + 110, y + 240, 40, 150);
+        }
+
+    </script>
 </body>
+
 </html>
