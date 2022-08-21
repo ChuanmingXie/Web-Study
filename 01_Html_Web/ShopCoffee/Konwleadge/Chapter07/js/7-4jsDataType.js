@@ -150,3 +150,25 @@ function SortInsert(params) {
     }
     return arrayInt.join(',');
 }
+
+function PrintPascalTriangle(params) {
+    var array = new Array(9);
+    for (let i = 0; i < array.length; i++) {
+        array[i] = new Array(i);
+        for (let j = 0; j < array[i].length; j++) {
+            if (j == 0 || j == i) {
+                array[i][j] = 1;
+            } else {
+                array[i][j] = array[i - 1][j] + array[i - 1][j - 1];
+            }
+        }
+    }
+
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array[i].length; j++) {
+            console.log(array[i][j]+"   ");
+        }
+        console.log();
+    }
+}
+PrintPascalTriangle();
