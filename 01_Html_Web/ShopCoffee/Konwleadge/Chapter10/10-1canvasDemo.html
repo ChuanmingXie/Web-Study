@@ -38,7 +38,7 @@
             img.onload = function () {
                 contextbg.drawImage(img, 0, 0, 1300, 650);
             }
-            var drawRobotcanvas = document.getElementById('drawRobot');
+            this.drawRobotcanvas = document.getElementById('drawRobot');
             this.contextRobot = drawRobotcanvas.getContext('2d');
             drawRobot(70, 70);
         }
@@ -89,6 +89,10 @@
             contextRobot.fillRect(x + 110, y + 240, 40, 150);
         }
 
+        this.onmousemove = function (event) {
+            contextRobot.clearRect(0, 0, drawRobotcanvas.width, drawRobotcanvas.height);
+            drawRobot(event.screenX - 140, event.screenY - 310);
+        }
     </script>
 </body>
 
