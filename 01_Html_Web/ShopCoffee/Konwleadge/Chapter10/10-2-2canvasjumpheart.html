@@ -6,10 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>10-2-2 跳动的心</title>
+    <link rel="stylesheet" href="./css/democommon.css">
 </head>
 
 <body>
-
+    <h2>10-2绘图示例-跳动的心</h2>
+    <div class="panel_bg">
+        <h4>10-2-2 跳动的心</h4>
+        <div class="panel">
+            <canvas id="myCanvas" class="canvasbase" width="800px" height="500px"></canvas>
+        </div>
+    </div>
+    <script>
+        var canvas, context, img = new Image();
+        /* 初始化 */
+        window.onload = function () {
+            canvas = document.getElementById('myCanvas');
+            context = canvas.getContext('2d');
+            img.src = "./img/heart.png";
+            big();
+        }
+        function big() {
+            context.clearRect(90, 90, 150, 150);      // 擦除小图
+            context.drawImage(img, 50, 50, 250, 250);
+            setTimeout("small()", 500);
+        }
+        function small() {
+            context.clearRect(50, 50, 250, 250);
+            context.drawImage(img, 90, 90, 150, 150);
+            setTimeout("big()", 500);
+        }
+    </script>
 </body>
 
 </html>
