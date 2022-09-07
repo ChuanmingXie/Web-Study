@@ -1,0 +1,139 @@
+@charset "utf-8";
+
+*{margin: 0;padding: 0;font:600 12px/20px 'Han Sans SC','宋体',Tahoma,Arial,Helvetica,Hiragino Sans GB;}
+ul,li{list-style: none;}
+.clear{clear: both;}
+.floatleft{float: left;}
+.floatright{float: right;}
+
+
+#main{width: 780px; margin: auto;}
+header .banner{width: 100%; height: 150px;}
+header + hr{
+    width: 100%; 
+    height: 3px; 
+    background: #2286c6;
+    border: none;
+}
+.menu{
+    width: 100%; 
+    height: 36px;
+    background: url("../imgs/button1.jpg") repeat-x; 
+    border-bottom: 1px solid #2286c6;
+}
+.menu ul{
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+}
+.menu ul li{
+    width: 80px;
+    font:600 12px/36px Cambria,'Microsoft Yahei UI','宋体';
+    text-align: center;
+    float: left;
+}
+.blue_a{color: #024b88;text-decoration: underline;}
+
+.content_left{
+    width: 195px;
+    height: 620px;
+    padding: 5px;
+    padding-left: 0;    
+    padding-top: 0;
+}
+.content_middle{
+    width: 390px; 
+    height: 620px;
+    padding: 5px;
+    border-left: 1px solid #2286c6;
+    border-right: 1px solid #2286c6;
+}
+.content_right{
+    width: 163px;
+    height: 620px;
+    padding: 5px;
+}
+.content_left h4,
+.content_right h4{
+    height: 20px;
+    background: #bdf;
+    padding-left:5px;
+    font:bolder 12px/20px '宋体';
+    display: flex;
+}
+
+.weather_title{
+    height: 47px;
+    background: url("../imgs/weather.jpg") no-repeat;
+}
+
+.weather_content,
+.recommend,
+.right_scenery,
+.right_recommend{background: #5ea6eb;}
+.weather_content,
+.recommend{
+    margin-left: 5px;
+}
+.recommend dl,
+.weather_content ul{
+    margin-left: 5px;
+}
+.recommend dd{
+    text-align: center;
+    margin: -8px auto -3px auto;
+}
+.recommend img,
+.right_scenery img{
+    border: 1px solid #FFF;
+    margin: 5px;
+}
+.carousel{}
+.middle_title{}
+.middle_scenery{
+    height: 125px;
+    margin: 0 1px;
+    display: flex;
+    justify-content: space-around;
+}
+.middle_scenery li img{
+    border: 1px solid #2286c6;
+}
+
+.weather_content{color: #FFF;}
+.travelroute{color: #0c568f;}
+.weather_content li,
+.travelroute li{
+    display: flex;
+}
+.right_recommend{
+    padding: 10px;
+}
+.right_recommend li{
+    border-bottom: 1px dotted #FFF;
+    color: #FFF;
+    height: 20px;
+}
+.eat{height: 100px;}
+.hotel{height: 155px;}
+
+.arrow{    
+    width: 20px;
+    height: 20px;
+    display: block;
+    background: 40% 50%/40% 40% url(../imgs/icon2.gif) no-repeat;
+}
+.text{
+    width: 20px;
+    height: 20px;
+    display: block;
+    background:40% 50%/40% 40%  url("../imgs/icon1.gif") no-repeat;
+}
+
+footer{
+    text-align: center;
+    background: #5ea6eb;
+}
+footer .white{
+    color: #FFF;
+}
