@@ -1,13 +1,13 @@
 @charset "utf-8";
 
-*{margin: 0;padding: 0;font:600 12px/20px 'Han Sans SC','宋体',Tahoma,Arial,Helvetica,Hiragino Sans GB;}
+*{margin: 0;padding: 0;font:600 12px/20px 'Microsoft Yahei UI',Tahoma,Arial,Helvetica}
 ul,li{list-style: none;}
 .clear{clear: both;}
 .floatleft{float: left;}
 .floatright{float: right;}
+body{background-color: #2286c6;}
 
-
-#main{width: 780px; margin: auto;}
+#main{width: 780px; margin: auto;background: #FFF;}
 header .banner{width: 100%; height: 150px;}
 header + hr{
     width: 100%; 
@@ -36,83 +36,80 @@ header + hr{
 
 .content_left{
     width: 195px;
-    height: 620px;
+    height: 590px;
     padding: 5px;
     padding-left: 0;    
     padding-top: 0;
 }
 .content_middle{
     width: 390px; 
-    height: 620px;
+    height: 590px;
     padding: 5px;
+    padding-bottom:0;
     border-left: 1px solid #2286c6;
     border-right: 1px solid #2286c6;
+    border-bottom: 20px solid #2286c6;
 }
 .content_right{
-    width: 163px;
-    height: 620px;
+    width: 168px;
+    height: 590px;
     padding: 5px;
+    border-bottom: 15px solid #2286c6;
 }
 .content_left h4,
 .content_right h4{
     height: 20px;
     background: #bdf;
     padding-left:5px;
-    font:bolder 12px/20px '宋体';
+    font:bold 13px/20px 'Microsoft Yahei UI';
     display: flex;
 }
 
 .weather_title{
-    height: 47px;
+    height: 48px;
     background: url("../imgs/weather.jpg") no-repeat;
 }
-
-.weather_content,
-.recommend,
-.right_scenery,
-.right_recommend{background: #5ea6eb;}
-.weather_content,
-.recommend{
+.weather_title p{color: #FFF; padding: 20px 0px 0 80px; font-size: 13px;}
+.weather_content{
+    color: #FFF; 
+    background: #5ea6eb;
     margin-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
-.recommend dl,
-.weather_content ul{
-    margin-left: 5px;
-}
+.weather_content ul{ margin-left: 5px;}
+.weather_content li{display: flex; font-weight: 500;}
+.recommend{margin-left: 5px;background: #5ea6eb; height: 457px;}
 .recommend dd{
     text-align: center;
-    margin: -8px auto -3px auto;
+    color: #FFF;
+    font-weight: 500;
+    margin: -15px auto -4px auto;
 }
-.recommend img,
-.right_scenery img{
-    border: 1px solid #FFF;
-    margin: 5px;
+.recommend img{
+    border: 1px solid #FFF; 
+    margin: 9px;
 }
-.carousel{}
-.middle_title{}
+
+.middle_title{margin-top: 10px;}
 .middle_scenery{
     height: 125px;
     margin: 0 1px;
     display: flex;
     justify-content: space-around;
 }
-.middle_scenery li img{
-    border: 1px solid #2286c6;
-}
-
-.weather_content{color: #FFF;}
+.middle_scenery li img{border: 1px solid #2286c6;}
 .travelroute{color: #0c568f;}
-.weather_content li,
-.travelroute li{
-    display: flex;
-}
-.right_recommend{
-    padding: 10px;
-}
+.travelroute li{display: flex;margin-left: 10px;}
+
+.right_scenery{background: #5ea6eb; padding: 8px;}
+.right_scenery img{border: 1px solid #FFF;}
+.right_recommend{background: #5ea6eb; padding: 10px;}
 .right_recommend li{
-    border-bottom: 1px dotted #FFF;
+    border-bottom: 1px dashed #FFF;
     color: #FFF;
     height: 20px;
+    font-weight: 500;
 }
 .eat{height: 100px;}
 .hotel{height: 155px;}
@@ -131,9 +128,10 @@ header + hr{
 }
 
 footer{
+    height: 17px;
+    border: 5px solid #FFF;
+    font: 600 12px/17px Arial,'宋体';
     text-align: center;
     background: #5ea6eb;
 }
-footer .white{
-    color: #FFF;
-}
+footer .white{color: #FFF;}
