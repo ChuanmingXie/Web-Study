@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+*{margin: 0;padding: 0;}
+ul,li{list-style: none;}
+a{text-decoration: none;}
+.floatleft{float: left;}
+.floatright{float: right;}
+.clear{clear: both;}
+body{font-family: 'Microsoft Yahei UI',Tahoma,Arial,Helvetica;}
+
+#main{width: 960px;margin: auto;}
+.logo{margin-top: 5px;}
+.link_tips{
+    width: 50px;
+    height: 16px;
+    margin-top: 10px;
+    position: relative;
+    left: 15px;
+    background: 0 0/90% 90% url("../imgs/icon_count.png")  no-repeat;
+}
+.site_link{
+    width: 248px; 
+    height: 28px;
+    display: flex;
+    justify-content: space-around;
+    align-items:  center;
+    background: #eafffa;
+    border: 1px solid #d7f0e8;
+}
+.site_link li{
+    width: 60px;
+    text-align: center;
+    padding:0 1px;
+}
+.site_link li a{
+    font: 400 12px/20px 'Microsoft Yahei';
+    color: #828d8b;
+}
+.menu_top_bg{
+    width: 100%;
+    height: 35px;
+    background: #fe6915;
+    font:500 12px/35px 'Microsoft Yahei';
+    color: #FFF;
+}
+.menu_top{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+.menu_top li{width: 50px;}
+.menu_top a{color: #FFF; font:500 12px/35px 'Microsoft Yahei';  }
+
+.banner{
+    margin: 10px 0;
+    width: 960px;
+    height: 130px;
+    background: 0 0/100% 100% url("../imgs/banner.jpg") no-repeat;
+}
+.menu_left_bg{margin-right: 10px; width: 180px;}
+.menu_left>li{
+    width: 180px;
+    margin-bottom: 10px;
+    background: #e2e0d2;
+    border: 1px solid #d5a134;
+}
+.menu_left>li>div{
+    height: 25px;
+    font:600 13px/25px 'Microsoft Yahei';    
+    color: #FFF;
+    background: url("../imgs/navTitleBg.jpg") repeat-x;
+}
+.menu_left>li>ul li{
+    margin-left: 5px;
+    display: flex;
+    flex-direction: row;
+    font: 400 12px/28px 'Microsoft Yahei';
+}
+.menu_left>li>ul li:first-child{
+    margin-top: 15px;
+}
+.menu_left a{font: 400 12px/28px 'Microsoft Yahei';color: #636161;}
+.dot{
+    width: 25px;
+    height: 25px;
+    background: 50% 50%/20% 20% url("../imgs/dot.jpg") no-repeat;
+}
+.middle_bg{width: 670px;}
+
+.good_title{
+    width: 770px;
+    height: 40px;
+    padding-bottom: 3px;
+    border-bottom: 2px solid #c09037;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.good_title .title_dot{
+    width: 28px;
+    height: 21px;
+    background: 0 0/100% 100% url("../imgs/titleDot.jpg") no-repeat;
+}
+
+.good_list{
+    height: 215px; 
+    margin-bottom: 20px;
+    display: inline-flex;
+    justify-items: center; 
+    align-items: center;
+}
+.good_list dl{margin: 5px;}
+dt{
+    width: 122px;
+    height: 122px;
+    margin: 10px; 
+    margin-bottom: 0;
+    border: 1px solid #bfbfbf ;
+} 
+dt span{
+    width: 40px;
+    height: 40px;
+    display: block; 
+    position:absolute;
+    /* top: 0;
+    left: 0; */
+}
+dt .item1{background: 0 0/100% 100% url('../imgs/item_1.gif') no-repeat;}
+dt .item2{background: 0 0/100% 100% url('../imgs/item_2.gif') no-repeat;}
+dt .item3{background: 0 0/100% 100% url('../imgs/item_3.gif') no-repeat;}
+dt .item4{background: 0 0/100% 100% url('../imgs/item_4.gif') no-repeat;}
+dt .item5{background: 0 0/100% 100% url('../imgs/item_5.gif') no-repeat;}
+
+dl dd p{font:500 12px/20px 'Microsoft Yahei'}
+dl dd p:nth-child(1){width: 145px; color: #206eba;}
+dl dd p:nth-child(2){color: gray; font-weight: 300; text-decoration: line-through;}
+dl dd p:nth-child(3){color: red; font-weight: bold;}
+
+footer{margin-bottom: 20px;}
+footer .center{text-align: center; font-weight: 300;font-size: 12px;}
