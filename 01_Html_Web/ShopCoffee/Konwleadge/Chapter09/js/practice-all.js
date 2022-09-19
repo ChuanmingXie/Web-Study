@@ -11,6 +11,7 @@
     Event对象是JS中非常重要的对象,其中包括当前触发事件的状态,键盘、鼠标状态或位置、窗口变化、表单填写和提交等
     大多数event对象的属性是只读的,因为Event是事件动作的快照。
  */
+/* 显示鼠标移动时的坐标信息 */
 this.onmousemove = function (event) {
     var mouseX = event.screenX;
     var mouseY = event.screenY;
@@ -80,12 +81,12 @@ function TurnExchange(srcSelect, desSelect) {
             }
         }
     }
-    var indexArray = [];
+    var indexArray = [];   // 下标数组
     for (let i = 0; i < desSelect.options.length; i++) {
         for (let j = 0; j < srcSelect.options.length; j++) {
             if (srcSelect.options[j].innerText == desSelect.options[i].innerText) {
-                indexArray.push(j);
-                srcSelect.options[j] = null;
+                srcSelect.options[j] = null;  // 将移动到目标项清空删除
+                indexArray.push(j);  // 记录下标查看是否
             }
         }
     }

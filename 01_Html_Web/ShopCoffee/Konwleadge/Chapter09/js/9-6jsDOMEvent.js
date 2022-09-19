@@ -29,6 +29,7 @@ var upImages = ["u0.png", "u1.png", "u2.png"];
 var images = rightImages;
 var n = 0;
 
+/* 根据键盘信息操作dom对象 */
 function doKeyDown(e) {
     var walkDiv = document.getElementById('walkingDiv')
     var walkPerson = document.getElementById('walkPerson');
@@ -80,7 +81,7 @@ function doKeyDown(e) {
     walkDiv.style.top = y + 'px';
     n++;
 }
-
+/* px单位设置 */
 function dealPx(pixeStr) {
     var pixel = pixeStr.substring(0, pixeStr.indexOf('px'));
     if (pixel == "") {

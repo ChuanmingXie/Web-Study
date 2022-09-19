@@ -7,12 +7,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>10-2-1 图片放大镜</title>
     <link rel="stylesheet" href="./css/democommon.css">
+    <style>
+        .movebox {
+            position: absolute;
+            visibility: hidden;
+        }
+    </style>
+    <script>
+        var canvas, context;
+        var img = new Image();
+        window.onload = function () {
+            canvas = document.getElementById('zoomCanvas');
+            context = canvas.getContext("2d");
+            img.src = './img/baby.jpg';
+            context.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+            toggleCanvas();
+        }
+        /* 当移动鼠标选中区域时，总会有一些边界图片在放大时，出现短影和残影，尚未学到解决方法 */
+        function enlargre(e) {
+            var imge = document.getElementsByTagName('img')[0];
+            var e = e || window.event;
+            var x = e.clientX - 30;
+            var y = e.clientY - imge.offsetTop - 30;
+            context.drawImage(img, x, y, 60, 60, 0, 0, canvas.width, canvas.height);
+        }
+
+        function toggleCanvas() {
+            var imgMove = document.getElementsByTagName('img')[1];
+            var canvasMove = document.getElementById('zoomCanvasMove');
+            imgMove.onmouseenter = function (e) {
+                canvasMove.style.visibility = 'visible';
+            }
+            imgMove.onmousemove = function (e) {
+                var e = e || window.event;
+                var x = e.clientX;    // 鼠标焦点横坐标
+                var y = e.clientY;    // 鼠标焦点竖坐标
+                // 当鼠标处于图像上时,设置鼠标焦点左侧30个，上方0个单位长度的位置，为放大的起始范围
+                var xdraw = x - imgMove.offsetLeft - 30;
+                var ydraw = y - imgMove.offsetTop;
+                /* 设置canvasmove 随鼠标移动 */
+                canvasMove.style.left = x + 'px';
+                canvasMove.style.top = y + 'px';
+                /* 设置放大区域显示在canvaszoom上 */
+                contextMove = canvasMove.getContext('2d');
+                // var imgZoom = new Image();
+                // imgZoom.src = './img/baby.jpg';
+                contextMove.drawImage(img, xdraw, ydraw, 60, 60, 0, 0, canvasMove.width, canvasMove.height);
+            }
+            imgMove.onmouseout = function (e) {
+                canvasMove.style.visibility = 'hidden';
+            }
+        }
+    </script>
 </head>
 
 <body>
-    <div class="panel">
-        <div class="panel_bg"> 
-            <h4>图片放大镜</h4>
+    <h2>10-2 图片放大镜</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h4>10-2-1 图片放大镜</h4>
+            <img src="./img/baby.jpg" width="450" height="250" alt="" onmousemove="enlargre(event)">
+            <canvas class="canvasbase" id="zoomCanvas" width="250" height="250"></canvas>
+        </div>
+        <div class="panel">
+            <h4>10-2-1 图片放大镜升级</h4>
+            <img src="./img/baby.jpg" width="450" height="250" alt="">
+            <canvas class="canvasbase movebox" id="zoomCanvasMove" width="250" height="250"></canvas>
         </div>
     </div>
 </body>

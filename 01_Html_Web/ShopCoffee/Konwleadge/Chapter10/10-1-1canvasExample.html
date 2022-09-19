@@ -151,6 +151,7 @@
             // 绘制圆饼图
             var color = ['#126E82bb', "#F2481Bbb", "#BE7E4Abb", "#DBBE0Dbb", "#74759Bbb", "#0F59A4bb"];
             var data = [15, 20, 15, 20, 20];
+            /* 闭包函数，返回数据总数，用于后面计算各个数据的占比 */
             var sum = (function (datas) { var sum = 0; datas.forEach(d => sum += d); return sum; })(data);
             console.log(sum);
             var startPoint = Math.PI * 3 / 2;
@@ -166,6 +167,7 @@
             }
         }
 
+        /* 绘制bezier曲线和quadratic曲线 */
         function drawDrawPath() {
             canvasDrawPath = document.getElementById('canvasDrawPath');
             var context = canvasDrawPath.getContext('2d');
@@ -187,50 +189,50 @@
             context.stroke();
         }
 
-        function drawDrawGradient() {
-            /* **************5-1 线性渐变**************** */
-            canvasLinearGradient = document.getElementById('canvasLinearGradient');
-            var context = canvasLinearGradient.getContext('2d');
-            /* 创建水平向右的渐变 */
-            var gradientLinear = context.createLinearGradient(10, 20, 290, 20);
-            /* 设置渐变色 */
-            gradientLinear.addColorStop(0.0, 'yellow');
-            gradientLinear.addColorStop(0.25, 'green');
-            gradientLinear.addColorStop(0.5, 'yellow');
-            gradientLinear.addColorStop(0.75, 'green');
-            gradientLinear.addColorStop(1.0, 'yellow');
-            context.fillStyle = gradientLinear;
-            context.fillRect(10, 20, 280, 160)
+function drawDrawGradient() {
+    /* **************5-1 线性渐变**************** */
+    canvasLinearGradient = document.getElementById('canvasLinearGradient');
+    var context = canvasLinearGradient.getContext('2d');
+    /* 创建水平向右的渐变 */
+    var gradientLinear = context.createLinearGradient(10, 20, 290, 20);
+    /* 设置渐变色 */
+    gradientLinear.addColorStop(0.0, 'yellow');
+    gradientLinear.addColorStop(0.25, 'green');
+    gradientLinear.addColorStop(0.5, 'yellow');
+    gradientLinear.addColorStop(0.75, 'green');
+    gradientLinear.addColorStop(1.0, 'yellow');
+    context.fillStyle = gradientLinear;
+    context.fillRect(10, 20, 280, 160)
 
-            /* 创建从左上到右下的对角线渐变 */
-            var gradientLinear2 = context.createLinearGradient(310, 20, 600, 160);
-            gradientLinear2.addColorStop(0.0, 'yellow');
-            gradientLinear2.addColorStop(0.25, 'green');
-            gradientLinear2.addColorStop(0.5, 'yellow');
-            gradientLinear2.addColorStop(0.75, 'green');
-            gradientLinear2.addColorStop(1.0, 'yellow');
-            context.fillStyle = gradientLinear2;
-            context.fillRect(310, 20, 280, 160);
+    /* 创建从左上到右下的对角线渐变 */
+    var gradientLinear2 = context.createLinearGradient(310, 20, 600, 160);
+    gradientLinear2.addColorStop(0.0, 'yellow');
+    gradientLinear2.addColorStop(0.25, 'green');
+    gradientLinear2.addColorStop(0.5, 'yellow');
+    gradientLinear2.addColorStop(0.75, 'green');
+    gradientLinear2.addColorStop(1.0, 'yellow');
+    context.fillStyle = gradientLinear2;
+    context.fillRect(310, 20, 280, 160);
 
-            /* **************5-2 径向渐变**************** */
-            canvasRadialGradient = document.getElementById('canvasRadialGradient');
-            var context = canvasRadialGradient.getContext('2d');
-            /* 创建从圆点到四周的径向渐变 */
-            var gradientRadial1 = context.createRadialGradient(140, 100, 20, 140, 100, 180);
-            gradientRadial1.addColorStop(0.0, 'red')
-            gradientRadial1.addColorStop(0.25, 'yellow');
-            gradientRadial1.addColorStop(1.0, '#008000bb');
-            context.fillStyle = gradientRadial1;
-            context.fillRect(20, 20, 250, 160);
+    /* **************5-2 径向渐变**************** */
+    canvasRadialGradient = document.getElementById('canvasRadialGradient');
+    var context = canvasRadialGradient.getContext('2d');
+    /* 创建从圆点到四周的径向渐变 */
+    var gradientRadial1 = context.createRadialGradient(140, 100, 20, 140, 100, 180);
+    gradientRadial1.addColorStop(0.0, 'red')
+    gradientRadial1.addColorStop(0.25, 'yellow');
+    gradientRadial1.addColorStop(1.0, '#008000bb');
+    context.fillStyle = gradientRadial1;
+    context.fillRect(20, 20, 250, 160);
 
-            /* 创建非同心圆的渐变 */
-            var gradientRadial2 = context.createRadialGradient(320, 100, 5, 600, 100, 80);
-            gradientRadial2.addColorStop(0.0, 'red');
-            gradientRadial2.addColorStop(0.7, 'yellow');
-            gradientRadial2.addColorStop(1.0, 'green');
-            context.fillStyle = gradientRadial2;
-            context.fillRect(300, 20, 280, 160);
-        }
+    /* 创建非同心圆的渐变 */
+    var gradientRadial2 = context.createRadialGradient(320, 100, 5, 600, 100, 80);
+    gradientRadial2.addColorStop(0.0, 'red');
+    gradientRadial2.addColorStop(0.7, 'yellow');
+    gradientRadial2.addColorStop(1.0, 'green');
+    context.fillStyle = gradientRadial2;
+    context.fillRect(300, 20, 280, 160);
+}
 
         function drawDrawImg() {
             var canvasLoadImg = document.getElementById('canvasLoadImg');

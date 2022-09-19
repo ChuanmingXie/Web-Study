@@ -3,6 +3,9 @@
 *{padding: 0; margin: 0;}
 ul,li{list-style: none;}
 
+.menu_top{width: 700px; margin: auto;}
+.menu_top li{width: 160px; float: left;}
+
 .content_left{width: 250px; margin: auto;}
 .menu_left{border: 10px solid #d5d5d5;}
 .menu_title{

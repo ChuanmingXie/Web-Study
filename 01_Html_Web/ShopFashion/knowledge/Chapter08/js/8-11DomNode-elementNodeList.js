@@ -1,5 +1,4 @@
-var profitArray = new Array();
-
+// 统计全部金额
 function amountProfit() {
     var sum = 0;
     var myTable = document.getElementsByTagName('table')[0];
@@ -26,11 +25,13 @@ function amountProfit() {
     var lastRow=myTable.children[2].children.length-1;
     myTable.children[2].children[lastRow].children[1].innerHTML = sum;
 
+    // 统计方式2
     /* var tableRows=document.getElementsByTagName('tr');
     var lastRow=tableRows.get(tableRows.length-1);
     lastRow.lastChild.previousSibling.innerHTML=sum; */
 }
 
+// 向最后一行添加新数据
 function insertRearRow() {
     var mytable=document.getElementsByTagName('table')[0];
     var index=mytable.rows.length-1;
