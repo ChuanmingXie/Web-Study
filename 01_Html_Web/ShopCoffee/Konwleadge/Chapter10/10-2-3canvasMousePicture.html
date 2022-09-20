@@ -1,18 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>10-2-3鼠标画板</title>
     <link rel="stylesheet" href="./css/democommon.css">
+
+    <style>
+        .colordiv {
+            width: 100px;
+            height: 300px;
+            float: left;
+            margin: 20px 0;
+            border: 1px solid #856D72;
+            border-radius: 10px;
+        }
+
+        #drawColor {
+            float: left;
+        }
+
+        input[type='color'] {
+            width: 100%;
+            height: 40px;
+            padding: 0;
+            border: none;
+            border-radius: 10px;
+            margin: 1px 0;
+        }
+    </style>
+    <script>
+        var canvasdraw, contextdraw;
+        window.onload = function () {
+            canvasdraw = document.getElementById('drawPanel');
+            contextdraw = canvasdraw.getContext('2d');
+
+            // 在按压下绘制一个半径15的黑色圆点
+            canvasdraw.onmousedown = function (event) {
+                this.onmousemove = function (event) {
+                    var e = event || window.event;
+                    var x = e.clientX - 30;
+                    var y = e.clientY - canvasdraw.offsetTop - 0;
+                    contextdraw.fillStyle = "black";
+                    contextdraw.beginPath();
+                    contextdraw.arc(x, y, 15, 0, Math.PI * 2, true);
+                    contextdraw.closePath();
+                    contextdraw.fill();
+                }
+            }
+            canvasdraw.onclick = function (event) {
+                this.onmousemove = function (event) { }
+            }
+            canvasdraw.onmouseout = function (event) {
+                this.onmousemove = function (event) { }
+            }
+
+
+            var colorInput = document.getElementsByTagName('input');
+            var drawColor = document.getElementById('drawColor');
+            var contextColor = drawColor.getContext('2d');
+            drawColor.onmousedown = function (event) {
+                this.onmousemove = function (event) {
+                    var e = event || window.event;
+                    var x = e.clientX - 30;
+                    var y = e.clientY - drawColor.offsetTop;
+                    // contextColor.fillStyle = function (colorInput) {
+                    //     console.log(colorInput);
+                    //     for (const item in colorInput) {
+                    //         console.log(item.getAttribute('class'))
+                    //         if (item.getAttribute('class') == 'actice') {
+                    //             return item.value;
+                    //         }
+                    //     }
+                    // };
+                    contextColor.beginPath();
+                    contextColor.arc(x, y, 15, 0, Math.PI * 2, true);
+                    contextColor.closePath();
+                    contextColor.fill();
+                }
+            }
+            drawColor.onclick = function (event) {
+                this.onmousemove = function (event) { }
+            }
+
+            for (let i = 0; i < colorInput.length; i++) {
+                const element = colorInput[i];
+                // if (element.getAttribute('class') == 'actice') {
+                //     element.removeAttribute('active');
+                // }
+                console.log(element.value);
+                element.onclick = function (event) {
+                    // this.prevetDefault();
+                    var e = event.target || event.srcElement;
+                    contextColor.fillStyle = e.value;
+                    // this.setAttribute('class', 'active');
+                }
+            }
+        }
+    </script>
 </head>
+
 <body>
+    <h2>10-2-3 鼠标画板</h2>
     <div class="panel_bg">
         <div class="panel">
-            <h4>10-2-3 鼠标画板</h4>
+            <h4>2. 选择不同颜色加以绘制</h4>
+            <canvas class="canvasbase" id="drawColor" width="700" height="300"></canvas>
+            <div class="colordiv">
+                <input type="color" id="colorRed" class="active" value="#FF0000">
+                <input type="color" id="colorBlue" value="#467AFC">
+                <input type="color" id="colorYellow" value="#FC8C23">
+                <input type="color" id="colorGreen" value="#2775B6">
+                <input type="color" id="colorBlack" value="#000000">
+                <input type="color" id="colorGrey" value="#F0F0F0">
+                <input type="color" id="colorWhite" value="#74759B">
+            </div>
+        </div>
+        <div class="panel">
+            <h4>1. 按压绘制黑色圆点</h4>
+            <canvas class="canvasbase" id="drawPanel" width="800" height="300"></canvas>
         </div>
     </div>
 </body>
+
 </html>

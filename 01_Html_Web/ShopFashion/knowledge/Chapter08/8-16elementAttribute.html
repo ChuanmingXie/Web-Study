@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用js设置节点的CSS样式属性</title>
+    <link rel="stylesheet" href="./css/8-01windowProperty.css">
+</head>
+
+<body>
+    <h2>JS设置操作CSS样式</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h4>1. 操作多个P元素</h4>
+            <p>文本1文本1文本1文本1文本1文本1文本1文本1文本1文本1</p>
+            <p>文本2文本2文本2文本2文本2文本2文本2文本2文本2文本2</p>
+            <p class="active test">文本3文本3文本3文本3文本3文本3文本3文本3文本3文本3</p>
+            <p>文本4文本4文本4文本4文本4文本4文本4文本4文本4文本4</p>
+        </div>
+        <div class="panel">
+            <h4>2. 操作多个Input元素</h4>
+            <div class="colordiv">
+                <input type="color" id="colorRed" class="active" value="#FF0000">
+                <input type="color" id="colorBlue" value="#467AFC">
+                <input type="color" id="colorYellow" value="#FC8C23">
+                <input type="color" id="colorGreen" value="#2775B6">
+                <input type="color" id="colorBlack" value="#000000">
+                <input type="color" id="colorGrey" value="#F0F0F0">
+                <input type="color" id="colorWhite" value="#74759B">
+            </div>
+        </div>
+        <div class="panel">
+            <h4>3. 操作多个Input radio元素</h4>
+            <input type="radio" name="radioGroup" />单选1
+            <input type="radio" name="radioGroup" />单选2
+            <input type="radio" name="radioGroup" />单选3
+            <input type="radio" name="radioGroup" />单选4
+            <input type="radio" name="radioGroup" />单选5
+            <input type="radio" name="radioGroup" />单选6
+        </div>
+    </div>
+
+    <script>
+        var plist = document.getElementsByTagName('p');
+        for (let i = 0; i < plist.length; i++) {
+            const element = plist[i];
+            console.log(i + "element.classList获取类样式集合：" + element.classList);
+            console.log(i + "element.className获取类样式名称" + element.className);
+            console.log(i + "element.getAttribute('class')" + element.getAttribute("class"));
+            element.onclick = function () {
+                if (this.getAttribute('class') == null) {
+                    for (let j = 0; j < plist.length; j++) {
+                        if (plist[j].className == 'active text') {
+                            plist[j].removeAttribute('class');
+                        }
+                    }
+                    this.setAttribute('class', 'active text');
+                }
+                else {
+                    this.removeAttribute('class');
+                }
+            }
+        }
+        var colorInput = document.getElementsByTagName('input');
+        for (let i = 0; i < colorInput.length; i++) {
+            const element = colorInput[i];
+            console.log(i + "element.getAttribute('class')" + element.getAttribute("class"));
+            // console.log(element.value);
+            if (element.getAttribute('type') == 'color') {
+                element.onclick = function (event) {
+                    // this.prevetDefault();
+                    var target = event.target || event.srcElement;
+                    if (this.className == 'active') {
+                        this.removeAttribute('class');
+                    } else {
+
+                        for (let j = 0; j < colorInput.length; j++) {
+                            if (colorInput[j].className == 'active') {
+                                colorInput[j].removeAttribute('class');
+                            }
+                        }
+                        this.setAttribute('class', 'active');
+                    }
+                }
+            }
+        }
+
+        //非闭包
+        var Inputs = document.getElementsByTagName('input')
+        for (let i = 0; i < Inputs.length; i++) {
+            console.log(Inputs[i].getAttribute('type'));
+            if (Inputs[i].getAttribute('type') == 'radio') {
+                Inputs[i].onclick = function (e) {
+                    var target = e.target || e.srcElement
+                    for (let i = 0; i < Inputs.length; ++i) {
+                        if (target.type == "radio" && target == Inputs[i]) {
+                            alert(++i);
+                            break;
+                        }
+                    }
+                    console.log(target)
+                }
+            }
+        }
+        //闭包方法
+        // var foo = (function () {
+        //     var radio_list = (function () {
+        //         var _list = [],
+        //             nodes = document.getElementsByTagName('input');
+        //             console.log(nodes.length)
+        //         for (var i = 0; i < nodes.length; ++i) {
+        //             var node = nodes[i];
+        //             if (node.type == 'radio' && node.name == 'radioGroup') {
+        //                 if (node.attachEvent)
+        //                     node.attachEvent('onclick', function (e) { foo(e) });
+        //                 else if (node.addEventListener)
+        //                     node.addEventListener('click', function (e) { foo(e) }, false);
+        //                 _list.push(node);
+        //             }
+        //         }
+        //         return _list;
+        //     })();
+        //     return function (e) {
+        //         var o = (function () {
+        //             if (e) return e.target || e.srcElement;
+        //             else if (window.event) return e.srcElement;
+        //         })();
+        //         for (var i = 0; i < radio_list.length; ++i) {
+        //             if (o == radio_list[i]) {
+        //                 alert(++i);
+        //                 break;
+        //             }
+        //         }
+        //     }
+        // })();
+    </script>
+
+</body>
+
+</html>

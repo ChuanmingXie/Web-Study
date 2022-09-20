@@ -14,7 +14,7 @@
     <div class="panel_bg">
         <h4>10-2-2 跳动的心</h4>
         <div class="panel">
-            <canvas id="myCanvas" class="canvasbase" width="800px" height="500px"></canvas>
+            <canvas id="myCanvas" class="canvasbase" width="350px" height="360px"></canvas>
         </div>
     </div>
     <script>
@@ -26,11 +26,19 @@
             img.src = "./img/heart.png";
             big();
         }
+        /* 显示与擦除小图 */
         function big() {
-            context.clearRect(90, 90, 150, 150);      // 擦除小图
+            context.clearRect(90, 90, 150, 150);
             context.drawImage(img, 50, 50, 250, 250);
+            setTimeout("middle()", 500);
+        }
+        /* 显示与擦除中涂 */
+        function middle() {
+            context.clearRect(70, 70, 200, 200);
+            context.drawImage(img, 70, 70, 200, 200);
             setTimeout("small()", 500);
         }
+        /* 显示与擦除小图 */
         function small() {
             context.clearRect(50, 50, 250, 250);
             context.drawImage(img, 90, 90, 150, 150);
