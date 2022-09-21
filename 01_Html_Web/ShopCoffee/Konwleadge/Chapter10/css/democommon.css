@@ -87,6 +87,7 @@ input[type='button']:hover,
 input[type='reset']:hover {
     background: #ea4307;
     border: 1px solid #ea4307;
+    cursor: pointer;
 }
 
 input[type='text'],
