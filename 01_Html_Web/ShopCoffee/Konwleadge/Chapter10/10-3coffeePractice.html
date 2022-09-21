@@ -107,14 +107,15 @@
                     var spanlist = document.getElementsByTagName('span');
                     for (let i = 0; i < spanlist.length; i++) {
                         const element = spanlist[i];
-                        element.addEventListener('click', show(), true);
+                        element.addEventListener('click', function show() {
+                            alert(i + ":" + this.innerText);
+                        }, true);
                     }
                 }
-
-                function show() {
-                    var id = this.innerHTML;
-                    alert(id);
-                }
+                // function show(event, i) {
+                //     var e = event.target || event.srcElement;
+                //     alert(i + ":" + event.innerText);
+                // }
             </script>
         </div>
 
