@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+.middle_good{width: 690px; float: left;}
+.pic_title_good{
+    width: 680px;
+    font:small-caps bold 14px/40px Cambria,Microsoft Yahei;
+    color: #fff;
+    text-align: left;
+    text-indent: 20px;
+    margin: 0 10px 10px;
+}
+.pic_list_goood{float: left;}
+.pic_list_goood div{height: 220px;}
+.pic_list_goood dl{width: 152px; margin: 0 10px 10px; float: left;}
+.pic_list_goood dl img{border: 1px solid #ccc; padding: 5px; margin-bottom:10px ;}
+.pic_list_goood dl dd{float: left;}
+
+.pic_list_goood2{margin-left: 10px;}
+.pic_list_goood2 li{
+    width: 170px; 
+    height: 311px;
+    float: left;
+}
+.pic_list_goood2 div{
+    height: 280px;    
+    padding: 3px;
+    margin: 1px;
+    border: 1px solid #ccc;
+}
+
+.price{font-size: 15px;font-weight: 700; color: red; float: left;}
+.font12{font-size: 12px; color:#ccc; float: right;}
+
+/* 美食广场样式 */
+.middle_food{width: 80%; float: left;}
+.pic_title_food{width: 91%; height: 40px; margin: 1px 10px ;}
+.iconfood{display: inline-flex;justify-content: center;align-items: center;}
+.iconfood img{width: 40px;height: 40px;}
+.iconfood span{
+    font: bold 14px/40px Cambria,Microsoft Yahei;
+    letter-spacing: 4px;
+    margin: auto;
+    cursor: pointer;
+}
+.iconfood .orange{font-size: 10px; letter-spacing: 0;cursor: pointer;}
+.pic_list_food{
+    height: 560px;
+    min-width: 932px;
+    border: 1px solid #f4f5f0;
+    padding: 5px 20px 40px;
+    margin: 0 10px 10px;
+    display: inline-flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+.pic_list_food dl{width: 275px; margin: 10px; float: left;}
+.pic_list_food dl div{height: 200px;}
+.pic_list_food dl img{
+    width:269px;
+    height: 195px;
+    border: 1px solid #ccc; 
+    padding: 2px; 
+    /* margin: 5px; */
+}
+.pic_list_food dl dt{
+    font: small-caps bold 14px/40px Cambria, Yahei;
+    text-align: center;
+    background: #e4e5e1;
+}
+.pic_list_food dl dd{margin: 10px 0;}
+
+.price_food{font-weight: 700; color: red; float: left;}
+.pic_across{
+    width: 90%;
+    height: 230px;
+    margin: 0 auto;
+}
+.pic_across_list{
+    height: 180px;
+    border-top: 2px solid #41B349;
+    border-bottom: 2px solid #41B349;
+    position: relative;
+    display: inline-flex;
+    padding: 5px 10px;
+    margin: 0 10px;
+}
+.pic_across_list dl{width: 180px;margin: auto 5px; }
+.pic_across_list dl div{height: 150px;}
+.pic_across_list dl img{
+    height: 130px;
+    width: 170px;
+    border: 1px solid #ccc; 
+    padding: 5px; margin: auto; 
+}
