@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>咖啡商城</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <style type="text/css">
+        h2 {
+            background: #525288;
+            color: #FFF;
+            line-height: 40px;
+            padding-left: 20px;
+        }
+        .panel_bg .panel {width: 400px;}
+
+        .adviseinfo {
+            width: 300px;
+            padding: 5px;
+            margin: 0 auto;
+        }
+        .adviseinfo dl {text-align: center;}
+        .adviseinfo .picinfo {
+            position: relative;
+            text-align: center;
+        }
+        .adviseinfo .picinfo img {border: 1px groove gray;}
+        .adviseinfo .picinfo img:hover {border-color: red;}
+
+        .adviseinfo dd {
+            margin: 0;
+            height: 50px;
+            /* text-align: center; */
+        }
+        .adviseinfo dd .price {color: red;}
+        .adviseinfo dd .salenum {
+            color: gray;
+            font-size: 12px;
+        }
+
+        p {
+            height: 50px;
+            width: 302px;
+            font:bold 13px/25px Cmabria,'楷体';
+            color: #fff;
+            overflow: hidden;
+            margin: 0;
+            background: #5e7987;
+            position: absolute;
+            left: 0;
+            top: 251px;
+            z-index: -2;
+            opacity: 0.8;
+            display: none;
+            transition: all 2s ease-out;
+        }
+        .adviseinfo .picinfo:hover>p {
+            z-index: 2;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>热门商品</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <dl class="adviseinfo">
+                <dt>
+                    <div class="picinfo">
+                        <a href="#"><img src="./img/coffee/small_coffee_pic.jpg" alt=""></a>
+                        <p>进口特价2盒全国包邮马来西亚旧街场3合1经典原味速溶白咖啡640g</p>
+                    </div>
+                </dt>
+                <dd>
+                    <span class="price"> ¥ <span>41.99</span></span> <br>
+                    <span class="salenum">已售出<em>3572</em> 件</span>
+                </dd>
+            </dl>
+        </div>
+
+        <div class="panel">
+            <dl class="adviseinfo">
+                <dt>
+                    <div class="picinfo">
+                        <a href="#"><img src="./img/coffee/small_coffee_pic.jpg" alt=""></a>
+                        <p>进口特价2盒全国包邮马来西亚旧街场3合1经典原味速溶白咖啡640g</p>
+                    </div>
+                </dt>
+                <dd>
+                    <span class="price"> ¥ <span>41.99</span></span> <br>
+                    <span class="salenum">已售出<em>3572</em> 件</span>
+                </dd>
+            </dl>
+        </div>
+
+        <div class="panel">
+            <dl class="adviseinfo">
+                <dt>
+                    <div class="picinfo">
+                        <a href="#"><img src="./img/coffee/small_coffee_pic.jpg" alt=""></a>
+                        <p>进口特价2盒全国包邮马来西亚旧街场3合1经典原味速溶白咖啡640g</p>
+                    </div>
+                </dt>
+                <dd>
+                    <span class="price"> ¥ <span>41.99</span></span> <br>
+                    <span class="salenum">已售出<em>3572</em> 件</span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+</body>
+
+</html>
