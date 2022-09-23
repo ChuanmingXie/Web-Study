@@ -1,17 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>5-02 边框宽度</title>
     <link rel="stylesheet" href="./css/5-02boderStyleDemo.css">
+    <style>
+        .border_group{ width: 960px; display: flex;flex-direction: row;flex-wrap: wrap;}
+        .border_group div{width: 260px; height: 60px; margin: 20px;}
+        .dotted{border:8px dotted #F71384;}
+        .dashed{border:8px dashed #F71384;}
+        .double{border:8px double #F71384;}
+        .groove{border:8px groove #F71384;}
+         .ridge{border:8px ridge  #F71384;}
+         .inset{border:8px inset  #F71384;}
+        .outset{border:8px outset #F71384;}
+    </style>
 </head>
+
 <body>
     <h2>5-02边框宽度</h2>
+
+    <div class="border_group">
+        <div class="dotted">dotted</div>
+        <div class="dashed">dashed</div>
+        <div class="double">double</div>
+        <div class="groove">groove</div>
+        <div class="ridge">ridge</div>
+        <div class="inset">inset</div>
+        <div class="outset">outset</div>
+    </div>
+    
     <h4>标题添加边框</h4>
-    <div>div添加边框</div>
+    <div class="divtest">div添加边框</div>
     <p>p标签添加边框</p>
     <span>span标签添加边框</span>
+</div>
+
 </body>
+
 </html>

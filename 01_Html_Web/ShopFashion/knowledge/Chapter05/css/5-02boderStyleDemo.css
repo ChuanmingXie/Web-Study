@@ -2,7 +2,7 @@
 h4{
     border-style: solid dashed;
 }
-div{
+.divtest{
    border-top-style: solid; 
    border-bottom-style: solid;
    border-left-style: dashed;

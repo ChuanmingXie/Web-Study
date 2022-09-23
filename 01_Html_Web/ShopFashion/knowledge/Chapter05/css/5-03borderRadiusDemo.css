@@ -15,18 +15,7 @@ div{
 .greenyusuilv{background: #41B349;}
 .greenwasonglv{background: #6E8B74;}
 
-.radius1{
-    border-radius: 10px 20px;
-}
-
-.radius2{
-    border-radius: 10px 20px 30px;
-}
-
-.radius3{
-    border-radius: 10px 20px/30px 40px;
-}
-
-.radius4{
-    border-radius: 10px 20px 30px/50px 60px;
-}
+.radius1{border-radius: 10px 20px;}
+.radius2{border-radius: 10px 20px 30px;}
+.radius3{border-radius: 10px 20px/30px 40px;}
+.radius4{border-radius: 10px 20px 30px/50px 60px;}
