@@ -8,11 +8,13 @@
     <title>6-1 Animation 动画</title>
     <link rel="stylesheet" href="./css/common.css">
     <style type="text/css">
+        /* 设置背景 */
         .path_bg{
             width: 620px;
             height: 400px;
-            background:0 0 /100% 100% url(./img/animation/path.png) no-repeat;}
-        
+            background:0 0 /100% 100% url(./img/animation/path.png) no-repeat;
+        }
+        /* 绑定关键帧 */
         .path_bg img{
             width: 130px;
             height: 120px;
@@ -22,9 +24,7 @@
             -webkit-animation: carruning 8s infinite;
             -moz-animation: carruning 8s infinite;
         }
-        .path_bg img:hover{
-            transform: rotate(90deg);
-        }
+        /* 定义关键帧 */
         @keyframes carruning{
             0%{left:20px;top:0px;}
             25%{left:450px;top:0px;}
@@ -39,6 +39,34 @@
             75%{left:20px;top:290px;}
             100%{left:20px;top:0px;}
         }
+        .path_bg img:hover{
+            transform: rotate(90deg);
+        }
+
+        /* 示例1 */
+        @keyframes myfirst
+        { 
+            from {background: red;}
+            to{background: yellow;} 
+        }
+        /* 示例2 */
+        @keyframes mymove
+        {
+            0%{background:olive; left:0px;   top:100px;}
+            50%{background:teal; left:350px; top:100px;transform:rotate(-180deg);}
+            100% {background: aqua; left:600px; top:100px;}
+        }
+        /* 示例3 */
+        @keyframes myfirst
+        {  
+            0% {background: red; left:0px; top:0px;} 
+            25% {background: yellow; left:200px; top:0px;} 
+            50% {background: blue; left:200px; top:200px;} 
+            75% {background: green; left:0px; top:200px;}
+            100% {background: red; left:0px; top:0px;}
+        }
+        div { animation: myfirst   5s  infinite;  }
+
         .backgroundchange{
             width: 600px;
             height: 180px;
@@ -114,12 +142,12 @@
                 <div class="colorbox-2">CSS3 动画</div>
             </div>
         </div>
-        <div class="panel">
-            <h4>6-1-1 示例：跑动的汽车</h4>
-            <div class="path_bg">
-                <img src="./img/animation/car.png" alt="">
-            </div>
-        </div>
+<div class="panel">
+    <h4>6-1-1 示例：跑动的汽车</h4>
+    <div class="path_bg">
+        <img src="./img/animation/car.png" alt="">
+    </div>
+</div>
         <div class="panel">
             <h4>6-1-4 示例：变换且移动的背景</h4>
             <div class="backgroundchange areaheight">

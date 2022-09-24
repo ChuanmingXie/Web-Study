@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6-2 Transition 过渡特效</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        /* 应用于宽度属性的过渡效果，时长为 2 秒 */
+        .div1 {
+            width: 100px;
+            height: 100px;
+            background: yellow;
+            transition: width 2s;
+        }
+
+        /* 规定当鼠标指针悬浮于 <div> 元素上时 */
+        .div1:hover {
+            width: 300px;
+        }
+
+        /* 如需向多个样式添加过渡效果，请添加多个属性，由逗号隔开： */
+        .div2 {
+            width: 20px;
+            height: 20px;
+            overflow: hidden;
+            background: yellowgreen;
+            transition: width 2s, height 2s, transform 2s;
+        }
+
+        .div2:hover {
+            width: 200px;
+            height: 200px;
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <h2>6-2 简单过渡示例</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h4>1.作用于宽度之上</h4>
+            <div class="div1"> 鼠标至于此处 </div>
+        </div>
+        <div class="panel">
+            <h4>2. 作用于 宽,高,旋转变化之上</h4>
+            <div class="div2"> 鼠标至于此处 </div>
+        </div>
+    </div>
+</body>
+
+</html>
