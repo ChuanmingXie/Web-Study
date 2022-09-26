@@ -11,14 +11,17 @@
         img {
             width: 40px;
         }
-        .whilediv{
+
+        .whilediv {
             height: 230px;
         }
-        .picBorder{
+
+        .picBorder {
             width: 480px;
             margin: 10px auto;
         }
-        .picBorder img{
+
+        .picBorder img {
             width: 120px;
             margin: -2px auto;
         }
@@ -78,23 +81,25 @@
         </div>
         <div class="panel">
             <h4>7-5-3 for 循环</h4>
-            <div><p>
-                <script type="text/javascript">
-                    for (let index = 0; index < 7; index++) {
-                        // 次数注意条件为  j<=index, 实现 下三角
-                        for (let j = 1; j <= index; j++) {
-                            document.write("T T T ");
+            <div>
+                <p>
+                    <script type="text/javascript">
+                        for (let index = 0; index < 7; index++) {
+                            // 次数注意条件为  j<=index, 实现 下三角
+                            for (let j = 1; j <= index; j++) {
+                                document.write("T T T ");
+                            }
+                            document.write('<img src="img/flowControl/w' + (index % 9 + 1) + '.png" /><br/>')
                         }
-                        document.write('<img src="img/flowControl/w' + (index % 9 + 1) + '.png" /><br/>')
-                    }
-                    for (let i = 0; i < 7; i++) {
-                        for (let k = 6; k > i; k--) {
-                            document.write('T T T ');
+                        for (let i = 0; i < 7; i++) {
+                            for (let k = 6; k > i; k--) {
+                                document.write('T T T ');
+                            }
+                            document.write("<img src='img/flowControl/w" + (i % 9 + 1) + ".png' /><br />");
                         }
-                        document.write("<img src='img/flowControl/w" + (i % 9 + 1) + ".png' /><br />");
-                    }
-                </script>
-            </p></div>
+                    </script>
+                </p>
+            </div>
         </div>
         <div class="panel">
             <h4>7-5-2 do...while循环</h4>

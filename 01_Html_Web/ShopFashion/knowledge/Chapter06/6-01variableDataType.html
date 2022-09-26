@@ -11,12 +11,14 @@
             font:14px/44px Cambria,Microsoft YaHei;
         }
         p::first-line {
-            font-size: 14px;
+            font-size: 16px;
         }
 
         p::first-letter,
         label::first-letter {
-            font-size: 40px;
+            font-size: 16px;
+            font-family: 'Consolas';
+            color: lightcoral;
             cursor: pointer;
         }
     </style>
@@ -27,6 +29,8 @@
         x = '软件学院';
         alert(typeof (x));
     </script>
+
+    
 </head>
 
 <body>
@@ -40,23 +44,23 @@
     <p></p>
     <p></p>
 
-    <script type="text/javascript">
-        var a = '计算机科学与技术';
-        var b = 2 == 3;
-        var c = null;
-        var x = undefined;
-        var y = [1, 2, 3, '数组'];
-        var y1 = new Array("1", "2", "3", "4");
-        var z = 30;
+<script type="text/javascript">
+    var a = '计算机科学与技术';
+    var b = 2 == 3;
+    var c = null;
+    var x = undefined;
+    var y = [1, 2, 3, '数组'];
+    var y1 = new Array("1", "2", "3", "4");
+    var z = 30;
 
-        var plist = document.getElementsByTagName('p');
-        plist[1].innerText = 'a 的数据类型为：' + typeof a;
-        plist[2].innerText = 'b 的数据类型为：' + typeof b;
-        plist[3].innerText = 'c 的数据类型为：' + typeof c;
-        plist[4].innerText = 'x 的数据类型为：' + typeof x;
-        plist[5].innerText = 'y 的数据类型为：' + y1.constructor;
-        plist[6].innerText = 'z 的数据类型为：' + typeof z;
-    </script>
+    var plist = document.getElementsByTagName('p');
+    plist[1].innerText = '字符串'+a+'     的数据类型为：' + typeof a;
+    plist[2].innerText = '逻辑结果'+b+'     的数据类型为：' + typeof b;
+    plist[3].innerText = c+'     的数据类型为：' + typeof c;
+    plist[4].innerText = x+'     的数据类型为：' + typeof x;
+    plist[5].innerText = '数组和实例化后'+y+'     的数据类型为：' + y1.constructor;
+    plist[6].innerText = ''+数字+'     的数据类型为：' + typeof z;
+</script>
 </body>
 
 </html>
