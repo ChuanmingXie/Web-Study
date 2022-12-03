@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>1-1 jQuery 简单示例</title>
+    <script src="../Content/js/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            alert('hello world jQuery!');
+        })
+        $(function () {
+            alert('hello jQuery!')
+        })
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $('div').html("您好！欢迎来到jQuery的精彩世界！")
+        })
+    </script>
+    <script type="text/javascript">
+        function first() {
+            alert("js 函数1");
+        }
+        function second() {
+            alert("js 函数2");
+        }
+        function all() {
+            first();
+            second();
+        }
+
+        /* 
+        这样绑定只能使用第一个函数
+        window.onload=first;
+        window.onload=second;
+         */
+        window.onload = all;
+
+    </script>
+</head>
+
+<body>
+    <h1>1.1 引入jQuery 调用加载函数的简单示例</h1>
+    <div></div>
+</body>
+
+</html>

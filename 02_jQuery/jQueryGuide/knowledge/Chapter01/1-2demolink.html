@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>1-2 链式操作风格</title>
+    <style type="text/css">
+        .ifrme{border: solid 1px #888; font-size: 13px;}
+        .title{padding:6px;background-color: #EEE;}
+        .content{padding: 8px;font-size: 12px; text-align: center;display: none;}
+        .curcol{background-color: #ccc;}
+    </style>
+   
+    <script src="../Content/js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('.content').html('您好 ! 欢迎来到jQuery的世界');
+            $('.title').click(function(){
+                $(this).addClass('curcol')
+                .next('.content').css('display','block');
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>1-2 链式操作风格</h1>
+    <div class="title">标题</div>
+	<div class="content"></div>
+</body>
+</html>

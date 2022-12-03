@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-2 jQuery选择器的优点</title>
+    <script src="../../Content/jQuery/jquery-1.3.1.js"></script>
+    <script type="text/javascript">
+        /* 可以自动处理 出现空值 的情况 */
+        $('tt').css("color","red");
+    </script>
+</head>
+
+<body>
+    <h1>2-2 jQuery DOM选择器具备自动判空的能力</h1>
+    <div>test</div>
+    <script type="text/javascript">
+        /* 此处针对空值会报错，需要额外添加是否为空值的判断 */
+        // document.getElementById('tt').style.color = "red";
+        if (document.getElementById('tt')) {
+            document.getElementById('tt').style.color = "red";
+        }
+    </script>
+
+    <div>test</div>
+    <script type="text/javascript">
+        /* jQuery 选择器返回的是对象，需要使用length属性或者索引器获取具体元素 */
+        if($('tt').length>0){
+            //  dosomething
+        }
+        if($('tt')[0]){
+            // dosomething
+        }
+    </script>
+</body>
+
+</html>

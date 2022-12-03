@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>1-3 jQuery控制DOM对象</title>
+    <style type="text/css">
+        .iframe{border: solid 1px #888; font-size: 13px;}
+        .title{padding: 6px; background-color: #eee;}
+        .content{padding: 8px; font-size: 12px;}
+        .tip{padding: 8px; font-size: 12px; background-color: #eee;display:none;}
+        .txt{border: solid 1px #888;}
+        .btn{width: 60px; border: solid 1px #888;}
+        .width1{width: 260px;}
+    </style>
+    <script src="../Content/js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            /*
+            无论传统JS 还是jQuery 操作DOM元素，必须放在DOM节点加载之后进行:
+            1. 若在head内必须放在 $() 初始化事件种；JS需放在onload事件中
+            2. 若在元素之后，则可直接获取DOM并使用
+            */            
+            $("#submit").click(function (e) { 
+                e.preventDefault();
+                var name=$("#name").val();
+                var gender=$("#genderman").is(":checked")?"男":"女";
+                var marry=$("#isMarry").is(":checked")?"已婚":"未婚";
+                $("#tip").html(name+"<br>"+gender+"<br>"+marry+"<br>").css("display","block");
+            });
+        })
+    </script>
+    <script type="text/javascript">
+       /*  window.onload=function(){
+            // 传统JavaScript 的DOM 控制方式
+            submit=document.getElementById('submit');
+            submit.onclick=function(){
+                var name=document.getElementById('name').value;
+                var gender=(genderman.checked)?"男":"女";
+                var marry=(isMarry.checked)?"已婚":"未婚";
+                document.getElementById("tip").style.display="block";
+                document.getElementById('tip').innerHTML=name+"<br>"+gender+"<br>"+marry+"<br>";
+            } 
+        } */
+    </script>
+</head>
+<body>
+	<h1>1-3 jQuery操作DOM对象</h1>
+    <div class="inframe">
+        <div class="title">请填写如下信息</div>
+        <div class="content">
+            姓名：<input type="text" name="" id="name"><br>
+            性别：<input type="radio" name="gender" id="genderman" value="man"> 男
+                <input type="radio" name="gender" id="genderwoman" value="woman"> 女 <br>
+            婚否：<input type="checkbox" name="" id="isMarry"> <br>
+            <input type="button" id="submit" value="提交" class="btn"><br> <br>
+        </div>
+        <div id="tip"></div>
+    </div>
+    <script type="text/javascript">
+        /*  传统JavaScript 的DOM 控制方式
+        submit=document.getElementById('submit');
+        submit.onclick=function(){
+            var name=document.getElementById('name').value;
+            var gender=(genderman.checked)?"男":"女";
+            var marry=(isMarry.checked)?"已婚":"未婚";
+            document.getElementById("tip").style.display="block";
+            document.getElementById('tip').innerHTML=name+"<br>"+gender+"<br>"+marry+"<br>";
+        } */
+    </script>
+</body>
+</html>

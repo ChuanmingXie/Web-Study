@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-4 层次选择器</title>
+    <link rel="stylesheet" href="../../Content/css/common.css">
+    <style type="text/css">
+        h4~div,span,p{width: 140px;height: 140px;margin: 5px; background: #aeb7ed; border:solid 1px #000; float: left; font-size: 13px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
+        div.mini{width: 55px; height: 55px; float: left; background-color: #aeb7ed;font-size: 12px;}
+        div.hide{display: none;}
+        *{margin: 5px;}
+        input[type=button]{width: 200px;}
+    </style>
+    <script src="../../Content/jQuery/jquery-1.3.1.js"></script>
+    <script type="text/javascript">
+        $(function(){
+
+        })
+    </script>
+</head>
+<body>
+    <h1>2-4 层次选择器</h1>
+    <div class="panel_bg">
+        <div class="panel">
+            <h2>测试设置</h2>
+        </div>
+        <div class="panel">
+            <h2>测试选项</h2>
+            <div class="btnGroup">
+                <div type="button" id="btn1" value="选择测试区中所有的div元素"></div>
+                <div type="button" id="btn1" value="选择测试区的子元素中选择div元素"></div>
+                <div type="button" id="btn1" value="选择所有class为one的紧邻的div元素"></div>
+                <div type="button" id="btn1" value="选择id为two的元素后面的所有div兄弟元素"></div>
+            </div>
+        </div>
+        <div class="panel">
+            <h4>测试元素</h4>
+            <div class="one" id="one">
+                id为one，class为one的div
+                <div class="mini">class为mini的div</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

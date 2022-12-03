@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>1-4 jQuery控制CSS</title>
+    <style type="text/css">
+        .iframe{border: solid 1px #888; font-size: 13px;}
+        .defcol{padding: 6px; background-color: #EEE;}
+        .curcol{padding: 6px; background-color: #ccc; color: #FFF;}
+    </style>
+    <script src="../Content/js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $(".defcol").click(function (e) { 
+                e.preventDefault();
+                $(this).toggleClass("curcol");
+            });
+        })
+    </script>
+</head>
+<body>
+	<h1>1-4 jQuery控制CSS</h1>
+    <div class="iframe">
+        <div  class="defcol">标题</div>
+    </div>
+</body>
+</html>
