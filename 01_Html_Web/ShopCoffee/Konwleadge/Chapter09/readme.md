@@ -218,7 +218,7 @@
             不同的事件处理函数可以重复绑定。
 
 ##### 8.4.2 事件处理函数的执行顺序
-        如果给同一个事件绑定多个处理函数，先绑定的先执行。
+        如果给同一个事件绑定多个处理函数，**先绑定的先执行**。
             <script>
                 window.onload = function(){
                 var outA = document.getElementById("outA");
