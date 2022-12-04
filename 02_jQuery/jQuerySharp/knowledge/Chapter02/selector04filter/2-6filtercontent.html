@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-6 内容过滤选择器</title>
+    <link rel="stylesheet" href="../../Content/css/common.css">
+    <link rel="stylesheet" href="../css/partslector.css">
+    <script src="../../Content/jQuery/jquery-1.3.1.js"></script>
+    <script type="text/javascript">
+        $(function(){
+
+        })
+    </script>
+</head>
+<body>
+    <h1>2-6 内容过滤选择器</h1>
+    <div class="panel_bg">
+        <div class="panel">
+            <h2>测试设置</h2>
+            <input type="button" id="reset" value="重置样式">
+            <input type="checkbox" name="" id="isReset" checked>
+            <label for="isReset">每次测试前重置样式</label>
+        </div>
+        <div class="panel">
+            <h2>测试选项</h2>
+            <div class="btnGroup">
+
+            </div>
+        </div>
+        <div class="panel">
+            <h4>测试元素</h4>
+            <div class="one" id="one">
+                id为one,class为one的div
+                <div class="mini">class为mini的div</div>
+            </div>
+            <div class="one" id="two" title="test">
+                id为one，class为one，title为test的div
+                <div class="mini" title="other">class为mini，title为other的div</div>
+                <div class="mini" title="test">class为mini，title为 test 的div</div>
+            </div>
+            <div class="one">
+                <div class="mini">class为mini的div</div>
+                <div class="mini">class为mini的div</div>
+                <div class="mini">class为mini的div</div>
+                <div class="mini">class为mini的div</div>
+            </div>
+            <div class="one">
+                <div class="mini">class为mini的div</div>
+                <div class="mini">class为mini的div</div>
+                <div class="mini">class为mini的div</div>
+                <div class="mini" title="test">class为mini,title为test的div</div>
+            </div>
+            <div class="one" style="display: none">
+                Style的display属性为none
+            </div>
+            <div class="hide">class为hide的div</div>
+            <div>
+                包含input:hidden的div
+                <input type="hidden" size="8" name="">
+            </div>
+            <span id="move">执行动画的span</span>
+        </div>
+    </div>
+</body>
+</html>

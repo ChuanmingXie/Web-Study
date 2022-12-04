@@ -7,7 +7,7 @@
     <title>2-3 基础选择器</title>
     <link rel="stylesheet" href="../../Content/css/common.css">
     <style type="text/css">
-        h4~div,span,p{width: 140px;height: 140px;margin: 5px;background: #a9b1e3;border:solid 1px rgb(141, 201, 216); float: left; font-size: 17px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
+        h4~div,span,p{width: 140px;height: 140px;margin: 5px;background: #a9b1e3;border:solid 1px #8dc9d8; float: left; font-size: 17px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
         div.mini{width: 55px; height: 55px; background-color: #a9b1e3; font-size: 12px; float: left;}
         div.hide{display: none;}
         *{margin: 5px;}
@@ -24,7 +24,7 @@
             // 修改后的程序，需要在在重置元素时不破坏其他元素样式
             $("div").css("background","none")
             $("span").css("background","none")
-            $('div[class=none').css("display","none");
+            $('div[class=none]').css("display","none");
           });  
 
           /* 判断是否自动重置样式，并调用重置点击事件 */
@@ -75,7 +75,7 @@
     <div class="panel_bg">
         <div class="panel">
             <h2>测试设置</h2>
-            <button id="reset">手动充值页面元素</button>
+            <button id="reset">手动重置页面元素</button>
             <input type="checkbox" name="isReset" id="isReset" checked>
             <label for="isReset">点击下列按钮前重置界面</label>
         </div>
