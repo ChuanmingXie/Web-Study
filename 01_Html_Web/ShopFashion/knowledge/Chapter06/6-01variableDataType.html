@@ -7,15 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>6-01 数据类型</title>
     <style type="text/css">
-        body{
-            font:14px/44px Cambria,Microsoft YaHei;
-        }
-        p::first-line {
-            font-size: 16px;
-        }
-
-        p::first-letter,
-        label::first-letter {
+        body {font: 14px/44px Cambria, Microsoft YaHei;}
+        p::first-line {font-size: 16px;}
+        p::first-letter, label::first-letter {
             font-size: 16px;
             font-family: 'Consolas';
             color: lightcoral;
@@ -30,7 +24,33 @@
         alert(typeof (x));
     </script>
 
+<script type="text/javascript">
+    a;
+    alert(a);       //undefined
+    // var chuangming%=20; // 错误的标识符
+    // var true=10;    // 使用了关键字的错误标识符
+
+    var a=10;
+    var b=10.2;
+    var c=5e2;
+    var d=1.2e3;
+    var e=0xf;
+    var f=.2e3;
+    alert(a+"<br/>"+b+"<br/>"+c+"<br/>"+d+"<br/>"+e);
+
+    var str1="abc";
+    var str2="bac";
+    alert(str1==str2);
+
+    var m=null;
+    var n;      
+    alert(n);     // undefined
+    alert(m==n);  // ture
+    alert(m===n); // false
     
+    alert(String.abc);  //undefine
+</script>
+
 </head>
 
 <body>
@@ -44,23 +64,23 @@
     <p></p>
     <p></p>
 
-<script type="text/javascript">
-    var a = '计算机科学与技术';
-    var b = 2 == 3;
-    var c = null;
-    var x = undefined;
-    var y = [1, 2, 3, '数组'];
-    var y1 = new Array("1", "2", "3", "4");
-    var z = 30;
+    <script type="text/javascript">
+        var a = '计算机科学与技术';
+        var b = 2 == 3;
+        var c = null;
+        var x = undefined;
+        var y = [1, 2, 3, '数组'];
+        var y1 = new Array("1", "2", "3", "4");
+        var z = 30;
 
-    var plist = document.getElementsByTagName('p');
-    plist[1].innerText = '字符串'+a+'     的数据类型为：' + typeof a;
-    plist[2].innerText = '逻辑结果'+b+'     的数据类型为：' + typeof b;
-    plist[3].innerText = c+'     的数据类型为：' + typeof c;
-    plist[4].innerText = x+'     的数据类型为：' + typeof x;
-    plist[5].innerText = '数组和实例化后'+y+'     的数据类型为：' + y1.constructor;
-    plist[6].innerText = ''+数字+'     的数据类型为：' + typeof z;
-</script>
+        var plist = document.getElementsByTagName('p');
+        plist[1].innerText = '字符串' + a + '     的数据类型为：' + typeof a;
+        plist[2].innerText = '逻辑结果' + b + '     的数据类型为：' + typeof b;
+        plist[3].innerText = c + '     的数据类型为：' + typeof c;
+        plist[4].innerText = x + '     的数据类型为：' + typeof x;
+        plist[5].innerText = '数组和实例化后' + y + '     的数据类型为：' + y1.constructor;
+        plist[6].innerText = '' + 数字 + '     的数据类型为：' + typeof z;
+    </script>
 </body>
 
 </html>

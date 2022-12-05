@@ -7,6 +7,22 @@
     <title>6-02 变量作用域</title>
     <link rel="stylesheet" href="css/6-02variableScope.css">
     <script type="text/javascript" src="./js/6-02variableScope.js"></script>
+
+    <script type="text/javascript">
+        document.write(parseFloat("67red")+"<br />");    // 67
+        document.write(parseFloat("53.4")+"<br />");     // 53
+        document.write(parseFloat("0xC")+"<br />");      // 12 直接进行进制转换
+        document.write(parseFloat("chuan")+"<br />");    // NaN
+    </script>
+
+    <script type="text/javascript">
+        document.write(parseFloat("35wang")+"<br />");  // 35
+        document.write(parseFloat("0xa")+"<br />");     // 0
+        document.write(parseFloat("35.34")+"<br />");  // 35.34
+        document.write(parseFloat("35.34.244")+"<br />");  // 35.34
+        document.write(parseFloat("chuan")+"<br />");       // NaN
+    </script>
+
     <script type="text/javascript">
         var name2="此处为全局变量的信息";
         function testPart(){

@@ -151,6 +151,7 @@ function SortInsert(params) {
     return arrayInt.join(',');
 }
 
+// 杨辉三角
 function PrintPascalTriangle(params) {
     var array = new Array(9);
     for (let i = 0; i < array.length; i++) {

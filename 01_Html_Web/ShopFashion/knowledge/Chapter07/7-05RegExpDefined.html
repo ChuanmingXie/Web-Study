@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>7-05 正则对象的引用</title>
     <link rel="stylesheet" href="./css/7-01arrayDefined.css">
+
+    <script type="text/javascript">
+        /* 定义测试字符串 */
+        var str = "WebSite CloudWhales Build by chuanmingxie He's have Copyright at CloudWhales"
+        /*方式1： 使用字面量方式的正则匹配（其中i:忽略大小写，g:全局匹配，可以同时使用） */
+        var regExp = /cloud/ig;
+        var result = regExp.exec(str);
+        alert(result.index);
+
+        /*方式2： 使用new 对象 方式的正则匹配（其中i:忽略大小写，g:全局匹配，可以同时使用） */
+        var regExpn = new RegExp('cloud', 'ig');
+        var i = 0;
+        var resultStr = "";
+        //var resutln=regExpn.exec(str);
+        /* 想使用多次匹配需要通过 while 方式进行多次判空执行 */
+        while ((result = regExpn.exec(str)) != null) {
+            resultStr += "第" + (++i) + "次匹配" + result.index + "~" + regExpn.lastIndex + "\n";
+        }
+        /* 返回查找多次拼接的字符串 */
+        alert(resultStr);
+    </script>
+
+    <script type="text/javascript">
+        var str = "WebSite CloudWhales Build by chuanmingxie He's have Copyright at CloudWhales"
+        var regExp = /whales/ig;
+        var i = 0;
+        /* exec  相较于 test方法更为强大*/
+        while (regExp.test(str)) {
+            alert("匹配" + (++i) + "次" + "检测到最后下标" + regExp.lastIndex);
+        }
+    </script>
+
 </head>
+
 <body>
     <h2>7-05 正则对象的定义与创建 </h2>
     <div>
@@ -35,8 +69,9 @@
         <p>
             exec()方法：var result= RegExpObject.exec(string); <br>
             test()方法：RegExpObject.text(string); <br>
-            compile()方法：  <br>
+            compile()方法： <br>
         </p>
     </div>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,21 +8,47 @@
     <title>7-05 正则对象方法</title>
     <link rel="stylesheet" href="./css/7-01arrayDefined.css">
     <style>
-        div{
+        div {
             width: 1000px;
             height: 240px;
         }
     </style>
+    <script type="text/javascript">
+        /* 正则的神奇之处就在于组合的千变万化，如下面的三种方式 
+        ([.]{1,}) : 括号表达式[]代表限定必须为括号内的字符,只能为"." 表示1-多个 "." 组成字符串
+        ([\.]{1,})：与上面表达式一样
+        (.{1,}) : 表示任意超过1个的字符的字符串
+        ([0-9A-z-_]) 表示任意 数子、字母、中划、下划线组成的字符串
+        ([\dA-z\.])与上面表达式相同
+        */
+        var regExp = /^[0-9A-z_-]+@([\.]{1,})+\.(com|org|cn)$/;
+        alert(regExp.test("12chuan-_dce@..org"));       // true;
+
+        var regExp = /^[0-9A-z_-]+@(.{1,})+\.(com|org|cn)$/;
+        alert(regExp.test("12chuan-_dce@sina.org"));       // true;
+
+        var regExp = /^([0-9A-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+        alert(regExp.test("12chuan-_dce@sina.org"));       // true;
+
+        var regExp = /^[0-9A-z_-]+@([0-9A-z-_]{1,})+\.(com|org|cn)$/;
+        alert(regExp.test("12chuan-_dce@sina.org"));       // true;
+    </script>
 </head>
+
 <body>
     <h2>7-05 正则对象方法的使用</h2>
     <div>
         <span>综合测试结果：</span>
-        <p><script src="./js/7-05RegExpMethod.js"></script></p>
+        <p>
+            <script src="./js/7-05RegExpMethod.js"></script>
+        </p>
     </div>
     <div style="height:300px;">
         <span>正则与字符串：</span>
-        <p><script src="./js/7-05RegExpWithString.js"></script></p>
+        <p>
+            <script src="./js/7-05RegExpWithString.js"></script>
+        </p>
     </div>
 </body>
+
 </html>

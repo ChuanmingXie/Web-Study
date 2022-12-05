@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7-5-3 正则表达式常用通配符</title>
+
+    
+
+    <script type="text/javascript">
+        var str = "cloudwhalescloudwhales";
+        document.write(str + "<br/>");
+        var regArray = [/w+/, /w*/, /w?/, /d{1,7}/, /d{1}/, /d{0,}/, /^c/, /s$/];
+        // /?=cloud/, /?!cloud/ 检测不到，result.index 报错
+        for (let i = 0; i < regArray.length; i++) {
+            result = (regArray[i].exec(str));
+            alert(result.index + "~" + regArray[i].lastIndex);
+            document.write(result.toString() + ":" + result.index + "~" + regArray[i].lastIndex + "<br/>")
+        }
+    </script>
+
+    <script type="text/javascript">
+        str="cloudcloudcloud123whalesWhalesABC";
+        document.write(str + "<br/>");
+        var regArray=[/[cloud]/,/[^cloud]/,/[0-9]/,/[a-z]/,/[A-z]/,/[A-Z]/,/["whales"|"123"|"ABC"]/];
+        for (let i = 0; i < regArray.length; i++) {
+            result = (regArray[i].exec(str));
+            alert(result.index + "~" + regArray[i].lastIndex);
+            document.write(result.toString() + ":" + result.index + "~" + regArray[i].lastIndex + "<br/>")
+        }        
+    </script>
+
+    <script type="text/javascript">
+        /* 元字符的使用 */
+        var str = "WebSite CloudWhales Build by chuanmingxie" + "\r" +
+            " He's have Copyright at CloudWhales" + "\n" +
+            "This's WebSite use 5-10 days and can running 0x86 0x64 or Liunx 077";
+        document.write(str + "<br/>");
+        var regArray = new Array()
+        regArray[0] = /./;
+        regArray[1] = /\d/
+        regArray[2] = /\D/
+        regArray[3] = /\s/
+        regArray[4] = /\S/
+        regArray[5] = /\n/
+        regArray[6] = /\r/
+        // regArray[7] = /\077/   //检测不到，result.index 报错
+        // regArray[8] = /\x86/   //检测不到，result.index 报错
+
+        for (let i = 0; i < regArray.length; i++) {
+            // while((result=(regArray[i]).exec(str))!=null){
+            result = (regArray[i]).exec(str);
+            alert(result.index + "~" + regArray[i].lastIndex);
+            document.write(result.toString() + ":" + result.index + "~" + regArray[i].lastIndex + "<br/>")
+            // }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
