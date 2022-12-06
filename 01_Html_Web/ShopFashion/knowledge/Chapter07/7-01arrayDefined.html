@@ -7,6 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>7-01数组定义</title>
     <link rel="stylesheet" href="./css/7-01arrayDefined.css">
+    <script type="text/javascript">
+        /* 示例 */
+        var array = [];  //定义一个空数组
+        var goodTypes = new Array();		//定义一个空数组,并通过索引赋值
+        goodTypes[0] = "男装";
+        goodTypes[1] = "女装";
+        var foodTypes = new Array("卤菜", "川菜", "粤菜");
+        for (const key in foodTypes) {
+            if (Object.hasOwnProperty.call(foodTypes, key)) {
+                const element = foodTypes[key];
+                document.write(element);
+            }
+        }
+        var MovieTypes = new Array(8);
+        for (const key in MovieTypes) {
+            if (Object.hasOwnProperty.call(MovieTypes, key)) {
+                const element = MovieTypes[key];
+                document.write(element);
+            }
+        }
+        /* 简写 */
+        var foods = ["兰州拉面", "潍坊火烧", "背景烤鸭", "德州扒鸡"]; // 直接为数组赋值
+
+    </script>
 </head>
 
 <body>
@@ -94,10 +118,10 @@
         <span> 简写：</span>
         <p>
             var movies=[<br>
-                ['科幻','流浪地球',80],<br>
-                ['战争','长津湖',79],<br>
-                ['动漫','雄狮少年',6],<br>
-                ['戏剧','赵氏孤儿',100]<br>
+            ['科幻','流浪地球',80],<br>
+            ['战争','长津湖',79],<br>
+            ['动漫','雄狮少年',6],<br>
+            ['戏剧','赵氏孤儿',100]<br>
             ]
         </p>
     </div>

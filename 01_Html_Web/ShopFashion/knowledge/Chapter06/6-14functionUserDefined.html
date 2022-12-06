@@ -7,7 +7,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>6-14 用户自定义函数</title>
     <link rel="stylesheet" href="./css/6-12functiondefined.css">
+    <script type="text/javascript">
+        function fun1() {
+            var name = "cloudWhales";
+            function fun2(params) {
+                var age = 18;
+                alert(name);
+            }
+            // alert(age); // 报错！ 外部函数无法直接调用内部函数的局部变量
+            fun2();     // 在外部函数中调用局部函数
+        }
+        fun1();
+    </script>
 
+    <script type="text/javascript">
+        function fun1() {
+            var n = 1;
+            function fun2() {  //该函数访问了fun1中的变量 n 即为闭包函数
+                alert(n);
+            }
+            return fun2;
+        }
+        var f = fun1();
+        f();
+    </script>
+
+    <script type="text/javascript">
+        function show(name, age) {
+            alert("我是：" + name + ",今年：" + age);
+        }
+        window.show("cloudname", 22);
+        show.call(window, "cloud", 25);
+        show.apply(window, ["whales", 28]);
+    </script>
+
+    <script type="text/javascript">
+        function show(arr, func) {
+            func.call(window, arr);
+        }
+        show([1, 2, 3, 4], function (arr) { // 注意函数的实际执行在闭包中进行
+            for (i in arr) {
+                document.write(i + "  ");
+            }
+        })
+    </script>
 </head>
 
 <body>
@@ -27,24 +70,24 @@
             <div>
                 <p>
                     function funcName ([param]) {<br>
-                        statements;<br>
-                        [return expression]<br>
+                    statements;<br>
+                    [return expression]<br>
                     }<br>
                 </p>
                 <p>
-                   var x = function ([param]) { <br>
-                        statements;<br>
-                        [return expression]<br>
+                    var x = function ([param]) { <br>
+                    statements;<br>
+                    [return expression]<br>
                     }<br>
                 </p>
                 <p>
                     var funcName=new Function([param],statements)
                 </p>
                 <p>
-(function ([param]) {<br>
-    statements;<br>
-    [return expression]<br>
-})([params]);
+                    (function ([param]) {<br>
+                    statements;<br>
+                    [return expression]<br>
+                    })([params]);
                 </p>
             </div>
         </div>

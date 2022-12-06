@@ -133,27 +133,27 @@
         <div class="panel">
             <h4>杨辉三角 </h4>
             <div>
-                <script>
-                    /* 杨辉三角形 */
-                    var array = new Array(8);
-                    for (let i = 0; i < array.length; i++) {
-                        array[i] = new Array();
-                        for (let j = 0; j <= i; j++) {
-                            if (j == 0 || j == i) {
-                                array[i][j] = 1;
-                            } else {
-                                array[i][j] = parseInt(array[i - 1][j]) + parseInt(array[i - 1][j - 1]);
-                            }
-                        }
-                    }
+<script>
+    /* 杨辉三角形 */
+    var array = new Array(8);
+    for (let i = 0; i < array.length; i++) {
+        array[i] = new Array();
+        for (let j = 0; j <= i; j++) {
+            if (j == 0 || j == i) {
+                array[i][j] = 1;
+            } else {
+                array[i][j] = parseInt(array[i - 1][j]) + parseInt(array[i - 1][j - 1]);
+            }
+        }
+    }
 
-                    for (let i = 0; i < array.length; i++) {
-                        for (let j = 0; j < array[i].length; j++) {
-                            document.write(String(array[i][j]).padStart(2, '0') + "  ");
-                        }
-                        document.write("</br>");
-                    }
-                </script>
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array[i].length; j++) {
+            document.write(String(array[i][j]).padStart(2, '0') + "  ");
+        }
+        document.write("</br>");
+    }
+</script>
             </div>
         </div>
     </div>

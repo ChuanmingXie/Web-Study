@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>6-10 forIn循环</title>
+    <script type="text/javascript">
+        var array = new Array(5);
+        array[0] = 1;
+        array[1] = 3;
+        array[3] = "CloudWhales";
+        array[5] = true;     //JS 的数组长度是自定增长，是数组和集合的结合体
+        for (const index in array) {
+            // 注意这里和forin 拿到的是数组的下标，想要取到元素，还需要 使用索引器 array[index]
+            document.write("index:" + index + "\t" + array[index] + "<br>")
+        }
+    </script>
+
+    <script type="text/javascript">
+        /* JS虽然并不是面向对象 但是基于对象的，现在对浏览器对象BOM中的浏览器对象进行遍历  */
+        for (var properties in navigator) {
+            document.write("属性:" + properties + "\t,属性值：" + navigator[properties] + "<br/>")
+        }
+    </script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>

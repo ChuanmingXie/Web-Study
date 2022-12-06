@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="text/javascript">
+        {
+            for (let i = 0; i < 10; i++) {
+                document.write(i + "<br/>");
+                try {
+                    if (i == 5) {
+                        throw new Error("报错！");
+                    }
+                } catch (error) {
+                    document.write(i+error.message);
+                }
+            }
+        }
+    </script>
+
+    <script type="text/javascript">
+        try {
+            var age = 6;
+            if (age < 10) {
+                throw new Error("年龄太小！");
+            }
+        } catch (e) {
+            document.write("报错" + e.message + "<br/>");
+        } finally {
+            document.write("总会执行的finally代码块" + "<br/>");
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
