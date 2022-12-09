@@ -32,7 +32,8 @@ header + hr{
     text-align: center;
     float: left;
 }
-.blue_a{color: #024b88;text-decoration: underline;}
+.blue_a{color: #096bbb;text-decoration: underline;}
+.blue_a:hover{color: #085ea4;text-decoration: underline;}
 
 .content_left{
     width: 195px;
@@ -107,10 +108,19 @@ header + hr{
 .right_recommend{background: #5ea6eb; padding: 10px;}
 .right_recommend li{
     border-bottom: 1px dashed #FFF;
-    color: #FFF;
     height: 20px;
     font-weight: 500;
 }
+.right_recommend li a{
+    color: #FFF;
+    text-decoration: none;
+}
+.right_recommend li a:hover{
+    color: #085ea4;
+    text-decoration: underline;
+}
+
+
 .eat{height: 100px;}
 .hotel{height: 155px;}
 
