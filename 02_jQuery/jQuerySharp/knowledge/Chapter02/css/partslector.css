@@ -2,7 +2,7 @@
 
 *{margin: 5px;}
 
-h4~div {
+h4~div,span,p {
     height: 140px;
     width: 140px;
     font-size: 13px;
@@ -13,6 +13,8 @@ h4~div {
     float: left;
 }
 
-div.mini{width: 55px; height: 55px; background-color: none; font-size: 12px;}
+div.mini{width: 55px; height: 55px; background-color: none;
+     font-size: 12px; float: left;border: #9ee7c0 1px solid;
+}
 div.hide{display: none;}
 input[type=button]{width: 220px;}

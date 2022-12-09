@@ -17,10 +17,10 @@ hr{
 }
 
 .panel_bg{
-    display: inline-table;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: baseline;
     flex-wrap: wrap;
 }
 .panel_bg .panel{
@@ -76,7 +76,7 @@ audio{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    align-content: space-between;
+    align-content: flex-start;
     justify-content: center;
 }
 .btnGroup{width: 600px; height: 40px;}

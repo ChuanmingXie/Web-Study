@@ -1,131 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2-3 基础选择器</title>
-    <link rel="stylesheet" href="../../Content/css/common.css">
-    <style type="text/css">
-        h4~div,span,p{width: 140px;height: 140px;margin: 5px;background: #a9b1e3;border:solid 1px #8dc9d8; float: left; font-size: 17px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
-        div.mini{width: 55px; height: 55px; background-color: #a9b1e3; font-size: 12px; float: left;}
-        div.hide{display: none;}
-        *{margin: 5px;}
-        input[type=button]{width: 220px;}
-    </style>
-    <script src="../../Content/jQuery/jquery-1.3.1.js"></script>
-    <script type="text/javascript">
-        $(function(){
-          /* 点击重置页面元素样式 */
-          $("#reset").click(function (e) { 
-            e.preventDefault();
-            // $("*").remove("style");
-            // window.location.reload ();
-            // 修改后的程序，需要在在重置元素时不破坏其他元素样式
-            $("div").css("background","none")
-            $("span").css("background","none")
-            $('div[class=none]').css("display","none");
-          });  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2-3 基础选择器</title>
+  <link rel="stylesheet" href="../../Content/css/common.css">
+  <style type="text/css">
+    h4~div,
+    span,
+    p {
+      width: 140px;
+      height: 140px;
+      margin: 5px;
+      background: #a9b1e3;
+      border: solid 1px #8dc9d8;
+      float: left;
+      font-size: 17px;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
 
-          /* 判断是否自动重置样式，并调用重置点击事件 */
-          $("input[type=button]").click(function (e) { 
-            e.preventDefault();
-            if($("#isReset").is(":checked")){
-                $("#reset").click();
-            }
-          });
+    div.mini {
+      width: 55px;
+      height: 55px;
+      background-color: #a9b1e3;
+      font-size: 12px;
+      float: left;
+    }
 
-          /* 为id为move的元素添加动画 */
-          function animateIt() {
-            $("#move").slideToggle("slow",animateIt);
-          }
-          animateIt();
+    div.hide {
+      display: none;
+    }
 
-          /* 选中元素修改样式 */
-          $("#btn1").click(function (e) { 
-            e.preventDefault();
-            $("#one").css("background","#bfa");
-          });
+    * {
+      margin: 5px;
+    }
 
-          $("#btn2").click(function (e) { 
-            e.preventDefault();
-            $(".mini").css("background","#bfa");
-          });
-          
-          $("#btn3").click(function (e) { 
-            e.preventDefault();
-            $("div").css("background","#bfa");
-          });
+    input[type=button] {
+      width: 220px;
+    }
+  </style>
+  <script src="../../Content/jQuery/jquery-1.3.1.js"></script>
+  
+  <script type="text/javascript">
+    $(function () {
+      /* 点击重置页面元素样式 */
+      $("#reset").click(function (e) {
+        e.preventDefault();
+        // $("*").remove("style");
+        // window.location.reload ();
+        // 修改后的程序，需要在在重置元素时不破坏其他元素样式
+        $("div").css("background", "none")
+        $("span").css("background", "none")
+        $('div[class=none]').css("display", "none");
+      });
 
-          $("#btn4").click(function (e) { 
-            e.preventDefault();
-            $(".panel:gt(1)").css("background","#bfa");
-          });
+      /* 判断是否自动重置样式，并调用重置点击事件 */
+      $("input[type=button]").click(function (e) {
+        e.preventDefault();
+        if ($("#isReset").is(":checked")) {
+          $("#reset").click();
+        }
+      });
 
-          $("#btn5").click(function (e) { 
-            e.preventDefault();
-            $("span,#two").css("background","#bfa");
-          });
+      /* 为id为move的元素添加动画 */
+      function animateIt() {
+        $("#move").slideToggle("slow", animateIt);
+      }
+      animateIt();
 
-        })
-    </script>
+      /* 选择id为one的元素 */
+      $("#btn1").click(function (e) {
+        e.preventDefault();
+        $("#one").css("background", "#bfa");
+      });
+      //选择class为mini的元素
+      $("#btn2").click(function (e) {
+        e.preventDefault();
+        $(".mini").css("background", "#bfa");
+      });
+      // 选择所有div
+      $("#btn3").click(function (e) {
+        e.preventDefault();
+        $("div").css("background", "#bfa");
+      });
+      // 选择所有元素
+      $("#btn4").click(function (e) {
+        e.preventDefault();
+        $(".panel:gt(1)").css("background", "#bfa");
+      });
+      // 选择span和id为two的元素
+      $("#btn5").click(function (e) {
+        e.preventDefault();
+        $("span,#two").css("background", "#bfa");
+      });
+
+    })
+  </script>
 </head>
+
 <body>
-    <h1>2-3 基本选择器的使用</h1>
-    <div class="panel_bg">
-        <div class="panel">
-            <h2>测试设置</h2>
-            <button id="reset">手动重置页面元素</button>
-            <input type="checkbox" name="isReset" id="isReset" checked>
-            <label for="isReset">点击下列按钮前重置界面</label>
-        </div>
-        <br>
-        <div class="panel">
-            <h2>测试选项</h2>
-            <div class="btnGroup">
-                <input type="button" value="选择id为one的元素"  id="btn1">
-                <input type="button" value="选择class为mini的元素" id="btn2">
-                <input type="button" value="选择span和id为two的元素" id="btn5">
-                <input type="button" value="选择所有元素" id="btn4">
-                <input type="button" value="选择所有div" id="btn3">
-            </div>
-        </div>
-        <br>
-        <div class="panel">
-            <h4>测试元素</h4>
-            <div id="one" class="one">
-                id为one,class为one的div
-                <div class="mini"> class 为mini的div </div>
-            </div>
-            <div id="two" class="one" title="test">
-                id为two,class为one,title为test的div
-                <div class="mini" title="other">class为mini,title为other的div</div>
-                <div class="mini" title="test">class为mini,title为test的div</div>
-            </div>
-            <div class="one">
-                <div class="mini">class为mini的div</div>
-                <div class="mini">class为mini的div</div>
-                <div class="mini">class为mini的div</div>
-                <div class="mini">class为mini的div</div>
-            </div>
-            <div class="one">
-                <div class="mini">class为mini的div</div>
-                <div class="mini">class为mini的div</div>
-                <div class="mini">class为mini的div</div>
-                <div class="mini" title="test"> class为mini, title为test 的div</div>
-            </div>
-            <div class="none" style="display:none;">
-                style的display为none的div
-            </div>
-            <div class="hide">
-                class为hide的div
-            </div>
-            <div>
-                <input type="hidden" name="" size="8">
-                包含input:hidden的div
-            </div>
-            <span id="move">正在执行动画的span</span>
-        </div>
+  <h1>2-3 基本选择器的使用</h1>
+  <div class="panel_bg">
+    <div class="panel">
+      <h2>测试设置</h2>
+      <button id="reset">手动重置页面元素</button>
+      <input type="checkbox" name="isReset" id="isReset" checked>
+      <label for="isReset">点击下列按钮前重置界面</label>
     </div>
+    <br>
+    <div class="panel">
+      <h2>测试选项</h2>
+      <div class="btnGroup">
+        <input type="button" value="选择id为one的元素" id="btn1">
+        <input type="button" value="选择class为mini的元素" id="btn2">
+        <input type="button" value="选择span和id为two的元素" id="btn5">
+        <input type="button" value="选择所有元素" id="btn4">
+        <input type="button" value="选择所有div" id="btn3">
+      </div>
+    </div>
+    <br>
+    <div class="panel">
+      <h4>测试元素</h4>
+      <div id="one" class="one">
+        id为one,class为one的div
+        <div class="mini"> class 为mini的div </div>
+      </div>
+      <div id="two" class="one" title="test">
+        id为two,class为one,title为test的div
+        <div class="mini" title="other">class为mini,title为other的div</div>
+        <div class="mini" title="test">class为mini,title为test的div</div>
+      </div>
+      <div class="one">
+        <div class="mini">class为mini的div</div>
+        <div class="mini">class为mini的div</div>
+        <div class="mini">class为mini的div</div>
+        <div class="mini">class为mini的div</div>
+      </div>
+      <div class="one">
+        <div class="mini">class为mini的div</div>
+        <div class="mini">class为mini的div</div>
+        <div class="mini">class为mini的div</div>
+        <div class="mini" title="test"> class为mini, title为test 的div</div>
+      </div>
+      <div class="none" style="display:none;">
+        style的display为none的div
+      </div>
+      <div class="hide">
+        class为hide的div
+      </div>
+      <div>
+        <input type="hidden" name="" size="8">
+        包含input:hidden的div
+      </div>
+      <span id="move">正在执行动画的span</span>
+    </div>
+  </div>
 </body>
+
 </html>

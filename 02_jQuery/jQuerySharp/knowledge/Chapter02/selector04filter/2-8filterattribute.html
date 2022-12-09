@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,24 +10,78 @@
     <link rel="stylesheet" href="../css/partslector.css">
     <script src="../../Content/jQuery/jquery-1.3.1.js"></script>
     <script type="text/javascript">
-        $(function(){
+        $(function () {
+            function animateIt() {
+                $("#move").slideToggle("slow", animateIt);
+            }
+            animateIt();
+            $("#reset").click(function (e) {
+                e.preventDefault();
+                // $("*").removeAttr("style");
+                $("div").css("background", "none");
+                $("span").css("background", "none");
+                $(":header").css("background", "none");
+                $("div[class=none]").css("display", "none");
+            });
+            $("input[type=button]").click(function (e) {
+                e.preventDefault();
+                if ($("#isRest").val(":checked")) {
+                    $("#reset").click();
+                }
+            });
 
+            // 选择含有title属性的div
+            $("#btn1").click(function (e) {
+                e.preventDefault();
+                $("h4~div[title]").css("background", "#bfa");
+            });
+            // 选择属性值为test的div
+            $("#btn2").click(function (e) {
+                e.preventDefault();
+                $("h4~div[title='test']").css("background", "#bfa");
+            });
+            // 选择属性值不为test的div
+            $("#btn3").click(function (e) {
+                e.preventDefault();
+                $("h4~div[title!='test']").css("background", "#bfa");
+            });
+            // 选择属性值为te开始的div
+            $("#btn4").click(function (e) {
+                e.preventDefault();
+                $("h4~div[title^='te']").css("background", "#bfa");
+            });
+            // 选择属性值以er结束的div
+            $("#btn5").click(function (e) {
+                e.preventDefault();
+                $("h4~div[title$='er'],h4~div div[title$=er]").css("background", "#bfa");
+            });
+            // 选择属性值含有es的元素
+            $("#btn6").click(function (e) {
+                e.preventDefault();
+                $("h4~div[title*='es'], h4~div div[title*=es]").css("background", "#bfa");
+            });
         })
     </script>
 </head>
+
 <body>
     <h1>2-8 属性过滤选择器</h1>
     <div class="panel_bg">
         <div class="panel">
             <h2>测试设置</h2>
-            <input type="button" id="reset" value="重置样式">
+            <button type="button" id="reset">重置样式</button>
             <input type="checkbox" name="" id="isReset" checked>
             <label for="isReset">每次测试前重置样式</label>
         </div>
         <div class="panel">
             <h2>测试选项</h2>
             <div class="btnGroup">
-
+                <input type="button" id="btn1" value="选择含有title属性的div">
+                <input type="button" id="btn2" value="选择属性值为test的div">
+                <input type="button" id="btn3" value="选择属性值不为test的div">
+                <input type="button" id="btn4" value="选择属性值为te开始的div">
+                <input type="button" id="btn5" value="选择属性值以er结束的div">
+                <input type="button" id="btn6" value="选择属性值含有es的元素">
             </div>
         </div>
         <div class="panel">
@@ -44,7 +99,7 @@
                 <div class="mini">class为mini的div</div>
                 <div class="mini">class为mini的div</div>
                 <div class="mini">class为mini的div</div>
-                <div class="mini">class为mini的div</div>
+                <div class="mini"></div>
             </div>
             <div class="one">
                 <div class="mini">class为mini的div</div>
@@ -64,4 +119,5 @@
         </div>
     </div>
 </body>
+
 </html>

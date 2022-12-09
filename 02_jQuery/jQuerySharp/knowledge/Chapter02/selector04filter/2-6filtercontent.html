@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,24 +10,65 @@
     <link rel="stylesheet" href="../css/partslector.css">
     <script src="../../Content/jQuery/jquery-1.3.1.js"></script>
     <script type="text/javascript">
-        $(function(){
+        $(function () {
+            function animateIt() {
+                $("#move").slideToggle("slow", animateIt);
+            }
+            animateIt();
 
+            $("#reset").click(function (e) {
+                e.preventDefault();
+                $("div").css("background", "none");
+                $("span").css("background", "none");
+                $("div[class=none]").css("display", "none");
+            });
+
+            $("input[type=button]").click(function (e) {
+                e.preventDefault();
+                if ($("#isReset").is(":checked")) {
+                    $("#reset").click();
+                }
+            });
+            // 选择文本含有di的元素
+            $("#btn1").click(function (e) {
+                e.preventDefault();
+                $("h4~div:contains('di')").css("background", "#bfa");
+            });
+            // 选择不包含子元素或文本元素的空div
+            $("#btn2").click(function (e) {
+                e.preventDefault();
+                $("h4~div div:empty").css("background", "#bfa");
+            });
+            // 选择含有class为mini元素的div
+            $("#btn3").click(function (e) {
+                e.preventDefault();
+                $("h4~div:has(.mini)").css("background", "#bfa");
+            });
+            // 选择含有子文本(或文本元素)的div元素
+            $("#btn4").click(function (e) {
+                e.preventDefault();
+                $("h4~div:parent").css("background", "#bfa");
+            });
         })
     </script>
 </head>
+
 <body>
     <h1>2-6 内容过滤选择器</h1>
     <div class="panel_bg">
         <div class="panel">
             <h2>测试设置</h2>
-            <input type="button" id="reset" value="重置样式">
+            <button type="button" id="reset">重置样式</button>
             <input type="checkbox" name="" id="isReset" checked>
             <label for="isReset">每次测试前重置样式</label>
         </div>
         <div class="panel">
             <h2>测试选项</h2>
             <div class="btnGroup">
-
+                <input type="button" id="btn1" value="选择文本含有di的元素">
+                <input type="button" id="btn2" value="选择不包含子元素或文本元素的空div">
+                <input type="button" id="btn3" value="选择含有class为mini元素的div">
+                <input type="button" id="btn4" value="选择含有子文本(或文本元素)的div元素">
             </div>
         </div>
         <div class="panel">
@@ -44,7 +86,7 @@
                 <div class="mini">class为mini的div</div>
                 <div class="mini">class为mini的div</div>
                 <div class="mini">class为mini的div</div>
-                <div class="mini">class为mini的div</div>
+                <div class="mini"></div>
             </div>
             <div class="one">
                 <div class="mini">class为mini的div</div>
@@ -64,4 +106,5 @@
         </div>
     </div>
 </body>
+
 </html>

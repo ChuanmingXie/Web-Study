@@ -37,19 +37,22 @@
                 }
             });
 
-            // 层次选择器
+            // 选择测试区中所有的div元素
             $("#btn1").click(function (e) { 
                 e.preventDefault();
                 $("h4~div").css("background", "#bfa");
             });
+            // 选择测试区的子元素中选择div元素
             $("#btn2").click(function (e) { 
                 e.preventDefault();
                 $("h4~div > div").css("background", "#bfa");
             });
+            // 选择所有class为one的紧邻的div元素
             $("#btn3").click(function (e) { 
                 e.preventDefault();
                 $(".one+div").css("background", "#bfa");
             });
+            // 选择id为two的元素后面的所有div兄弟元素
             $("#btn4").click(function(e){
                 e.preventDefault();
                 $("#two~ div").css("background", "#bfa");
