@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9-10 事件流- 冒泡事件，捕获事件</title>
+    <script type="text/javascript">
+        /* 冒泡事件 */
+        function show(sText) {
+            var oDiv = document.getElementById("display");
+            oDiv.innerHTML += sText;
+        }
+
+        /* 捕获事件 */
+        window.onload = function () {
+            var mybody = document.getElementById('mybody');
+            var mydiv = document.getElementById('mydiv');
+            var myp = document.getElementById('myp');
+            mybody.addEventListener('click',function () { show('body <br>') },true);
+            mydiv.addEventListener('click',function () { show('div <br>') },true);
+            myp.addEventListener('click',function () { show('p <br>') },true);
+        }
+    </script>
+</head>
+
+<body id="mybody" onclick="show('body <br>')">
+    <div id="mydiv" onclick="show('div <br>');">
+        <p id="myp" onclick="show('p <br>');"> 点击我 </p>
+    </div>
+    <div id="display"></div>
+</body>
+
+</html>
