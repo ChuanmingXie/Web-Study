@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9-09 HTML事件</title>
+    <link rel="stylesheet" href="./css/democommon.css">
+</head>
+<body onload="alert('hello')" unonload="alert('bye bye')">
+    <form action="https://www.baidu.com" submit="alert('跳转')"> <!-- submit= "return false" -->
+        <input type="text" value="a" onfocus="alert('获取焦点')" onblur="alert('失去焦点')">
+        <input type="text" value="b" onchange="alert('改变文本框并失去焦点')" onselect="alert('文本被选中')">
+        <select name="" id="" onchange="alert('选项改变')">
+            <option value="beijing">北京</option>
+            <option value="shanghai">上海</option>
+            <option value="tianjin">天津</option>
+        </select>
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>
