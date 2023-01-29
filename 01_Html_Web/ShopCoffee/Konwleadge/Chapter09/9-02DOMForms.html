@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9-02 获取DOM种表单的相关控件</title>
+    <script type="text/javascript">
+        function operatorForm() {
+            var myform = document.forms[0];
+            alert(myform.action);
+            alert(myform.method);
+            alert(myform.target);
+            myform.submit();
+        }
+        function resetForm() {
+            var myform = document.forms[0];
+            myform.reset();
+        }
+    </script>
+</head>
+
+<body>
+    <form id="formID" action="https://www.baidu.com/" method="get"
+        target="_blank">
+        <input type="text" name="username" value="cloudwhales">
+        <input type="password" name="password" value="123456">
+
+        <select name="city" id="">
+            <option value="beijing">北京</option>
+            <option value="shanghai" selected>上海</option>
+        </select>
+        <br>
+
+        <input type="button" value="获取表单内第一个控件" onclick="alert(document.getElementById('formID').elements[0].value);">
+        <input type="button" value="获取表单内第二个控件"
+            onclick="alert(document.getElementById('formID').elements['password'].value);">
+        <input type="button" value="获取表单内第三个控件" onclick="alert(document.getElementById('formID').city.value);">
+        <input type="button" value="操作表单" onclick="operatorForm()">
+        <input type="button" value="重置表单" onclick="document.forms[0].reset()">
+    </form>
+</body>
+
+</html>

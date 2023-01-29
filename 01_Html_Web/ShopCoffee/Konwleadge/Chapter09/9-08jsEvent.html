@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9-08 标准DOM监听事件与IE监听事件的实现</title>
+
+    <script type="text/javascript">
+        var show = function () {
+            alert("hello standard DOM");
+        }
+        window.onload = function () {
+            var testAdd = document.getElementById('testAddEvent');
+            var testRemove = document.getElementById('testRemoveEvent');
+
+            var testAttach = document.getElementById('testAttach');
+            var testDatach = document.getElementById('testDetach');
+
+            testAdd.addEventListener("click", show, false);
+            /* 解除方式1 */
+            /* testRemove.addEventListener("click", function () {
+                 testAdd.removeEventListener("click", show, false)
+             }, false); */
+            /* 解除方式2 */
+            testRemove.onclick = function () {
+                testAdd.removeEventListener('click', show, false);
+            }
+
+            testAttach.attachEvent("click",show);
+            testDatach.onclick=function(){
+                testAttach.detachEvent("click",show);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h2>标准DOM 事件监听</h2>
+    <input type="button" value="测试事件绑定" id="testAddEvent">
+    <input type="button" value="测试事件解除" id="testRemoveEvent">
+
+    <h2>IE 事件监听</h2>
+    <input type="button" value="测试事件绑定" id="testAttach">
+    <input type="button" value="测试事件解除" id="testDetach">
+</body>
+
+</html>

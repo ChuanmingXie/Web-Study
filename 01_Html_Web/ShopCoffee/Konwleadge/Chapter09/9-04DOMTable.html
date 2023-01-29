@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9-04 操作表格元素及子元素</title>
+    <script type="text/javascript">
+        function updatecell(){
+            var rowindex=document.getElementById("row").value;
+            var cellindex=document.getElementById("cell").value;
+            var tb=document.getElementById('mytable');
+            /* 通过数组访问 */
+            // tb.rows[rowindex-1].cells[cellindex-1].innerHTML=document.getElementById('name').value;
+            /* 通过item 访问 */
+            tb.rows.item(rowindex-1).cells.item(cellindex-1).innerHTML=document.getElementById('name').value;
+        }
+    </script>
+</head>
+<body>
+    <table id="mytable" border="1">
+        <caption>表格示例</caption>
+        <tr><td>C</td><td>C++</td></tr>
+        <tr><td>LSD</td><td>ARM</td></tr>
+        <tr><td>J2EE</td><td>C#.net</td></tr>
+    </table>
+    <input type="button" value="表格标题" onclick="alert(document.getElementById('mytable').caption.innerHTML);">
+    <input type="button" value="第一行，第一列" onclick="alert(document.getElementById('mytable').rows[0].cells[0].innerHTML);">
+    <input type="button" value="第二行，第二列" onclick="alert(document.getElementById('mytable').rows[1].cells[1].innerHTML);">
+    <input type="button" value="第三行，第二列" onclick="alert(document.getElementById('mytable').rows[2].cells[1].innerHTML);">
+    <br> 修改表格元素内容：将<br>
+    第 <input type="text" id="row" size="2"> 行, 
+    第 <input type="text" id="cell" size="2"> 列,
+    改为： <input type="text" id="name" size="10"> <br>
+    <input type="button" value="确认修改" id="btnSet" onclick="updatecell()">
+</body>
+</html>

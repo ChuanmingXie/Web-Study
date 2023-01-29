@@ -37,7 +37,8 @@
             </script>
         </p>
     </div>
-    <h4>8-04-1 history</h4>
+
+    <h4>8-04-2 history</h4>
     <div id="btngroup">
         <a href="./8-01windowProperty.html" class="white">测试历史对象链接</a>
         <input type="button" value="forward()前进" onclick="historyForward()">
@@ -59,10 +60,26 @@
             history.back();
         }
     </script>
-    <h4>8-04-1 navigator</h4>
+
+    <h4>8-04-3 navigator</h4>
     <div id="btngroup">
         <input type="button" value="Brower" onclick="browserType()">
     </div>
+    <script type="text/javascript">
+        function browserType() {
+            var isExists;
+            var typeInfo = ['MSIE', 'Trident', 'Firefox', 'Chrome', 'safari', 'netscape'];
+            var explorer = navigator.userAgent;
+            alert(explorer);
+            for (let i = 0; i < typeInfo.length; i++) {
+                if (explorer.indexOf(typeInfo[i]) >= 0) {
+                    isExists = typeInfo[i];
+                    break;
+                }
+            }
+            alert('您的浏览器类型为：' + isExists);
+        }
+    </script>
 
     <div class="panel" style="float:left;">
         <span>地址栏导航信息</span>
@@ -74,24 +91,11 @@
                 document.write('浏览器平台：' + navigator.platform + "<br>");
                 document.write('浏览器Cookies启用：' + navigator.cookieEnabled + "<br>");
                 document.write('浏览器的用户代理报头：' + navigator.userAgent + "<br>");
-
-                function browserType() {
-                    var isExists;
-                    var typeInfo = ['MSIE', 'Trident', 'Firefox', 'Chrome', 'safari', 'netscape'];
-                    var explorer = navigator.userAgent;
-                    for (let i = 0; i < typeInfo.length; i++) {
-                        if (explorer.indexOf(typeInfo[i]) >= 0) {
-                            isExists = typeInfo[i];
-                            break;
-                        }
-                    }
-                    alert('您的浏览器类型为：' + isExists);
-                }
             </script>
         </p>
     </div>
     <script type="text/javascript">
-        alert(document.referrer.length);
+        alert("referrer.length:"+document.referrer.length);
     </script>
 </body>
 

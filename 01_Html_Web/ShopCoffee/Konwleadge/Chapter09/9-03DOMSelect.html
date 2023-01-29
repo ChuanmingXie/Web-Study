@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9-03 列表框、下拉菜单的访问</title>
+    <script type="text/javascript">
+        var s_city;
+        onload = function () {
+            s_city = document.getElementById('city');
+
+        }
+        var change = function (city) {
+            alert(city.text);
+        }
+    </script>
+</head>
+
+<body>
+    <select name="city" id="city" size="5">
+        <option value="beijing">北京</option>
+        <option value="shanghai" selected>上海</option>
+        <option value="tianjin">天津</option>
+        <option value="nanjing">南京</option>
+        <option value="shenzhen">深圳</option>
+        <option value="wuhan">武汉</option>
+    </select>
+    <br>
+    <input type="button" value="第一个城市" onclick="change(s_city.options[0]);">
+    <input type="button" value="上一个城市" onclick="change(s_city.options[s_city.selectedIndex-1]);">
+    <input type="button" value="下一个城市" onclick="change(s_city.options[s_city.selectedIndex+1]);">
+    <input type="button" value="最后一个城市" onclick="change(s_city.options[s_city.length-1]);">
+</body>
+
+</html>
