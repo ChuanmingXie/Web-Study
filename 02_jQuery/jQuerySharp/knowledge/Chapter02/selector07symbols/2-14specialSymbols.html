@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-14 jQuery特殊符号</title>
+    <link rel="stylesheet" href="../../Content/css/common.css">
+    <script src="../../Content/jQuery/jquery-1.3.1.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            /* 含有特殊字符的选择器对象,正常方式无法相关数据 */
+            var id_a=$('#id.a');
+            var id_b=$('#id#b');
+            var id_c=$('#id[1]');
+            /* 无法获取对象，自然输出为null(获取元素时不报错是因为jQuery的你不容错机制较高) */
+            console.log(id_a.html()+"\n"+id_b.html()+"\n"+id_c.html());
+            alert("正常方式处理：\n"+id_a.html()+"\n"+id_b.html()+"\n"+id_c.html());
+
+            /* 含有特殊字符的对象，使用选择器语法时需要为对象的特殊符号添加转义字符 */
+            var id_aa=$('#id\\.a');
+            var id_bb=$('#id\\#b');
+            var id_cc=$('#id\\[1\\]');
+            console.log(id_aa.html()+"\n"+id_bb.html()+"\n"+id_cc.html());
+            alert("添加转移字符:\n"+id_aa.html()+"\n"+id_bb.html()+"\n"+id_cc.html());
+
+            /* 空格添加与否影响选择器的选择结果 */
+            var div_test1=$(".test :hidden"); //4个 子元素选择器 选择 .test元素下的具备hidden属性的子元素
+            var div_test2=$(".test:hidden");  //3个 过滤选选择器 选择 具备hidden属性的test元素，
+            console.log("加空格选取个数:"+div_test1.length+"\n不加空格选取个数:"+div_test2.length)
+            alert("test :hidden携带空格时选取元素个数"+div_test1.length);
+            alert("test:hidden未携带空格时选择元素个数"+div_test2.length);
+        });
+    </script>
+</head>
+<body>
+    <h1>2-14 选择器中特殊符号的处理</h1>
+
+    <h2>1. 选择器中含有 .,#,{},[],() 等特殊符号</h2>
+    <div id="id.a">我的id是id.a</div>
+    <div id="id#b">我的id是id#b</div>
+    <div id="id[1]">我的id是id[1]</div>
+    
+    <h2>2. 选择器中含有 “” 或者 ’‘</h2>
+    <p>双引号里使用成对单引号包裹，单引号里使用成对双引号包裹，不可交叉混用</p>
+
+    <h2>3. 选择器中的空格问题</h2>
+    <div class="test">
+        <div style="display:none;">aa</div>
+        <div style="display:none;">aa</div>
+        <div style="display:none;">aa</div>
+        <div class="test" style="display: none;">dd</div>
+    </div>
+    <div class="test" style="display: none;">ee</div>
+    <div class="test" style="display: none;">ff</div>
+</body>
+</html>

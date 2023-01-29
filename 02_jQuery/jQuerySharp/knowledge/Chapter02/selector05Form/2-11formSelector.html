@@ -7,11 +7,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2-11 表单选择器</title>
     <script src="../../Content/jQuery/jquery-1.3.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var alltext = $("#form1 :text");
+            var allpassword = $("#form1 :password");
+            var allradio = $("#form1 :radio");
+            var allcheckbox = $("#form1 :checkbox");
+
+            /* 不设置 type 的button也是submit */
+            var allSubmit = $("#form1 :submit");
+            var allImage = $("#form1 :image");
+            var allReset = $("#form1 :reset");
+            /* 包括<input type=button> 和 <button></button> */
+            var allButton = $("#form1 :button");
+            var allFile = $("#form1 :file");
+            /* 包括<input type='hidden'> 和 <div style='display:none'>test</div> */
+            var allHidden = $("#form1 :hidden");
+            var allTextarea = $("#form1 textarea");
+
+            var allSelect = $("#form1 :select");
+            var select = $("#form1 select");
+
+            var allInput = $("#form1 :input");
+            var input = $("#form1 input");
+
+            $("div").append("页面中:<br/>")
+                .append(" 有(:text 元素)　　" + alltext.length + "个<br/>")
+                .append(" 有(:password 元素)　" + allpassword.length + "个<br/>")
+                .append(" 有(:radio 元素)　　　" + allradio.length + "个<br/>")
+                .append(" 有(:checkbox 元素)　" + allcheckbox.length + "个<br/>")
+                .append(" 有(:submit 元素)　　" + allSubmit.length + "个<br/>")
+                .append(" 有(:image 元素)　　" + allImage.length + "个<br/>")
+                .append(" 有(:reset 元素)　　" + allReset.length + "个<br/>")
+                .append(" 有(:button 元素)　" + allButton.length + "个<br/>")
+                .append(" 有(:file 元素)　　" + allFile.length + "个<br/>")
+                .append(" 有(:hidden 元素)　" + allHidden.length + "个<br/>")
+                .append(" 有(:textarea 元素)" + allTextarea.length + "个<br/>")
+                .append(" 有(select 元素)　" + select.length + "个<br/>")
+                .append(" 有(:select 元素)　" + allSelect.length + "个<br/>")
+                .append(" 有(input 元素)　 " + input.length + "个<br/>")
+                .append(" 有(:input 元素)　" + allInput.length + "个<br/>")
+                .css('color','red');
+        });
+    </script>
 </head>
 
 <body>
     <h1>2-11 表单选择器</h1>
-    <form action="#"  id="form1">
+    <form action="#" id="form1">
         <input type="button" value="Button" /><br>
         <input type="checkbox" name="c" />1
         <input type="checkbox" name="c" />2
@@ -33,6 +76,7 @@
         <textarea rows="" cols=""></textarea> <br>
         <button>Button</button> <br>
     </form>
+    <div></div>
 </body>
 
 </html>

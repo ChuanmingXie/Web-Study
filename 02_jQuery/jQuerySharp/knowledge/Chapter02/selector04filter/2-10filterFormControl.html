@@ -34,6 +34,34 @@
             });
 
 
+            $("#btn1").click(function (e) {
+                $('#form1 input:enabled').val('这里变化了');
+                return false;
+            });
+
+            $('#btn2').click(function (e) {
+                $("#form1 input:disabled").val('这里变化了');
+                return false;
+            });
+
+            /* 进入页面就调用 对多选框勾选状况的统计操作 */
+            countChecked();
+            $(':checkbox').click(countChecked);
+            function countChecked() {
+                var count = $("#input:checked").length;
+                $("div .tip").eq(0).html('<strong>有：' + count + '个元素被选中</strong>');
+            }
+
+            /* 使用：selected选择器，操作下来列表框 */
+            $("select").change(function (e) {
+                var citys = "";
+                $.each($('select :selected'), function (i, e) {
+                    //console.log(i + "e:" + $(e).text());
+                    citys += $(e).text() + ',';
+                });
+                $("div .tip").eq(1).html("<strong>你选中的城市为：" + citys + "</strong>");
+            }).trigger("change");
+            /* trigger(change) 意味：select加载后，马上执行onchange事件，也可以使用 .change()代替 */
         })
     </script>
 </head>
@@ -68,6 +96,7 @@
                     <input type="checkbox" name="newselector" id="" checked> test4
                     <input type="checkbox" name="newselector" id="">test5
                 </div>
+                <div class="tip"></div>
                 <br>
                 <div class="forminline">
                     下拉列表：
@@ -91,6 +120,7 @@
                         <option value="6">湖北</option>
                     </select>
                 </div>
+                <div class="tip"></div>
             </form>
 
             <span id="move">执行动画的span</span>
