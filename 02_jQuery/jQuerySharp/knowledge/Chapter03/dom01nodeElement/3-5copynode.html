@@ -5,8 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3-5 复制节点-clone</title>
+    <link rel="stylesheet" href="../../Content/css/common.css">
+    <script src="../../Content/jQuery/jquery-1.3.1.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#btnLightClone").click(function (e) { 
+                $("ul li").click(function (e) { 
+                    $(this).clone().appendTo("ul"); // 复制当前点击的节点，并将其添加到ul中
+                });                
+            });
+            $("#btnDeepClone").click(function (e) { 
+                $("ul li").click(function (e) { 
+                    $(this).clone(true).appendTo("ul"); // 复制当前节点，并且使其具备相同事件
+                });                
+            });
+        })
+    </script>
 </head>
 <body>
-    
+    <h1>3-5 复制节点</h1>
+    <p title="请选择你喜欢的水果">你最喜欢的水果是</p>
+    <div id="test">
+        <ul>
+            <li title="fruit1">苹果</li>
+            <li title="fruit2">橘子</li>
+            <li title="fruit3">菠萝</li>
+        </ul>
+    </div>
+    <input type="button" id="btnLightClone" value="浅拷贝">
+    <input type="button" id="btnDeepClone" value="深拷贝">
 </body>
 </html>

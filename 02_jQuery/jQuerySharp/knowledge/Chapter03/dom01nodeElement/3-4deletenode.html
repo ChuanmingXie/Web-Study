@@ -5,8 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3-4 删除节点-remove|empty</title>
+    <link rel="stylesheet" href="../../Content/css/common.css">
+    <script src="../../Content/jQuery/jquery-1.3.1.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#btnRemove").click(function (e) { 
+                // 获取第二个li元素节点后，将它从网页中删除
+                $("ul li:eq(1)").remove();
+                // 将li元素中属性title不等于“fruit3”的元素删除
+                $("ul li").remove("li[title!='fruit3']");
+            });
+
+            $("#btnAgain").click(function (e) {
+                /* 
+                remove删除后页面上有直观表现，但 remove 方法具有返回值，
+                可以直接将返回值赋值给一个变量，即在jQuery对象中并未删除，
+                可以重新获取并添加到指定位置，是一种交换元素的方式
+                */
+               var li=$("ul li:eq(1)").remove();
+               alert(li.text());
+               li.appendTo("ul");
+            });
+            
+            $("#btnEmpty").click(function (e) {
+                $("ul li:eq(1)").empty();
+            });
+        })
+    </script>
 </head>
 <body>
-    
+    <h1>3-4 删除节点</h1>
+    <div id="test">
+        <ul>
+            <li title="fruit1">苹果</li>
+            <li title="fruit2">橘子</li>
+            <li title="fruit3">香蕉</li>
+        </ul>
+    </div>
+    <input type="button" id="btnRemove" value="remove">
+    <input type="button" id="btnAgain" value="appendAgain">
+    <input type="button" id="btnEmpty" value="empty">
 </body>
 </html>

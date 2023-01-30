@@ -5,8 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3-2 创建节点-元素|属性|文本</title>
+    <link rel="stylesheet" href="../../Content/css/common.css">
+    <script src="../../Content/jQuery/jquery-1.3.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#nodeElement").click(function (e) { 
+                /* 创建元素节点 */
+                var li_1=$("<li></li>");  // 创建li
+                var li_2=$("<li></li>");  // 创建li
+                $('div > ul').append(li_1).append(li_2);    // 链式法则追加li元素
+                $('div > ul').append(li_1).append(li_2);    // 重复添加li元素
+            });
+            $("#nodeText").click(function (e) { 
+                /* 创建文本节点 */
+                var li_3=$("<li>苹果</li>");
+                $('ul').append(li_3);
+                $('#test ul').append("<li>香蕉</li>");
+                $('#test ul').append("<li>菠萝</li>");
+            });
+            $("#nodeAttribute").click(function (e) { 
+                /* 创建属性节点 */
+                var li_4=$("<li title='juzi'>橘子</li>");
+                var li_5=$("<li title='youtao'>油桃</li>");
+                $('ul').prepend(li_4).append(li_5);
+            });
+        })
+    </script>
 </head>
 <body>
-    
+    <h1>3-2 创建节点</h1>
+    <div id="test">
+        <ul></ul>
+    </div>
+    <input type="button" id="nodeElement" value="创建元素节点">
+    <input type="button" id="nodeText" value="创建文本节点">
+    <input type="button" id="nodeAttribute" value="创建属性节点">
 </body>
 </html>
