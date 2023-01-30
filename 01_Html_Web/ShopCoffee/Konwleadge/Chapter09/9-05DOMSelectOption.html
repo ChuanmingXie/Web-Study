@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9-05 DOM操作列表框和下拉列表选项</title>
+    <script type="text/javascript">
+        function createSelect(){
+            var select=document.createElement('select');
+            for (let i = 0; i < 10; i++) {
+                var optionItem=new Option("新增的选项"+i,i);
+                select.options[i]=optionItem;
+            }
+            select.size=5;
+            select.id='city';
+            var test= document.getElementById('test');
+            test.insertBefore(select,test.firstChild.nextSibling);
+        }
+        
+        onload=function(){
+            var btnCreate=document.getElementById('btnCreate');
+            var btnDelete=document.getElementById('btnDelete');
+            var btnDeleteAll=document.getElementById('btnDeleteAll');
+
+            btnDelete.onclick=createSelect;
+            btnCreate.onclick=createSelect;
+            btnDeleteAll.onclick=createSelect;
+        }
+    </script>
+</head>
+<body id="test">
+    <br>
+    <input type="button" id="btnCreate" value="创建一组城市列表">
+    <input type="button" id="btnDelete" value="逐条删除列表项">
+    <input type="button" id="btnDeleteAll" value="一次性清空全部列表项">
+</body>
+</html>

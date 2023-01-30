@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9-05 DOM操作节点- 创建|复制|删除|添加</title>
+    <script type="text/javascript">
+        function creatNode () {
+            var city= document.getElementById("city");
+            var elementli=document.createElement("li");
+            elementli.innerHTML="南京";
+
+            /* 将节点插入到父元素之后 */
+            city.appendChild(elementli);
+            /* 将节点插入到父元素第一个子元素之后 */
+            //city.insertBefore(elementli,city.firstChild.nextSibling);
+            /* 将父元素第一个子元素的节点替换为 elementli */
+            //city.replaceChild(elementli,city.firstChild.nextSibling);
+        }
+        function insertNode(){
+            var city=document.getElementById('city');
+            var elementli=document.createElement("li");
+            elementli.innerHTML="长安";
+            
+            /* 将节点插入到父元素第一个子元素之后 */
+            city.insertBefore(elementli,city.firstChild.nextSibling);
+        }
+        
+        function repalceNode() {
+            var city=document.getElementById('city');
+            var elementli=document.createElement("li");
+            elementli.innerHTML="广阳";
+            /* 将最后一个节点替换为 elementli */
+            city.replaceChild(elementli,city.lastChild.previousSibling);
+            /* 将第一个节点替换为elementli */
+            //city.replaceChild(elementli,city.firstChild.nextSibling);
+        }
+        
+        function copyNode() {
+            var city=document.getElementById('city');
+            /* false: 浅复制一个节点，不会复制节点的文本内容;
+                true :深复制一个节点
+             */
+            var elementli=city.firstChild.nextSibling.cloneNode(true);
+            city.appendChild(elementli);
+        }
+
+        function deleteNode(){
+            var city=document.getElementById('city');
+            /* 删除第一个节点 */
+            city.removeChild(city.firstChild.nextSibling);
+        }
+        onload=function(){
+            var btnCreate= document.getElementById('btnCreate');
+            var btnInsert= document.getElementById('btnInsert');
+            var btnReplace= document.getElementById('btnReplace');
+            var btnCopy= document.getElementById('btnCopy');
+            var btnDelete= document.getElementById('btnDelete');
+            
+            btnCreate.onclick=creatNode;
+            btnInsert.onclick=insertNode;
+            btnReplace.onclick=repalceNode;
+            btnCopy.onclick=copyNode;
+            btnDelete.onclick=deleteNode;
+        }
+    
+    </script>
+</head>
+<body>
+    <ul id="city">
+        <li>北京</li>
+        <li>上海</li>
+    </ul>
+
+    <input type="button" id="btnCreate" value="创建节点" >
+    <input type="button" id="btnInsert" value="插入节点" >
+    <input type="button" id="btnReplace" value="替换节点" >
+    <input type="button" id="btnCopy" value="复制节点">
+    <input type="button" id="btnDelete" value="删除节点">
+</body>
+</html>
