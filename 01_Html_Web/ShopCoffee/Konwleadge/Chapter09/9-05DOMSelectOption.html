@@ -17,15 +17,30 @@
             var test= document.getElementById('test');
             test.insertBefore(select,test.firstChild.nextSibling);
         }
-        
+
+        function deleteOption() {
+            var select=document.getElementById('city');
+            if(select.options.length>0){
+                select.remove(select.options.length-1);
+                /* 删除选项方式2 */
+                // select.optionItem[city.options.length-1]=null;
+            }
+        }
+        function deleteAllOptions(){
+            var select=document.getElementById('city');
+            if(select.options.length>0){
+                /* 删除全部选项 */
+                select.options.length=0;
+            }
+        }
         onload=function(){
             var btnCreate=document.getElementById('btnCreate');
             var btnDelete=document.getElementById('btnDelete');
             var btnDeleteAll=document.getElementById('btnDeleteAll');
 
-            btnDelete.onclick=createSelect;
             btnCreate.onclick=createSelect;
-            btnDeleteAll.onclick=createSelect;
+            btnDelete.onclick=deleteOption;
+            btnDeleteAll.onclick=deleteAllOptions;
         }
     </script>
 </head>

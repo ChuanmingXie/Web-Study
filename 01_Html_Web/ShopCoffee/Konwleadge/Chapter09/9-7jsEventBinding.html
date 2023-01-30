@@ -7,6 +7,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>咖啡商城</title>
     <link rel="stylesheet" href="./css/democommon.css">
+    <script type="text/javascript">
+        function show(params) {
+            var id = params.id;
+            alert(id);
+        }
+        function test1(){
+            alert("绑定HTML元素");
+        }
+        function test2(){
+            alert("绑定DOM元素");
+        }
+        function bandingAll(){
+            var plist = document.getElementsByName('funcbinding3');
+            for (let i = 0; i < plist.length; i++) {
+                plist[i].onclick = function (event) {
+                    e = event.target || event.srcElement;
+                    alert((i++) + ":" + e.id);
+                }
+            }
+        }
+        function bandingbyDOM(){
+            var spanlist = document.getElementsByTagName('span');
+            for (let i = 0; i < spanlist.length; i++) {
+                const element = spanlist[i];
+                element.addEventListener('click', function show() {
+                    alert(i + ":" + this.innerText);
+                }, true);
+            }
+        }
+        // function show(event, i) {
+        //     var e = event.target || event.srcElement;
+        //     alert(i + ":" + event.innerText);
+        // }
+
+        onload=function(){
+            document.getElementById('test2').onclick=test2;
+            bandingAll();
+            bandingbyDOM();
+        }
+    </script>
 </head>
 <style>
     .group {
@@ -31,17 +71,9 @@
         background: #1F638F;
     }
 
-    span>span {
-        width: 165px
-    }
-
-    span>span>span {
-        width: 145px;
-    }
-
-    span>span>span>span {
-        width: 125px;
-    }
+    span>span { width: 165px}
+    span>span>span { width: 145px;}
+    span>span>span>span { width: 125px;}
 </style>
 
 <body>
@@ -50,17 +82,14 @@
         <div class="panel">
             <h4>1. 行内事件绑定</h4>
             <p class="white" id="funcbinding1" onclick="var id=this.id;alert(id); return false;">事件绑定方式1</p>
+            <a href="https://www.baidu.com" onclick="return false">点击测试</a>
+            <input type="button" value="测试1" id="test1" onclick="test1()">
+            <button type="button" id="test2"><b> 测试2 </b></button>
         </div>
 
         <div class="panel">
             <h4>2. 行内事件绑定函数名</h4>
             <p class="white" id="funcbinding2" onclick="show(this)">事件绑定方式2</p>
-            <script>
-                function show(params) {
-                    var id = params.id;
-                    alert(id);
-                }
-            </script>
         </div>
 
         <div class="panel">
@@ -71,17 +100,6 @@
                 <p class="white" id="funcbinding3" name="funcbinding3">事件绑定方式3-3</p>
                 <p class="white" id="funcbinding3" name="funcbinding3">事件绑定方式3-4</p>
             </div>
-            <script>
-                // window.onload = function () {
-                var plist = document.getElementsByName('funcbinding3');
-                for (let i = 0; i < plist.length; i++) {
-                    plist[i].onclick = function (event) {
-                        e = event.target || event.srcElement;
-                        alert((i++) + ":" + e.id);
-                    }
-                }
-                // }
-            </script>
         </div>
 
         <div class="panel">
@@ -102,21 +120,6 @@
                     </span>
                 </span>
             </div>
-            <script>
-                window.onload = function () {
-                    var spanlist = document.getElementsByTagName('span');
-                    for (let i = 0; i < spanlist.length; i++) {
-                        const element = spanlist[i];
-                        element.addEventListener('click', function show() {
-                            alert(i + ":" + this.innerText);
-                        }, true);
-                    }
-                }
-                // function show(event, i) {
-                //     var e = event.target || event.srcElement;
-                //     alert(i + ":" + event.innerText);
-                // }
-            </script>
         </div>
 
         <div class="panel">
