@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9-11 事件属性及兼容性</title>
+    <script type="text/javascript">
+        function headle(event) {
+            if(window.event){
+                event=window.event;
+            }
+            var target;
+            if(event.srcElement){
+                target=event.srcElement;
+            }else{
+                target=event.target;
+            }
+            alert(target.tagName);
+        }
+        onload=function(){
+            var img=document.getElementsByTagName("img")[0];
+            img.onclick=headle;
+        }
+    </script>
+</head>
+
+<body>
+    <img src="./img/cloudwhales.png" alt="">
+</body>
+
+</html>
