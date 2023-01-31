@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3-10 文本节点-获取|设置文本</title>
+    <link rel="stylesheet" href="../../Content/css/common.css">
+    <script src="../../Content/jQuery/jquery-1.3.1.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("input:eq(0)").click(function (e) { 
+                var pHtml=$("p").html();
+                alert(pHtml);
+            });
+            $("input:eq(1)").click(function (e) { 
+                var pText=$("p").text();
+                alert(pText);
+            });
+            $("input:eq(2)").click(function (e) { 
+                $("p").html("<strong>重新设置的strong Html元素</strong>");
+            });
+            $("input:eq(3)").click(function (e) { 
+                $("p").text("重新设置的文本内容");
+            });
+            $("input:eq(4)").click(function (e) { 
+                var ulAllHtml=$("ul").html();
+                var ulfirstHtml=$("ul li").html();
+                alert("ul 得到："+ulAllHtml+"\nul li 得到:"+ulfirstHtml);
+            });
+            $("input:eq(5)").click(function (e) { 
+                /* 此处会直接输出 多个 li 内的文本 */
+                var ulText=$("ul li").text();
+                alert(ulText);
+            });
+            $("input:eq(6)").click(function (e) { 
+                var thisVal=$(this).val();
+                alert(thisVal);
+            });
+            $("input:eq(7)").click(function (e) { 
+                $(this).val("点击触发");
+            });
+            
+        })
+    </script>
+</head>
+<body>
+    <h1>3-10 文本节点的获取和设置</h1>
+    <p title="请选择你最喜欢的水果">你最喜欢的水果是？</p>
+    <div id="test">
+        <ul>
+            <li title="fruit1">苹果</li>
+            <li title="fruit2">橘子</li>
+            <li title="fruit3">香蕉</li>
+        </ul>
+    </div>
+    <hr>
+    <input type="button" value="获取p元素的HTML代码">
+    <input type="button" value="获取p元素的文本">
+    
+    <input type="button" value="设置p元素的HTML代码">
+    <input type="button" value="设置p元素的文本">
+
+    <input type="button" value="获取li元素的HTML代码">
+    <input type="button" value="获取li元素的内容">
+
+    <input type="button" value="获取按钮的值">
+    <input type="button" value="设置按钮的值">
+</body>
+</html>

@@ -5,8 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3-8 节点属性-设置|获取属性</title>
+    <link rel="stylesheet" href="../../Content/css/common.css">
+    <script src="../../Content/jQuery/jquery-1.3.1.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#btnGetAttr").click(function (e) { 
+               var attr0= $("p").attr("title");
+               alert(attr0);
+            });
+            $("#btnSetAttr").click(function (e) { 
+                $("p").attr("title","新修改的属性");
+            });
+            $("#btnRemoveAttr").click(function (e) { 
+                $("p").removeAttr("title");
+            });
+        })
+    </script>
 </head>
 <body>
-    
+    <h1>3-8 节点属性</h1>
+    <p title="选择你喜欢的水果">你喜欢的水果是？</p>
+    <div id="test">
+        <ul>
+            <li title="fruit1">苹果</li>
+            <li title="fruit2">橘子</li>
+            <li title="fruit3">香蕉</li>
+        </ul>
+    </div>
+    <hr>
+    <input type="button" id="btnGetAttr" value="获取元素节点属性">
+    <input type="button" id="btnSetAttr" value="重新设置元素节点属性">
+    <input type="button" id="btnRemoveAttr" value="删除元素节点属性">
 </body>
 </html>

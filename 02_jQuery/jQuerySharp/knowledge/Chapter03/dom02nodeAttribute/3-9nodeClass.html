@@ -5,8 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3-9 节点样式-attr|addClass|removeClass|toggleClass|haClass|is</title>
+    <style type="text/css">
+        .hight{font-weight: bold;color: red;}
+        .light{font-style: italic;color: blue;}
+    </style>
+    <link rel="stylesheet" href="../../Content/css/common.css">
+    <script src="../../Content/jQuery/jquery-1.3.1.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("input:eq(0)").click(function (e) { 
+                var attrStr="";
+                for (let i = 0; i < $("ul li").length; i++) {
+                    var temp=$("ul li:eq("+i+")").attr("title");
+                    console.log(temp);
+                    attrStr +=temp+"\n";
+                };
+                alert(attrStr);             
+            });
+
+            $("input:eq(1)").click(function (e) { 
+                $("ul li:even").attr("class","hight");
+            });
+            $("input:eq(2)").click(function (e) { 
+                $("ul li:even").addClass("light");                
+            });
+            $("input:eq(3)").click(function (e) {
+                $("ul li:even").removeClass();
+            });
+            $("input:eq(4)").click(function (e) { 
+                $("ul li:even").removeClass("hight");            
+            });
+            $("input:eq(5)").click(function (e) { 
+                $("ul li:even").toggleClass("light");
+            });
+            $("input:eq(6)").click(function (e) { 
+                var isExit1=$("ul li:even").hasClass("light");
+                var isExit2=$("ul li:even").is(".light");    
+                /* 注意 is 方式的类名要加 . */
+                alert("hasCalss 方式："+isExit1+"\nis 方式："+isExit2)         
+            });
+            
+        })
+    </script>
 </head>
 <body>
-    
+    <h1>3-9 元素节点样式</h1>
+    <p class="myclass" title="请选择您最喜欢的水果">你最喜欢的水果</p>
+    <div id="test">
+        <ul>
+            <li title="fruit1">苹果</li>
+            <li title="fruit2">橘子</li>
+            <li title="fruit3">香蕉</li>
+        </ul>
+    </div>
+    <hr>
+    <input type="button" value="输出Class类名">
+    <input type="button" value="设置Class">
+    <input type="button" value="追加Class">
+    <input type="button" value="删除全部Class">
+    <input type="button" value="删除指定Class">
+    <input type="button" value="重复切换Class">
+    <input type="button" value="判断元素节点是否存在Class">
 </body>
 </html>

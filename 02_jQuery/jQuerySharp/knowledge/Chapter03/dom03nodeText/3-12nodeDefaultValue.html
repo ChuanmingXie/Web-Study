@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3-12 文本框默认值-defaultValue</title>
+    <link rel="stylesheet" href="../../Content/css/common.css">
+    <script src="../../Content/jQuery/jquery-1.3.1.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#email").focus(function (e) { 
+                var text_value=$(this).val();
+                if(text_value==this.defaultValue){
+                    $(this).val("");
+                }
+            });
+            $("#email").blur(function (e) { 
+                var text_value=$(this).val();
+                if(text_value==""){
+                    $(this).val(this.defaultValue);
+                }
+            });
+            $("#password").focus(function (e) { 
+                var text_value=$(this).val();
+                if(text_value==this.defaultValue){
+                    $(this).val("");
+                }
+            });
+            $("#password").blur(function (e) { 
+                var text_value=$(this).val();
+                if(text_value==""){
+                    $(this).val(this.defaultValue);
+                }
+            });
+            
+        })
+    </script>
+</head>
+<body>
+    <h1>3-12 文本框默认值的使用</h1>
+    <input type="email" name="" id="email" value="请输入邮箱地址"> <br> <br>
+    <input type="password" name="" id="password" value="请输入邮箱密码"> <br> <br>
+    <input type="button" value="登录"> 
+</body>
+</html>

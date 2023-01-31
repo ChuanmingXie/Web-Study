@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3-13 下拉框,列表框,复选框,单选框值的设置和获取</title>
+    <link rel="stylesheet" href="../../Content/css/common.css">
+    <script src="../../Content/jQuery/jquery-1.3.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("input[type=button]:eq(0)").click(function (e) { 
+                $("#single").val("selected02");
+            });
+            $("input[type=button]:eq(1)").click(function (e) { 
+                $("#multiple").val(["selected02","selected03"]);
+            });
+            $("input[type=button]:eq(2)").click(function (e) { 
+                $(":checkbox").val(["checked01","checked03"]);
+                $(":radio").val(["radio02"]);
+            });
+        })
+    </script>
+</head>
+<body>
+    <h1>3-13 下拉框,列表框,复选框,单选框值-val方式</h1>
+    单项赛：
+    <select name="" id="single">
+        <option value="selected01">1号选手</option>
+        <option value="selected02">2号选手</option>
+        <option value="selected03">3号选手</option>
+    </select>
+    <br>    <br>
+    接力赛：
+    <select name="" id="multiple" multiple size="5" style="height: 120px;">
+        <option value="selected01" selected>1号队员</option>
+        <option value="selected02">2号队员</option>
+        <option value="selected03">3号队员</option>
+        <option value="selected04">4号队员</option>
+        <option value="selected05" selected>5号队员</option>
+    </select>
+    <br>    <br>
+    爱　好：
+    <input type="checkbox" name="" id="" value="checked01"> 语文
+    <input type="checkbox" name="" id="" value="checked02"> 化学
+    <input type="checkbox" name="" id="" value="checked03"> 英语
+    <input type="checkbox" name="" id="" value="checked04"> 美术
+    <br>    <br>
+    身　高：
+    <input type="radio" name="height" id="" value="radio01"> 165~170
+    <input type="radio" name="height" id="" value="radio02"> 170~175
+    <input type="radio" name="height" id="" value="radio03"> 175~180
+    <hr>
+    <input type="button" value="选中单选下拉框">
+    <input type="button" value="选中多选下拉框">
+    <input type="button" value="选中单选/复选框">
+</body>
+</html>
