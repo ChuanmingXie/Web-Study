@@ -5,8 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3-15 遍历操作-children|next|prev|siblings|closest</title>
+    <link rel="stylesheet" href="../../Content/css/common.css">
+    <script src="../../Content/jQuery/jquery-1.3.1.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("input[type=button]:eq(0)").click(function (e) { 
+                var bodychildren=$("body").children();
+                var ulchildren=$("ul").children();
+                var pchildren=$("p").children();
+                alert("body的子元素："+bodychildren.html()+"\n p的子元素"+pchildren.html()+"\n ul的子元素"+ulchildren);
+            });
+            $("input[type=button]:eq(1)").click(function (e) { 
+                var li2Next=$("ul li:eq(1)").next();
+                var li2Prev=$("ul li:eq(1)").prev();
+                alert("橘子之后的节点"+li2Next.html()+"\n 橘子之前的节点"+li2Prev.html());                
+            });
+            $("input[type=button]:eq(2)").click(function (e) { 
+                var ulPrev=$("ul").prev();
+                var ulnext=$('ul').next();
+                alert("ul之前的元素"+ulPrev.html()+"\n ul之后的元素"+ulnext.html())
+            });
+            $("input[type=button]:eq(3)").click(function (e) { 
+                var li3sibling=$("ul li:eq(2)").siblings();
+                alert("香蕉 节点 的siblings"+li3sibling.html());
+            });
+            $("input[type=button]:eq(4)").click(function (e) { 
+                $("li").bind('click', function (e) {
+                    $(e.target).closest('li').css("color","red");
+                });
+            });
+        })
+    </script>
 </head>
 <body>
-    
+    <h1>3-15 节点遍历</h1>
+    <p title="请选择你最喜欢的水果">你最喜欢的水果是？</p>
+    <ul>
+        <li title="fruit1">苹果</li>        
+        <li title="fruit2">橘子</li>
+        <li title="fruit3">香蕉</li>        
+        <li title="fruit4">芒果</li>
+        <li title="fruit5">火龙果</li>        
+        <li title="fruit6">无花果</li>
+    </ul>
+    <hr>
+    <input type="button" value="获取节点">
+    <input type="button" value="获取紧邻其后节点">
+    <input type="button" value="获取紧邻其前节点">
+    <input type="button" value="获取同辈节点的首节点">
+    <input type="button" value="获取closeset节点">
 </body>
 </html>

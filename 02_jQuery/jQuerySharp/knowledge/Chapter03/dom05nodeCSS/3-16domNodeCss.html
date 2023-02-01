@@ -5,8 +5,120 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3-16 dom的CSS操作</title>
+    <link rel="stylesheet" href="../../Content/css/common.css">
+    <script src="../../Content/jQuery/jquery-1.3.1.js"></script>
+    <style type="text/css">
+        textarea{
+            white-space:nowrap;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            $("input[type=button]:eq(0)").click(function (e) { 
+               var pcolor= $("p").css("color");
+               alert("p元素的颜色为："+pcolor);
+            });
+            $("input[type=button]:eq(1)").click(function (e) { 
+                $("p").css("color", "red");
+                alert("重新设置p元素颜色为："+$("p").css("color"));
+            });
+            $("input[type=button]:eq(2)").click(function (e) { 
+                $("ul li:even").css({
+                    "fontSize": "30px",
+                    "backgroundColor":"#898989",
+                    "color":"#FFF"
+                });
+                $("ul li:odd").css({
+                    "background": "#8346FF",
+                    "border":"1px solid #999"                    
+                });
+            });
+            $("input[type=button]:eq(3)").click(function (e) { 
+                var pheight = $("p").height();
+                var pwidth = $("p").width();
+                alert("p元素的高度"+pheight+"p元素的宽度"+pwidth);
+            });
+            $("input[type=button]:eq(4)").click(function (e) { 
+                $("p").height("100px").width("800px");
+                $("p").css("margin", "10px 0px 5px 5px");
+            });
+            $("input[type=button]:eq(5)").click(function (e) { 
+                /* offset 方法获取左边距和上边距 */
+                var offset = $("p").offset();
+                var top = offset.top;
+                var left = offset.left;
+                alert("offset : "+"p元素的上边距"+top+", p元素的左边距"+left);
+                
+                /* position 方法获取左边距和上边距 */
+                var position = $("p").position();
+                var top = position.top;
+                var left = position.left;
+                alert("position："+"p元素的上边距"+top+", p元素的左边距"+left);
+            });
+            $("input[type=button]:eq(6)").click(function (e) { 
+                $("p").each(function (index, element) {
+                    // element == this
+                    var offset = $(this).offset();
+                    var top = offset.top;
+                    var left = offset.left;
+                    console.log("("+top+","+left+")");
+                    alert("第"+index +"个p元素上左边距："+"("+top+","+left+")");
+                });
+            });
+            $("input[type=button]:eq(7)").click(function (e) { 
+               var textAreaScrollLeft= $("textarea").scrollLeft();
+               var textAreaScorllTop=$("textarea").scrollTop();
+               alert("文本域滚动条距离上方"+textAreaScorllTop+"文本域滚动条距离左侧"+textAreaScrollLeft);
+            });
+            $("input[type=button]:eq(8)").click(function (e) { 
+                $("textarea").scrollLeft(300);
+                $("textarea").scrollTop(300);
+            });
+
+            /* 当鼠标悬停在按钮上时，显示功能提示 */
+            $("input[type=button]").hover(function () {
+                    // over
+                    $(this).attr("title",$(this).val());
+                }, function () {
+                    // out
+                    $(this).removeAttr("title");
+                }
+            );
+            $("textarea").css({"overflow":"scroll","white-space":"nowrap","width":"400px"});
+            /* 为文本框设置初始值 */
+            $("textarea").val("静夜思 - 唐 李白  床前明月光，疑是地上霜；举头望明月，低头思故乡。静夜思 - 唐 李白  床前明月光，疑是地上霜；\n举头望明月，低头思故乡。\n静夜思 - 唐 李白  \n床前明月光，疑是地上霜；\n举头望明月，低头思故乡。\n静夜思 - 唐 李白  \n床前明月光，疑是地上霜；\n举头望明月，低头思故乡。\n静夜思 - 唐 李白  \n床前明月光，疑是地上霜；\n举头望明月，低头思故乡。");
+        });
+    </script>
 </head>
 <body>
-    
+    <h1>3-16 DOM的CSS操作</h1>
+    <p>
+        CSS DOM技术简单来说就是读取和设置style对象的各种属性，
+        直接使用style设置样式虽然简单快捷，但是无法通过他来设置外部css样式，
+        使用jQuery 操作CSS DOM则较为灵活
+    </p>
+    <p title="请选择你最喜欢的水果">你最喜欢的水果是？</p>
+    <div id="test">
+        <ul>
+            <li title="fruit1">苹果</li>
+            <li title="fruit2">香蕉</li>
+            <li title="fruit3">橘子</li>
+            <li title="fruit4">火龙果</li>
+            <li title="fruit5">无花果</li>
+        </ul>
+        <br>
+        <textarea name="area" id="" cols="60" rows="6" style="height: 100px;"></textarea>
+    </div>
+    <hr>
+    <input type="button" value="获取p元素的Color">
+    <input type="button" value="设置p元素的Color">
+    <input type="button" value="设置li元素的字体大小和背景色">
+    <hr>
+    <input type="button" value="获取p元素宽度,高度">
+    <input type="button" value="设置p元素宽度,高度">
+    <input type="button" value="获取p元素左边距和上边距first">
+    <input type="button" value="获取p元素左边距和上边距All">
+    <input type="button" value="获取p元素的滚动条距离顶端和左侧的距离">
+    <input type="button" value="设置p元素的滚动条距离顶端和左侧的距离">
 </body>
 </html>
