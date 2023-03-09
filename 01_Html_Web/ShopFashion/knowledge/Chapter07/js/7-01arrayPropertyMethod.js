@@ -81,7 +81,7 @@ function arrayjoin() {
     howmany必选，表示要删除元素的数量，0代表不删除数据
     [items]可选：表示向数组中添加和替换的元素
     从第二项开始删除两项，替换为‘北京烤鸭’,总数减少一项 */
-    foods.slice(2, 2, '北京烤鸭');
+    foods.splice(2, 2, '北京烤鸭','烧花鸭');
 
     showFoodsByJoin(foods);
 

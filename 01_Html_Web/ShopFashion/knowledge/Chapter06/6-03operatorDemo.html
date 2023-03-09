@@ -43,6 +43,11 @@
         document.writeln("<p>" + c + "--结果是" + (c--) + ";</p>")
         document.writeln("<p>--" + d + "结果是" + (--d) + ";</p>")
         document.write("</div>");
+
+        var num=10;
+        var numstring="10";
+        document.write("<p>"+(num==numstring)+"</p>");  // true
+        document.write("<p>"+(num===numstring)+"</p>"); // false
     </script>
     <script type="text/javascript">
         document.write(11>'11' ? "数字11大于字符'11'" : "数字11不大于字符'11'");
