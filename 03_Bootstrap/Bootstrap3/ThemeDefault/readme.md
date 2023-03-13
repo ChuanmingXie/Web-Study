@@ -9,7 +9,7 @@
 #### fonts: 各类图标样式 css框架
 #### google-code-prettify: 代码样式 js框架
 #### holder：基于 SVG 的浏览器占位图插件 js框架
-#### html5shiv： 让IE6,7,8,9 兼容Html的 js框架
+#### html5shiv： 让IE6,7,8,9 兼容Html5的 js框架
 #### jquery：DOM操作经典框架
 #### jquery-plugin：常用的jQuery 自定义插件 打包编译
 - fancyBox-2.1.4：支持对放大的图片添加阴影，对图片添加导航操作按纽和弹层效果

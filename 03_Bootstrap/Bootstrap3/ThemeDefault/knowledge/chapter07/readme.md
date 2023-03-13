@@ -5,7 +5,7 @@
 * bpiocns 相关字体文件的缺失
 * anyoldicons 相关字体文件的缺失
 
-后经过查阅anyoldiocn相关内容后，发现了较为全面的内容：[codrops]("https://github.com/codrops/ResponsiveIconGrid" "codrops") 
+后经过查阅anyoldiocn相关内容后，发现了较为全面的内容：[codrops](https://github.com/codrops/ResponsiveIconGrid "codrops") 
 
 笔者在查阅比较了完整版本后茅塞顿开，考虑图书出品人杨旺功老师可能是想让读者自行寻找答案所以故意删减相关内容
 
