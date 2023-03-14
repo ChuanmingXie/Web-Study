@@ -24,6 +24,18 @@
    - jQuery Easing v1.3
    - jQuery ScrollTo 1.4.3
    - jQuery One Page Nav Plugin
+
+jquery-1.9.1.js  <!-- jQuery Core -->
+bootstrap.min.js <!-- Bootstrap -->
+supersized.3.2.7.min.js <!-- Slider -->
+waypoints.js            <!-- WayPoints -->
+waypoints-sticky.js     <!-- Waypoints for Header -->
+jquery.isotope.js       <!-- Isotope Filter -->
+jquery.fancybox.pack.js <!-- Fancybox -->
+jquery.fancybox-media.js <!-- Fancybox for Media -->
+jquery.tweet.js          <!-- Tweet -->
+plugins.js <!-- Contains: jPreloader, jQuery Easing, jQuery ScrollTo, jQuery One Page Navi -->
+
 #### jquery-table：表格插件
 #### respond.js：respond.js是一个快速、轻量的polyfill，用于为IE6-8以及其它不支持CSS3 Media Queries 的浏览器提供媒体查询的min-width和max-width特性，实现响应式网页设计。
 #### application.js：教材附带的js，在相关章节中有所引用
