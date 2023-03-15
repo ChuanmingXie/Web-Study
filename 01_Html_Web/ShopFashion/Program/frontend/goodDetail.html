@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,18 +18,278 @@
     </script>
     <[end if]-->
 </head>
+
 <body>
     <article>
         <!-- header start -->
+        <header>
+            <div class="top_content">
+                <div class="floatleft displayenter">
+                    <img src="./img/icon/star.jpg" alt="">收藏|欢迎订购！
+                    <a href="#" class="orange">[请登录]</a>
+                    <a href="#" class="orange">[免费注册]</a>
+                </div>
+                <div class="floatright displayenter">
+                    客户服务<img src="./img/icon/arrow.gif" alt="">&nbsp;
+                    网站导航<img src="./img/icon/arrow.gif" alt="">&nbsp;
+                    <div class="shopcart_bg">
+                        <div class="droparrow">
+                            <span class="shopcart"></span>购物车<span class="orange">0</span>件
+                            <img src="./img/icon/arrow.gif" alt="">
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <ul class="shop_pic">
+                            <!-- <li>
+                                <a href="#"><img src="./img/goodadvise/s1.jpg" alt=""></a>
+                                <p>1件<a href="#"><span class="orange floatright">删除</span></a></p>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
         <!-- header end -->
 
         <!-- logo start -->
+        <section class="logo">
+            <img src="./img/icon/logo.jpg" alt="">
+            <div id="imgBox">
+                <a href="./goodIndex.html">
+                    <img src="./img/icon/banner1.jpg" alt="">
+                </a>
+                <p id="circle"></p>
+            </div>
+        </section>
+        <div class="clear"></div>
         <!-- logo end -->
 
         <!-- nav start -->
+        <nav class="nav_bg bluefeiyancao">
+            <div class="nav_content">
+                <ul class="menu_top">
+                    <li><a href="./goodIndex.html" class="white">购物首页</a></li>
+                    <li><a href="./goodShow.html" class="white">最新上架</a></li>
+                    <li><a href="#" class="white">品牌活动</a></li>
+                    <li><a href="#" class="white">厂家直供</a></li>
+                    <li><a href="#" class="white">优惠团购</a></li>
+                    <li><a href="#" class="white">限时抢购</a></li>
+                    <li><a href="#" class="white">折扣促销</a></li>
+                </ul>
+            </div>
+        </nav>
         <!-- nav end -->
 
         <!-- section start -->
+        <section class="main">
+            <!-- 左侧菜单栏 -->
+            <nav>
+                <ul class="menu_left">
+                    <li><span class="title bluehuangqing">女装</span></li>
+                    <li><span class="red_dot"></span><a href="#">上衣</a><span class="right_arrow"></span></li>
+                    <li><span class="red_dot"></span><a href="#">下衣</a><span class="right_arrow"></span></li>
+                    <li><span class="red_dot"></span><a href="#">内衣</a><span class="right_arrow"></span></li>
+                    <li><span class="red_dot"></span><a href="#">连衣裙</a><span class="right_arrow"></span></li>
+                    <li><span class="title bluehuangqing">男装</span></li>
+                    <li><span class="red_dot"></span><a href="#">衬衫</a><span class="right_arrow"></span></li>
+                    <li><span class="red_dot"></span><a href="#">T恤</a><span class="right_arrow"></span></li>
+                    <li><span class="red_dot"></span><a href="#">短裤</a><span class="right_arrow"></span></li>
+                    <li><span class="red_dot"></span><a href="#">工装</a><span class="right_arrow"></span></li>
+                    <li><span class="title bluehuangqing">童装</span></li>
+                    <li><span class="red_dot"></span><a href="#">潮牌</a><span class="right_arrow"></span></li>
+                    <li><span class="red_dot"></span><a href="#">萌娃</a><span class="right_arrow"></span></li>
+                    <li><span class="red_dot"></span><a href="#">西装</a><span class="right_arrow"></span></li>
+                    <li><span class="title bluehuangqing">运动装</span></li>
+                    <li><span class="red_dot"></span><a href="#">运动鞋</a><span class="right_arrow"></span></li>
+                    <li><span class="red_dot"></span><a href="#">运动衣</a><span class="right_arrow"></span></li>
+                </ul>
+            </nav>
+            <!-- 中间商品详情 -->
+            <div class="middle_good_detail">
+                <h1 class="detail_pic_title blueyuqinlan">商品详情</h1>
+                <div class="detail_pic_left">
+                    <div id="box">
+                        <img src="./img/gooddetail/dd1.jpg" width="400" height="400" id="showPicture" alt="">
+                        <div id="shade"></div>
+                    </div>
+                    <ul class="small_piclist">
+                        <li><img src="./img/gooddetail/dd1.jpg" onclick="changeImg(this)" alt=""></li>
+                        <li><img src="./img/gooddetail/dd2.jpg" onclick="changeImg(this)" alt=""></li>
+                        <li><img src="./img/gooddetail/dd3.jpg" onclick="changeImg(this)" alt=""></li>
+                        <li><img src="./img/gooddetail/dd4.jpg" onclick="changeImg(this)" alt=""></li>
+                        <li><img src="./img/gooddetail/dd5.jpg" onclick="changeImg(this)" alt=""></li>
+                    </ul>
+                    <canvas id="canvas" width="400px" height="400px"></canvas>
+                </div>
+                <div>
+                    <h1 class="font16">冬季新款牛仔外套女中长款加厚<br> 女冬装连帽毛领加绒牛仔棉衣女风衣</h1>
+                    <!-- 将图片上的内容通过原生CSS样式设置，而非图片 -->
+                    <!-- <img src="./img/gooddetail//pic_mess.jpg" alt=""> -->
+                    <div class="good_info_bg">
+                        <div class="line_info">
+                            <span>价格</span>
+                            <b class="pricesign"></b> <b class="price_orign">448.00</b>
+                        </div>
+                        <div class="line_info">
+                            <span>价格</span>
+                            <b class="price_now">￥198.5</b>&nbsp;<b class="price_tip">显示抢购价</b>
+                        </div>
+                        <div class="line_info">
+                            <span></span>
+                            <i class="goldcoin"></i> <b>淘金币可抵0.73元</b>
+                        </div>
+                        <div class="line_info">
+                            <span>配送</span>
+                            <b class="deliver">江苏</b>&nbsp;至&nbsp;
+                            <b class="destined">上东泰山</b>
+                            <b class="deliverFee">快递￥10</b>
+                        </div>
+                        <div class="line_info">
+                            <span>价格</span>
+                            <input type="button" value="M">
+                            <input type="button" value="L">
+                            <input type="button" value="XL">
+                            <input type="button" value="2XL">
+                        </div>
+                        <div class="line_info">
+                            <span>颜色分类</span>
+                            <img src="./img/gooddetail/dd3.jpg" alt=""> &nbsp;
+                            <img src="./img/gooddetail/dd4.jpg" alt="">
+                        </div>
+                        <div class="line_info">
+                            <span>数量</span>
+                            <i class="addnum_tool">
+                                <input type="button" class="btnnum" value="-">
+                                <input type="text" name="addnum" value="1" disabled>
+                                <input type="button" class="btnnum" value="+">
+                            </i>件（库存249件）
+                        </div>
+                        <div class="line_info">
+                            <a class="buynow">立即购买</a>
+                            <a class="shop_icon_bg"><i class="addshopcart"></i>加入购物车</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <ul class="detail_tab" id="goodTabs">
+                    <li onclick="changeTabInfo(this)" class="tab_active">商品详情</li>
+                    <li onclick="changeTabInfo(this)">商品评价</li>
+                    <li onclick="changeTabInfo(this)">购物记录</li>
+                </ul>
+                <article class="tab_content1">
+                    <ul class="goodparams">
+                        <li title="服装版型：修身">服装版型：修身</li>
+                        <li title="风格：甜美">风格：甜美</li>
+                        <li title="甜美：瑞丽">甜美：瑞丽</li>
+                        <li title="衣长：中长款">衣长：中长款</li>
+                        <li title="袖长：长袖">袖长：长袖</li>
+                        <li title="袖型：常规">袖型：常规</li>
+                        <li title="领型：带帽">领型：带帽</li>
+                        <li title="衣门襟：拉链">衣门襟：拉链</li>
+                        <li title="图案：纯色">图案：纯色</li>
+                        <li title="成分含量：81">成分含量：81%(含)-90%(含)</li>
+                        <li title="质地：棉">质地：棉</li>
+                        <li title="25-29周岁">适用年龄：25-29周岁</li>
+                        <li title="年份季节：2015年冬季">年份季节：2015年冬季</li>
+                        <li title="颜色分类：深蓝色">颜色分类：深蓝色</li>
+                        <li title="尺码：M L XL 2XL">尺码：M L XL 2XL</li>
+                    </ul>
+                    <section>
+                        <img src="./img/gooddetail/detail1.jpg" alt="">
+                        <img src="./img/gooddetail/detail2.jpg" alt="">
+                        <img src="./img/gooddetail/detail3.jpg" alt="" class="img_border">
+                        <img src="./img/gooddetail/detail4.jpg" alt="" class="img_border">
+                        <img src="./img/gooddetail/detail5.jpg" alt="" class="img_border">
+                        <img src="./img/gooddetail/detail6.jpg" alt="" class="img_border">
+                    </section>
+                </article>
+                <article class="tab_content2 none">
+                    <div class="comment_tool">
+                        <input type="radio" name="comment_all" id="comment_all">全部
+                        <input type="radio" name="comment_pic" id="comment_pic">图片
+                        <input type="radio" name="comment_add" id="comment_add">追平
+                        <input type="radio" name="comment_better" id="comment_better">好评
+                        <input type="radio" name="comment_middle" id="comment_middle">中评
+                        <input type="radio" name="comment_bad" id="comment_bad">差评
+                        <input type="checkbox" name="comment_userful" id="comment_userful">有内容的评论
+                        <select name="comment_sortway id="">
+                            <option value=" 0">推荐排序</option>
+                            <option value="1">好评</option>
+                            <option value="2">差评</option>
+                            <option value="3">图片</option>
+                            <option value="4">时间</option>
+                        </select>
+                    </div>
+                    <div class="comment_bg">
+                        <hr>
+                        <div class="floatleft usercommentpic">
+                            <img src="./img/icon/commentheader.png" alt="">
+                            <p>C**s</p>
+                            <p>♥♥♥</p>
+                        </div>
+                        <div class="floatleft usercomment">
+                            <div class="comment_base">
+                                <span>体重：52公斤</span>
+                                <span>身高：152厘米</span>
+                                <span>色差：无色差</span>
+                                <span>是否和身：刚好</span>
+                            </div>
+                            <div class="comment_content">
+
+                            </div>
+                            <div class="comment_footer timeandsize">
+                                <span>2023年03月16日</span>
+                                <span>颜色分类：深蓝色</span>
+                                <span>尺码：L</span>
+                                <div class="floatright userfulprasie">有用<span>(0)</span></div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </article>
+                <article class="tab_content3 none">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>买家</th>
+                                <th>淘宝价</th>
+                                <th>数量</th>
+                                <th>付款时间</th>
+                                <th>款式和型号</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>a*娜娜</td>
+                                <td><em class="price2">￥188.00</em></td>
+                                <td>1</td>
+                                <td>2021-02-12 20:39:29</td>
+                                <td>
+                                    <div>
+                                        <p>颜色分类：深蓝色</p>
+                                        <p>尺寸：XL</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+                <div class="clear"></div>
+                <!-- 底部广告 -->
+                <div>
+                    <h1 class="detail_pic_title purpleluodian">看了又看</h1>
+                    <ul class="detail_pic_list">
+                    </ul>
+                </div>
+            </div>
+            <!-- 右侧广告 -->
+            <aside class="right_advise">
+                <h1 class="advise_title">热门推荐</h1>
+                <ul class="advise_pic_list">
+
+                </ul>
+            </aside>
+        </section>
         <!-- section end -->
 
         <div class="clear"></div>
@@ -36,5 +297,9 @@
         <!-- footer start -->
         <!-- footer end -->
     </article>
+
+    <script src="./js/Pro-common.js"></script>
+    <script src="./js/Pro-goodDetail.js"></script>
 </body>
+
 </html>

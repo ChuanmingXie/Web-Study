@@ -88,5 +88,4 @@ function zoomPicture() {
         img.src = showpic.src;
         context.drawImage(img, (shade.offsetLeft) * 2, (shade.offsetTop) * 2, 400, 400, 0, 0, 400, 400);
     }
-
 }
