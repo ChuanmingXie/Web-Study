@@ -6,7 +6,7 @@ onload = function onload() {
   bannerSilder();
   bannerControl();
   looksearchAgain();
-  adviseNotice();
+  showgoodAdvise();
   zoomPicture();
 };
 /* 位广告牌添加动态效果 */
@@ -102,13 +102,55 @@ function looksearchAgain() {
 
 
 function adviseNotice() {
-  var arrayimgs = ["s1.jpg", "s2.jpg", "s3.jpg", "s4.jpg", "s5.jpg", "s6.jpg", "s7.jpg", "s8.jpg", "s9.jpg"];
-  var arrayprice = ['56.00', '97.00', '89.00', '69.00', '89.00', '93.00', '58.00', '69.00', '78.00'];
+  var arrayimgs = ["s1.jpg", "s2.jpg", "s3.jpg", "s4.jpg", "s5.jpg", "s6.jpg", "s7.jpg", "s8.jpg", "s9.jpg", "yifu1.jpg", "yifu2.jpg", "yifu3.jpg", "yifu4.jpg", "yifu5.jpg"];
+  var arrayprice = ['56.00', '97.00', '89.00', '69.00', '89.00', '93.00', '97.00', '89.00', '69.00', '89.00', '93.00', '58.00', '69.00', '78.00'];
+  var arrayrandom = getRandomNum(9, 0, 14);
   var element = '';
 
-  for (var i = 0; i < arrayimgs.length; i++) {
-    element += '<li><a href="#"><img src="' + "../" + 'Chapter09/img/goodadvise/' + arrayimgs[i] + '" alt=""></a><p class="price2">￥' + arrayprice[i] + '元</p></li>';
+  for (var i = 0; i < arrayrandom.length; i++) {
+    var index = arrayrandom[i];
+    element += '<li><a href="#"><img src="' + "../" + 'Chapter09/img/goodadvise/' + arrayimgs[index] + '" alt=""></a><p class="price2">￥' + arrayprice[index] + '元</p></li>';
   }
 
   document.querySelector(".advise_pic_list").innerHTML = element;
+}
+
+function getRandomNum(num, minNum, maxNum) {
+  var array = new Array();
+
+  for (var i = 0; i < num; i++) {
+    do {
+      var random = Math.floor(Math.random() * maxNum + minNum);
+
+      if (!checkNum(array, random)) {
+        array.push(random);
+        break;
+      }
+    } while (true);
+  }
+
+  return array;
+}
+
+function checkNum(array, num) {
+  for (var i = 0; i < array.length; i++) {
+    if (num == array[i]) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+function showgoodAdvise() {
+  var advise = document.querySelector(".advise_pic_list");
+  var index = setInterval(adviseNotice, 2000);
+
+  advise.onmouseover = function () {
+    clearInterval(index);
+  };
+
+  advise.onmouseleave = function () {
+    index = setInterval(adviseNotice, 2000);
+  };
 }
