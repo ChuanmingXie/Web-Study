@@ -3,9 +3,7 @@ onload = function () {
     createCircle();
     bannerSilder();
     bannerControl();
-    looksearchAgain();
     showAdviseGood();
-    zoomPicture();
 }
 
 let bannerIndex = 0;
@@ -60,28 +58,12 @@ function shopcartInit() {
     document.querySelector(".shop_pic").innerHTML = elememt;
 }
 
-function looksearchAgain() {
-    var arrayimgs = ["ss1.jpg", "ss2.jpg", "ss3.jpg", "ss4.jpg", "ss5.jpg"];
-    var introduce = ["2015新款条纹显瘦V领短袖露背宽松连身裤"
-        , "2015女士新款百搭休闲阔腿裤高腰红色短裤"
-        , "女版街头个性休闲口袋纯色卫衣吊带哈伦裤"
-        , "韩版简约百搭五分袖喇叭袖圆领打底短袖"
-        , "卡玛娅秋装新款女装圆领纯棉上衣棉T恤"
-    ];
-    let element = "";
-    for (let i = 0; i < arrayimgs.length; i++) {
-        element += '<li><img src="' + "./" + 'img/gooddetail/' + arrayimgs[i]
-            + '"title="' + introduce[i]
-            + '"><p>' + introduce[i] + '</p></li>';
-    }
-    document.querySelector(".detail_pic_list").innerHTML = element;
-}
 function adviseNotice() {
     let arrayimgs = ["s1.jpg", "s2.jpg", "s3.jpg", "s4.jpg", "s5.jpg", "s6.jpg", "s7.jpg", "s8.jpg", "s9.jpg", "yifu1.jpg", "yifu2.jpg", "yifu3.jpg", "yifu4.jpg", "yifu5.jpg"];
     let arrayprice = ['56.00', '97.00', '89.00', '93.00', '58.00', '69.00', '78.00', '89.00', '69.00', '89.00', '93.00', '58.00', '69.00', '78.00'];
     let element = '';
     let randomArray = getRandomNum(9, 0, 14);
-    console.log(randomArray);
+    // console.log(randomArray);
     for (let i = 0; i < randomArray.length; i++) {
         let index = randomArray[i];
         element += '<li><a href="#"><img src="' + "./" + 'img/goodadvise/' + arrayimgs[index]
