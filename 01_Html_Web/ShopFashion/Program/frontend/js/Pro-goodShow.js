@@ -1,6 +1,7 @@
 
 window.addEventListener("load",goodListInit1,false);//对于FireFox
 window.addEventListener("load",goodListInit2,false);//对于FireFox
+window.addEventListener("load",showAdviseGood,false);
 /* 
 <dl>
     <div>

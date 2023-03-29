@@ -5,7 +5,6 @@ onload = function onload() {
   createCircle();
   bannerSilder();
   bannerControl();
-  showAdviseGood();
 };
 
 var bannerIndex = 0;

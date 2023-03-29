@@ -3,7 +3,6 @@ onload = function () {
     createCircle();
     bannerSilder();
     bannerControl();
-    showAdviseGood();
 }
 
 let bannerIndex = 0;

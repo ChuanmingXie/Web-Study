@@ -110,3 +110,4 @@ function looksearchAgain() {
 
 addEventListener("load",looksearchAgain,false);
 addEventListener("load",zoomPicture,false);
+addEventListener("load",showAdviseGood,false);
