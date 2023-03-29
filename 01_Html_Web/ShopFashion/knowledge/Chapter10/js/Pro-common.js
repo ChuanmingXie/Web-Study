@@ -1,12 +1,3 @@
-onload = function () {
-    shopcartInit();
-    createCricle();
-    bannerSilder();
-    bannerControl();
-    looksearchAgain();
-    showgoodAdvise();
-    zoomPicture();
-}
 /* 位广告牌添加动态效果 */
 let bannerIndex = 0;
 let bannerImgs = ["banner1.jpg", "banner2.png", 'banner3.png'];
@@ -64,27 +55,6 @@ function shopcartInit() {
     document.querySelector(".shop_pic").innerHTML = elememt;
 }
 
-/* 看了又看列表栏 */
-/* 
-<li><img src="../Chapter09/img/gooddetail/ss1.jpg" title="2022新款条纹显瘦V领短袖毛衣宽松 oversize">
-    <p>2022年新款条纹显瘦V领短袖毛衣宽松</p></li>
-*/
-function looksearchAgain() {
-    var arrayimgs = ["ss1.jpg", "ss2.jpg", "ss3.jpg", "ss4.jpg", "ss5.jpg"];
-    var introduce = ["2015新款条纹显瘦V领短袖露背宽松连身裤"
-        , "2015女士新款百搭休闲阔腿裤高腰红色短裤"
-        , "女版街头个性休闲口袋纯色卫衣吊带哈伦裤"
-        , "韩版简约百搭五分袖喇叭袖圆领打底短袖"
-        , "卡玛娅秋装新款女装圆领纯棉上衣棉T恤"
-    ];
-    let element = "";
-    for (let i = 0; i < arrayimgs.length; i++) {
-        element += '<li><img src="' + "../" + 'Chapter09/img/gooddetail/' + arrayimgs[i]
-            + '"title="' + introduce[i]
-            + '"><p>' + introduce[i] + '</p></li>';
-    }
-    document.querySelector(".detail_pic_list").innerHTML = element;
-}
 
 /* 
 <li><a href="#"><img src="../Chapter09/img/goodadvise/s1.jpg" alt=""></a><p class="price2">￥56.38元</p></li>

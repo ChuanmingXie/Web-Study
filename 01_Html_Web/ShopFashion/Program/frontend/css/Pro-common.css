@@ -203,3 +203,56 @@ a.white{font-weight: 700; color: #fff; padding: 0 5px;}
 .advise_pic_list li img{border: 1px solid #ccc;  width: 83px; height: 97.5px;}
 
 /* 底部页脚区 */
+
+footer{width: 100%;min-width: 1200px; background: #efefef;margin-top: 15px;}
+.foot_title{width: 100%; height: 40px; padding-top: 8px;}
+.foot_pic{width: 100%; display: inline-flex; justify-content: center; align-items: center;}
+.foot_pic li{width: 120px; font: small-caps lighter 24px/30px '华文琥珀'; text-align: center; color: #fff; float: left;}
+.foot_list{
+    width: 100%;
+    margin: 0;
+    padding-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.foot_list>li{width: 170px; float: left;}
+.foot_list li ul{padding-left: 10px;}
+.red1{
+    width: 35px; 
+    height: 31px; 
+    display: block; 
+    background: url('../img/icon/red1.jpg') no-repeat;
+}
+.line1{
+    width: 2px;
+    height: 70px;
+    margin: 0 15px;
+    background: #F24818;
+    display: inline-block;
+}
+.font16{
+    font-size: 16px;
+    font-weight: 700;
+}
+.red2{
+    width: 35px; 
+    height: 31px; 
+    display: block; 
+    background: url('../img/icon/red2.jpg') no-repeat;
+}
+.red3{
+    width: 35px; 
+    height: 31px; 
+    display: block; 
+    background: url('../img/icon/red3.jpg') no-repeat;
+}
+.foot_line{
+    font-size: 12px;
+    margin-top: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.copyright{
+    text-align: center;
+    padding: 10px 0;
+}
