@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+/* 基础样式 */
 body{font-family: Cambria, '楷体';}
 h2{font: 700 18px/28px Cambria, '楷体';}
 h3{font: 700 16px/28px Cambria, '楷体';}
@@ -12,6 +13,8 @@ hr{
     border: none;
     margin: 5px auto;
 }
+
+/* 表单样式 */
 .panel_bg{
     display: inline-table;
     flex-direction: column;
@@ -66,6 +69,94 @@ audio{
     margin: 0 3px;
     border-bottom: 1px solid #edb132;
 }
+
+/* 表单元素样式 */
+input[type=submit],
+input[type=button],
+input[type=reset] {
+    width: 80px;
+    height: 35px;
+    margin-right: 5px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    background: #33b8c9;
+    color: white;
+    font: 900 14px/28px '楷体';
+}
+
+input[type=reset] {
+    background-color: #AAAAAA;
+}
+
+.white {
+    height: 30px;
+    width: 185px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 30px;
+}
+
+select,
+.textinline,
+input[type='text'],
+input[type='range'],
+input[type=email],
+input[type=tel],
+input[type=password],
+textarea{
+    width: 300px;
+    height: 30px;
+    font: 800 14px/20px '楷体';
+    border: 1px solid #33b8c9;
+    border-radius: 5px;
+    margin: 5px;
+}
+textarea{
+    height: 120px;
+}
+.textinline{
+    height: 50px;
+}
+
+
+input[type=submit]:hover,
+input[type=button]:hover,
+input[type=reset]:hover {
+    background-color: darksalmon;
+}
+.white:hover,
+input[type=submit]:hover,
+input[type=button]:hover,
+input[type=reset]:hover {
+    background-color: darksalmon;
+    /*  background: #ea4307;
+    border: 1px solid #ea4307; */
+}
+
+input[type="text"]:hover,
+input[type="text"]:focus,
+textarea:hover,
+textarea:focus{
+    border: 1px solid #33b8c9;
+    outline: 1px solid #189aab;
+}
+
+select {
+    width: 285px;
+    height: 30px;
+}
+option {
+    line-height: 30px;
+    font-family: Cambria, '楷体';
+    font-size: 18px;
+}
+
+select:focus,
+.textinline:focus{
+    border: none;
+    outline: 2px solid #EA4307;
+}
+
 .canvasGroup,
 .btnGroup {
     margin: 0 auto;
@@ -76,70 +167,40 @@ audio{
     justify-content: center;
 }
 .btnGroup{width: 600px; height: 40px;}
-
-input[type='button'],
-input[type='submit'],
-input[type='reset'],
-.white{
-    width: 120px;
-    height: 32px;
-    color: #fff;
-    font-family: Cambria, Microsoft Yahei;
-    border: 1px solid #1F638F;
-    border-radius: 10px;
-    background: #1F638F;
-    float: right;
+.btnGroup {
+    width: 500px;
+    display: inline-flex;
+    justify-content: flex-end;
 }
-.white {
-    height: 30px;
-    width: 185px;
-    text-align: center;
+
+/* 链接，消息，文本样式  */
+.panel a{
     text-decoration: none;
-    line-height: 30px;
+    display:inline-flex;
+    justify-content:center;
+    margin-top:20px;
+    width:120px;
+    border-bottom:1px solid transparent;
 }
-.white:hover,
-input[type='submit']:hover,
-input[type='button']:hover,
-input[type='reset']:hover {
-    background: #ea4307;
-    border: 1px solid #ea4307;
+.panel a:hover{
+    border-bottom:1px solid #234434;
 }
-
-input[type='text'],
-input[type='range'],
-select,
-.textinline{
-    width: 280px;
-    height: 25px;
-    font: 600 14px/25px  Cambria,'Times New Roman';
-    letter-spacing: 2px;
-    border-radius: 5px;
-    border: 1px solid #fcd304;
+.atop{
+    width: 600px;
 }
-select {
-    width: 285px;
-    height: 30px;
+.atop a{
+    float: right;
+    margin-right: 5px;
 }
-option {
-    line-height: 30px;
-    font-family: Cambria, '楷体';
-    font-size: 18px;
+.message{
+    color: #EF6F48;
 }
-input[type='text']:focus,
-select:focus,
-.textinline:focus{
-    border: none;
-    outline: 2px solid #EA4307;
-}
-.textinline{
-    height: 50px;
-}
-
-
 .resultdiv {
     min-height: 95px;
     width: 90%;
 }
+
+/* 表格样式 */
 table {
     width: 600px;
     margin: 5px auto;
@@ -158,12 +219,12 @@ table th {
     /* letter-spacing: 5px; */
     color: #15559A;
     /* background: #5CB3cc; */
-    border: none;
+    border: 1px solid transparent;;
     border-bottom: 1px solid #BBB5AC;
 }
 table td,
 table tr {
-    border: none;
+    border: 1px solid transparent;
     border-bottom: 1px solid #BBB5AC;
     padding: 3px;
 }
