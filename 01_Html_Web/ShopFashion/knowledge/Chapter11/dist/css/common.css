@@ -158,12 +158,12 @@ table th {
     /* letter-spacing: 5px; */
     color: #15559A;
     /* background: #5CB3cc; */
-    border: none;
-    border-bottom: 1px solid #BBB5AC;
+    border: 1px solid transparent;
+    border: 1px solid transparent;
 }
 table td,
 table tr {
-    border: none;
+    border: 1px solid transparent;
     border-bottom: 1px solid #BBB5AC;
     padding: 3px;
 }

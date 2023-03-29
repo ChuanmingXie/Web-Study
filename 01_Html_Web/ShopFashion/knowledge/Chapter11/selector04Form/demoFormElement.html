@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11-10 jQuery - 表单及其元素选择器</title>
+    <link rel="stylesheet" href="../dist/css/common.css">
+    <script src="../dist/js/jQuery/jquery-3.6.4.js"></script>
+    <script>
+        $(function () {
+            var result = "统计结果如下：<hr>"
+            result += "<br/>&lt;input&gt;标签数量为：" + $(":input").length;
+            result += "<br/>单行文本框数量为：" + $(":text").length;
+            result += "<br/>密码框数量为：" + $(":password").length;
+            result += "<br/>单选按钮数量为：" + $(":radio").length;
+            result += "<br/>上传文本框数量为：" + $(":file").length;
+            result += "<br/>复选框数量为：" + $(":checkbox").length;
+            result += "<br/>图片按钮数量为：" + $(":image").length;
+            result += "<br/>提交按钮数量为：" + $(":submit").length;
+            result += "<br/>普通按钮数量为：" + $(":button").length;
+            $('.resultdiv').html(result);
+        })
+    </script>
+</head>
+
+<body>
+    <h2>11-10 jQuery - 表单及其元素选择器</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <form action="#" method="post" id="#myform">
+                用户ID：<input type="text" value="U0001" disabled="disabled" /> <br>
+                用户名：<input type="tel" name="userName" value="请输入用户名" /> <br>
+                密　码：<input type="password" name="userPwd" value="请输入密码" /> <br>
+
+                <fieldset>
+                    <legend>部　门：</legend>
+                    <input type="radio" name="userDept" value="华北销售部" />华北销售部
+                    <input type="radio" name="userDept" value="东北销售部" />东北销售部 <br>
+                    <input type="radio" name="userDept" value="华东销售部" />华东销售部
+                    <input type="radio" name="userDept" value="港澳台销售部" />港澳台销售部
+                </fieldset>
+                验证码:
+                <input type="text" name="validateCode" disabled="disabled" />
+                <img src="../dist/img/validateCode.png" height="20px">
+                <input type="button" value="刷新验证码" /> <br> <br>
+                个人照片:<input type="file" /> <br>
+
+                <fieldset>
+                    <legend>销售产品：</legend>
+                    <input type="checkbox" name="goodsType" value="红酒" />红酒
+                    <input type="checkbox" name="goodsType" value="饮料" />饮料 <br>
+                    <input type="checkbox" name="goodsType" value="运动" checked="checked" />运动
+                    <input type="checkbox" name="goodsType" value="太阳伞" />太阳伞
+                </fieldset> <br>
+                <div class="btnGroup">
+                    <input type="submit" value="提交" />
+                    <input type="button" value="重置" /><br>
+                    <input type="image" src="../dist/img/return.png" width="150px" />
+                </div>
+            </form>
+            <br>
+        </div>
+    </div>
+    
+    <div class="clear"></div>
+    <div class="resultdiv"></div>
+</body>
+
+</html>

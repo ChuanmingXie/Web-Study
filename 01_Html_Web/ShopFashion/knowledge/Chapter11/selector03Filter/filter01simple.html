@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - 简单过滤选择器</title>
+    <link rel="stylesheet" href="../dist/css/common.css">
+    <script src="../dist/js/jQuery/jquery-3.6.4.js"></script>
+    <script>
+        $(function () {
+            $('table tr:first').css("background-color", "gray");
+            $('table tr:last').css("text-align", "right");
+            $('table tr:eq(2)').css("color", "red");
+            $('table tr:lt(1)').css("font-weight", "bold");
+            $('table tr:odd').css("background-color", "#dddddd");
+            $(':root').css('background-color', "#55aa7f");
+            $('table tr:not(:first)').css('font-size', '11pt').css('font-family', "宋体");
+        })
+    </script>
+</head>
+
+<body>
+    <h2>11-4 jQuery - 简单过滤</h2>
+    <div class="panel_bg">
+        <h4>过滤示例</h4>
+        <div class="panel">
+            <table>
+                <tr>
+                    <td>商品名</td>
+                    <td>商品价格</td>
+                    <td>商品数量</td>
+                </tr>
+                <tr>
+                    <td>海俪恩太阳眼镜</td>
+                    <td>299</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td>和田玉平安扣</td>
+                    <td>1280</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>汤美男士皮带</td>
+                    <td>198</td>
+                    <td>36</td>
+                </tr>
+                <tr>
+                    <td>上海围巾故事</td>
+                    <td>159</td>
+                    <td>67</td>
+                </tr>
+                <tr>
+                    <td>基地滑雪服</td>
+                    <td>1289</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>YIBYOO发饰</td>
+                    <td>89</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td colspan="3">商品共计6种</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>
