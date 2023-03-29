@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - 样式操作</title>
+    <link rel="stylesheet" href="../dist//css/common.css">
+    <style>
+        /* addClass() | removeClass() */
+        .titleClass{font-size: 20px;font-weight: bold;}
+        .baseClass{padding-left: 20px;background-color: #EEE;}
+        .fontSize{font-size: 16px;}
+        .p0{color: red;}
+        .p1{color: blue;}
+        .p2{color: green;}
+        
+        /* toggle() | css() */
+        input{margin: 5px 0px; width: 150px;}
+        .focusClass{background-color: #FFF;border: 2px dotted #FF0000;}
+        .inverseColor{color:#FFF;background-color: #000;}
+
+    </style>
+    <script src="../dist/js/jQuery/jquery-1.11.3.js"></script>
+    <script>
+        /* addClass() | removeClass() */
+        $(function (e) {
+            $('#articleTitle').addClass('titleClass'); //添加某种样式
+            $("p[title='desc']").addClass("baseClass fontColor"); //添加多种样式
+            //根据位置的不同，添加不同的样式，index为索引，oldClass为原来样式
+            $("p[title='desc']").addClass(function (index, oldClass) {
+                console.log(index + oldClass);
+                return 'p' + index;
+            });
+        });
+
+        function removeClass() {
+            $('p').removeClass("fontSize"); //移出指定的样式
+            $('p').removeClass(); //移出所有的样式
+        }
+
+        /* toggle() | css() */
+        var count = 0;
+        //获取焦点
+        function userNameOnFocus() {
+            $('#userName').toggleClass('focusClass');
+        }
+        //部门改变
+        function changeDept() {
+            $('#saleDept').toggleClass("inverseColor", ++count % 3 == 0);
+        }
+        //图片 放大
+        function enlargeImage() {
+            $('img').css({
+                width: function (index, value) {
+                    return parseFloat(value) * 1.1;
+                },
+                height: function (index, value) {
+                    return parseFloat(value) * 1.1;
+                }
+            });
+        }
+        //图片 缩小
+        function lessenImage() {
+            $('img').css({
+                width: function (index, value) {
+                    return parseFloat(value) * 0.9;
+                },
+                height: function (index, value) {
+                    return parseFloat(value) * 0.9;
+                }
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <h2>11-12 jQUery - 样式操作</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h3>1. addClass|removeClass</h3>
+            <p id="articleTitle">jQuery样式元素样式</p>
+            <p title="desc">可以使用attr()方法操作元素的class属性，以获取或改变标签的样式</p>
+            <p title="desc">除此之外，jQuery还提供了addClass()、removeClass()方法</p>
+            <p title="desc" id="lastContent">使用addClass为页面追加样式</p>
+            <br>
+            <div class="btnGroup">
+                <input type="button" value="移出样式" onclick="removeClass()" />
+            </div>
+        </div>
+        <hr>
+        <div class="panel_bg">
+            <h3>2. toggleClass|css</h3>
+            销售人员： <input type="text" id="userName" placeholder="请输入销售人员名称" class="baseClass"
+                onfocus="userNameOnFocus()" /> <br>
+            销售部门： <input type="text" id="saleDept" placeholder="请输入销售部门" /> <br>
+            <div class="btnGroup">
+                <input type="button" value="更换销售部门样式(单机3次)" onclick="changeDept()" />
+            </div>
+            <br>
+            <img src="../dist/img/flower2.jpg" width="300px"> <br>
+            <div class="btnGroup">
+                <input type="button" id="" value="图片放大" onclick="enlargeImage()" />
+                <input type="button" id="" value="图片缩小" onclick="lessenImage()" />
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

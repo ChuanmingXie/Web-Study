@@ -1,13 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jQuery - 属性操作</title>
-    <script src="../dist/js/jQuery/jquery-3.6.0.js"></script>
+    <link rel="stylesheet" href="../dist/css/common.css">
+
+    <style type="text/css">
+        input {
+            margin: 5px 0px;
+            width: 150px;
+        }
+
+        input[type='checkbox'] {
+            width: 80px;
+        }
+    </style>
+    <!--  3.6.4 版本对 removeProp支持不佳  -->
+    <script src="../dist/js/jQuery/jquery-1.11.3.js"></script>
+    <script>
+        $(function () {
+            // 图片src 相互交换
+            $("#changeSrc").click(function (e) {
+                let flower1Src = $("#flower1").attr('src');
+                $("#flower1").attr('src', function () {
+                    return $("#flower2").attr('src');
+                });
+                $("#flower2").attr('src', flower1Src);
+                e.preventDefault();
+            });
+
+            /* 
+                易错bug：
+                1. 函数方法 书写错误，名称和调用不对应
+                2. $()选择器里没有加 双引号 ("")
+                3. 设置的属性拼写错误，如checked 写成 checkbox等
+            */
+        });
+
+        // 取消禁用
+        function enabledSelect() {
+            $("input[type='checkbox']").removeProp('disabled');
+        }
+
+        // 全部选中
+        function changeSelect() {
+            $("input[type='checkbox']").prop("checked", true);
+        }
+
+        // 反选
+        function reverseSelect() {
+            $("input[type='checkbox']").prop('checked', function (index, oldValue) {
+                return !oldValue;
+            });
+        }
+
+        // 禁用
+        function disabledSelect() {
+            $("input[type='checkbox']").prop({
+                checked: true,
+                disabled: true
+            });
+        }
+    </script>
 </head>
+
 <body>
-    
+    <h2>11-11 jQuery - 属性操作</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h3>1. 控制图片的src </h3>
+            <img id="flower1" src="../dist/img/flower1.jpg" height="200px">
+            <img id="flower2" src="../dist/img/flower2.jpg" height="200px">
+            <div class="btnGroup">
+                <input type="button" value="鲜花交互" id="changeSrc" />
+            </div>
+        </div>
+        <hr>
+        <div class="panel">
+            <h3>2. 控制单选框的选择情况 </h3>
+            <input type="checkbox" name="flowerType" value="玫瑰" />玫瑰
+            <input type="checkbox" name="flowerType" value="百合" />百合
+            <input type="checkbox" name="flowerType" value="康乃馨" checked="checked" />康乃馨
+            <input type="checkbox" name="flowerType" value="马蹄莲" />马蹄莲
+            <hr>
+            <div class="btnGroup">
+                <input type="button" value="全选" onclick="changeSelect()" />
+                <input type="button" value="反选" onclick="reverseSelect()" />
+                <input type="button" value="全选后禁用" onclick="disabledSelect()" />
+                <input type="button" value="取消该禁用" onclick="enabledSelect()" />
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

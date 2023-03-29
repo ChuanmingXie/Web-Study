@@ -16,3 +16,8 @@ jQuery Migrate Plugin
 下载压缩的生产 jQuery Migrate 3.3.2
 
 下载未压缩的开发 jQuery Migrate 3.3.2
+
+
+
+百度翻译接口
+https://fanyi.baidu.com/?aldtype=16047#zh/en/单词
