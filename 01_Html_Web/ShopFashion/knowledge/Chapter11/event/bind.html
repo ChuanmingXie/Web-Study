@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11-16 jQuery - 事件绑定</title>
+    <link rel="stylesheet" href="../dist/css/common.css">
+    <style>
+        #leftDiv {
+            width: 300px;
+            height: 200px;
+            float: left;
+            margin: 0 auto;
+        }
+
+        #rightDiv {
+            width: 300px;
+            height: 200px;
+            float: right;
+            border: 1px solid #666;
+        }
+
+        .entered {
+            font:small-caps bold 10px/30px '楷体';
+        }
+    </style>
+    <script src="../dist/js/jQuery/jquery-1.11.3.js"></script>
+    <script src="../dist/js/jQuery/jquery-migrate-1.4.1.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            //bind(type,fn1):绑定一个点击事件
+            $("#bindBtn").bind('click', function (e) {
+                $("#rightDiv").text("使用Bind（）方法绑定事件处理");
+            });
+            //bind(types,fn1):为一个对象同时绑定mouseenter和mouseleave事件
+            $("#bindMoreBtn").bind('mouseenter mouseleave', function (e) {
+                $(this).toggleClass('entered');
+            });
+            //bind(type1:fn1,type2:fn2,...type3:fn3):为一个对象同时绑定多个事件，且每个事件具有单独的处理函数
+            $("#bindManyBtn").bind({
+                click: function () {
+                    $("#rightDiv").slideToggle();
+                },
+                mouseenter: function () {
+                    $("#rightDiv").css('background-color', 'red');
+                },
+                mouseleave: function () {
+                    $("#rightDiv").css('background-color', 'yellow');
+                }
+            });
+            //事件bind的缩写形式
+            $("#bindShortBtn").click(function () {
+                $("#rightDiv").text("使用bind 方法的简写 绑定事件处理");
+            });
+            /* one 方法的使用 */
+            $("#rightDiv").one('click', function (e) {
+                $("this").text("使用one() 方法绑定事件处理,只执行一次");
+            });
+            /* toggle() 方法的使用 */
+            //模拟连续多次单机事件
+            $("#toggleBtn").toggle(
+                function () { $("#rightDiv").css('background-color', 'red'); },
+                function () { $("#rightDiv").css('background-color', 'green'); },
+                function () { $("#rightDiv").css('background-color', 'yellow'); },
+                function () { $("#rightDiv").css('background-color', 'black'); }
+            );
+            /* 动画效果结束后再调用处理函数 */
+            $("#toggleAnimateBtn").click(function (e) {
+                $("#rightDiv").toggle('slow', 'swing', function () {
+                    $(this).css('background-color', 'green');
+                });
+            });
+
+            /* live() 方法*/
+            $(".panel:eq(1) #rightDiv").live('click', function (e) {
+                alert($(this).html());
+            });
+
+            $("#liveBtn").live('click', function (e) {
+                $(".panel:eq(1) #rightDiv").text("使用Bind（）方法绑定事件处理");
+            });
+
+            /* delegate() 方法：对对象内符合条件的子元素绑定事件*/
+            $(".panel:eq(1)").delegate('#delegateBtn', 'click', function (e) {
+                $(".btnGroup").slideToggle();
+            });
+
+            /* on()方法 */
+            /* 绑定事件,代替bind()方法 */
+            $(".panel:eq(2) .btnGroup").on('click', '#bindOnBtn', function (e) {
+                $(".panel:eq(2) #rightDiv").text("使用on() 方法绑定事件处理");
+            });
+            /* 绑定事件，并额外传递数据，代替degelate() */
+            $(".panel:eq(2) .btnGroup").on('click', '#bindOnBtnData', { msg: "传递一些数据" }, function (e) {
+                alert(e.data.msg);
+            });
+
+            //绑定事件,替代live() 方法
+            $('.panel:eq(1)').on('click', "div[id!=leftDiv]", function () {
+                alert($(this).html());
+            });
+
+
+            /* hover()方法 */
+            $(".panel:eq(2) #rightDiv").hover(
+                function () {
+                    let r = parseInt(Math.random() * 255);
+                    let g = parseInt(Math.random() * 255);
+                    let b = parseInt(Math.random() * 255);
+                    let rgb='rgb(' + r + ',' + g + ','+ b + ')';
+                    console.log(rgb);
+                    $(this).css('background-color', rgb);
+                    $(this).text("使用Bind（）方法绑定事件处理");
+                },
+                function () {
+                    $(this).css('background-color', 'yellow');
+                });
+        });
+    </script>
+</head>
+
+<body>
+    <h2>11-16 jQuery 事件绑定</h2>
+    <div class="panel_bg">
+        <h3>1. bind|one|toggle</h3>
+        <div class="panel">
+            <div class="btnGroup">
+                <input type="button" id="bindBtn" value="bind绑定事件" />
+                <input type="button" id="bindMoreBtn" value="一次bind绑定2个事件" />
+                <input type="button" id="bindManyBtn" value="多次绑定事件" />
+                <input type="button" id="bindShortBtn" value="事件绑定缩写" />
+                <input type="button" id="toggleBtn" value="toggle()多事件切换" />
+                <input type="button" id="toggleAnimateBtn" value="toggle()动画事件" />
+            </div>
+            <div id="rightDiv">效果</div>
+        </div>
+        <hr>
+
+        <h3>2. live|delegate</h3>
+        <div class="panel">
+            <div class="btnGroup">
+                <input type="button" id="liveBtn" value="live 替代bind"></button>
+            </div>
+            <input type="button" id="delegateBtn" value="deletegate 显示与隐藏"></button>
+            <div id="rightDiv">已经存在的DIV</div>
+        </div>
+        <hr>
+
+        <h3>3. on|hover</h3>
+        <div class="panel">
+            <div class="btnGroup">
+                <input type="button" id="bindOnBtn" value="on事件绑定" />
+                <input type="button" id="bindOnBtnData" value="on传输数据" />
+                <input type="button" id="bindHoverBtn" value="hover切换状态" />
+            </div>
+            <div id="rightDiv">右侧展示区,有一些提示的东西</div>
+        </div>
+    </div>
+</body>
+
+</html>

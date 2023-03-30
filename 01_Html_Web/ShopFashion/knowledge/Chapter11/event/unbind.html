@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11-17 jQuery - 解除绑定</title>
+    <link rel="stylesheet" href="../dist/css/common.css">
+    <style>
+        #rightDiv {
+            width: 300px;
+            height: 200px;
+            float: right;
+            border: 1px solid #666;
+        }
+    </style>
+    <script src="../dist/js/jQuery/jquery-1.11.3.js"></script>
+    <script>
+        /* 11-19jQuery事件处理-解除事件绑定-unbind|undelegate|off */
+
+        $(function () {
+            //使用bind绑定事件
+            $('#manyBindBtn').bind({
+                click: function () { $('#rightDiv').slideToggle(); },
+                mouseover: function () { $('#rightDiv').css('background-color', 'red'); },
+                mouseout: function () { $('#rightDiv').css('background-color', 'yellow'); },
+            });
+
+            // 使用delegate 绑定事件
+            $(document).delegate("#delegateBindBtn", "click", function () {
+                $('#rightDiv').slideToggle();
+            });
+
+            // 使用hover绑定事件
+            $('#rightDiv').hover(
+                function () { $(this).css('background-color', 'gray'); },
+                function () { $(this).css('background-color', 'white'); }
+            );
+
+            // 使用on ()方法绑定事件
+            $('#leftDiv').on('click', '#bindBtn', function () {
+                alert('使用bind()方法绑定事件处理');
+            });
+
+            /* 解除事件绑定 */
+            $('#removeBindBtn').on('click', function () {
+                /* unbind() - off() */
+                // 使用unbind解除click事件绑定
+                $('#manyBindBtn').unbind('click');
+                // 解除该元素上所有的事件绑定
+                $('#manyBindBtn').unbind();
+                // 使用off()解除事件绑定
+                $('#manyBindBtn').off('click');
+                $(document).off('click', '#manyBindBtn');
+                $('#manyBindBtn').off();
+
+                /* undelegate() - off */
+                // 使用undelegate()方法解除delegate()方法绑定的事件
+                $(document).undelegate('#delegateBindBtn', 'click');
+                // 使用off()方法解除delegate()方法绑定的事件
+                $(document).off('click', '#delegateBindBtn');
+
+                /*  */
+                // 使用off()解除on()方法绑定的事件
+                $('#leftDiv').off('click', '#bindBtn');
+                // 使用off()方法解除所有按钮上的事件绑定
+                $("input[type='button']").off();
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <h2>11-17 jQuery - 解除事件绑定</h2>
+    <div class="panel_bg">
+        <h3>解除绑定测试</h3>
+        <div class="panel">
+            <div class="btnGroup">
+                <input type="button" id="bindBtn" value="bind事件绑定" />
+                <input type="button" id="manyBindBtn" value="多事件绑定" />
+                <input type="button" id="delegateBindBtn" value="delegate事件绑定" />
+                <input type="button" id="removeBindBtn" value="解除事件绑定" />
+            </div>
+        </div>
+        <div id="rightDiv">右侧展示区</div>
+    </div>
+</body>
+
+</html>
