@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,68 @@
     <title>12-4 jQuery - 包裹节点</title>
     <link rel="stylesheet" href="../dist/css/common.css">
     <script src="../dist/js/jquery-1.11.3.js"></script>
+    <script>
+        $(function () {
+            $("#wrapTest").hover(function () {
+                // over
+                $("#wrap").wrap("<b></b>");
+                $("#wrapAll").wrapAll("<div class='message'></div>");
+                $("#wrapinner p").wrapInner("<s class='message'></s>");
+            }, function () {
+                // out
+                $("#wrap").unwrap();
+                $("#wrapAll").unwrap();
+                $("#wrapinner p").unwrap("<s></s>");
+            });
+
+            $("#wrapTest").click(function (e) { 
+                $("#wrapinner p").wrapInner("<span class='message'></span>");                
+            });
+        })
+    </script>
 </head>
+
 <body>
-    
+    <h2>12-4 包裹节点</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <dl>
+                <dd>
+                    <div id="wrap">
+                        <p>节点包裹效果</p>
+                        <p>节点包裹效果</p>
+                    </div>
+                </dd>
+                <dt>
+                    节点包裹效果
+                </dt>
+
+                
+                <dd>
+                    <div id="wrapAll">
+                        <p>节点All包裹效果</p>
+                        <p>节点All包裹效果</p>
+                    </div>
+                </dd>
+                <dt>
+                    节点All包裹效果
+                </dt>
+                
+                
+                <dd>
+                    <div id="wrapinner">
+                        <p>节点Inner包裹效果</p>
+                        <p>节点Inner包裹效果</p>
+                    </div>
+                </dd>
+                <dt>
+                    节点Inner包裹效果
+                </dt>
+        </div>
+        <div class="btnGroup">
+            <input type="button" id="wrapTest" value="节点包裹测试">
+        </div>
+    </div>
 </body>
+
 </html>

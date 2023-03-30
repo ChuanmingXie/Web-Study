@@ -1,14 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>12-2 jQuery - clone复制节点</title>
     <link rel="stylesheet" href="../dist/css/common.css">
+    <style>
+        #cloneDiv div {
+            display: inline-block;
+            margin: 0 3px;
+        }
+
+        input[type=button] {
+            width: 200px;
+            margin: 5px 0px;
+        }
+    </style>
     <script src="../dist/js/jquery-1.11.3.js"></script>
+    <script>
+        /* 12-1jQuery-DOM节点操作-复制 */
+        $(function (e) {
+            // 为planetDiv中的span标签附加数据
+            $('#planetDiv span').data("msg", "银河系宇宙星空-图形艺术图");
+            // 为planetDiv添加单击事件，在事件中获取div中的span标签的附加数据
+            // $('#planetDiv').mouseover(function(){
+            // 	alert('planetDiv 鼠标悬浮触发,附加数据:'+$(this).find("span").data('msg'));
+            // });
+            $('#planetDiv').click(function () {
+                alert('planetDiv 鼠标悬浮触发,附加数据:' + $(this).find("span").data('msg'));
+            });
+
+            // 为planetDiv中的img添加事件
+            $('#planet img').click(function () {
+                alert($(this).attr('title'));
+            });
+
+            /* 12-1jQuery-DOM节点操作-复制 */
+            // 普通复制
+            $('#normalClone').click(function () {
+                // 清空cloneDiv的内容
+                $('#cloneDiv').empty();
+                // 仅复制元素的内容，不对元素的事件处理和元素的附加数据进行复制
+                $('#cloneDiv').append($('#planetDiv').clone(false));
+            });
+            // 元素、事件处理、子元素的时间处理和附加数据同时复制
+            $('#normalEventClone').click(function () {
+                $('#cloneDiv').append($('#planetDiv').clone(true));
+            });
+            // 复制元素及事件处理、但不复制子元素事件处理和附加数据
+            $('#deepClone').click(function () {
+                $('#cloneDiv').append($('#planetDiv').clone(true, false));
+            });
+            // 元素、事件处理、子元素的事件处理和附加数据同时复制
+            $('#deepEventClone').click(function () {
+                $('#cloneDiv').append($('#planetDiv').clone(true, true));
+            });
+        })
+    </script>
 </head>
+
 <body>
-    
+    <h2>12-2jQuery-DOM节点操作-复制</h2>
+    <div id="containerDiv">
+        <div id="planetDiv">
+            <img src="../dist/img/n2.png" title="宇宙星球" /> <br>
+            <span>设计艺术星球</span>
+        </div>
+
+        <div>
+            <input type="button" id="normalClone" value="普通复制" />
+            <input type="button" id="normalEventClone" value="复制事件" />
+            <input type="button" id="deepClone" value="复制元素及子元素" />
+            <input type="button" id="deepEventClone" value="复制子元素及事件" />
+        </div>
+        <hr>
+
+        <div id="cloneDiv"></div>
+    </div>
 </body>
+
 </html>

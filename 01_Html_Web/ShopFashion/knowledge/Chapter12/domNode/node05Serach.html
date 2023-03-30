@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12-5 jQuery - 节点的查找与过滤</title>
+    <link rel="stylesheet" href="../dist/css/common.css">
+    <script src="../dist/js/jquery-1.11.3.js"></script>
+    <script>
+        $(function () {
+            alert($("ul li:eq(2)").parent().html());
+            alert($("ul li:eq(3)").text());
+            alert($("ul li:eq(4)").siblings().length)
+        })
+    </script>
+</head>
+
+<body>
+    <h2>节点：祖先|后代|同胞|节点过滤</h2>
+    <ul>
+        <li>1</li>
+        <li>12</li>
+        <li>123</li>
+        <li>1234</li>
+        <li>12345</li>
+    </ul>
+</body>
+
+</html>

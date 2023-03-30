@@ -1,14 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>12-3 jQuery - 移除节点</title>
     <link rel="stylesheet" href="../dist/css/common.css">
+    <style>
+        input[type=button]{
+            width: 120px;
+        }
+        img {height: 250px;width: 250px;}
+        table {text-align: center; width: 100%;}
+    </style>
     <script src="../dist/js/jquery-1.11.3.js"></script>
+    <script>
+        /* 12-1jQuery-DOM节点操作-创建|插入|复制|删除|包裹 */
+
+        /* 12-1jQuery-DOM节点操作-删除 */
+        $(function (e) {
+            var firstImage;
+            var secondImage;
+            // 为每幅图附加数据
+            $("img:first").data("msg", '宇宙星空图-土星1');
+            $("img:eq(1)").data("msg", '宇宙星空图-土星2');
+            $("img:last").data("msg", '宇宙星空图-土星3');
+
+            // 为每张图绑定click事件
+            $('img').click(function () {
+                alert($(this).data('msg'));
+            });
+
+            /* jQuery-DOM节点操作-删除 */
+            //remove()
+            $("#removeBtn").click(function () {
+                if (($('#firstCell img').length) > 0) {
+                    // 先执行赋值语句在执行remove()方法
+                    firstImage = $('#firstCell img').remove();
+                }
+            });
+
+            /* 恢复remove()删除的图像 */
+            $("#recoveryRemoveBtn").click(function () {
+                $('#firstCell').append(firstImage);
+            });
+
+            //detach()
+            $("#detachBtn").click(function () {
+                if (($('#secondCell img').length) > 0) {
+                    secondImage = $('#secondCell img').detach();
+                }
+            });
+
+            /* 恢复detach()删除的图像 */
+            $("#recoveryDetachBtn").click(function () {
+                $('#secondCell').append(secondImage);
+            });
+
+            //empty()
+            $("#emptyBtn").click(function () {
+                $('#thirdCell').empty();
+            });
+        })
+    </script>
 </head>
+
 <body>
-    
+    <h2>12-3jQuery-DOM节点操作-删除</h2>
+    <table>
+        <tr>
+            <td id='firstCell'><img src="../dist/img/n10.png"></td>
+            <td id='secondCell'><img src="../dist/img/n9.png"></td>
+            <td id='thirdCell'><img src="../dist/img/n2.png"></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" id="removeBtn" value="删除元素" />
+                <input type="button" id="recoveryRemoveBtn" value="recovery 恢复" />
+            </td>
+            <td>
+                <input type="button" id="detachBtn" value="detach删除" />
+                <input type="button" id="recoveryDetachBtn" value="recovery 恢复" />
+            </td>
+            <td>
+                <input type="button" id="emptyBtn" value="empty" />
+            </td>
+        </tr>
+    </table>
 </body>
+
 </html>
