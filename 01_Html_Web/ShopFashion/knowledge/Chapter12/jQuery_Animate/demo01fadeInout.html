@@ -1,12 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>12-7 jQuery 动画 - 淡入淡出</title>
+    <link rel="stylesheet" href="../dist/css/common.css">
+    <style>
+        img {
+            border: 1px solid #72D543;
+            margin-top: 10px;
+            position: absolute;
+        }
+
+        .center {
+            width: 650px;
+            margin: 0 auto;
+        }
+
+        input[type=button] {
+            width: 120px;
+        }
+    </style>
+    <script src="../dist/js/jquery-1.11.3.js"></script>
+    <script src="../dist/js/jquery-migrate-1.4.1.min.js"></script>
+    <script type="text/javascript">
+        $(function (e) {
+            $("#fadeInBtn").click(function () {
+                $('img:eq(2)').fadeIn(4000, function () {
+                    $('img:eq(1)').fadeIn("slow", function () {
+                        $("img:eq(0)").fadeIn("fast");
+                    });
+                });
+            });
+
+            $("#fadeOutBtn").click(function () {
+                $("img:eq(0)").fadeOut("fast");
+                $("img:eq(1)").fadeOut("slow");
+                $("img:eq(2)").fadeOut(4000);
+            });
+
+            $("#fadeToggleBtn").click(function () {
+                $('img:eq(0)').fadeToggle("fast", function () {
+                    $('img:eq(1)').fadeToggle("slow", function () {
+                        $("img:eq(2)").fadeToggle(4000);
+                    });
+                });
+            });
+
+            $("#fadeToBtn").toggle(function () {
+                $("img:eq(0)").fadeTo("slow", 0.15);
+                $("img:eq(1)").fadeTo("fast", 0);
+                $("img:eq(2)").fadeTo(4000, 0.3);
+            }, function () {
+                $("img:eq(0)").fadeTo("slow", 1);
+                $("img:eq(1)").fadeTo("fast", 1);
+                $("img:eq(2)").fadeTo(4000, 1);
+            });
+
+
+            $("#banner").click(function (e) {
+                let num = window.setInterval(test, 3500);
+                $("img").hover(function () {
+                    // over
+                    window.clearInterval(num);
+                }, function () {
+                    // out
+                    num = setInterval(test, 3500);
+                }
+                );
+            });
+        });
+
+        function test() {
+            $('img:eq(0)').fadeToggle(2000, function () {
+                $('img:eq(1)').fadeToggle(2000, function () {
+                    $("img:eq(2)").fadeToggle(2000).delay(1000);
+                }).delay(1000);
+            });
+        }
+    </script>
 </head>
+
 <body>
-    
+    <h2>12-7 jQuery 动画 - 淡入淡出</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <div class="btnGroup">
+                <input type="button" value="隐藏Div" id="fadeOutBtn" />
+                <input type="button" value="显示Div" id="fadeInBtn" />
+                <input type="button" value="fadeToggle" id="fadeToggleBtn" />
+                <input type="button" value="fadeTo" id="fadeToBtn" />
+                <input type="button" value="动态切换" id="banner">
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="center">
+        <img src="../dist/img/pic1.jpg" alt="">
+        <img src="../dist/img/pic2.jpg" alt="">
+        <img src="../dist/img/pic3.jpg" alt="">
+    </div>
 </body>
+
 </html>
