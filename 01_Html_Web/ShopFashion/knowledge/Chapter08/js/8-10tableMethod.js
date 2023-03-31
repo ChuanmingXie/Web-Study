@@ -9,9 +9,11 @@ function insertrearRow() {
 function appendRow(index) {
     var mytable = document.getElementById('myTable');
     var row = mytable.insertRow(index);
-    var userIDCell = row.insertCell(0);
-    var userNameCell = row.insertCell(1);
-    var toolCell = row.insertCell(2);
+    var checkinput=row.insertCell(0);
+    var userIDCell = row.insertCell(1);
+    var userNameCell = row.insertCell(2);
+    var toolCell = row.insertCell(3);
+    checkinput.innerHTML="<input type='checkbox'/>"
     userIDCell.innerHTML = document.getElementById('userID').value;
     userNameCell.innerHTML = document.getElementById('userName').value;
     toolCell.innerHTML = '<input type="image" src="./img/filetool/delete.png" alt="删除" onclick="deleteRow(this)"> ' +
