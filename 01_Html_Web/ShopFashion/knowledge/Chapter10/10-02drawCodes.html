@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="请输入验证码">
+    <canvas id="myCanvas" width="70px" height="43px" style="border:1px solid #d3d3d3;" onclick="createCode(randCode())"></canvas>
+    <script>
+        createCode(randCode())
+
+        /*干扰线的随机x坐标值*/
+        function lineX() {
+            var ranLineX = Math.floor(Math.random() * 90);
+            return ranLineX;
+        }
+
+        /*干扰线的随机y坐标值*/
+        function lineY() {
+            var ranLineY = Math.floor(Math.random() * 40);
+            return ranLineY;
+        }
+
+        function randNum(min, max) { //随机数函数
+            return parseInt(Math.random() * (max - min) + min)
+        }
+        function randColor(min, max) { //随机颜色的函数
+            var r = randNum(min, max)
+            var g = randNum(min, max)
+            var b = randNum(min, max)
+            return `rgb(${r},${g},${b})`
+        }
+
+        function randCode(){
+            let code = "";
+            var codeLength = 4;//验证码的长度，可变
+            var selectChar = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');//所有候选组成验证码的字
+            for (var i = 0; i < codeLength; i++) {
+                var charIndex = Math.floor(Math.random() * 36);
+                code += selectChar[charIndex];
+            }
+            return code;
+        }
+
+        function createCode(code) {
+            var canvas = document.getElementById('myCanvas');//获取画布
+            if (canvas) {
+                var ctx = canvas.getContext('2d');
+
+                ctx.fillStyle = '#FFFFFF';
+                ctx.fillRect(0, 0, 70, 43);
+                ctx.font = "26px Consolas";
+                // 创建渐变
+                var gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+                gradient.addColorStop("0", "magenta");
+                gradient.addColorStop("0.5", "blue");
+                gradient.addColorStop("1.0", "red");
+                // 用渐变填色
+                ctx.strokeStyle = gradient;
+                
+                ctx.strokeText(code, 5, 30);//画布上添加验证码                
+
+                for (var j = 0; j < 20; j++) {
+                    ctx.strokeStyle = '#fff';
+                    ctx.beginPath(); //若省略beginPath，则每点击一次验证码会累积干扰线的条数
+                    ctx.moveTo(lineX(), lineY());
+                    ctx.lineTo(lineX(), lineY());
+                    ctx.lineWidth = 0.5;
+                    ctx.closePath();
+                    ctx.stroke();
+                }
+                for (var i = 0; i < 40; i++) {
+                    ctx.beginPath()
+                    ctx.arc(lineX(), lineY(), 1, 0, 2 * Math.PI) //随机确定圆心坐标
+                    ctx.closePath()
+                    ctx.fillStyle = randColor(0, 200)  //随机填充颜色
+                    ctx.fill(); //进行填充
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
