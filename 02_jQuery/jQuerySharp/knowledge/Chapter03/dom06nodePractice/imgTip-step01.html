@@ -1,12 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>案例2 图片提示01</title>
+    <script src=".././../Content/jQuery/jquery-1.3.1.js"></script>
+    <link rel="stylesheet" href="../../Content/css/common.css">
+    <style>
+        /* 文字提示 */
+        #tip {
+            position: absolute;
+            border: 1px solid #333;
+            background: #f7f5d1;
+            padding: 1px;
+            color: #333;
+            display: none;
+        }
+
+        li {
+            list-style: none;
+            float: left;
+            display: inline;
+            margin-left: 10px;
+            border: 1px solid #AAAAAA;
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(function () {
+            let x = 10;
+            let y = 20;
+            $("a.tooltip").mouseover(function (e) {
+                this.newtitle = this.title;
+                this.title = "";
+                let newTip = "<div id='tip'><img src='" + this.href + "' alt='产品预览图'></div>";
+                $("body").append(newTip);   // 把提示内容添加到文档中
+                $("#tip").css({             // 设置位置及动画方式
+                    "top": (e.pageY + y) + "px",
+                    "left": (e.pageX + x) + "px"
+                }).show("fast");
+            }).mouseout(function () {        //移除
+                this.title = this.newtitle;
+                $("#tip").remove();
+            }).mousemove(function (e) {     //随鼠标移动
+                $("#tip").css({
+                    "top": (e.pageY + y) + "px",
+                    "left": (e.pageX + x) + "px"
+                });
+            });
+
+        })
+    </script>
 </head>
+
 <body>
-    
+    <h2>6-2 案例：图片提示</h2>
+    <div class="panel_bg">
+        <h3>1. 鼠标停留效果</h3>
+        <div class="panel">
+            <ul>
+                <li><a href="./img/apple_1_bigger.jpg" class="tool tip" title="苹果ipad"><img src="img/apple_1.jpg"
+                            alt="苹果系列"></a></li>
+                <li><a href="./img/apple_2_bigger.jpg" class="tooltip" title="苹果 ipad nanao"><img src="img/apple_2.jpg"
+                            alt="苹果系列"></a></li>
+                <li><a href="./img/apple_3_bigger.jpg" class="toolphonetip" title="苹果系列"><img src="img/apple_3.jpg"
+                            alt="苹果系列"></a></li>
+                <li><a href="./img/apple_4_bigger.jpg" class="to Mactip" title="苹果系列"><img src="img/apple_4.jpg"
+                            alt="苹果系列"></a></li>
+            </ul>
+        </div>
+        <h3>2. 鼠标停留无效果</h3>
+        <div class="panel">
+            <ul>
+                <li><a href="./img/apple_1_bigger.jpg" title="苹果 ipad"><img src="img/apple_1.jpg"
+                            alt="苹果系列"></a></li>
+                <li><a href="./img/apple_2_bigger.jpg" title="苹果 ipad nanao"><img src="img/apple_2.jpg"
+                            alt="苹果系列"></a></li>
+                <li><a href="./img/apple_3_bigger.jpg" title="苹果 iphone"><img src="img/apple_3.jpg"
+                            alt="苹果系列"></a></li>
+                <li><a href="./img/apple_4_bigger.jpg" title="苹果 Mac"><img src="img/apple_4.jpg"
+                            alt="苹果系列"></a></li>
+            </ul>
+        </div>
+    </div>
 </body>
+
 </html>

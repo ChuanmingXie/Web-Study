@@ -1,12 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>案例1 文字提示01</title>
+    <script src="../../Content/jQuery/jquery-2.0.3.js"></script>
+    <link rel="stylesheet" href="../../Content/css/common.css">
+    <style>
+        #tip{
+            position: absolute;
+            border: 1px solid #333;
+            background: #f7f5d1;
+            padding: 1px;
+            color: #333;
+            display: none;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            /* 此时会出现自带的提示和自定义的提示同时出现的问题 */
+            $("a.tooltip").mouseover(function (e) {
+                var tip = "<div id='tip'>" + this.title + "<\/div>";	//创建div
+                $('body').append(tip);		//把div追加到文档中
+                $('#tip').css({
+                    "top": e.pageY + "px",
+                    "left": e.pageX + "px"
+                }).show("fast");				//设置div出现的x和y坐标，和出现方式及速度
+            }).mouseout(function () {
+                $("#tip").remove();			//鼠标离开时移出div
+            });
+        });
+    </script>
 </head>
+
 <body>
-    
+    <h2>6-1 案例：文字提示</h2>
+    <div class="panel_bg">
+        <h3>1. jQuery添加了提示</h3>
+        <div class="panel">
+            <p><a href="#" class="tooltip" title="这是自定义的超链接提示">提示1</a></p>
+            <p><a href="#" class="tooltip" title="这是自定义的超链接提示">提示1</a></p>
+        </div>
+        <div class="panel">
+            <h3>2. html自带的提示</h3>
+            <p><a href="#" title="这是系统自带的超链接提示">提示2</a></p>
+            <p><a href="#" title="这是系统自带的超链接提示">提示2</a></p>
+        </div>
+    </div>
 </body>
+
 </html>

@@ -1,12 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>案例1 文字提示03</title>
+    <script src="../../Content/jQuery/jquery-2.0.3.js"></script>
+    <link rel="stylesheet" href="../../Content/css/common.css">
+    <style>
+        #tip {
+            position: absolute;
+            border: 1px solid #333;
+            background: #f7f5d1;
+            padding: 1px;
+            color: #333;
+            display: none;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            let x = 10;
+            let y = 20;
+            
+            $("a.tooltip").mouseover(function (e) {
+                this.newtitle = this.title;
+                this.title = "";
+                var tip = "<div id='tip'>" + this.newtitle + "<\/div>";	//创建div
+                $('body').append(tip);		//把div追加到文档中
+                $('#tip').css({             //设置div出现的x和y坐标，和出现方式及速度
+                    "top": (e.pageY + y) + "px",
+                    "left": (e.pageX + x) + "px"
+                }).show("fast");				
+            }).mouseout(function () {       //鼠标离开时移出div
+                this.title=this.newtitle;
+                $("#tip").remove();
+            }).mousemove(function (e) {     //鼠标移动事件
+                $('#tip').css({
+                    "top": (e.pageY + y) + "px",
+                    "left": (e.pageX + x) + "px"
+                });
+            });
+        });
+    </script>
 </head>
+
 <body>
-    
+    <h2>6-1 案例：文字提示</h2>
+    <div class="panel_bg">
+        <h3>1. jQuery添加了提示</h3>
+        <div class="panel">
+            <p><a href="#" class="tooltip" title="这是自定义的超链接提示">提示1</a></p>
+            <p><a href="#" class="tooltip" title="这是自定义的超链接提示">提示1</a></p>
+        </div>
+        <h3>2. html自带的提示</h3>
+        <div class="panel">
+            <p><a href="#" title="这是系统自带的超链接提示">提示2</a></p>
+            <p><a href="#" title="这是系统自带的超链接提示">提示2</a></p>
+        </div>
+    </div>
 </body>
-</html>
