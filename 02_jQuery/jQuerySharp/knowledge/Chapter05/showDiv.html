@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - 显示div 到屏幕中间</title>
+    <script src="../Content/jQuery/jquery-2.0.3.js"></script>
+    <style>
+        div {
+            background-color: aquamarine;
+            width: 100px;
+            height: 720px;
+            opacity: 0.3;
+            text-align: center;
+            z-index: 999;
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h3>我爱底层</h3>
+    <h3>我爱底层</h3>
+    <h3>我爱底层</h3>
+    <h3>我爱底层</h3>
+    <h3>我爱底层</h3>
+    <script>
+        $(function () {
+            $("<div>324354657</div>").appendTo("body")
+            setDivCenter($("div"));
+        })
+        function setDivCenter(divName) {
+            var top = ($(window).height() - $(divName).height()) / 2;
+            var left = ($(window).width() - $(divName).width()) / 2;
+            var scrollTop = $(document).scrollTop();
+            var scrollLeft = $(document).scrollLeft();
+            $(divName).css({
+                "position": 'absolute',
+                'top': top + scrollTop,
+                "left": left + scrollLeft,
+                "opacity": "0.3"
+            }).fadeTo("slow", 0.8).fadeOut(3000);
+           
+        }
+
+    </script>
+</body>
+
+</html>

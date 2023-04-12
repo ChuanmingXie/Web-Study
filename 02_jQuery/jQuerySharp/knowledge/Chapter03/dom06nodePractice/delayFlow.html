@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../Content/jQuery/jquery-2.0.3.js"></script>
+    <link rel="stylesheet" href="../../Content/css/common.css">
+    <style>
+        /* 文字提示 */
+        #tip {
+            position: absolute;
+            border: 1px solid #333;
+            background: #f7f5d1;
+            padding: 1px;
+            color: #333;
+            display: none;
+        }
+
+        li {
+            list-style: none;
+            float: left;
+            display: inline;
+            margin-left: 10px;
+            border: 1px solid #AAAAAA;
+        }
+
+
+        #randomball {
+            width: 90px;
+            height: 90px;
+            text-align: center;
+            margin: 0 auto;
+            padding: 0;
+            border-radius: 90px;
+            background: #CE5777;
+            box-shadow: 0px -2px 20px 1px inset;
+        }
+
+        #randomball span {
+            font: 900 24px/95px Cambria;
+            color: #FFF;
+        }
+    </style>
+
+    <script>
+        $(function () {
+            let x = 10;
+            let y = 20;
+            $("a.tooltip").mouseover(function (e) {
+                this.newtitle = this.title;
+                this.title = "";
+                let imginfo = this.newtitle ? "<br>" + this.newtitle : "";
+                let tip = "<div id='tip'><img src='" + this.href + "'+alt='产品预览图' />" + imginfo + "</div>";
+                $("body").append(tip);
+                $("#tip").css({
+                    "top": (e.pageY + y) + "px",
+                    "left": (e.pageX + x) + "px"
+                }).show("fast");
+            }).mouseout(function () {
+                this.title = this.newtitle;
+                $("#tip").remove();
+            }).mousemove(function (e) {
+                $("#tip").css({
+                    "top": (e.pageY + y) + "px",
+                    "left": (e.pageX + x) + "px"
+                });
+            });
+
+
+            $("<div id='randomball'><span>10</span></div>").appendTo("body")
+            setDivCenter($("#randomball")[0]);
+            delayURL();
+
+
+        });
+        function delayURL() {
+            var delay = $("#randomball span").text();
+            //alert(delay);
+            var t = setTimeout("delayURL()", 1000);
+            if (delay > 0) {
+                delay--;
+                $("#randomball span").text(delay);
+            } else {
+                clearTimeout(t);
+                $("#randomball").fadeOut(1000)
+                window.location.href = "./imgTip-step02.html";
+            }
+        }
+
+        function setDivCenter(elemt) {
+            var top = ($(window).height()/2 - $(elemt).height()) / 2;
+            var left = ($(window).width() - $(elemt).width()) / 2;
+            var scrollTop = $(document).scrollTop();
+            var scrollLeft = $(document).scrollLeft();
+            $(elemt).css({
+                "position": 'absolute',
+                'top': top + scrollTop,
+                "left": left + scrollLeft,
+                "z-index": 999,
+                "opacity": "0.3"
+            }).fadeTo("slow", 1);
+        }
+    </script>
+</head>
+
+<body>
+    <h2>1323124</h2>
+    <div class="panel_bg">
+        <h3>1. 鼠标停留效果</h3>
+        <div class="panel">
+            <ul>
+                <li><a href="img/apple_1_bigger.jpg" class="tooltip" title="苹果 ipad"><img src="img/apple_1.jpg"
+                            alt="苹果 ipad"></a></li>
+                <li><a href="img/apple_2_bigger.jpg" class="tooltip" title="苹果 ipad nanao"><img src="img/apple_2.jpg"
+                            alt="苹果 ipad nanao></a></li>
+                <li><a href=" img/apple_3_bigger.jpg" class="tooltip" title="苹果 iphone"><img src="img/apple_3.jpg"
+                            alt="苹果 iphone"></a></li>
+                <li><a href="img/apple_3_bigger.jpg" class="tooltip" title="苹果 Mac"><img src="img/apple_4.jpg"
+                            alt="苹果 Mac"></a></li>
+            </ul>
+        </div>
+        <h3>2. 鼠标停留无效果</h3>
+        <div class="panel">
+            <ul>
+                <li><a href="img/apple_1_bigger.jpg" title="苹果 ipad"><img src="img/apple_1.jpg" alt="苹果 ipad"></a></li>
+                <li><a href="img/apple_2_bigger.jpg" title="苹果 ipad nanao"><img src="img/apple_2.jpg" alt="苹果 ipad nanao></a></li>
+                <li><a href=" img/apple_3_bigger.jpg" title="苹果 iphone"><img src="img/apple_3.jpg" alt="苹果 iphone"></a>
+                </li>
+                <li><a href="img/apple_3_bigger.jpg" title="苹果 Mac"><img src="img/apple_4.jpg" alt="苹果 Mac"></a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
