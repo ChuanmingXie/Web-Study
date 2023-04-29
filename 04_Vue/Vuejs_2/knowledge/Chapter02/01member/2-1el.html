@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-1 Vue对象的成员-el</title>
+    <link rel="stylesheet" href="../../Content/css/common.css">
+    <script src="../../Content/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="../../Content/js/jquery-migrate-1.4.1.min.js" type="text/javascript"></script>
+    <script src="../../Content/js/vue-2.6.10.js" type="text/javascript"></script>
+    <style>
+        #app,
+        .appClass {
+            width: 300px;
+            height: 200px;
+            background-color: #c2e2b1d7;
+            float: left;
+            display: inline-block;
+            margin: 0 5px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            var app = new Vue({
+                el: document.getElementById('app')
+            });
+
+
+            var app2 = new Vue({
+                el: '#app'
+            });
+
+            /* 通过类名挂载操作Vue实例对象 */
+            var app3 = new Vue({
+                el: '.appClass'
+            });
+
+            var app4 = new Vue({
+                el: '#toggleBtn'
+            });
+
+
+            $("#elAlert1").click(function (e) {
+                e.preventDefault();
+                alert(app);
+                console.log(app);
+            });
+
+            $("#elAlert2").click(function (e) {
+                e.preventDefault();
+                alert(app.$el);
+                console.log($(app.$el));
+            });
+
+            /* 比较Vue对象获取的Element与jQuery获取的Element的异同 */
+            $("#compare").on('click', function () {
+                console.log("我是来自Vue实例:" + app2);
+                console.log("我是来自Vue实例的el属性:" + app2.$el);
+                console.log("我是来自jQuery的对象：" + $("#app"));
+                console.log("我是来自jQuery的对象的首个对象：" + $("#app").get(0));
+
+
+                console.log("我是来自Vue的对象" + app3);
+                console.log("我是来自Vue的对象的el属性：" + app3.$el);
+                console.log("我是来自jQuery的对象：" + $(".appClass"));
+                console.log("我是来自jQuery的对象的首个对象：" + $(".appClass").get(0));
+
+            });
+
+            $(app2.$el).toggle(function () { $(this).css("background-color", "red"); },
+                function () { $(this).css("background-color", 'green'); });
+
+            $(app4.$el).toggle(function () { $(app3.$el).slideToggle(); },
+                function () { $(this).css('background-color', 'red'); },
+                function () { $(app3.$el).css('background-color', 'green') },
+                function () { $(app3.$el).css('background-color', 'yellow') },
+                function () { $(this).css('background-color', 'purple') });
+
+            /* 操作从Vue获取的Element和jQuery获取的Element */
+            $("#appendele").click(function (e) {
+                e.preventDefault();
+                $(app2.$el).text("<ul><li>12124</li></ul>");
+                app.$el.innerText = "<ul><li>12124</li></ul>";
+                var newli_1 = $("<ul><li>12124</li></ul>");
+                var newli_2 = $("<ul><li>12124</li></ul>");
+                $("#app").append(newli_1);
+                $(app2.$el).append(newli_2);
+
+                console.log("我是通过Vue实例的el属性访问的outerHTML" + app.$el.outerHTML)
+                console.log("我是通过Vue实例的el属性访问的outerHTML" + $("#app").outerHTML)
+                console.log("我是通过Vue实例的el属性访问的outerHTML" + $("#app").get(0).outerHTML)
+
+                /* 分析下面操作错误的原因： */
+                /* 1. 通过id选择器返回的是单个jQuery对象,无需再次获取 */
+                // $("#app").get(0).text("这是通过jQuery访问，并使用jQuery的text方法,进行添加");
+                $("#app3").text("这是通过jQuery访问，并使用jQuery的text方法,进行添加");
+                /* 2.DOM对象不能直接使用jQuery方法，需要通过$()进行转化 */
+                (app3.$el).style.width="220px";
+                $(app3.$el).slideUp(3000);
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <h2>2-1 Vue成员el</h2>
+    <div class="panel_bg">
+        <h3></h3>
+        <div class="panel">
+            <div id="app"></div>
+            <div class="appClass"></div>
+            <div class="btnGroup">
+                <input type="button" id="elAlert1" value="显示app元素内容">
+                <input type="button" id="elAlert2" value="显示app元素el内容">
+                <input type="button" id="compare" value="比较Vue和jQuery元素">
+                <input type="button" id="appendele" value="追加元素">
+                <input type="button" id="toggleBtn" value="toggle多事件切换">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

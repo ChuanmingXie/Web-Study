@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-4 Vue成员对象-表达式</title>
+    <link rel="stylesheet" href="../../Content/css/common.css">
+    <script src="../../Content/js/vue-2.6.10.js"></script>
+</head>
+
+<body>
+    <h2>2-4 Vue 支持运算符和表达式</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <div id="app1">{{book}}</div>
+        </div>
+        <div class="panel">
+            <div id="app2">{{number/10}}{{isOk?'确认':'取消'}}{{text.split(',').reverse().join(',')}}</div>
+        </div>
+        <div class="panel">
+            <div id="app3"><span v-html="link"></span></div>
+        </div>
+        <div class="panel">
+            <div id="app4"><span v-pre>{{这里的内容不会编译，不会被插值运算符执行}}</span></div>
+        </div>
+        <div class="panel">
+            <div id="app5">{{date}}</div>
+        </div>
+    </div>
+    <!--
+		<div id="app">{{message|filerA|filterB}}</div>
+		<div id="app">{{message|filerA('arg1','arg2')}}</div>
+		这里的arg1和arg2是传递个过滤器的第二个和第三个参数，因为第一个参数是数据本身value
+		过滤器应当处理一些简单的格式化或过滤工作,要实现更为复杂的数据变换,应该使用计算属性 
+		-->
+
+    <script type="text/javascript">
+        /* 插值表达式应用 */
+        var app1 = new Vue({
+            el: '#app1',
+            data: { book: '《Vue.js实战》' }
+        });
+
+        /* 插值运算符，执行表达式 */
+        var app2 = new Vue({
+            el: '#app2',
+            data: { number: 100, isOK: false, text: '123,456' }
+        });
+
+        /* 结合 v-html指令， 可以将数据解释为纯文本 */
+        var app3 = new Vue({
+            el: '#app3',
+            data: { link: '\<a href="#"\>这是一个链接\</a\>' }
+        });
+
+        /* 显示未格式化的时间信息 */
+        var app5 = new Vue({
+            el: '#app5',
+            data: { date: new Date() },
+            mounted: function () {
+                // 声明一个变量指向Vue实例this,保证作用域一致
+                var _this = this;
+                this.timer = setInterval(function () {
+                    // 定时修改date变量
+                    _this.date = new Date();
+                }, 1000);
+            },
+            /* 在该Vue实例销毁之前，清除我们的定时器 */
+            beforeDestroy: function () {
+                if (this.timer) {
+                    clearInterval(this.timer);
+                }
+            }
+        });
+
+    </script>
+</body>
+
+</html>

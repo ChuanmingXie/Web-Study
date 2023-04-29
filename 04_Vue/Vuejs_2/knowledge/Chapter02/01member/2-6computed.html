@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-5 Vue对象成员-计算属性</title>
+    <link rel="stylesheet" href="../../Content/css/common.css">
+    <script src="../../Content/js/vue-2.6.10.js"></script>
+
+</head>
+
+<body>
+    <div class="panel_bg">
+        <div class="panel">
+            <h2>1. 计算属性转化表达式</h2>
+            <div id="app1">{{text.split(',').reverse().join(',')}}</div>
+            <div id="app2">{{reversedText}}</div>
+        </div>
+        <div class="panel">
+            <h2>2. 计算属性计算总结</h2>
+            <div id="app3">{{prices}}</div>
+            <div id="app4">{{}}</div>
+        </div>
+        <div class="panel">
+            <h2>3. 计算属性的缓存特点</h2>
+            <div id="app5">{{textByComputed}}</div>
+            <div id="app6">{{textByComputed()}}</div>
+        </div>
+        <div class="panel">
+            <h2>4. 计算属性setter的使用</h2>
+            <div id="app7">{{fullName}}</div>
+            <input type="button" id="btnSetter" @click="handleSetter" value="请测试名称 siweixie">
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        /* 1. 非计算属性处理数据 */
+        var app1 = new Vue({
+            el: "#app1",
+            data: { text: "1234,456" }
+        });
+        /* 2. 计算属性处理数据 */
+        var app2 = new Vue({
+            el: "#app2",
+            data: { text: "1234,567" },
+            computed: {
+                reversedText: function () {
+                    return this.text.split(',').reverse().join(',');
+                }
+            },
+        });
+
+        /* 3. 计算属性处理数据 */
+        var app3 = new Vue({
+            el: '#app3',
+            data: {
+                package1: [
+                    { name: 'iphone 7', price: 7199, count: 2 },
+                    { name: 'ipad', price: '2888', count: 1 }],
+                package2: [
+                    { name: 'Huawei pro7', price: 6199, count: 3 },
+                    { name: 'mackBook', price: '7888', count: 1 }],
+                package3: [
+                    { name: 'apple', price: 3, count: 5 },
+                    { name: 'banana', price: 5, count: 10 }]
+            },
+            computed: {
+                prices: function () {
+                    var prices = 0;
+                    for (let i = 0; i < this.package1.length; i++) {
+                        prices += this.package1[i].price * this.package1[i].count;
+                    }
+                    for (let i = 0; i < this.package2.length; i++) {
+                        prices += this.package2[i].price * this.package2[i].count;
+                    }
+                    for (let i = 0; i < this.package3.length; i++) {
+                        prices += this.package3[i].price * this.package3[i].count;
+                    }
+                    return prices;
+                }
+            }
+        });
+
+        /* computed 属性*/
+        var app3 = new Vue({
+            el: '#app5',
+            data: { text: '1239,0456' },
+            computed: {
+                textByComputed: function () {
+                    // 注意this指代当前Vue实例,其可以代理text文本
+                    // return this.text.split(',').reverse().join(',');
+                    /* 计算属性既可以依赖其他计算属性也可以共享其他Vue实例的数据 */
+                    return app1.text.split(',').reverse().join(',');
+                }
+            }
+        });
+        /* methods 属性 */
+        var app4 = new Vue({
+            el: '#app6',
+            data: { text: '1234,4568' },
+            methods: {
+                textByMethods: function () {
+                    return this.text.split(',').reverse().join(',');
+                }
+            }
+        });
+
+
+        /* 计算属性的setter */
+        var app5 = new Vue({
+            el: '#app7',
+            data: { firstName: 'Chuanming', lastName: 'Xie' },
+            computed: {
+                fullName: {
+                    get: function () { return this.firstName + ' ' + this.lastName; },
+                    set: function (newValue) {
+                        var names = newValue.split(' ');
+                        this.firstName = names[0];
+                        this.lastName = names[names.length - 1];
+                    }
+                },
+            }
+        });
+        var btn = new Vue({
+            el: '#btnSetter',
+            methods: {
+                handleSetter: function () {
+                    app5.fullName = 'siwei xie';
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

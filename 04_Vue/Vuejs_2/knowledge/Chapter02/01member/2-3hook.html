@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-3 Vue对象成员-钩子方法</title>
+    <link rel="stylesheet" href="../../Content/css/common.css">
+    <script src="../../Content/js/vue-2.6.10.js"></script>
+</head>
+
+<body>
+    <h2>2-3 created|mounted|beforeDestory</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <div id="app1">
+                <p v-if="show">这是一段文本</p>
+                <input type="button" @click="handleClose" value="点击隐藏" />
+            </div>
+        </div>
+        <div class="panel">
+            <div id="app2">
+                <p v-if="show">这是一段文本</p>
+                <input type="button" @click="handleClose" value="点击隐藏">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" charset="utf-8">
+        var app = new Vue({
+            el: '#app1',
+            data: {
+                a: 2,
+                show: true
+            },
+            methods: {
+                handleClose: function () {
+                    this.show = false;
+                }
+            },
+            created: function () {
+                console.log(this.a);
+                alert(this.a);
+            },
+            mounted: function () {
+                console.log(this.$el);
+                alert(this.$el);
+            },
+        });
+
+        var app2 = new Vue({
+            el: '#app2',
+            data: {
+                show: true
+            },
+            methods: {
+                init: function (text) {
+                    console.log(text);
+                    alert(text);
+                },
+                handleClose: function () {
+                    this.show = false;
+                }
+            },
+            mounted: function () {
+                // vue代理了methods的成员，故可以之间访问init方法
+                this.init("在初始化的时候调用");
+            }
+        });
+        app2.init("在外部调用");
+    </script>
+</body>
+
+</html>
