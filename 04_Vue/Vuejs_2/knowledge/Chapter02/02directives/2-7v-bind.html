@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,64 @@
     <title>2-7v-bind指令</title>
     <link rel="stylesheet" href="../../Content/css/common.css">
     <script src="../../Content/js/vue-2.6.10.js"></script>
+    <style type="text/css">
+        a{
+            display: inline-block;
+            width: 150px;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <h2>2-7v-bind指令</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h3>1. 绑定超链接</h3>
+            <div id="app1">
+                <a v-bind:href="url">普通超链接</a>
+                <img v-bind:src="imgurl" alt=""> <br>
+                <!-- 简写 -->
+                <a :href="url">语法糖超链接</a>
+                <img :src="imgurl" alt="">
+            </div>
+        </div>
+        <div class="panel">
+            <h3>2. 绑定事件</h3>
+            <div id="app2">
+                <p v-if="show">这是一段文本</p>
+                <div class="btnGroup">
+                    <button type="button" v-on:click="handleClose">点击隐藏</button>
+                    <!-- 语法糖 -->
+                    <button type="button" @click="handleClose">点击隐藏</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var app1 = new Vue({
+            el: "#app1",
+            data: {
+                url: "https://github.com/ChuanmingXie",
+                imgurl: "https://scpic.chinaz.net/files/pic/pic9/202009/apic27858.jpg"
+            }
+        });
+
+        var app2 = new Vue({
+            el: "#app2",
+            data: {
+                show: true
+            },
+            methods: {
+                handleClose: function () {
+                    this.show = false;
+                }
+            },
+        });
+    </script>
 </body>
+
 </html>

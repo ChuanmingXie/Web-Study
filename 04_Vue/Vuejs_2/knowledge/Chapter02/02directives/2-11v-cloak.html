@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-11 v-cloak</title>
+    <link rel="stylesheet" href="../../Content/css/common.css">
+    <script src="../../Content/js/vue-2.6.10.js"></script>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>2-11 v-cloak</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <div id="app" v-cloak>
+                {{message}} <br>
+                <span v-once>{{message}}</span>
+                <div v-once><span>{{message}}</span></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: { message: "这是一段文本" }
+        });
+    </script>
+</body>
+
+</html>

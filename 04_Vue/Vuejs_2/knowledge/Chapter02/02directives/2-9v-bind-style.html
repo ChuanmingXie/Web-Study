@@ -1,14 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2-7v-bind指令</title>
+    <title>2-9v-bind指令设置style </title>
     <link rel="stylesheet" href="../../Content/css/common.css">
     <script src="../../Content/js/vue-2.6.10.js"></script>
 </head>
+
 <body>
-    
+    <h2>2-9 v-bind 指令设置style</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h3>1. 使用 :style 给元素绑定内联样式</h3>
+            <p>使用 v-bind:style(:style)既是给元素绑定内联样式,方法与:class类似,同样有对象语法和数组语法</p>
+            <div id="app1">
+                <div :style="{'color':color,'font-size':fontsize+'px'}">这里是一段文本</div>
+                <p>渲染后的结果 为&lt;div style="color:red;font-size:14px;"&gt;&lt;/div&gt;</p>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h3>2. 属性名称的命名方式</h3>
+            <p>CSS样式名称可以使用驼峰命名(camelCase)或者横分隔命名(kebab-case)</p>
+
+        </div>
+        <div class="panel">
+            <h3>3. data,computed设置样式</h3>
+            <p>大多数情况下，直接写长串的样式不便于阅读和维护，所以一般在data或者computed里以字符串的方式维护style </p>
+            <div id='app2'>
+                <div :style="styles">这里是一段文本</div>
+            </div>
+        </div>
+        <div class="panel">
+            <h3>4. 数组语法</h3>
+            <p>应用多个对象样式时，使用数组语法（暂时无效）</p>
+            <div id="app3">
+                <div :style="[color,fontSize]">这里是一段文本</div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var app1 = new Vue({
+            el: '#app1',
+            data: {
+                color: 'red',
+                fontsize: 14
+            }
+        });
+
+        var app2 = new Vue({
+            el: '#app2',
+            data: {
+                styles: {
+                    color: 'red',
+                    fontSize: 14 + 'px'
+                }
+            }
+        });
+
+        var app3 = new Vue({
+            el: '#app3',
+            data: {
+                color: 'red',
+                fontSize: 14 + 'px'
+            }
+        });
+    </script>
 </body>
+
 </html>

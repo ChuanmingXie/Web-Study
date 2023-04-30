@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-8 v-bind 绑定类</title>
+    <link rel="stylesheet" href="../../Content/css/common.css">
+    <script src="../../Content/js/vue-2.6.10.js"></script>
+
+</head>
+
+<body>
+    <h2>2-8 v-bind 绑定类属性</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h3>1. 对象语法</h3>
+            <div>
+                <h4>1.1 简单对象</h4>
+                <div id="app1">
+                    <div :class="{'active':IsActive}">
+                        渲染后的结果&lt;div class="active"&gt;&lt;/div&gt;
+                    </div>
+                </div>
+
+                <h4>1.2 多个对象</h4>
+                <div id="app2">
+                    <div class="static" :class="{'active':isActive,'error':isError}">
+                        渲染后的结果&lt;div class="stacic active"&gt;&lt;/div&gt;
+                    </div>
+                </div>
+
+                <h4>1.3 计算属性</h4>
+                <div id='app3'>
+                    <div :class="classname">
+                        渲染后的结果&lt;div class="active"&gt;&lt;/div&gt;
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <h3>2. 数组方式</h3>
+            <div>
+                <h4>2.1 简单数组</h4>
+                <div id='app4'>
+                    <div :class="[activeCls,errorCls]">
+                        渲染后的结果&lt;div class="active error"&gt;&lt;/div&gt;
+                    </div>
+                </div>
+                <h4>2.2 数组和表达式</h4>
+                <div id='app5'>
+                    <div :class="[isActive?activeCls:'',errorCls]">
+                        渲染后的结果&lt;div class="active error"&gt;&lt;/div&gt;
+                    </div>
+                </div>
+                <h4>2.3 数组和对象</h4>
+                <div id='app6'>
+                    <div :class="[{'active':isActive},errorCls]">选然后的结果可通过审阅查看</div>
+                </div>
+                <h4>2.4 data,methods,computed</h4>
+                <div id='app7'>
+                    <button :class="classArray">	</button>
+                        渲染后的结果为&lt;div class='btn btn-lagrge btn-disabled'&gt;&lt;/div&gt;
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <h3>3. 通过组件设置</h3>
+            <div id="app8">
+                <my-component :class="{'active':isActive}"></my-component>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var app1=new Vue({
+            el:'#app1',
+            data:{IsActive:true}
+        });
+
+        var app2=new Vue({
+            el:'#app2',
+            data:{
+                isActive:true,
+                isError:false
+            }
+        });
+        
+        var app3=new Vue({
+            el:"#app3",
+            data:{
+                isActive:true,
+                error:null,
+            },
+            computed: {
+                classname:function(){
+                    return {
+                        active:this.isActive && !this.error,
+                        'text-fail':this.error&&this.error.type==='fail'
+                    }
+                }
+            },
+        });
+
+        var app4=new Vue({
+            el:"#app4",
+            data:{
+                activeCls:'active',
+                errorCls:'error'
+            }
+        });
+
+        var app5=new Vue({
+            el:"#app5",
+            data:{
+                isActive:true,
+                activeCls:'active',
+                errorCls:"error"
+            }
+        });
+
+        var app6=new Vue({
+            el:"#app6",
+            data:{
+                isActive:true,
+                errorCls:'error'
+            }
+        });
+        
+        var app7=new Vue({
+            el:"#app7",
+            data:{
+                size:"large",
+                disabled:true,
+            },
+            computed:{
+                classArray:function(){
+                    return [
+                        'btn',{
+                            ['btn-'+this.size]:this.size!='',
+                            ['btn-disabled']:this.disabled
+                        }
+                    ]
+                }
+            }
+        });
+
+        Vue.component('my-component',{
+            template:'<p class="article">这里有一些文本</p>'
+        })
+
+        var app8=new Vue({
+            el:"#app8",
+            data:{
+                isActive:true
+            }
+        });
+    </script>
+</body>
+
+</html>

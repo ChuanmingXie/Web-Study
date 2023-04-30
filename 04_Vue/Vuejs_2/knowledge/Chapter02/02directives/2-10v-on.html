@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +9,67 @@
     <link rel="stylesheet" href="../../Content/css/common.css">
     <script src="../../Content/js/vue-2.6.10.js"></script>
 </head>
+
 <body>
-    
+    <h2>2-8 v-on事件绑定</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h3>1. v-on示例</h3>
+            <div id="app1">
+                <p v-if="show">这里是一段文本</p>
+                <input type="button" v-on:click="handleClose" value="点击隐藏">
+            </div>
+        </div>
+        <div class="panel">
+            <h3>2. v-on内联语句</h3>
+            <div id="app2">
+                <p v-if="show">这是一段文本</p>
+                <input type="button" v-on:click="show=false" value="点击隐藏">
+            </div>
+        </div>
+        <div class="panel">
+            <h3>3. v-on使用methods</h3>
+            <div id="app3">
+                <p v-if="show">这是一段文本</p>
+                <input type="button" v-on:click="handleClose" value="点击隐藏">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var app1 = new Vue({
+            el: '#app1',
+            data: {
+                show: true
+            },
+            methods: {
+                handleClose: function () {
+                    this.show = false;
+                }
+            }
+        });
+
+        var app2 = new Vue({
+            el: "#app2",
+            data: {
+                show: true
+            }
+        });
+
+        var app3 = new Vue({
+            el: '#app3',
+            data: {
+                show: true
+            },
+            methods: {
+                handleClose: function () {
+                    this.close();
+                },
+                close: function () {
+                    this.show = false;
+                }
+            }
+        });
+    </script>
 </body>
+
 </html>
