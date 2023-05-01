@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-15 迭代指令与排序</title>
+    <link rel="stylesheet" href="../../Content/css/common.css">
+    <script src="../../Content/js/vue-2.6.10.js"></script>
+</head>
+
+<body>
+    <h2>2-15更新数组并排序</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h3>1. 数组迭代</h3>
+            <div id="app1">
+                <ul>
+                    <li v-for="book in books">{{book.name}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="panel">
+            <h3>2. 模板迭代</h3>
+            <div id="app2">
+                <ul>
+                    <template v-for="book in books">
+                        <li>书名：{{book.name}}</li>
+                        <li>作者：{{book.author}}</li>
+                    </template>
+                </ul>
+            </div>
+        </div>
+        <div class="panel">
+            <h3>3. 属性迭代</h3>
+            <div id="app3">
+                <ul>
+                    <li v-for="book in books">书名：{{book.name}} - 作者：{{book.author}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var app1 = new Vue({
+            el: '#app1',
+            data: {
+                books: [
+                    { name: '《Vue.js实战》', author: "EF" },
+                    { name: '《JavaScript精粹》', author: "道格拉斯" },
+                    { name: '《JavaScript高级》', author: "尼克拉斯" },
+                ]
+            }
+        });
+        /* push() */
+        app1.books.push({ name: '《CSS揭秘》', author: "李庆芳" });
+        /* unshift() */
+        app1.books.unshift({ name: '《CSS语言精粹》', author: '徐丽芳' });
+
+
+        /* concat() */
+        var tempbooks = [
+            { name: '《Vue.js实战》', author: 'chuanmingxie' },
+            { name: '《JavaScript精粹》', author: '道格拉斯' },
+            { name: '《JavaScript高级》', author: 'nicholas C.Zakas' },
+            { name: '《启示录1》', author: '谢传明' },
+            { name: '《启示录2》', author: '张志伟' },
+            { name: '《启示录3》', author: '黄伊安' },
+            { name: '《启示录4》', author: 'DD' },
+        ];
+        var app2 = new Vue({
+            el: "#app2",
+            data: {
+                books: tempbooks.concat(app1.books)
+            }
+        });
+
+        /* sort() */
+        var booksConcat=tempbooks.concat(app1.books).sort();
+        var booksConcat=tempbooks.concat(app1.books).sort(sortNumber);
+        
+        let collator=new Intl.Collator('cn');
+        var sortString=function(a,b){
+            return collator.compare(a.name,b.name);
+        }
+        var app3 = new Vue({
+            el: "#app3",
+            data: {
+                books: booksConcat.sort(sortString)
+            }
+        });       
+        
+        var sortNumber=function(a,b){
+            if(b.author>a.author){return -1;}
+            if(b.author<a.author){return 1;}
+            return 0;
+        }
+
+        /* filter() */
+        app3.books=app2.books.filter(function(item){
+            return item.name.match(/JavaScript/);
+        })
+        Vue.set(app1.books,3,{name:'《C#开发指南》',author:'Josnk tome'});
+        app1.books.splice(3,1,{name:'《C#开发指南》',author:'Jonsk tome'});
+        app1.books.splice(1);
+
+    </script>
+</body>
+
+</html>

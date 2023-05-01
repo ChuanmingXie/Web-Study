@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-14 迭代指令与过滤</title>
+    <link rel="stylesheet" href="../../Content/css/common.css">
+    <script src="../../Content/js/vue-2.6.10.js"></script>
+</head>
+
+<body>
+    <h2>2-14 v-for与过滤</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h3>1. 过滤筛选</h3>
+            <div id="app">
+                <ul>
+                    <template v-for="book in sortedBooks">
+                        <li>书名：{{book.name}}</li>
+                        <li>作者：{{book.author}}</li>
+                    </template>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                books: [
+                    { name: '《Vue.js实战》', author: "chuanmingxie" },
+                    { name: '《JavaScript精粹》', author: "Douglas Crockford" },
+                    { name: '《JavaScript高级》', author: "nicholas C.Zakas" },
+                    { name: '《JavaScript12》', author: "nicholas C.Zakas" },
+                    { name: '《JavaScript1》', author: "nicholas C.Zakas" },
+                ]
+            },
+            computed: {
+                filterBooks: function () {
+                    return this.books.filter(function (book) {
+                        return book.name.match(/javascript/);
+                    })
+                },
+                sortedBooks: function () {
+                    return this.books.sort(function (a, b) {
+                        /* 方式1：if() 比较数字大小，字符串也适用 */
+                        if (a.name.length < b.name.length) { return 1; }
+                        if (a.name.length > b.name.length) { return -1; }
+                        return 0;
+                        /* 方式2：数字相减返回数字，仍然只能放回数字（字符串不适用）*/
+                        return b.name.length - a.name.length;
+                        // return a.name.length < b.name.length 这种比较方式，结果仍然出错
+                    })
+                }
+            },
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-13 v-for 指令操作</title>
+    <link rel="stylesheet" href="../../Content/css/common.css">
+    <script src="../../Content/js/vue-2.6.10.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <h2>2-13 指令操作</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h3>1. 遍历数组</h3>
+            <div id="app1">
+                <ul>
+                    <li>基本用法</li>
+                    <li v-for="book of books">{{book.name}}</li>
+                    <li>of与in</li>
+                    <li v-for="book in books">{{book.name}}</li>
+                    <li>元素和索引</li>
+                    <!-- <li v-for="{book,index} in books">{{index}}-{{book.name}}</li> -->
+                    <li v-for="(book,index) in books">{{index}}-{{book.name}}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h3>2. 遍历数组-template</h3>
+            <div id="app2">
+                <ul>
+                    <template v-for="book in books">
+                        <li>书名：{{book.name}}</li>
+                        <li>作者：{{book.author}}</li>
+                    </template>
+                </ul>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h3>3. 遍历对象属性</h3>
+            <div id="app3">
+                <span v-for="property in user">-{{property}}-</span>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h3>4. 遍历数组属性即索引</h3>
+            <div id="app4">
+                <ul>
+                    <li v-for="(value,key,index) in user">{{index}}-{{key}}:{{value}}</li>
+                    <li v-for="{value,key,index} in user">{{index}}-{{key}}:{{value}}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h3>5. 迭代整数</h3>
+            <div id="app5">
+                <span v-for="n in 10">{{n}},</span>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app1',
+            data: {
+                books: [
+                    { name: '《Vue.js实战》' },
+                    { name: '《JavaScript精粹》' },
+                    { name: '《JavaScript高级程序设计》' }
+                ]
+            }
+        });
+
+        var app2 = new Vue({
+            el: "#app2",
+            data: {
+                books: [
+                    { name: '《Vue.js 实战》', author: '梁实秋' },
+                    { name: '《JavaScript精粹》', author: 'Douglas Crockford' },
+                    { name: '《JavaScript高级设计》', author: 'nicholas C.Zakas' }
+                ]
+            }
+        });
+
+        var app3 = new Vue({
+            el: "#app3",
+            data: {
+                user: { name: 'changmingxie', gender: '男', age: 28 }
+            }
+        });
+
+        var app4 = new Vue({
+            el: "#app4",
+            data: {
+                user: { name: 'chuangmingxie', gender: '男', age: 29 }
+            }
+        });
+
+        var app5 = new Vue({
+            el: '#app5'
+        });
+    </script>
+</body>
+
+</html>
