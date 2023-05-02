@@ -117,7 +117,7 @@ select,
     font: 600 14px/25px  Cambria,'Times New Roman';
     letter-spacing: 2px;
     border-radius: 5px;
-    border: 1px solid #fcd304;
+    border: 1px solid #85d7e4;
 }
 select {
     width: 285px;
@@ -131,8 +131,8 @@ option {
 input[type='text']:focus,
 select:focus,
 .textinline:focus{
-    border: none;
-    outline: 2px solid #EA4307;
+    outline: 1px solid transparent;
+    border: 1px solid #1860f1;
 }
 .textinline{
     height: 50px;
