@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-17 v-model 绑定值</title>
+    <link rel="stylesheet" href="../../Content/css/common.css">
+    <script src="../../Content/js/vue-2.6.10.js"></script>
+</head>
+
+<body>
+    <h2>2-17 绑定动态数据</h2>
+    <div class="panel_bg">
+        <div class="app">
+            <div class="panel">
+                <h3>1.单选按钮</h3>
+                <input type="radio" v-model="picked" :value="value" />
+                <label>单选按钮</label>
+                <p>{{picked}}</p>
+                <p>{{value}}</p>
+            </div>
+            <div class="panel">
+                <h3>2.复选框</h3>
+                <input type="checkbox" v-model="checkToggle" :true-value="value1" :false-value='value2' />
+                <label>复选框</label>
+                <p>{{checkToggle}}</p>
+                <p>{{value1}}</p>
+                <p>{{value2}}</p>
+            </div>
+            <div class="panel">
+                <h3>3.选择列表</h3>
+                <select v-model="selected">
+                    <option :value="{number:123}">123</option>
+                </select>
+                {{selected.number}}
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                picked: false,
+                value: 123,
+                checkToggle: false,
+                value1: 'a',
+                value2: 'b',
+                selected: '',
+            }
+        });
+    </script>
+</body>
+
+</html>

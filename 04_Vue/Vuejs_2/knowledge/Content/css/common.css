@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+[v-cloak]{display: none;}
 body{font-family: Cambria, '楷体';}
 h2{font: 700 18px/28px Cambria, '楷体';}
 h3{font: 700 16px/28px Cambria, '楷体';}
@@ -166,7 +167,7 @@ table th {
 }
 table td,
 table tr {
-    border: none;
+    border: 1px solid transparent;
     border-bottom: 1px solid #BBB5AC;
     padding: 3px;
 }

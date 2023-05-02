@@ -1,12 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3-3 复杂购物车</title>
+    <link rel="stylesheet" href="../../Content/css/common.css">
+    <script type="text/javascript" src="../../Content/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../Content/js/vue-2.6.10.js"></script>
+
+    <style>
+        table{
+            width: 100%;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div id="app" v-cloak>
+        <template v-if='list.length'>
+            <table>
+                <thead>
+                    <tr>
+                        <th>物品分类</th>
+                        <th><input type="button" id="Checkall" @click="handleSelectAll()" value="全选" /></th>
+                        <th>排序</th>
+                        <th>商品名称</th>
+                        <th>商品价格</th>
+                        <th>购物数量</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template v-for="(item,indexs) in list">
+                        <tr v-for="(shop,index) in item.product">
+                            <td v-if="shop.rowspanShow" :rowspan="rowspanNum(indexs)">{{item.type}}</td>
+                            <!-- <td>{{item.type}}</td> -->
+                            <td><input type="checkbox" @click="AddChecked($event)" value="" /></td>
+                            <td>{{index+1}}</td>
+                            <td>{{shop.name}}</td>
+                            <td>{{shop.price}}</td>
+                            <td>
+                                <button type="button" @click="handleReduce(indexs,index)"
+                                    :disabled="shop.count===1">-</button>
+                                {{shop.count}}
+                                <button type="button" @click="handleAdd(indexs,index,3)">+</button>
+                            </td>
+                            <td><input type="button" @click="handleRemove(indexs,index)" value="移出" /></td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+            <!-- <div>总价：￥{{totalPrice}}</div> -->
+            <div v-if="checkItem.length">总价：￥{{totalPrice}}</div>
+            <div v-else>￥ 0</div>
+        </template>
+        <div v-else>购物车为空</div>
+    </div>
+
+    <script src="index.js"></script>
 </body>
+
 </html>

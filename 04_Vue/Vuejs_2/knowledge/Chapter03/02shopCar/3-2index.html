@@ -1,12 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3-2 简单购物车</title>
+    <link rel="stylesheet" href="../../Content/css/common.css">
+    <script src="../../Content/js/jquery-1.11.1.min.js"></script>
+    <script src="../../Content/js/vue-2.6.10.js"></script>
+    <style>
+        table{
+            width: 100%;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div id="app" v-cloak>
+        <template v-if='list.length'>
+            <table>
+                <thead>
+                    <tr>
+                        <th><input type="button" id="Checkall" @click="handleSelectAll()" value="全选" /></th>
+                        <th>排序</th>
+                        <th>商品名称</th>
+                        <th>商品价格</th>
+                        <th>购物数量</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(item,index) in list">
+                        <td><input type="checkbox" @click="AddChecked($event)" value="" /></td>
+                        <td>{{index+1}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.price}}</td>
+                        <td>
+                            <button type="button" @click="handleReduce(index)" :disabled="item.count===1">-</button>
+                            {{item.count}}
+                            <button type="button" @click="handleAdd(index)">+</button>
+                        </td>
+                        <td><input type="button" @click="handleRemove(index)" value="移出" /></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div v-if="checkItem.length">总价：￥{{totalPrice}}</div>
+            <div v-else>￥ 0</div>
+        </template>
+        <div v-else>购物车为空</div>
+    </div>
+
+    <script>
+        /* 3-2实战练习-购物车结算-Vue|jQuery*/
+        var app = new Vue({
+            el: '#app',
+            data: {
+                list: [
+                    { id: 1, name: 'iphone 13', price: 6188, count: 1 },
+                    { id: 2, name: 'iPad Pro', price: 588, count: 1 },
+                    { id: 3, name: 'MacBook Pro', price: 21688, count: 1 }
+                ],
+                checkItem: []
+            },
+            computed: {
+                totalPrice: function () {
+                    var total = 0;
+                    let arr2 = [];
+                    var unique = Array.from(new Set(this.checkItem))
+                    this.list.filter(item => {
+                        unique.includes(item.id) && arr2.push(item);
+                    });
+                    for (var i = 0; i < arr2.length; i++) {
+                        var item = arr2[i];
+                        total += item.price * item.count;
+                    }
+                    /* 此处做了一个千位分隔符 */
+                    return total.toString().replace(/\B(?=(\d{3})+$)/g, ",");
+                },
+            },
+            methods: {
+                handleReduce: function (index) {
+                    if (this.list[index].count == 1) return;
+                    this.list[index].count--;
+                },
+                handleAdd: function (index) {
+                    this.list[index].count++;
+                },
+                handleRemove: function (index) {
+                    this.list.splice(index, 1);
+                },
+                AddChecked: function (e) {
+                    var id = parseInt($(e.target).parent().next('td').text());
+                    if ($(e.target).prop('checked')) {
+                        this.checkItem.push(id);
+                    } else {
+                        /* 删除指定元素没那么简单，需要先找到下标，在进行删除 */
+                        // this.checkItem.pop(id);	//错误，无法删除指定元素
+                        var indexdel = this.checkItem.findIndex(item => item === id);
+                        this.checkItem.splice(indexdel, 1);
+                    }
+                },
+
+                handleSelectAll: function () {
+                    this.checkItem.splice(0, this.checkItem.length);
+                    var that = this;
+
+                    $("input[type='checkbox']").prop('checked', true);
+                    $("input[type='checkbox']").each(function (index, elememt) {
+                        var numtemp = parseInt($(elememt).parent().next('td').text());
+                        console.log(numtemp);
+                        //this.checkItem.push(numtemp);
+                        that.checkItem.push(numtemp);
+                    })
+                }
+            }
+        });
+    </script>
 </body>
+
 </html>

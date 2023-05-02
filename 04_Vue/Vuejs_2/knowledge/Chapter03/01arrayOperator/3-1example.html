@@ -1,12 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3-1 数组的处理总结</title>
+    <link rel="stylesheet" href="../../Content/css/common.css">
+    <script src="../../Content/js/jquery-1.11.1.min.js"></script>
+    <script src="../../Content/js/vue-2.6.10.js"></script>
+    <style>
+        img {
+            width: 200px;
+            height: 160px;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <h2>3-1 Vue中处理数组</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <h3>1. 使用Computed 传参</h3>
+            <div id="app1">
+                <template v-for="(item) in photoList(item.photo)">
+                    <img :src="item.src" />
+                </template>
+                <!-- <div>{{photoList(item.photo)}}</div> -->
+            </div>
+        </div>
+        <div class="panel">
+            <h3>2.点击事件源传参</h3>
+            <div id="app2">
+                <ul>
+                    <li><input type="button" @click="clickMyself($event)" value="传递自己获取别人" /></li>
+                    <li><input type="hidden" value="我藏着重要数据" /></li>
+                    <li><input type="button" @mouseover="clickMyself($event)" value="传递自己获取别人" /></li>
+                    <li><span>我是明文</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="panel">
+            <h3>3. 数组的各种操作</h3>
+            <div id="app3">
+                <div>数组中{{methodIncludes(item.array1,'2')}}</div>
+                <div class="btnGroup">
+                    <input type="button" onmouseover="includesApply()" value="测试includes" /><br>
+                    <input type="button" onmouseover="arrayDelete()" value="测试在指定位置删除" /><br>
+                    <input type="button" onmouseover="pushApply()" value="测试push合并数组" /><br>
+                    <input type="button" onmouseover="emptyArray()" value="测试清空数组" /><br>
+                    <input type="button" onmouseover="DuplicateArray()" value="测试清空数组" /><br>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <view v-for="(item,index) in taobao" :key="index">
+                <switch :data-k="index" @change="schange" :class="ids[index].checked?'checked':''"
+                    :checked="ids[index].checked?true:false">
+                </switch>
+            </view>
+        </div>
+    </div>
+
+    <script src="exapmle.js"></script>
 </body>
+
 </html>
