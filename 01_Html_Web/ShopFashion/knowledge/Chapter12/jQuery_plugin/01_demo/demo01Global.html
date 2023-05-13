@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12-12 封装全局插件</title>
+    <link rel="stylesheet" href="../dist/css/common.css">
+    <script src="../dist/js/jquery-1.11.3.js"></script>
+</head>
+<body>
+    <h2>12-12 封装全局插件</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            这里什么多没有！
+        </div>
+    </div>
+    <script type="text/javascript">
+        $.extend({
+            sayHello:function(name){
+                alert("从extend中说Hello!")
+            }
+        });
+
+        $.sayHello();   //调用全局函数
+        $.sayHello("带参调用全局函数：$.sayHello('124')");
+        jQuery.sayHello("通过顶层对象调用全局函数：jQuery.sayHello")
+    </script>
+</body>
+</html>

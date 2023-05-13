@@ -1,12 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jQuery - 数组操作</title>
+    <title>12-8 jQuery - 数组操作</title>
+    <link rel="stylesheet" href="../dist/css/common.css">
+    <script src="../dist/js/jquery-1.11.3.js"></script>
 </head>
+
 <body>
-    
+    <h2>12-8 $.each 数据操作</h2>
+    <div class="panel_bg">
+        <div class="panel">
+            <ul>
+                <li>我是有内容的li标签</li>
+                <li>我是有内容的li标签</li>
+                <li>我是有内容的li标签</li>
+                <li>我是有内容的li标签</li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">
+        //遍历DOM对象集合
+        $("li").each(function (index, element) {
+            $(this).on("click", function () {
+                alert($(this).html());
+            });
+            console.log(index + " " + element.innerHTML);
+        });
+        //遍历Array数组
+        $.each([0, 1, 2], function (index, element) {
+            alert("Item #" + index + ": " + element);
+        });
+
+        var person=({
+            name:"张红",
+            info:function(){
+                alert("你好，我是张宏伟！");
+            },
+        });
+        alert(person);
+
+        var record=[1,2,3,4,5];
+        for (let i = 0; i < record.length; i++) {
+            return function(){
+                return alert(i);
+            }            
+        }
+        record(3);
+        console.log(record);
+    </script>
 </body>
+
 </html>

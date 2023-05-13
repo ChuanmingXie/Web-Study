@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jQuery - extend 对象</title>
 </head>
+
 <body>
-    
+
+    <script type="text/javascript">
+        var userBaseInfo = { 'name': 'guoqy', 'address': 'QingDao' };
+        var userBuyInfo = { 'goodsName': '韩国蜜炼果味茶', 'amount': 20 };
+        //1.将userBaseInfo作为target目标，用来存放合并后的内容（userBaseInfo内容被修改）
+        var target1=$.extend(userBaseInfo,userBuyInfo);
+        
+        //2.用一个空对象作为target目标，用来存放合并后的内容（userBaseInfo内容没有修改）
+        var target2 = $.extend({}, userBaseInfo, userBuyInfo);
+        console.log(target);
+        
+        //3.为jQuery添加myFunction()方法
+        $.extend({ "myFunction": function () { alert("我的新增方法"); } });
+        //调用$.myFunction()方法
+        $.myFunction();
+        
+        //4.为jQuery添加myProperty属性
+        $.extend({ "myProperty": "我的新增属性" });
+        
+        //使用myProperty属性
+        alert($.myProperty);
+    </script>
 </body>
+
 </html>
