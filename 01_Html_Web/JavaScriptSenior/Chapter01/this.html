@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1-1 this指向</title>
+    <link rel="stylesheet" href="../dist/css/common.css">
+    <style>
+        p {
+            text-indent: 2rem;
+        }
+
+        p b {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>1-1 this指向</h2>
+    <div class="panel_bg">
+        <h3>1. 全局</h3>
+        <p>
+            全局中。this指向顶级window
+        </p>
+        <div class="panel">
+        </div>
+
+        <h3>2. 普通函数中</h3>
+        <p>
+            普通函数非严格模式时，this指向顶级 window <br>
+            <b> 严格模式“use strict ” 时,this访问得到undefined </b>
+        </p>
+        <div class="panel">
+        </div>
+
+        <h3>3. 对象函数中</h3>
+        <p>对象的函数属性</p>
+        <div class="panel">
+        </div>
+
+        <h3>4. 构造函数中</h3>
+        <p>this指向有构造函数生成的当前对象</p>
+        <div class="panel">
+        </div>
+
+        <h3>5. 箭头函数中</h3>
+        <p>
+            this 永远指向其父作用域（函数作用域，全全局作用域），箭头函数不绑定this
+        </p>
+        <div class="panel">
+        </div>
+
+        <h3>6. call、apply、bind</h3>
+        <p></p>
+        <div class="panel">
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script type="text/javascript">
+        /* 1. 全局作用域中，this指的是windows */
+        console.log(this);
+
+        /* 2. 普通函数非严格/严格 window 模式时 undefined */
+        var t = function () {
+            console.log(this);
+        }();
+
+        var t2 = function () {
+            "use strict";
+            console.log(this);
+        }();
+
+        /* 3. 对象的函数属性中 this指向当前对象 */
+        var o = {
+            name: "张小丰",
+            foo() {
+                console.log(this);
+            }
+        }
+        // 对象函数属性中是自己 ，调用函数 {name: '张小丰', foo: ƒ}
+        o.foo();
+        var bar = o.foo;  // 拓展1  打印函数体 f foo(){ console.log(this); }
+        console.log(bar);
+
+        var p = {
+            name: "张三丰",
+        }
+        p.bar1 = o.foo;
+        console.log(p); // 拓展2 打印 p {name: '张三丰', bar1: ƒ} 
+        p.bar1();       // 拓展2 打印 p {name: '张三丰', bar1: ƒ}
+
+        /* 4. 构造函数 this指向有构造函数生成的当前对象 */
+        function Dog() {
+            this.name = "旺财";
+            console.log(this);
+        }
+        new Dog();
+
+        var Dog1 = function () {
+            this.name = "旺财";
+        }
+        console.log(new Dog1());
+
+        /* 5. 箭头函数 */
+        var s = {
+            foo: () => {
+                console.log(this);
+            }
+        }
+        s.foo();        // 打印windows
+
+        var s2 = {
+            name: "父级作用域",
+            foo: function () {
+                return () => {
+                    console.log(this);
+                }
+            }
+        }
+        console.log(s2.foo());        // 打印foo 函数体
+    </script>
+</body>
+
+</html>

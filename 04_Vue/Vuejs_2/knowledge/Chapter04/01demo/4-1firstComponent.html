@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4-1 组件示例</title>
+    <link rel="stylesheet" href="../../Content/css/common.css">
+    <script src="../../Content/js/vue-2.6.10.js"></script>
+</head>
+
+<body>
+    <h2>4-1 组件示例</h2>
+    <div class="panel_bg">
+        <h3> 1. 组件呈现的大致效果</h3>
+        <div class="panel">
+            <Crad style="width:350px">
+                <p solt="title">某某界面</p>
+                <a href="#" slot="extra">
+                    <Icon type="android-close" size="18"></Icon>
+                </a>
+                <div style="height: 100px;"></div>
+                <div>
+                    <Row:gutter="16">
+                        <i-col span="17">
+                            <i-input v-model="value" placeholder="请输入..."></i-input>
+                        </i-col>
+
+                        <i-col span="4">
+                            <i-button type="primary" icon="paper-airplane">发送</i-input>
+                        </i-col>
+                        </Row:gutter>
+                </div>
+            </Crad>
+        </div>
+    </div>
+
+    <h3>2. 全局注册</h3>
+    <div id="app1">
+        <my-component></my-component>
+    </div>
+
+    <h3>3. 局部注册</h3>
+    <div id="app2">
+        <my-component></my-component>
+    </div>
+
+    <h3>4. is属性挂载</h3>
+    <div id="app3">
+        <table>
+            <tbody is="my-component"></tbody>
+        </table>
+    </div>
+
+    <h3>5. Vue组件的其他选项</h3>
+    <div id="app4">
+        <my-component></my-component>
+    </div>
+
+    <script type="text/javascript">
+        Vue.component('mycomponent', {
+            template: '<div>{{message}}</div>',
+            data: function () {
+                return { message: '组件内容' }
+            }
+        });
+
+        var app1=new Vue({
+            el:"#app1",
+            components:{
+                'my-component':Child
+            }
+        });
+
+        var app2=new Vue({
+            el:"#app2"
+        })
+
+        var app4=new Vue({
+            el:"#app3",
+        })
+    </script>
+</body>
+
+</html>
